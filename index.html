@@ -22,6 +22,7 @@
   :root{
     --navy:#101D33;
     --navy-mid:#1D3153;
+    --navy-2:#1b2f4d;
     --gold:#8E6C34;
     --gold-mid:#CFAD6B;
     --gold-pale:#E8D3A4;
@@ -33,108 +34,338 @@
     --on-navy-muted:#C9D0DA;
     --gold-line:rgba(178,138,73,.45);
     --gold-line-soft:rgba(178,138,73,.24);
+    --grad-rule:linear-gradient(90deg,#987238,#d7bd87,#9f793d);
+    --grad-paper:linear-gradient(150deg,#fcfaf5 0%,#f1e9dd 66%,#fbf8f2 100%);
+    --grad-navy:linear-gradient(160deg,var(--navy-2),var(--navy));
+    --grad-gold:linear-gradient(150deg,#ead8b2,#cfad6b);
+    --surface-card:rgba(255,254,250,.97);
+    --shadow-card:0 22px 48px rgba(16,29,51,.09);
+    --shadow-soft:0 10px 26px rgba(16,29,51,.06);
     --font-display:'Archivo',system-ui,sans-serif;
     --font-text:'Source Sans 3',system-ui,sans-serif;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;background:var(--paper);color:var(--navy);font-family:var(--font-text);-webkit-font-smoothing:antialiased}
   a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{padding:28px 0}
-  header .wrap{display:flex;align-items:center;justify-content:space-between}
-  .brand{font-family:var(--font-display);font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--navy)}
-  .brand span{color:var(--gold)}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
-  .hero{background:linear-gradient(160deg,var(--navy-mid),var(--navy));color:var(--on-navy);padding:clamp(60px,10vw,108px) 0 clamp(56px,8vw,88px)}
-  .hero .eyebrow{color:var(--gold-mid)}
-  .hero .eyebrow::before{background:var(--gold-mid)}
-  h1{font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;line-height:1.04;font-size:clamp(38px,6vw,66px);margin:20px 0 0;text-wrap:balance}
-  .hero p{max-width:640px;margin:22px 0 0;font-size:clamp(16px,1.6vw,19px);line-height:1.65;color:var(--on-navy-muted)}
-  .badge{display:inline-block;margin-top:32px;padding:12px 22px;border:1px solid rgba(255,255,255,.24);font-family:var(--font-display);font-size:10.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale)}
-  section.partners{padding:clamp(56px,8vw,88px) 0}
-  section.partners h2{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em;font-size:clamp(24px,3vw,32px);margin:0 0 8px}
-  section.partners > .wrap > p{margin:0 0 40px;max-width:620px;color:var(--muted);font-size:15.5px;line-height:1.65}
-  .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
-  .card{background:rgba(255,254,250,.95);border:1px solid var(--gold-line);border-top:4px solid var(--gold-mid);box-shadow:0 10px 24px rgba(18,32,56,.06);padding:30px}
-  .card img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:top center}
-  .card strong{display:block;margin-top:18px;font-family:var(--font-display);font-size:17px;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
-  .card .role{display:block;margin-top:6px;font-family:var(--font-display);font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-  .card .focus{display:block;margin-top:12px;font-size:13.5px;line-height:1.6;color:var(--muted)}
-  .cta{padding:clamp(48px,7vw,72px) 0;text-align:center;border-top:1px solid var(--gold-line-soft)}
-  .cta p{margin:0 0 20px;font-size:15.5px;color:var(--muted)}
-  .cta a{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;background:var(--navy);color:var(--on-navy);font-family:var(--font-display);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
-  footer{padding:32px 0;border-top:1px solid var(--gold-line-soft)}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--muted)}
-  footer a{text-decoration:underline;text-decoration-color:var(--gold-line);text-underline-offset:3px}
-  footer nav{display:flex;gap:20px}
-  @media (max-width:760px){
+  img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.is-in{opacity:1;transform:none}
+
+  .rule-top{height:6px;background:var(--grad-rule)}
+
+  header{padding:26px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{display:flex;align-items:baseline;gap:8px;font-family:var(--font-display);font-weight:900;font-size:16px;letter-spacing:.01em;color:var(--navy);text-decoration:none}
+  .brand em{font-style:italic;color:var(--gold)}
+  .header-right{display:flex;align-items:center;gap:clamp(16px,3vw,32px)}
+  .header-nav{display:flex;gap:28px}
+  .header-nav a{font-family:var(--font-display);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--navy)}
+  .header-nav a:hover{color:var(--gold)}
+  .pill-tag{padding:9px 16px;border:1px solid var(--gold-line);font-family:var(--font-display);font-size:9.5px;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+
+  /* Hero */
+  .hero{position:relative;padding:clamp(56px,7vw,96px) 0 clamp(60px,7vw,88px);background:var(--grad-paper);overflow:clip}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(min(100%,340px),.84fr);gap:clamp(40px,5vw,60px);align-items:start}
+  .kicker{display:flex;align-items:center;gap:14px}
+  .kicker .line{width:40px;height:2px;background:var(--gold);flex:0 0 auto}
+  .kicker span{font-family:var(--font-display);font-size:10.5px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+  h1{margin:clamp(22px,2.8vw,32px) 0 0;font-family:var(--font-display);font-weight:900;letter-spacing:-.035em;line-height:.98;text-transform:uppercase;font-size:clamp(46px,7vw,92px);color:var(--navy)}
+  h1 em{font-style:italic;color:var(--gold)}
+  .lede{margin:clamp(20px,2.2vw,26px) 0 0;max-width:600px;font-family:var(--font-display);font-size:clamp(19px,2vw,25px);line-height:1.32;font-weight:750;letter-spacing:-.015em;color:var(--navy)}
+  .body-p{margin:clamp(18px,2vw,22px) 0 0;max-width:560px;font-size:clamp(15px,1.15vw,16.5px);line-height:1.72;color:var(--muted)}
+  .meta-note{margin:18px 0 0;font-size:12.5px;color:var(--muted)}
+  .meta-note b{color:var(--navy);font-weight:700}
+  .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:16px clamp(20px,2.6vw,32px);margin-top:clamp(30px,3.4vw,40px)}
+  .btn-primary{min-height:58px;padding:18px 32px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--navy);background:var(--navy);font-family:var(--font-display);font-size:11.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--white);text-decoration:none;transition:background .2s ease,color .2s ease}
+  .btn-primary:hover{background:var(--white);color:var(--navy)}
+  .link-ghost{display:inline-flex;align-items:center;gap:10px;padding-bottom:7px;border-bottom:1px solid var(--gold-line);font-family:var(--font-display);font-size:10.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--navy);text-decoration:none;transition:color .2s ease}
+  .link-ghost:hover{color:var(--gold)}
+  .link-ghost .arrow{color:var(--gold);font-size:15px}
+
+  /* Hero side card */
+  .disc-card{background:var(--surface-card);border:1px solid var(--gold-line);border-top:3px solid var(--gold);box-shadow:var(--shadow-card)}
+  .disc-card-head{padding:24px 26px 4px}
+  .disc-card-head span{display:block;font-family:var(--font-display);font-size:9.5px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .disc-row{display:grid;grid-template-columns:3px 1fr;gap:16px;padding:18px 26px;border-top:1px solid var(--gold-line-soft)}
+  .disc-row .bar{background:var(--grad-gold)}
+  .disc-row strong{display:block;font-family:var(--font-display);font-size:14.5px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+  .disc-row small{display:block;margin-top:5px;font-size:12.5px;color:var(--muted)}
+  .disc-navy{margin-top:0;padding:24px 26px 28px;background:var(--grad-navy);border-top:4px solid var(--gold-mid)}
+  .disc-navy strong{display:block;font-family:var(--font-display);font-size:clamp(17px,1.6vw,20px);line-height:1.25;font-weight:800;letter-spacing:-.02em;color:var(--on-navy)}
+  .disc-navy span{display:block;margin-top:9px;font-size:12.5px;line-height:1.6;color:var(--on-navy-muted)}
+
+  /* Tag strip */
+  .tag-strip{position:relative;z-index:2;margin-top:clamp(44px,5.4vw,60px);padding-top:clamp(24px,3vw,30px);border-top:1px solid var(--gold-line)}
+  .tag-strip > span{display:block;font-family:var(--font-display);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+  .tag{padding:10px 18px;border:1px solid var(--gold-line);background:var(--paper);font-family:var(--font-display);font-size:12.5px;font-weight:800;letter-spacing:-.005em;white-space:nowrap;color:var(--navy)}
+
+  /* Ansatz */
+  .ansatz{padding:clamp(64px,8vw,96px) 0;background:var(--white);border-top:1px solid var(--gold-line-soft)}
+  .ansatz-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(32px,5vw,64px)}
+  .ansatz h2{margin:14px 0 0;font-family:var(--font-display);font-weight:800;letter-spacing:-.025em;font-size:clamp(26px,3vw,36px);line-height:1.08;color:var(--navy)}
+  .ansatz-copy p{margin:0 0 16px;font-size:15.5px;line-height:1.75;color:var(--muted)}
+  .ansatz-copy p:last-child{margin-bottom:0}
+  .ansatz-copy strong{color:var(--navy)}
+
+  /* Partners */
+  .partners{padding:clamp(64px,8vw,100px) 0;background:var(--cream)}
+  .section-head{max-width:640px}
+  .section-head h2{margin:14px 0 0;font-family:var(--font-display);font-weight:800;letter-spacing:-.025em;font-size:clamp(26px,3vw,36px);color:var(--navy)}
+  .section-head p{margin:14px 0 0;font-size:15.5px;line-height:1.7;color:var(--muted)}
+  .cards{margin-top:clamp(36px,4.4vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,2.4vw,28px)}
+  .card{background:var(--surface-card);border:1px solid var(--gold-line);box-shadow:var(--shadow-soft);transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s ease;overflow:hidden}
+  .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card)}
+  .card .photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--sand,#e2dcce)}
+  .card .photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s ease}
+  .card:hover .photo img{transform:scale(1.04)}
+  .card .photo::after{content:"";position:absolute;inset:auto 0 0 0;height:56%;background:linear-gradient(180deg,rgba(16,29,51,0) 0%,rgba(16,29,51,.55) 100%)}
+  .card .body{padding:22px 24px 26px}
+  .card .role{display:block;font-family:var(--font-display);font-size:9px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+  .card strong{display:block;margin-top:8px;font-family:var(--font-display);font-size:18px;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+  .card .focus{display:block;margin-top:10px;font-size:13.5px;line-height:1.55;color:var(--muted)}
+  .card .more{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--font-display);font-size:9.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-line);padding-bottom:4px;transition:color .2s ease}
+  .card .more:hover{color:var(--gold)}
+
+  /* CTA */
+  .cta{padding:clamp(64px,8vw,96px) 0;background:var(--grad-navy);border-top:4px solid var(--gold-mid)}
+  .cta-grid{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px}
+  .cta-copy span{display:block;font-family:var(--font-display);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-mid)}
+  .cta-copy strong{display:block;margin-top:14px;max-width:520px;font-family:var(--font-display);font-size:clamp(22px,2.6vw,30px);line-height:1.22;font-weight:800;letter-spacing:-.02em;color:var(--on-navy)}
+  .cta-copy p{margin:14px 0 0;max-width:480px;font-size:14.5px;line-height:1.65;color:var(--on-navy-muted)}
+  .btn-gold{flex:0 0 auto;min-height:60px;padding:19px 32px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--gold-mid);background:var(--grad-gold);font-family:var(--font-display);font-size:11.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--navy);text-decoration:none;transition:background .2s ease,border-color .2s ease}
+  .btn-gold:hover{background:var(--white);border-color:var(--white)}
+
+  /* Footer */
+  footer{padding:clamp(48px,6vw,64px) 0 32px;background:var(--paper)}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:clamp(32px,5vw,56px)}
+  .footer-brand .brand{margin-bottom:14px}
+  .footer-brand p{margin:0;max-width:280px;font-size:13.5px;line-height:1.7;color:var(--muted)}
+  .footer-col span{display:block;margin-bottom:16px;font-family:var(--font-display);font-size:10px;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+  .footer-col a{display:block;margin-bottom:11px;font-size:13.5px;color:var(--muted);text-decoration:none}
+  .footer-col a:hover{color:var(--gold)}
+  .footer-bottom{margin-top:clamp(40px,5vw,56px);padding-top:22px;border-top:1px solid var(--gold-line-soft);display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted)}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .ansatz-grid{grid-template-columns:1fr}
+    .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .footer-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .header-nav{display:none}
     .cards{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
   }
 </style>
 </head>
 <body>
 
+<div class="rule-top" aria-hidden="true"></div>
+
 <header>
   <div class="wrap">
-    <span class="brand">THE GAP <span>Lab</span></span>
-    <span class="eyebrow" style="color:var(--gold)">Tochtergesellschaft der S&amp;D</span>
+    <a class="brand" href="/">THE GAP <em>Lab</em></a>
+    <div class="header-right">
+      <nav class="header-nav">
+        <a href="#partner">Die Partner</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <span class="pill-tag">Tochtergesellschaft der S&amp;D</span>
+    </div>
   </div>
 </header>
 
-<div class="hero">
+<section class="hero">
   <div class="wrap">
-    <span class="eyebrow">Neu gegründet</span>
-    <h1>THE GAP Lab.</h1>
-    <p>Die neue Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH — Verhandlungsführung, Leadership und Finance-Expertise unter einem gemeinsamen Dach, getragen von drei Partnern.</p>
-    <span class="badge">Mehr in Kürze</span>
-  </div>
-</div>
+    <div class="hero-grid">
+      <div>
+        <div class="kicker reveal">
+          <span class="line" aria-hidden="true"></span>
+          <span>Neu gegründet</span>
+        </div>
 
-<section class="partners">
+        <h1 class="reveal">THE GAP<br><em>Lab.</em></h1>
+
+        <p class="lede reveal">Verhandlungsführung, Leadership und Finance — drei Disziplinen, gebündelt in einer eigenen Gesellschaft.</p>
+
+        <p class="body-p reveal">THE GAP Lab GmbH ist die neue Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH. Drei Partner führen sie gemeinsam: für Mandate, die Verhandlungsstärke, Führungsklarheit und wirtschaftliche Tiefe zugleich brauchen.</p>
+
+        <p class="meta-note reveal"><b>Sitz:</b> Altdorf bei Nürnberg · <b>Status:</b> Gesellschaft in Gründung (i.G.)</p>
+
+        <div class="cta-row reveal">
+          <a class="btn-primary" href="https://www.schubart-dulgeridis.de/kontakt">Kontakt aufnehmen</a>
+          <a class="link-ghost" href="#partner">Die Partner <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="disc-card">
+          <div class="disc-card-head">
+            <span>Gebündelte Expertise</span>
+          </div>
+          <div class="disc-row">
+            <div class="bar" aria-hidden="true"></div>
+            <div>
+              <strong>Verhandlungsführung &amp; Rhetorik</strong>
+              <small>Dr. Oliver Meschkat</small>
+            </div>
+          </div>
+          <div class="disc-row">
+            <div class="bar" aria-hidden="true"></div>
+            <div>
+              <strong>Leadership &amp; Organisation</strong>
+              <small>Prof. Dr. Constantin Schubart</small>
+            </div>
+          </div>
+          <div class="disc-row">
+            <div class="bar" aria-hidden="true"></div>
+            <div>
+              <strong>Finance &amp; Transformation</strong>
+              <small>Prof. Dr. Marcel Dulgeridis</small>
+            </div>
+          </div>
+          <div class="disc-navy">
+            <strong>Gebündelt in einer Gesellschaft.</strong>
+            <span>THE GAP Lab GmbH — Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-strip reveal">
+      <span>Fokusfelder</span>
+      <div class="tags">
+        <span class="tag">Verhandlungsführung &amp; Rhetorik</span>
+        <span class="tag">Leadership &amp; Organisation</span>
+        <span class="tag">Finance &amp; Transformation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ansatz">
   <div class="wrap">
-    <h2>Die Partner</h2>
-    <p>Constantin Schubart, Oliver Meschkat und Marcel Dulgeridis führen THE GAP Lab gemeinsam als Partner.</p>
+    <div class="ansatz-grid">
+      <div class="reveal">
+        <span class="kicker" style="display:flex"><span class="line" aria-hidden="true" style="width:32px;height:2px;background:var(--gold)"></span></span>
+        <h2>Eine eigene Gesellschaft für ein eigenes Feld.</h2>
+      </div>
+      <div class="ansatz-copy reveal">
+        <p>Innerhalb der Schubart &amp; Dulgeridis GmbH war THE GAP Lab die Verbindung aus Verhandlungsführung, Leadership und Finance-Expertise, die immer wieder gemeinsam gefragt war. Mit der Gründung der <strong>THE GAP Lab GmbH</strong> bekommt dieses Feld eine eigene unternehmerische Heimat.</p>
+        <p>Getragen wird die Gesellschaft von drei Partnern, die diese Themen bereits einzeln verantworten — <strong>Constantin Schubart</strong> für Leadership &amp; Organisation, <strong>Oliver Meschkat</strong> für Verhandlungsführung &amp; Rhetorik und <strong>Marcel Dulgeridis</strong> für Finance &amp; Transformation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partner">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker"><span class="line" aria-hidden="true"></span><span>Die Partner</span></div>
+      <h2>Drei Köpfe, eine Gesellschaft.</h2>
+      <p>Constantin Schubart, Oliver Meschkat und Marcel Dulgeridis führen THE GAP Lab gemeinsam als Partner.</p>
+    </div>
+
     <div class="cards">
-      <article class="card">
-        <img src="https://www.schubart-dulgeridis.de/assets/portrait-constantin-schubart.webp" alt="Prof. Dr. Constantin Schubart" loading="lazy">
-        <strong>Prof. Dr. Constantin Schubart</strong>
-        <span class="role">Partner</span>
-        <span class="focus">Leadership &amp; Organisation</span>
+      <article class="card reveal">
+        <div class="photo">
+          <img src="https://www.schubart-dulgeridis.de/assets/portrait-constantin-schubart.webp" alt="Prof. Dr. Constantin Schubart" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="role">Partner</span>
+          <strong>Prof. Dr. Constantin Schubart</strong>
+          <span class="focus">Leadership &amp; Organisation</span>
+          <a class="more" href="https://www.schubart-dulgeridis.de/ueber-uns#constantin-schubart">Profil bei S&amp;D →</a>
+        </div>
       </article>
-      <article class="card">
-        <img src="https://www.schubart-dulgeridis.de/assets/portrait-oliver-meschkat.jpg" alt="Dr. Oliver Meschkat" loading="lazy">
-        <strong>Dr. Oliver Meschkat</strong>
-        <span class="role">Partner</span>
-        <span class="focus">Verhandlungsführung &amp; Rhetorik</span>
+      <article class="card reveal">
+        <div class="photo">
+          <img src="https://www.schubart-dulgeridis.de/assets/portrait-oliver-meschkat.jpg" alt="Dr. Oliver Meschkat" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="role">Partner</span>
+          <strong>Dr. Oliver Meschkat</strong>
+          <span class="focus">Verhandlungsführung &amp; Rhetorik</span>
+          <a class="more" href="https://www.schubart-dulgeridis.de/ueber-uns#oliver-meschkat">Profil bei S&amp;D →</a>
+        </div>
       </article>
-      <article class="card">
-        <img src="https://www.schubart-dulgeridis.de/assets/portrait-marcel-dulgeridis.webp" alt="Prof. Dr. Marcel Dulgeridis" loading="lazy">
-        <strong>Prof. Dr. Marcel Dulgeridis</strong>
-        <span class="role">Partner</span>
-        <span class="focus">Finance &amp; Transformation</span>
+      <article class="card reveal">
+        <div class="photo">
+          <img src="https://www.schubart-dulgeridis.de/assets/portrait-marcel-dulgeridis.webp" alt="Prof. Dr. Marcel Dulgeridis" loading="lazy">
+        </div>
+        <div class="body">
+          <span class="role">Partner</span>
+          <strong>Prof. Dr. Marcel Dulgeridis</strong>
+          <span class="focus">Finance &amp; Transformation</span>
+          <a class="more" href="https://www.schubart-dulgeridis.de/ueber-uns#marcel-dulgeridis">Profil bei S&amp;D →</a>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<div class="cta">
+<section class="cta" id="kontakt">
   <div class="wrap">
-    <p>THE GAP Lab entsteht gerade. Für ein Gespräch erreichen Sie die Partner schon jetzt über Schubart &amp; Dulgeridis.</p>
-    <a href="https://www.schubart-dulgeridis.de/kontakt">Kontakt aufnehmen →</a>
+    <div class="cta-grid">
+      <div class="cta-copy reveal">
+        <span>Mehr in Kürze</span>
+        <strong>THE GAP Lab entsteht gerade.</strong>
+        <p>Für ein Gespräch erreichen Sie die Partner schon jetzt über Schubart &amp; Dulgeridis — persönlich, unverbindlich, in 20–30 Minuten.</p>
+      </div>
+      <a class="btn-gold reveal" href="https://www.schubart-dulgeridis.de/kontakt">Kontakt aufnehmen <span aria-hidden="true">→</span></a>
+    </div>
   </div>
-</div>
+</section>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 THE GAP Lab GmbH i.G.</span>
-    <nav>
-      <a href="/impressum">Impressum</a>
-      <a href="/datenschutz">Datenschutz</a>
-      <a href="https://www.schubart-dulgeridis.de/">schubart-dulgeridis.de</a>
-    </nav>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">THE GAP <em>Lab</em></a>
+        <p>Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH. Hessenstraße 28, 90518 Altdorf bei Nürnberg.</p>
+      </div>
+      <div class="footer-col">
+        <span>Navigation</span>
+        <a href="#partner">Die Partner</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="https://www.schubart-dulgeridis.de/">schubart-dulgeridis.de</a>
+      </div>
+      <div class="footer-col">
+        <span>Rechtliches</span>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 THE GAP Lab GmbH i.G.</span>
+      <span>Gesellschaft in Gründung — HRB folgt nach Eintragung</span>
+    </div>
   </div>
 </footer>
+
+<script>
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
 
 </body>
 </html>
