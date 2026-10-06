@@ -52,7 +52,7 @@ PARTNERS = {
         "focus": "Leadership & Organisation",
         "job_title": "Geschäftsführer, Leadership & Organisation",
         "short_bio": "Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule. Betrachtet Rollen nie isoliert, sondern im Zusammenspiel von Strategie, Kultur und Führung.",
-        "long_bio": "Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule. Betrachtet Rollen nie isoliert, sondern im Zusammenspiel von Strategie, Kultur und Führung. Laut Handelsregister einzelvertretungsberechtigter Geschäftsführer der The Gap Lab GmbH.",
+        "long_bio": "Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule. Betrachtet Rollen nie isoliert, sondern im Zusammenspiel von Strategie, Kultur und Führung. Geschäftsführer der The Gap Lab GmbH.",
         "schema_desc": "Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule und Geschäftsführer der The Gap Lab GmbH. Fokus: Leadership und Organisation.",
         "img": "/assets/img/portrait-constantin-schubart.webp",
         "sd_url": "https://www.schubart-dulgeridis.de/ueber-uns#constantin-schubart",

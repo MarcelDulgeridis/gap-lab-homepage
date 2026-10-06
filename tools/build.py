@@ -170,11 +170,11 @@ def footer_html():
         '<div class="footer-grid">'
         '<div><a class="brand" href="/">THE GAP <span>Lab</span></a>'
         f'<p>{esc(SITE["legal_name"])}<br>{esc(SITE["street"])}<br>{esc(SITE["zip"])} {esc(SITE["city"])}</p>'
-        f'<p>{esc(SITE["hrb"])}, {esc(SITE["court"])}<br>Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH</p></div>'
+        '<p>Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH</p></div>'
         + "".join(cols)
         + "</div>"
         f'<div class="footer-bottom"><span>© 2026 {esc(SITE["legal_name"])}</span>'
-        f'<span>Sitz: {esc(SITE["city"])} · {esc(SITE["court"])}</span></div>'
+        f'<span>Sitz: {esc(SITE["city"])}</span></div>'
         "</div></footer>"
     )
 

@@ -17,7 +17,7 @@ FAQ_COMPANY = [
      "<a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> sowie "
      "<a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>. Sitz der Gesellschaft ist Altdorf bei Nürnberg.</p>"),
     ("Wer steht hinter THE GAP Lab?",
-     "<p>Geschäftsführer ist Prof. Dr. Constantin Schubart (laut Handelsregister einzelvertretungsberechtigt). "
+     "<p>Geschäftsführer ist Prof. Dr. Constantin Schubart. "
      "Partner sind Dr. Oliver Meschkat (Verhandlungsführung &amp; Rhetorik) und Prof. Dr. Marcel Dulgeridis (Finance &amp; Transformation). "
      "THE GAP Lab ist eine Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH. Mehr dazu auf <a href=\"/ueber-uns\">Über uns</a>.</p>"),
     ("Wie unterscheiden sich THE GAP Lab und die Schubart & Dulgeridis GmbH?",
@@ -28,9 +28,8 @@ FAQ_COMPANY = [
     ("Für wen ist das Angebot gedacht?",
      "<p>Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklungsmaßnahmen gezielt planen, durchführen oder einkaufen möchten, "
      "etwa um Verhandlungskompetenz, Führungsklarheit oder Finanzverständnis in ihrer Organisation zu stärken.</p>"),
-    ("Wo ist die Gesellschaft eingetragen?",
-     f"<p>The Gap Lab GmbH hat ihren Sitz in {SITE['city']} (Geschäftsanschrift: {SITE['street']}, {SITE['zip']} Altdorf) und ist im Handelsregister B des "
-     f"{SITE['court']} unter {SITE['hrb']} eingetragen. Tag der Eintragung: {SITE['registered']}.</p>"),
+    ("Wo sitzt THE GAP Lab?",
+     f"<p>Die The Gap Lab GmbH hat ihren Sitz in {SITE['city']} ({SITE['street']}, {SITE['zip']} Altdorf). Die vollständigen Firmenangaben stehen im <a href=\"/impressum\">Impressum</a>.</p>"),
 ]
 
 FAQ_COOPERATION = [
@@ -91,14 +90,14 @@ def home():
       <li><div><strong>Durchführung</strong><span>Maßnahmen umsetzen und begleiten.</span></div></li>
       <li><div><strong>Vermarktung</strong><span>Angebote klar beschreiben und in den Markt bringen.</span></div></li>
     </ol>
-    <div class="flow-foot"><strong>Vier Stufen, eine Gesellschaft.</strong>So ist der Unternehmensgegenstand im Handelsregister formuliert ({SITE['hrb']}, {SITE['court']}).</div>
+    <div class="flow-foot"><strong>Vier Stufen, eine Gesellschaft.</strong>Von der Idee bis zum fertigen Angebot für Maßnahmen der Personalentwicklung.</div>
   </aside>
 </div></div></section>
 """
 
     trust = f"""
 <section class="trust" aria-label="Fakten zur Gesellschaft"><div class="container"><div class="trust-grid">
-  <div class="trust-item"><strong>{SITE['hrb']}</strong><span>{SITE['court']}, eingetragen am {SITE['registered']}</span></div>
+  <div class="trust-item"><strong>Kostenloses Erstgespräch</strong><span>20 bis 30 Minuten per Microsoft Teams mit einem der Partner</span></div>
   <div class="trust-item"><strong>{SITE['city']}</strong><span>Sitz und Geschäftsanschrift der Gesellschaft</span></div>
   <div class="trust-item"><strong>Drei Partner</strong><span>Zwei Professoren (BWL) und ein promovierter Verhandlungsexperte</span></div>
   <div class="trust-item"><strong>Im Verbund mit S&amp;D</strong><span>Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH</span></div>
@@ -286,22 +285,10 @@ def ueber_uns():
     page = {
         "path": "/ueber-uns", "short": "Über uns",
         "title": "Über uns — Drei Partner, eine Gesellschaft | THE GAP Lab",
-        "description": "Wer steht hinter THE GAP Lab? Gesellschaftsdaten, Geschäftsführer, die drei Partner und der Verbund mit der Schubart & Dulgeridis GmbH.",
+        "description": "Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.",
         "priority": "0.8", "llms_group": "Unternehmen", "schema_type": "AboutPage",
     }
     page["schema_nodes"] = person_nodes()
-
-    facts = f"""<div class="table-wrap"><table class="facts"><tbody>
-<tr><th scope="row">Firma</th><td>{SITE['legal_name']} (Marke: THE GAP Lab)</td></tr>
-<tr><th scope="row">Rechtsform</th><td>Gesellschaft mit beschränkter Haftung</td></tr>
-<tr><th scope="row">Sitz</th><td>{SITE['city']}</td></tr>
-<tr><th scope="row">Geschäftsanschrift</th><td>{SITE['street']}, {SITE['zip']} Altdorf</td></tr>
-<tr><th scope="row">Handelsregister</th><td>{SITE['hrb']}, {SITE['court']}</td></tr>
-<tr><th scope="row">Gesellschaftsvertrag</th><td>vom {SITE['articles_date']}</td></tr>
-<tr><th scope="row">Eintragung</th><td>{SITE['registered']}</td></tr>
-<tr><th scope="row">Geschäftsführer</th><td>Prof. Dr. Constantin Schubart (einzelvertretungsberechtigt)</td></tr>
-<tr><th scope="row">Muttergesellschaft</th><td><a href="{SD}">{SITE['parent_name']}</a></td></tr>
-</tbody></table></div>"""
 
     def wide(key):
         p = PARTNERS[key]
@@ -324,7 +311,7 @@ def ueber_uns():
                   "The Gap Lab GmbH ist eine Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH. Hier steht, wer dahintersteht und wie die Gesellschaft aufgestellt ist.")
         + section(
             answer_box("Kurzantwort: Wer ist THE GAP Lab?",
-                       f"THE GAP Lab ist die Marke der The Gap Lab GmbH mit Sitz in {SITE['city']}, eingetragen im Handelsregister B des {SITE['court_gen']} unter {SITE['hrb']}. "
+                       f"THE GAP Lab ist die Marke der The Gap Lab GmbH mit Sitz in {SITE['city']}. "
                        "Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Geschäftsführer ist Prof. Dr. Constantin Schubart; Partner sind Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis.")
             + '<div class="split"><div>' + head("Warum es die Gesellschaft gibt", "Ein eigenes Feld für Personalentwicklung", "", "warum-title")
             + '</div><div class="prose">'
@@ -339,8 +326,6 @@ def ueber_uns():
                        "Alle Angaben entsprechen den veröffentlichten Profilen auf schubart-dulgeridis.de.", "partner-title")
                   + '<div class="grid">' + wide("constantin-schubart") + wide("oliver-meschkat") + wide("marcel-dulgeridis") + "</div>",
                   "section-cream", "partner-title")
-        + section(head("Gesellschaftsdaten", "Auf einen Blick",
-                       "Quelle: Mitteilung des Registergerichts über die Eintragung im Handelsregister B.", "daten-title") + facts, "section-white", "daten-title")
         + cta_band("Lernen Sie uns im Gespräch kennen", "Das Erstgespräch dauert 20 bis 30 Minuten und ist kostenlos.")
     )
     return page
@@ -381,7 +366,6 @@ def kontakt():
   <li><span class="k">E-Mail</span>{MAIL}</li>
   <li><span class="k">Telefon</span>{TEL}</li>
   <li><span class="k">Anschrift</span>{SITE['legal_name']}<br>{SITE['street']}<br>{SITE['zip']} {SITE['city']}</li>
-  <li><span class="k">Handelsregister</span>{SITE['hrb']}, {SITE['court']}</li>
 </ul>
 <p class="small muted">Während der Aufbauphase werden E-Mail und Telefon gemeinsam mit der Muttergesellschaft genutzt.</p>
 </div><div>"""
