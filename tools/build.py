@@ -188,6 +188,24 @@ def footer_html():
     )
 
 
+def stopify(page, html_body):
+    """S&D-Regel: Überschriften sind Aussagesätze mit Punkt (keine Fragen, keine Doppelpunkte am Ende)."""
+    if page["path"] in ("/impressum", "/datenschutz", "/404", "/ki-readiness"):
+        return html_body
+    def fix(m):
+        open_t, inner, close_t = m.group(1), m.group(2), m.group(3)
+        if 'card-title' in open_t:
+            return m.group(0)
+        text = re.sub(r"<[^>]+>", "", inner).rstrip()
+        if not text or text[-1] in ".!?:;·»)" or text.endswith("&amp;") :
+            return m.group(0)
+        return f"{open_t}{inner.rstrip()}.{close_t}"
+    html_body = re.sub(r"(<h1[^>]*>)(.*?)(</h1>)", fix, html_body, flags=re.S)
+    html_body = re.sub(r"(<h2(?![^>]*card-title)[^>]*>)(.*?)(</h2>)", fix, html_body, flags=re.S)
+    html_body = re.sub(r'(<h3 class="(?:v-h3|il-h3)">)(.*?)(</h3>)', fix, html_body, flags=re.S)
+    return html_body
+
+
 def with_journey(page):
     body = page["body"]
     if page.get("journey"):
@@ -253,7 +271,7 @@ def render(page):
         '<div class="rule-top" aria-hidden="true"></div>'
         + header_html(page)
         + '<main id="main">'
-        + with_journey(page)
+        + stopify(page, with_journey(page))
         + "</main>"
         + footer_html()
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))

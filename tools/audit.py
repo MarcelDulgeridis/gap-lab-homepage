@@ -126,13 +126,12 @@ def contrast(a, b):
 
 for fg, bg, label, need in [
     ("#7A5A27", "#fbf8f2", "gold-text auf paper", 4.5), ("#7A5A27", "#f2eadf", "gold-text auf cream", 4.5), ("#7A5A27", "#fffefa", "gold-text auf white", 4.5),
-    ("#85642C", "#fffefa", "f1 auf white", 4.5), ("#85642C", "#f4ebd8", "f1 auf f1-tint", 4.5),
-    ("#2c5a8c", "#fffefa", "f2 auf white", 4.5), ("#2c5a8c", "#e3ecf6", "f2 auf f2-tint", 4.5),
-    ("#2a6b5e", "#fffefa", "f3 auf white", 4.5), ("#2a6b5e", "#dcefe9", "f3 auf f3-tint", 4.5),
+    ("#85642C", "#fffefa", "f1 auf white", 4.5), ("#85642C", "#f2eadf", "f1 auf f1-tint", 4.5),
+    ("#101D33", "#EDEBE6", "f2 (navy) auf f2-tint", 4.5), ("#515966", "#fffefa", "f3 auf white", 4.5), ("#515966", "#E2DCCE", "f3 auf f3-tint", 4.5),
     ("#FDFCFA", "#101D33", "on-navy auf navy", 4.5), ("#C9D0DA", "#101D33", "on-navy-muted auf navy", 4.5), ("#CFAD6B", "#101D33", "gold-mid auf navy", 4.5),
-    ("#4f5b6e", "#fbf8f2", "muted auf paper", 4.5), ("#4f5b6e", "#f2eadf", "muted auf cream", 4.5),
-    ("#FFFFFF", "#85642C", "weiss auf f1", 4.5), ("#FFFFFF", "#2c5a8c", "weiss auf f2", 4.5), ("#FFFFFF", "#2a6b5e", "weiss auf f3", 4.5),
-    ("#FFFFFF", "#4a79ab", "weiss auf Ebene 3", 3.0), ("#FFFFFF", "#7a5a27", "weiss auf Ebene 4", 4.5),
+    ("#596578", "#fbf8f2", "muted auf paper", 4.5), ("#596578", "#f2eadf", "muted auf cream", 4.5), ("#596578", "#fffefa", "muted auf white", 4.5),
+    ("#FFFFFF", "#85642C", "weiss auf f1", 4.5), ("#FFFFFF", "#1D3153", "weiss auf navy-mid", 4.5), ("#FFFFFF", "#515966", "weiss auf f3", 4.5),
+    ("#FFFFFF", "#8E6C34", "weiss auf gold", 4.5), ("#101D33", "#f2eadf", "navy auf cream", 4.5),
 ]:
     c = contrast(fg, bg)
     if c < need: errors.append(f"Kontrast {label}: {c:.2f} < {need}")
@@ -177,6 +176,21 @@ for f, (txt, p) in pages.items():
         if r not in ids_defined and r not in ALL_DEF and not r.startswith("https://www.schubart-dulgeridis.de/"): errors.append(f"{rel}: Schema-Referenz {r} ohne Definition")
     if '"speakable"' in txt and 'class="answer"' not in txt: errors.append(f"{rel}: speakable ohne .answer")
     if rel not in ("404.html",) and "datePublished" in txt and not re.search(r'"dateModified":"2026-11-04"', txt) and rel in ("index.html","leistungen.html"): errors.append(f"{rel}: dateModified veraltet")
+
+# S&D-Palette: in den Stylesheets nur Markenfarben erlaubt
+PAL = {"#101D33","#1D3153","#1B2F4D","#8E6C34","#CFAD6B","#DCC79F","#E8D3A4","#FFFEFA","#FDFCFA","#FBF8F2","#F2EADF","#EAE5DA","#E2DCCE","#BFB098","#E5DDD2","#596578","#515966","#767B84","#C9D0DA",
+       "#7A5A27","#85642C","#6A4E20","#27344A","#4F5B6E","#26364D","#EDEBE6","#FCFAF5","#F1E9DD","#987238","#D7BD87","#9F793D","#EAD8B2","#8C4037","#E3A397","#FFFFFF","#FFF","#000","#000000"}
+for css in glob.glob(os.path.join(ROOT, "assets", "*.css")):
+    txt = open(css, encoding="utf-8").read()
+    for h in set(m.upper() for m in re.findall(r"#[0-9a-fA-F]{6}\b|#[0-9a-fA-F]{3}\b", txt)):
+        if h not in PAL: errors.append(f"{os.path.basename(css)}: Farbe {h} nicht in der S&D-Palette")
+    for m in set(re.findall(r"rgba?\((\d+),\s*(\d+),\s*(\d+)", txt)):
+        if tuple(map(int, m)) not in {(16,29,51),(142,108,52),(207,173,107),(251,248,242),(255,255,255),(201,208,218),(0,0,0),(140,64,55)}: errors.append(f"{os.path.basename(css)}: rgba{m} nicht in der S&D-Palette")
+    for m in re.finditer(r"border-radius:\s*([^;}]+)", txt):
+        v = m.group(1).strip()
+        if v not in ("0", "50%") : errors.append(f"{os.path.basename(css)}: border-radius {v} (S&D: null)")
+rawcss = open(os.path.join(ROOT, "assets", "visual.css"), encoding="utf-8").read()
+if "border-radius:50%" in rawcss.replace("object-fit:cover","") and "v-fc footer img{width:56px;height:56px;border-radius:50%" not in rawcss: errors.append("visual.css: runde Formen außer Porträts")
 
 print()
 for w in warns: print("WARN ", w)

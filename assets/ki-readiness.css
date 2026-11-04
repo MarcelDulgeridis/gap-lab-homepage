@@ -1,20 +1,20 @@
 /* KI-Readiness Check — übernommen aus dem Prototyp, auf .kic eingegrenzt. Nicht von Hand mit site.css mischen. */
 .kic{--navy: #101d33;
-      --navy-2: #17253d;
-      --navy-3: #22324f;
+      --navy-2: #101D33;
+      --navy-3: #1D3153;
       --gold: #8e6c34;
       --gold-light: #cfad6b;
-      --cream: #f3eddf;
+      --cream: #F2EADF;
       --paper: #fffefa;
       --ink: #596578;
-      --ink-soft: #8b93a1;
-      --on-dark: #f6f3ea;
-      --on-dark-2: rgba(246, 243, 234, .7);
-      --on-dark-3: rgba(246, 243, 234, .46);
+      --ink-soft: #767B84;
+      --on-dark: #FBF8F2;
+      --on-dark-2: rgba(251, 248, 242, .7);
+      --on-dark-3: rgba(251, 248, 242, .46);
       --line: rgba(16, 29, 51, .14);
       --line-dark: rgba(255, 255, 255, .11);
-      --team: #7fa3c9;
-      --critical: #b4574b;
+      --team: #C9D0DA;
+      --critical: #8C4037;
       --display: "Archivo", Arial, sans-serif;
       --text: "Source Sans 3", Arial, sans-serif;
       --ease: cubic-bezier(.2, .7, .2, 1);}
@@ -44,7 +44,7 @@
 .kic .k-btn:hover:not(:disabled){transform: translateY(-2px);}
 .kic .k-btn:disabled{opacity: .32;}
 .kic .k-btn-gold{background: var(--gold-light); color: var(--navy);}
-.kic .k-btn-gold:hover:not(:disabled){background: #dbbf87;}
+.kic .k-btn-gold:hover:not(:disabled){background: #DCC79F;}
 .kic .k-btn-navy{background: var(--navy); color: var(--on-dark);}
 .kic .k-btn-line{border-color: var(--line); color: var(--navy);}
 .kic .k-btn-line:hover{border-color: var(--navy);}
@@ -165,7 +165,7 @@
 .kic .compare{margin-top: 16px; padding: 32px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--team);}
 .kic .compare-kpis{display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 16px; color: var(--navy); font: 700 14px/1.3 var(--display);}
 .kic .compare-kpis b{font: 900 28px/1 var(--display); letter-spacing: -.04em; margin-right: 6px;}
-.kic .compare-kpis .them b{color: #4f79a6;}
+.kic .compare-kpis .them b{color: #1D3153;}
 .kic .compare-text{margin-top: 14px; font-size: 15px;}
 .kic .compare .bar.them i{background: var(--team);}
 .kic .compare .legend .dot.them{background: var(--team);}
@@ -193,7 +193,7 @@
 .kic .t-row .lbl small{display: block; margin-top: 3px; color: var(--on-dark-3); font-size: 10px; letter-spacing: .06em; text-transform: uppercase;}
 .kic .t-bar{position: relative; height: 10px; background: rgba(255,255,255,.08);}
 .kic .t-bar i{position: absolute; top: 0; bottom: 0; left: 0; background: var(--gold-light);}
-.kic .t-bar u{position: absolute; top: -3px; bottom: -3px; background: rgba(127,163,201,.28); border-left: 1px solid var(--team); border-right: 1px solid var(--team); text-decoration: none;}
+.kic .t-bar u{position: absolute; top: -3px; bottom: -3px; background: rgba(201,208,218,.28); border-left: 1px solid var(--team); border-right: 1px solid var(--team); text-decoration: none;}
 .kic .t-bar em{position: absolute; top: -5px; width: 3px; height: 20px; margin-left: -1px; background: #fff;}
 .kic .t-row .val{color: var(--on-dark); text-align: right;}
 .kic .t-row.hot .val{color: #e3a397;}
@@ -324,7 +324,7 @@
 .kic .demo-bar i.dm{--w:82%;background:var(--gold-light)}
 .kic .demo-bar i.dt{--w:41%;background:var(--team)}
 .kic .t-legend i.lg-team{background:var(--gold-light)}
-.kic .t-legend i.lg-spread{background:rgba(127,163,201,.5)}
+.kic .t-legend i.lg-spread{background:rgba(201,208,218,.5)}
 .kic .t-legend i.lg-me{background:#fff;width:3px;height:14px}
 .kic .teaser-row i.w25{width:25%}.kic .teaser-row i.w30{width:30%}.kic .teaser-row i.w35{width:35%}
 .kic .teaser-row i.w40{width:40%}.kic .teaser-row i.w45{width:45%}.kic .teaser-row i.w55{width:55%}

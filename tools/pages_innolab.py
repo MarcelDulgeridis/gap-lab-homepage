@@ -369,10 +369,10 @@ def build_body():
         head("2 · Die Lösung", "Ein Portfolio, fünf Hebel: vom Mandat bis zum Prototyp.",
              "InnoLab setzt dort an, wo Innovation im Alltag scheitert. Jedes Format liefert ein konkretes Ergebnis und lässt sich allein oder in einer abgestimmten Folge buchen.", "loesung-h")
         + '<div class="grid grid-4 il-principles">'
-        '<div class="card"><span class="tag">Prinzip 1</span><h3>Eine echte Aufgabe</h3><p>Gearbeitet wird an Ihrer eigenen Fragestellung, Ihrem Raum, Ihrem Seminar, nicht an Fallbeispielen.</p></div>'
-        '<div class="card"><span class="tag">Prinzip 2</span><h3>Erst erleben, dann übertragen</h3><p>Wissensinputs bleiben kurz, der Großteil der Zeit gehört der Anwendung. Methoden werden zuerst selbst erlebt.</p></div>'
-        '<div class="card"><span class="tag">Prinzip 3</span><h3>Ergebnis statt Teilnahme</h3><p>Prototyp, Canvas, Roadmap, Transferplan: Jedes Format endet mit Unterlagen, die weiter genutzt werden.</p></div>'
-        '<div class="card"><span class="tag">Prinzip 4</span><h3>Forschungsbasiert</h3><p>Entwickelt und evaluiert in einem Education Innovation Lab, mit 124 Teilnehmenden über 10 Monate.</p></div>'
+        '<div class="card"><span class="tag">01 · Prinzip</span><h3>Eine echte Aufgabe</h3><p>Gearbeitet wird an Ihrer eigenen Fragestellung, Ihrem Raum, Ihrem Seminar, nicht an Fallbeispielen.</p></div>'
+        '<div class="card"><span class="tag">02 · Prinzip</span><h3>Erst erleben, dann übertragen</h3><p>Wissensinputs bleiben kurz, der Großteil der Zeit gehört der Anwendung. Methoden werden zuerst selbst erlebt.</p></div>'
+        '<div class="card"><span class="tag">03 · Prinzip</span><h3>Ergebnis statt Teilnahme</h3><p>Prototyp, Canvas, Roadmap, Transferplan: Jedes Format endet mit Unterlagen, die weiter genutzt werden.</p></div>'
+        '<div class="card"><span class="tag">04 · Prinzip</span><h3>Forschungsbasiert</h3><p>Entwickelt und evaluiert in einem Education Innovation Lab, mit 124 Teilnehmenden über 10 Monate.</p></div>'
         "</div>"
         + '<h3 class="il-h3">Abgestimmte Folgen mit rund 10 % Vorteil</h3>' + journey(),
         "section-white", "loesung-h")
@@ -425,7 +425,7 @@ def build_body():
           f'Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die Muttergesellschaft von THE GAP Lab.</div>',
         "section-cream", "preise-h")
     faq = section(head("7 · Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS), "section-white", "faq-h")
-    cta = cta_band("Machen Sie den nächsten Schritt.",
+    cta = cta_band("Der nächste Schritt ist ein Gespräch.",
                    "Im kostenfreien Einstieg klären wir Ausgangslage, Ziel und das passende Format. Danach erhalten Sie ein Festpreisangebot.",
                    "Einstieg anfragen")
     problem = problem.replace("<section ", '<section id="problem" ', 1)

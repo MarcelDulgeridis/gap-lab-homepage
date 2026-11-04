@@ -20,13 +20,13 @@ Ausgangslage Wirkung geht an vier Stellen verloren, bevor Entwicklung im Alltag 
 Beschlossen Strategie, Konzept, Programm Hier geht Wirkung verloren Im Alltag Verhalten, Entscheidungen, Ergebnisse
 Verhandlungsführung Verhandlungen laufen ohne Strategie Entscheider verhandeln mit Kunden, Lieferanten oder intern, ohne Ziele, Alternativen und Spielräume vorab zu klären. Das Ergebnis sind Zugeständnisse, die vermeidbar gewesen wären. Ansehen Leadership & Organisation Führung bleibt unscharf Rollen, Entscheidungsrechte und Erwartungen sind nicht eindeutig. Beschlossene Strategie und gelebte Kultur laufen auseinander. Ansehen Finance & Transformation Zahlen werden nicht verstanden Führungskräfte entscheiden über Budgets und Veränderungen, ohne die finanzielle Wirkung belastbar einschätzen zu können. Ansehen Konzeption Maßnahmen passen nicht zur Zielgruppe Standardformate treffen nicht die Situation der Teilnehmenden und bleiben deshalb ohne Wirkung im Alltag. Ansehen
 Leistungen Vier Stufen, jede mit eigenem Ergebnis: von der Konzeption bis zur Vermarktung Jede Stufe beantwortet eine andere Frage und liefert ein eigenes Ergebnis. Sie können sie einzeln oder verbunden betrachten.
-Stufe 1 Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
+01 · Stufe Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
 Ergebnis Zielbild, Konzeptpapier mit Lernzielen und Ablauf, Format- und Zeitplan, Erfolgskriterien
-Stufe 2 Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
+02 · Stufe Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
 Ergebnis Unterlagen, Übungen und Fallbeispiele, Leitfäden und Checklisten für den Transfer
-Stufe 3 Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
+03 · Stufe Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
 Ergebnis Durchgeführte Maßnahme, Unterlagen, kurze Auswertung mit Empfehlungen
-Stufe 4 Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
+04 · Stufe Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
 Ergebnis Angebotsbeschreibung, Zielgruppenansprache, Informationsmaterial
 Alle Stufen im Detail
 Fokusfelder Verhandeln, Führen und Wirtschaften treffen bei Entscheidern zusammen Sie begegnen sich in denselben Situationen: Verhandeln, Führen und Wirtschaften treffen bei Entscheidern in denselben Situationen aufeinander. Jedes Fokusfeld hat einen klar benannten Ansprechpartner.
@@ -55,7 +55,7 @@ Wie kommt eine Zusammenarbeit zustande? Am Anfang steht ein kostenloses Erstgesp
 Was kostet eine Zusammenarbeit? Für die InnoLab-Formate nennen wir Festpreise ab 5.800 € netto. Für alle anderen Maßnahmen gibt es keine Pauschalpreise, weil Zielgruppe, Umfang und Format sehr unterschiedlich sein können. Nach dem Erstgespräch erhalten Sie ein individuelles Angebot nach Umfang.
 Wo sitzt THE GAP Lab? Die The Gap Lab GmbH hat ihren Sitz in Altdorf bei Nürnberg (Hessenstraße 28, 90518 Altdorf). Die vollständigen Firmenangaben stehen im Impressum .
 Weitere Antworten finden Sie in den FAQ .
-Welche Entwicklung soll in Ihrer Organisation ankommen? Sprechen Sie 20 bis 30 Minuten mit einem der Partner: kostenlos, unverbindlich, per Microsoft Teams. Die Terminbuchung läuft über die Kalender der Partner bei der Schubart & Dulgeridis GmbH.
+Entwicklung, die in Ihrer Organisation ankommt. Sprechen Sie 20 bis 30 Minuten mit einem der Partner: kostenlos, unverbindlich, per Microsoft Teams. Die Terminbuchung läuft über die Kalender der Partner bei der Schubart & Dulgeridis GmbH.
 Erstgespräch vereinbaren
 
 ## Leistungen — Konzeption bis Vermarktung | THE GAP Lab
@@ -65,32 +65,32 @@ Start Leistungen
 Leistungen von der Konzeption bis zur Vermarktung The Gap Lab GmbH deckt vier Stufen ab, in denen Maßnahmen der Personalentwicklung entstehen und wirken.
 Kurzantwort: Was bietet The Gap Lab an? The Gap Lab GmbH konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Inhaltlich arbeiten die Partner in drei Fokusfeldern: Verhandlungsführung & Rhetorik, Leadership & Organisation sowie Finance & Transformation.
 Überblick Vier Stufen beantworten vier Leitfragen und liefern je ein Ergebnis Jede Stufe liefert ein eigenes Ergebnis. Die Stufen bauen aufeinander auf, lassen sich aber einzeln beauftragen.
-Stufe 1 Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
+01 · Stufe Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
 Ergebnis Zielbild, Konzeptpapier mit Lernzielen und Ablauf, Format- und Zeitplan, Erfolgskriterien
-Stufe 2 Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
+02 · Stufe Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
 Ergebnis Unterlagen, Übungen und Fallbeispiele, Leitfäden und Checklisten für den Transfer
-Stufe 3 Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
+03 · Stufe Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
 Ergebnis Durchgeführte Maßnahme, Unterlagen, kurze Auswertung mit Empfehlungen
-Stufe 4 Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
+04 · Stufe Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
 Ergebnis Angebotsbeschreibung, Zielgruppenansprache, Informationsmaterial
-Welche Stufe brauchen Sie?
+Die passende Stufe.
 Wenn Noch unklar, was die Maßnahme bewirken soll und für wen Stufe 1 Konzeption Wenn Konzept steht, aber Inhalte und Materialien fehlen oder passen nicht Stufe 2 Entwicklung Wenn Alles liegt vor, die Maßnahme soll mit hoher Qualität umgesetzt werden Stufe 3 Durchführung Wenn Gutes Angebot, aber Nutzen und Zielgruppe sind nicht verständlich beschrieben Stufe 4 Vermarktung
-1 Stufe 1 Konzeption
+01 01 · Stufe Konzeption
 Ausgangslage Eine Entwicklungsmaßnahme soll etwas bewirken, aber niemand hat festgelegt, was genau und für wen.
 Was wir tun Wir klären Anlass, Ziel und Zielgruppe, sichten vorhandene Programme und leiten daraus ein Konzept ab: Lernziele, Inhalte, Format, Ablauf und Kriterien, an denen sich der Erfolg messen lässt.
 Mögliche Ergebnisse Zielbild und Zielgruppenbeschreibung Konzeptpapier mit Lernzielen, Inhalten und Ablauf Format- und Zeitplan Erfolgskriterien
 Geeignet, wenn eine Maßnahme neu aufgesetzt oder eine bestehende überarbeitet werden soll.
-2 Stufe 2 Entwicklung
+02 02 · Stufe Entwicklung
 Ausgangslage Das Konzept steht, aber Inhalte und Materialien fehlen oder passen nicht zur Zielgruppe.
 Was wir tun Wir erarbeiten Inhalte, Übungen, Fallbeispiele und Arbeitsmaterialien und schneiden sie auf die Praxis der Teilnehmenden zu. Die fachliche Tiefe kommt aus den Fokusfeldern der Partner.
 Mögliche Ergebnisse Unterlagen für Workshop oder Training Übungen und Fallbeispiele Leitfäden und Checklisten für den Transfer in den Alltag Ablaufplan für die Durchführung
 Geeignet, wenn bisherige Materialien zu allgemein sind und nicht zur Situation Ihrer Zielgruppe passen.
-3 Stufe 3 Durchführung
+03 03 · Stufe Durchführung
 Ausgangslage Die Maßnahme soll umgesetzt werden, mit hoher fachlicher Qualität und klarem Praxisbezug.
 Was wir tun Wir führen die Maßnahme im vereinbarten Format durch, zum Beispiel als Workshop, Training oder Begleitung. Die Umsetzung übernehmen die Partner entlang ihrer Fokusfelder. Format, Dauer und Ort stimmen wir mit Ihnen ab.
 Mögliche Ergebnisse Durchgeführte Maßnahme Unterlagen für die Teilnehmenden Kurze Auswertung mit Empfehlungen für die nächsten Schritte
 Geeignet, wenn Führungskräfte oder Teams in konkreten Situationen handlungsfähiger werden sollen.
-4 Stufe 4 Vermarktung
+04 04 · Stufe Vermarktung
 Ausgangslage Gute Maßnahmen bleiben unsichtbar, wenn Angebot, Nutzen und Zielgruppe nicht klar beschrieben sind.
 Was wir tun Wir bereiten Maßnahmen als verständliches Angebot auf und bringen sie in den Markt: mit klarer Beschreibung von Nutzen, Zielgruppe und Ablauf.
 Mögliche Ergebnisse Angebotsbeschreibungen Zielgruppenansprache Informationsmaterial
@@ -111,7 +111,7 @@ Was bietet The Gap Lab GmbH an? The Gap Lab GmbH konzipiert, entwickelt, führt 
 Muss ich alle vier Stufen beauftragen? Nein. Ob Sie eine Stufe, mehrere Stufen oder die gesamte Kette benötigen, hängt von Ihrer Ausgangslage ab. Das klären wir im kostenlosen Erstgespräch.
 Welche Ergebnisse erhalte ich? Je nach Stufe zum Beispiel ein Konzept mit Zielen und Erfolgskriterien, Arbeitsmaterialien und Übungen, eine durchgeführte Maßnahme mit Auswertung oder eine verständliche Angebotsbeschreibung. Den genauen Umfang halten wir im Angebot fest.
 Bieten Sie auch Diagnostik an? Diagnostik wie THE GAP und der Pulse-Check gehört zur Schubart & Dulgeridis GmbH. THE GAP Lab konzentriert sich auf Maßnahmen der Personalentwicklung. Mehr zur Diagnostik: schubart-dulgeridis.de/the-gap .
-Welche Stufe brauchen Sie? Im Erstgespräch klären wir, wo Ihre Ausgangslage liegt und welche Stufen sinnvoll sind.
+Die passende Stufe klärt das Erstgespräch. Im Erstgespräch klären wir, wo Ihre Ausgangslage liegt und welche Stufen sinnvoll sind.
 Erstgespräch vereinbaren
 
 ## Fokusfelder — Verhandlung, Leadership, Finance | THE GAP Lab
@@ -137,7 +137,7 @@ Leitfrage Was bewirkt das Vorhaben finanziell, und trägt der Business Case?
 Typische Situationen Budgetverantwortung Veränderung ohne Business Case Zahlen ohne Entscheidung
 Zentrale Begriffe GuV Bilanz Cashflow Business Case
 Prof. Dr. Marcel Dulgeridis Partner
-Nicht sicher, welches Fokusfeld passt? Im Erstgespräch ordnen wir Ihre Ausgangslage gemeinsam ein.
+Das passende Fokusfeld klärt das Erstgespräch. Im Erstgespräch ordnen wir Ihre Ausgangslage gemeinsam ein.
 Erstgespräch vereinbaren
 
 ## Über uns — Drei Partner, eine Gesellschaft | THE GAP Lab
@@ -158,7 +158,7 @@ Die Partner Wer hinter THE GAP Lab steht Alle Angaben entsprechen den veröffent
 Geschäftsführer · Leadership & Organisation Prof. Dr. Constantin Schubart Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule. Betrachtet Rollen nie isoliert, sondern im Zusammenspiel von Strategie, Kultur und Führung. Geschäftsführer der The Gap Lab GmbH. Fokusfeld ansehen Profil bei Schubart & Dulgeridis LinkedIn
 Partner · Verhandlungsführung & Rhetorik Dr. Oliver Meschkat Experte für Verhandlungsführung, Rhetorik und Argumentation. Schärft Verhandlungsstrategien und hilft, in kritischen Gesprächen souverän und rhetorisch überzeugend aufzutreten. Partner der The Gap Lab GmbH. Fokusfeld ansehen Profil bei Schubart & Dulgeridis LinkedIn
 Partner · Finance & Transformation Prof. Dr. Marcel Dulgeridis Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule, Campus Regensburg, mit Schwerpunkt Rechnungswesen und Finanzberichterstattung. Bringt Beratung, Finanzwirtschaft und unternehmerischen Aufbau in eine konsequente Umsetzungslogik. Partner der The Gap Lab GmbH. Fokusfeld ansehen Profil bei Schubart & Dulgeridis LinkedIn
-Lernen Sie uns im Gespräch kennen Das Erstgespräch dauert 20 bis 30 Minuten und ist kostenlos.
+Wir lernen uns im Gespräch kennen. Das Erstgespräch dauert 20 bis 30 Minuten und ist kostenlos.
 Erstgespräch vereinbaren
 
 ## Kontakt & Erstgespräch | THE GAP Lab
@@ -166,7 +166,7 @@ URL: https://gap-lab.de/kontakt
 
 Start Kontakt
 Kontakt und Erstgespräch Sprechen Sie 20 bis 30 Minuten mit einem der Partner. Das Gespräch ist kostenlos und unverbindlich.
-Termin buchen Wählen Sie Ihren Ansprechpartner Die Buchung läuft über die Kalender der Partner bei der Schubart & Dulgeridis GmbH. Dort wählen Sie die Person und sehen freie Zeiten live. Nach der Buchung erhalten Sie eine Outlook-Einladung mit Microsoft-Teams-Link.
+Termin buchen Drei Ansprechpartner, ein Termin Die Buchung läuft über die Kalender der Partner bei der Schubart & Dulgeridis GmbH. Dort wählen Sie die Person und sehen freie Zeiten live. Nach der Buchung erhalten Sie eine Outlook-Einladung mit Microsoft-Teams-Link.
 Leadership & Organisation Erstgespräch mit Constantin Prof. Dr. Constantin Schubart · Geschäftsführer. 20 bis 30 Minuten per Microsoft Teams, kostenlos. Termin wählen Verhandlungsführung & Rhetorik Erstgespräch mit Oliver Dr. Oliver Meschkat · Partner. 20 bis 30 Minuten per Microsoft Teams, kostenlos. Termin wählen Finance & Transformation Erstgespräch mit Marcel Prof. Dr. Marcel Dulgeridis · Partner. 20 bis 30 Minuten per Microsoft Teams, kostenlos. Termin wählen
 Mit dem Klick verlassen Sie gap-lab.de und wechseln zur Website der Muttergesellschaft; dort gilt deren Datenschutzerklärung .
 Ablauf So läuft das Erstgespräch ab
@@ -230,7 +230,7 @@ Quellen und weiterführend
 Fisher, R., Ury, W.: Getting to Yes (1981); deutsch: Das Harvard-Konzept . Grundlage der Unterscheidung von Positionen und Interessen sowie des Begriffs BATNA. Raiffa, H.: The Art and Science of Negotiation (1982). Grundlage des Begriffs der Zone of Possible Agreement. Tversky, A., Kahneman, D.: Judgment under Uncertainty: Heuristics and Biases. Science 185 (1974). Beschreibt den Ankereffekt.
 Weitere Fokusfelder Das könnte ebenfalls relevant sein
 Fokusfeld Leadership & Organisation Rollen, Entscheidungswege und Erwartungen klären. Fokusfeld ansehen Fokusfeld Finance & Transformation Kennzahlen verstehen und Veränderung wirtschaftlich fundiert umsetzen. Fokusfeld ansehen
-Welche Verhandlung soll besser werden? Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
+Verhandlungen, die vorbereitet beginnen. Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
 Erstgespräch vereinbaren
 
 ## Leadership & Organisation — THE GAP Lab
@@ -277,7 +277,7 @@ Quellen und weiterführend
 THE GAP — Diagnostik der Differenz zwischen Führungserwartung und Arbeitsrealität (Schubart & Dulgeridis GmbH): schubart-dulgeridis.de/the-gap .
 Weitere Fokusfelder Das könnte ebenfalls relevant sein
 Fokusfeld Verhandlungsführung & Rhetorik Verhandlungen vorbereiten, führen und überzeugend argumentieren. Fokusfeld ansehen Fokusfeld Finance & Transformation Kennzahlen verstehen und Veränderung wirtschaftlich fundiert umsetzen. Fokusfeld ansehen
-Wo klemmt es zwischen Anspruch und Alltag? Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
+Anspruch und Alltag zusammenbringen. Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
 Erstgespräch vereinbaren
 
 ## Finance & Transformation — THE GAP Lab
@@ -333,7 +333,7 @@ Quellen und weiterführend
 Handelsrechtlicher Jahresabschluss nach Handelsgesetzbuch (§§ 242 ff. HGB) sowie internationale Rechnungslegung nach IFRS als Grundlage der genannten Begriffe.
 Weitere Fokusfelder Das könnte ebenfalls relevant sein
 Fokusfeld Verhandlungsführung & Rhetorik Verhandlungen vorbereiten, führen und überzeugend argumentieren. Fokusfeld ansehen Fokusfeld Leadership & Organisation Rollen, Entscheidungswege und Erwartungen klären. Fokusfeld ansehen
-Welches Vorhaben braucht eine belastbare Zahlenbasis? Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
+Vorhaben mit belastbarer Zahlenbasis. Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.
 Erstgespräch vereinbaren
 
 ## InnoLab: Innovationsformate für Unternehmen | THE GAP Lab
@@ -364,10 +364,10 @@ InnoLab-Antwort Change Leadership Führungskräftetraining · 2 + 1 Tage vor Ort
 Problem Innovation lässt sich nicht belegen. Ursache Labs scheitern an fehlender Ausrichtung am Geschäft, fehlenden Kennzahlen und unausgewogenen Teams.
 InnoLab-Antwort Innovation Scorecard Strategieworkshop · 2 Tage vor Ort
 2 · Die Lösung Ein Portfolio, fünf Hebel: vom Mandat bis zum Prototyp. InnoLab setzt dort an, wo Innovation im Alltag scheitert. Jedes Format liefert ein konkretes Ergebnis und lässt sich allein oder in einer abgestimmten Folge buchen.
-Prinzip 1 Eine echte Aufgabe Gearbeitet wird an Ihrer eigenen Fragestellung, Ihrem Raum, Ihrem Seminar, nicht an Fallbeispielen.
-Prinzip 2 Erst erleben, dann übertragen Wissensinputs bleiben kurz, der Großteil der Zeit gehört der Anwendung. Methoden werden zuerst selbst erlebt.
-Prinzip 3 Ergebnis statt Teilnahme Prototyp, Canvas, Roadmap, Transferplan: Jedes Format endet mit Unterlagen, die weiter genutzt werden.
-Prinzip 4 Forschungsbasiert Entwickelt und evaluiert in einem Education Innovation Lab, mit 124 Teilnehmenden über 10 Monate.
+01 · Prinzip Eine echte Aufgabe Gearbeitet wird an Ihrer eigenen Fragestellung, Ihrem Raum, Ihrem Seminar, nicht an Fallbeispielen.
+02 · Prinzip Erst erleben, dann übertragen Wissensinputs bleiben kurz, der Großteil der Zeit gehört der Anwendung. Methoden werden zuerst selbst erlebt.
+03 · Prinzip Ergebnis statt Teilnahme Prototyp, Canvas, Roadmap, Transferplan: Jedes Format endet mit Unterlagen, die weiter genutzt werden.
+04 · Prinzip Forschungsbasiert Entwickelt und evaluiert in einem Education Innovation Lab, mit 124 Teilnehmenden über 10 Monate.
 Abgestimmte Folgen mit rund 10 % Vorteil InnoLab Journey Strategie → Raum → Innovationswoche
 Schritt 1 · 2 Tage Innovation Scorecard Ausrichten, messen, steuern Schritt 2 · 3 Tage InnoLab Design Raum analysieren und mitgestalten Schritt 3 · 5 Tage InnoLab Sprint Verstehen, bauen, pitchen
 24.700 € statt 27.400 € netto, rund 10 % Vorteil
@@ -468,7 +468,7 @@ Sind die Formate förderfähig? Eine Förderfähigkeit über INQA-Coaching für 
 Gibt es Rabatte? Ja: 15 % für einen zweiten Durchlauf desselben Formats, 20 % ab dem dritten Durchlauf oder bei einem Rahmenvertrag, 15 % für Kammern, Bildungsträger und die öffentliche Hand. Learning Design 4.0 gibt es zusätzlich als offenes Seminar ab 6 Teilnehmenden für 990 € pro Person.
 Wie sind Zahlung und Stornierung geregelt? Die Zahlung erfolgt zu 50 % bei Beauftragung und zu 50 % nach Durchführung. Die Stornierung ist bis 8 Wochen vorher kostenfrei, bis 4 Wochen vorher fallen 50 % an, danach 90 %. Ein Ersatztermin innerhalb von 6 Monaten ist einmalig kostenfrei.
 Wer führt InnoLab durch? Dr. Oliver Meschkat, Partner für Innovation und Change. Er hat über die Leistungsfähigkeit deutscher Innovation Labs promoviert und ist seit 2010 als Trainer und Berater tätig. Anbieter der Formate ist die Schubart & Dulgeridis GmbH, die Muttergesellschaft von THE GAP Lab.
-Machen Sie den nächsten Schritt. Im kostenfreien Einstieg klären wir Ausgangslage, Ziel und das passende Format. Danach erhalten Sie ein Festpreisangebot.
+Der nächste Schritt ist ein Gespräch. Im kostenfreien Einstieg klären wir Ausgangslage, Ziel und das passende Format. Danach erhalten Sie ein Festpreisangebot.
 Einstieg anfragen
 
 ## Glossar — Begriffe der Personalentwicklung | THE GAP Lab
@@ -497,7 +497,7 @@ Rollenklarheit Leadership & Organisation Alle Beteiligten wissen, welche Aufgabe
 THE GAP Lab THE GAP Lab Marke der The Gap Lab GmbH mit Sitz in Altdorf bei Nürnberg. Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung und ist eine Tochtergesellschaft der Schubart & Dulgeridis GmbH. Mehr dazu
 Umsetzungslücke Leadership & Organisation Der Abstand zwischen beschlossener Strategie und dem, was im Arbeitsalltag geschieht. Mehr dazu
 Verhandlungsspielraum (ZOPA) Verhandlungsführung Der Bereich, in dem beide Seiten einer Einigung zustimmen könnten (englisch: Zone of Possible Agreement). Überschneiden sich die Spielräume nicht, ist eine Einigung unwahrscheinlich. Mehr dazu
-Ein Begriff, den Sie in Ihrer Organisation klären möchten? Im Erstgespräch ordnen wir ein, welcher Begriff und welches Fokusfeld für Ihre Ausgangslage zählt.
+Begriffe, die in Ihrer Organisation geklärt sind. Im Erstgespräch ordnen wir ein, welcher Begriff und welches Fokusfeld für Ihre Ausgangslage zählt.
 Erstgespräch vereinbaren
 
 ## FAQ — Häufige Fragen zu THE GAP Lab
@@ -519,7 +519,7 @@ Wie läuft eine Maßnahme typischerweise ab? Typisch ist ein Ablauf in vier Schr
 Kontakt Erreichbarkeit und Termine
 Wie erreiche ich THE GAP Lab? Per E-Mail an info@schubart-dulgeridis.de oder telefonisch unter +49 30 695 19 779 . Während der Aufbauphase werden E-Mail und Telefon gemeinsam mit der Muttergesellschaft genutzt. Direkt buchbare Termine mit den Partnern finden Sie auf der Seite Kontakt .
 Mit wem kann ich ein Erstgespräch führen? Mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis. Die Terminbuchung läuft über die Kalender der Partner bei der Schubart & Dulgeridis GmbH; freie Zeiten werden live angezeigt.
-Ihre Frage ist nicht dabei? Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.
+Weitere Fragen klären wir im Erstgespräch. Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.
 Erstgespräch vereinbaren
 
 ## Impressum — THE GAP Lab (The Gap Lab GmbH)
