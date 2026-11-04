@@ -3,6 +3,7 @@
   function run() {
     var out = [], vw = document.documentElement.clientWidth, H = document.documentElement.scrollHeight;
     function sel(e) { var s = e.tagName.toLowerCase(); if (e.id) s += "#" + e.id; var c = (e.getAttribute("class") || "").trim().split(/\s+/).slice(0, 2).join("."); if (c) s += "." + c; return s; }
+    function inScroller(e) { for (var p = e.parentElement; p && p !== document.body; p = p.parentElement) { var o = getComputedStyle(p).overflowX; if (o === "auto" || o === "scroll") return true; } return false; }
     function skip(e) { return e.closest(".table-wrap,.sr-only,svg,script,style,noscript,[hidden],.skip-link"); }
     var all = Array.prototype.slice.call(document.body.querySelectorAll("*")).filter(function (e) { return !skip(e); });
     var sw = document.documentElement.scrollWidth;
@@ -11,7 +12,7 @@
     all.forEach(function (e) {
       var r = e.getBoundingClientRect(); if (!r.width || !r.height) return;
       var cs = getComputedStyle(e); if (cs.visibility === "hidden" || cs.display === "none") return;
-      if (r.right > vw + 1.5 && cs.position !== "fixed") out.push(["off-right", sel(e) + " right=" + Math.round(r.right)]);
+      if (r.right > vw + 1.5 && cs.position !== "fixed" && !inScroller(e)) out.push(["off-right", sel(e) + " right=" + Math.round(r.right)]);
       if (r.left < -1.5) out.push(["off-left", sel(e) + " left=" + Math.round(r.left)]);
       if (!e.matches(".hero,.page-hero") && (cs.overflow === "hidden" || cs.overflowX === "hidden") && e.scrollWidth > e.clientWidth + 2 && e.clientWidth > 0 && !/^(svg|img)$/i.test(e.tagName)) out.push(["clipped-x", sel(e) + " " + e.scrollWidth + ">" + e.clientWidth]);
       if (!e.matches(".hero,.page-hero") && (cs.overflow === "hidden" || cs.overflowY === "hidden") && e.scrollHeight > e.clientHeight + 2 && e.clientHeight > 0 && !/^(svg|img)$/i.test(e.tagName)) out.push(["clipped-y", sel(e) + " " + e.scrollHeight + ">" + e.clientHeight]);
@@ -52,6 +53,7 @@
     for (var i = 0; i < rects.length; i++) for (var j = i + 1; j < rects.length; j++) {
       var a = rects[i], c = rects[j];
       if (a.e.contains(c.e) || c.e.contains(a.e)) continue;
+      if (inScroller(a.e) !== inScroller(c.e)) continue;
       var ix = Math.min(a.r.right, c.r.right) - Math.max(a.r.left, c.r.left), iy = Math.min(a.r.bottom, c.r.bottom) - Math.max(a.r.top, c.r.top);
       if (ix > 3 && iy > 3) { var ar = Math.min(a.r.width * a.r.height, c.r.width * c.r.height); if (ix * iy > 0.2 * ar) out.push(["overlap", sel(a.e) + " <> " + sel(c.e) + " @y" + Math.round(a.r.top + window.scrollY)]); }
     }

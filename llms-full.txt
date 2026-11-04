@@ -9,12 +9,12 @@ URL: https://gap-lab.de/
 
 Personalentwicklung · Altdorf bei Nürnberg Personal­entwicklung, die verbindet. THE GAP Lab verbindet Verhandlungsstärke, Führungsklarheit und Finanzverständnis in Maßnahmen, die im Arbeitsalltag ankommen. Erstgespräch vereinbaren Leistungen ansehen
 Die Lücke zwischen Beschlossenem und Arbeitsalltag Links der Block Beschlossen, rechts der Block Im Alltag, dazwischen eine unterbrochene Brücke mit der Marke THE GAP. Beschlossen Strategie · Konzept Im Alltag Verhalten · Ergebnis THE GAP Hier setzt THE GAP Lab an: Beschlossenes kommt im Alltag an.
-3 Disziplinen in einer Gesellschaft 3 Partner mit Namen 5 InnoLab-Formate vor Ort 20–30 Minuten Erstgespräch kostenlos
+3 Disziplinen in einer Gesellschaft 3 Partner mit Namen 5 InnoLab-Formate vor Ort 20–30 Minuten Erstgespräch, kostenlos
 01 · Das Problem Wirkung geht an vier Stellen verloren
-01 Verhandlungsführung Verhandlungen laufen ohne Strategie Ziele, Alternativen und Spielräume bleiben offen.
+01 Konzeption Maßnahmen passen nicht zur Zielgruppe Standardformate treffen die Zielgruppe nicht.
 02 Leadership & Organisation Führung bleibt unscharf Rollen und Entscheidungsrechte sind unklar.
-03 Finance & Transformation Zahlen werden nicht verstanden Entscheidungen ohne Bild der Finanzwirkung.
-04 Konzeption Maßnahmen passen nicht zur Zielgruppe Standardformate treffen die Zielgruppe nicht.
+03 Verhandlungsführung Verhandlungen laufen ohne Strategie Ziele, Alternativen und Spielräume bleiben offen.
+04 Finance & Transformation Zahlen werden nicht verstanden Entscheidungen ohne Bild der Finanzwirkung.
 02 · Die Lösung Vier Stufen, jede mit eigenem Ergebnis Einzeln buchbar oder als Kette.
 01 · Stufe Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
 02 · Stufe Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
@@ -106,6 +106,7 @@ Kurzantwort: Wer ist THE GAP Lab? Die Marke der The Gap Lab GmbH in Altdorf bei 
 Aufbau und Team Wer hinter THE GAP Lab steht
 Muttergesellschaft, Tochtergesellschaft und drei Partner Muttergesellschaft Schubart & Dulgeridis GmbH Forschungsbasierte Beratung und Diagnostik
 Tochtergesellschaft · Altdorf bei Nürnberg The Gap Lab GmbH Maßnahmen der Personalentwicklung
+Drei Fokusfelder, drei Partner
 Verhandeln · Partner Dr. Oliver Meschkat Verhandlungsführung & Rhetorik Experte für Verhandlungsführung, Rhetorik und Argumentation. Fokusfeld LinkedIn Führen · Geschäftsführer Prof. Dr. Constantin Schubart Leadership & Organisation Professor für BWL an der IU. Rollen im Zusammenspiel von Strategie, Kultur und Führung. Fokusfeld LinkedIn Wirtschaften · Partner Prof. Dr. Marcel Dulgeridis Finance & Transformation Professor für BWL an der IU. Schwerpunkt Rechnungswesen und Finanzberichterstattung. Fokusfeld LinkedIn
 Wir lernen uns im Gespräch kennen. Kostenlos, 20 bis 30 Minuten.
 Erstgespräch vereinbaren
@@ -264,36 +265,23 @@ Erstgespräch vereinbaren
 URL: https://gap-lab.de/innolab
 
 Start InnoLab
-InnoLab · Innovation, Change, Personalentwicklung Innovation, die im Unternehmen ankommt. Nicht nur im Meeting. Fünf erprobte Formate bei Ihnen vor Ort, zum Festpreis und mit greifbaren Ergebnissen. Kostenfreien Einstieg anfragen Preise und Pakete 2 bis 5 Tage vor Ort · Festpreis ab 5.800 € netto
-Die fünf Formate im Überblick
-InnoLab Sprint Innovationswoche · 5 Tage vor Ort · 13.300 € InnoLab Design Lernraumberatung · 3 Tage vor Ort · 8.300 € Learning Design 4.0 Train the Trainer · 3 Tage vor Ort · 8.300 € Change Leadership Führungskräftetraining · 2 + 1 Tage vor Ort · 8.300 € Innovation Scorecard Strategieworkshop · 2 Tage vor Ort · 5.800 €
-Der Einstieg ist kostenfrei. Dabei klären wir das passende Format.
-Auf einen Blick Fünf Formate, 2 bis 5 Tage vor Ort, jedes mit einem Ergebnis zum Weiterverwenden. Kurz erklärt InnoLab ist ein Portfolio für Innovation, Change und Lernen, durchgeführt bei Ihnen vor Ort. Jedes Format endet mit einem Ergebnis: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset.
-Was InnoLab unterscheidet
+InnoLab Innovation, die im Unternehmen ankommt. Fünf Workshop-Formate bei Ihnen vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden. Einstieg anfragen Die fünf Formate
+01 InnoLab Sprint 02 InnoLab Design 03 Learning Design 4.0 04 Change Leadership 05 Innovation Scorecard
+Was ist InnoLab? Fünf Workshop-Formate, die Innovationsaufgaben lösen. Kurz erklärt InnoLab ist ein Baukasten aus fünf Formaten, die bei Ihnen vor Ort stattfinden. Jedes Format löst eine typische Aufgabe und endet mit einem Ergebnis, das Sie weiterverwenden.
+Von Ideen bleiben Folien Zu Prototyp, Geschäftsmodell, Pitch InnoLab Sprint 5 Tage Von Räume wirken nicht Zu Roadmap und Budgetrahmen für Lernräume InnoLab Design 3 Tage Von Seminare sind Frontalunterricht Zu Aktives, überarbeitetes Lernformat Learning Design 4.0 3 Tage Von Wandel stockt im Team Zu Change-Fahrplan für Führungskräfte Change Leadership 2 + 1 Tage Von Innovation ist nicht messbar Zu Scorecard und Entscheidungsvorlage Innovation Scorecard 2 Tage
 Ihre echte Aufgabe statt Fallbeispiele Prototypen statt Folien Anwendung statt Frontalunterricht Daten statt Bauchgefühl
-Was Sie davon haben
-Entscheidungsreife Ergebnisse, die Sie weiterverwenden Investitionen mit Begründung nach Nutzen und Kosten Akzeptanz, weil Betroffene zu Beteiligten werden Fortschritt, der sich messen und belegen lässt
-Welches Format für welche Aufgabe
-Ihre Teams sollen eine echte Fragestellung bis zum Prototyp bringen InnoLab Sprint Innovationswoche Ergebnis Prototyp, Business Model Canvas, Pitch 5 Tage Ihre Räume sollen zum Lernwerkzeug werden InnoLab Design Lernraumberatung Ergebnis Reifegradprofil, Roadmap, Budgetrahmen 3 Tage Ihre Lehre soll aktiv statt frontal werden Learning Design 4.0 Train the Trainer Ergebnis Überarbeitetes Lernformat, Methodenkoffer 3 Tage Ihre Führungskräfte sollen den Wandel tragen Change Leadership Führungskräftetraining Ergebnis Widerstandsanalyse, Kommunikationsplan, Change-Fahrplan 2 + 1 Tage Ihre Innovation soll mit Kennzahlen steuerbar werden Innovation Scorecard Strategieworkshop Ergebnis Scorecard, Reifegrad-Roadmap, Entscheidungsvorlage 2 Tage
 5 Formate
 2–5 Tage vor Ort
 ab 5.800 € Festpreis netto, Konzeption und Reisezeit inklusive
 Einstieg kostenfrei, bei InnoLab Design eine angerechnete Raumbegehung
-01 · Das Problem Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.
+01 · Warum jetzt Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.
 41 % Innovatorenquote im Mittelstand. Quelle: KfW-Innovationsbericht Mittelstand 2025
 85 % berichten von akuter Veränderungsmüdigkeit (Kommunikationsverantwortliche, DACH). Quelle: Communications Heatmap 2025, FTI Consulting und Quadriga Hochschule Berlin
 66 % sehen Führungskräfte als wichtigste Botschafter im Wandel. Quelle: Communications Heatmap 2025
 46,4 Mrd. € investierte die Wirtschaft in Weiterbildung. Quelle: IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)
-02 · Die Lösung Fünf Hebel, einzeln oder als Folge
-Abgestimmte Folgen mit rund 10 % Vorteil InnoLab Journey Strategie → Raum → Innovationswoche
-Schritt 1 · 2 Tage Innovation Scorecard Ausrichten, messen, steuern Schritt 2 · 3 Tage InnoLab Design Raum analysieren und mitgestalten Schritt 3 · 5 Tage InnoLab Sprint Verstehen, bauen, pitchen
-24.700 € statt 27.400 € netto, rund 10 % Vorteil
-Change & Learning Führung und Lehre gemeinsam
-Format A · 2 + 1 Tage Change Leadership Führungskräfte tragen den Wandel Format B · 3 Tage Learning Design 4.0 Lehrende gestalten aktives Lernen
-14.900 € statt 16.600 € netto
-03 · Die Formate Ablauf, Nutzen, Ergebnis und Preis je Format
-01 · InnoLab Sprint 02 · InnoLab Design 03 · Learning Design 4.0 04 · Change Leadership 05 · Innovation Scorecard
-01 Innovationswoche InnoLab Sprint Ideen entstehen nicht im Meeting. Sondern am Prototyp.
+02 · Die Formate Ein Format wählen, Details ansehen
+← 01 InnoLab Sprint 02 InnoLab Design 03 Learning Design 4.0 04 Change Leadership 05 Innovation Scorecard
+→ 01 Innovationswoche InnoLab Sprint Ideen entstehen nicht im Meeting. Sondern am Prototyp.
 5 Tage vor Ort 8–12 Teilnehmende
 Fünf Tage, in denen Ihre Teams eine echte Fragestellung bis zum präsentationsfähigen Prototyp entwickeln.
 Tag 1 · Challenge Kreative Zerstörung Fragestellung schärfen, Ziele nach OKR vereinbaren, erster Bau mit LEGO® Serious Play®. Tag 2 · Verstehen Kunde und Markt Persona, Kaufmotive, PESTEL, Five Forces, Point of View. Tag 3 · Ideen Vom Einfall zum Modell Brainwriting, Morphologischer Kasten, Walt-Disney-Methode, Prototyp in 3D. Tag 4 · Umsetzen Geschäftsmodell Business Model Canvas, Nutzenpyramide, Kernbotschaften, Kanban und Scrum. Tag 5 · Pitch Die Höhle der Löwen Fünf-Minuten-Pitch vor Entscheidern, gemeinsame Bewertung, Transferplan.
@@ -343,22 +331,21 @@ Für wen Geschäftsführung, Innovations-, HR- und Bildungsverantwortliche, Cont
 Ergebnis Innovation Scorecard · Strategie-Canvas · Reifegrad-Roadmap · Entscheidungsvorlage
 Kombinierbar Als Auftakt vor InnoLab Design oder zur Wirkungsmessung nach dem InnoLab Sprint
 Paketpreis 5.800 € netto Einstieg: Erfolgsfaktoren-Check (90 Minuten, kostenfrei) Einstieg anfragen
-04 · Der Beleg Aus der Forschung in die Praxis.
+03 · Der Beleg Aus der Forschung in die Praxis.
 Konzipiert und evaluiert in einem Education Innovation Lab. Die Mehrheit der Befragten bewertete Kreativität, Zusammenarbeit und Freude am Lernen mit gut oder sehr gut.
 3 qualitative Studien 10 Monate Realexperiment 124 Teilnehmende
 Partner · Innovation & Change Dr. Oliver Meschkat Promotion zur Leistungsfähigkeit deutscher Innovation Labs. Trainer und Berater seit 2010. Profil bei Schubart & Dulgeridis LinkedIn
-05 · Die Zusammenarbeit Von der ersten Frage zum Ergebnis
-Kostenfreier Einstieg Challenge-Klärung, Format-Check, Vorgespräch oder Erfolgsfaktoren-Check. Bei InnoLab Design eine Raumbegehung. Festpreisangebot Abgestimmt auf Ihre Ausgangslage, mit Leistungsumfang und Paketpreis. Durchführung vor Ort Bei Ihnen vor Ort. Konzeption, Organisation und Reisezeit sind im Preis enthalten. Transfer und Wirkung Ergebnisse und Transferplan. Optional: Wirkungsmessung nach drei Monaten.
-06 · Die Preise Klare Pakete. Klare Preise. Festpreis je Format. Alle Preise netto zzgl. gesetzlicher MwSt., Stand September 2026.
-Tage vor Ort, je Tag 2.500 € + Pauschale je Modul 800 € Konzeption, Organisation, Reisezeit = Paketpreis ab 5.800 € zzgl. Fahrtkosten 0,40 € je km und Hotel nach Aufwand
-Dauer und Paketpreis im Vergleich Ein Quadrat je Tag vor Ort. Festpreis netto, Balken ab 0 €. InnoLab Sprint 8–12 Teilnehmende 13.300 € InnoLab Design Projektteam 8.300 € Learning Design 4.0 6–12 Teilnehmende 8.300 € Change Leadership 8–14 Teilnehmende 8.300 € Innovation Scorecard 4–10 Teilnehmende 5.800 €
-Bündel Bündel · rund 10 % Vorteil InnoLab Journey Innovation Scorecard, dann InnoLab Design, dann InnoLab Sprint: von der Strategie über den Raum zur Innovationswoche. 24.700 € statt 27.400 € netto
-Bündel · rund 10 % Vorteil Change & Learning Change Leadership und Learning Design 4.0: Führungskräfte und Lehrende gemeinsam auf den Wandel vorbereiten. 14.900 € statt 16.600 € netto
+04 · Die Zusammenarbeit Von der ersten Frage zum Ergebnis
+Kostenfreier Einstieg Challenge-Klärung, Format-Check, Vorgespräch oder Erfolgsfaktoren-Check. Festpreisangebot Mit Leistungsumfang und Paketpreis. Durchführung vor Ort Konzeption, Organisation und Reisezeit sind im Preis enthalten. Transfer und Wirkung Ergebnisse und Transferplan, optional Wirkungsmessung.
+05 · Die Preise Klare Pakete. Klare Preise. Festpreis je Format, netto zzgl. gesetzlicher MwSt., Stand September 2026.
+Dauer und Paketpreis im Vergleich Ein Quadrat je Tag vor Ort. Festpreis netto, Balken ab 0 €. Preis = 2.500 € je Tag + 800 € Pauschale. InnoLab Sprint 8–12 Teilnehmende 13.300 € InnoLab Design Projektteam 8.300 € Learning Design 4.0 6–12 Teilnehmende 8.300 € Change Leadership 8–14 Teilnehmende 8.300 € Innovation Scorecard 4–10 Teilnehmende 5.800 €
+Bündel
+InnoLab Journey (Scorecard, Design, Sprint): 24.700 € statt 27.400 € Change & Learning (Change Leadership, Learning Design): 14.900 € statt 16.600 €
 Zusatzmodule
 Wirkungsmessung nach drei Monaten: 2.100 € Hospitation oder zusätzlicher Transfertag: 2.500 € Co-Trainer ab 13 bzw. 15 Teilnehmenden, je Tag: 1.300 € Zusätzlicher Trainer- oder Beratertag: 2.500 €
 Rabatte
 Zweiter Durchlauf desselben Formats: −15 % Ab drittem Durchlauf oder Rahmenvertrag: −20 % Kammern, Bildungsträger, öffentliche Hand: −15 % Learning Design 4.0 als offenes Seminar, ab 6 Teilnehmenden: 990 € p. P.
-Konditionen. Alle Preise netto zzgl. gesetzlicher MwSt. · Fahrtkosten 0,40 € je km, Hotel nach Aufwand · Raum und Verpflegung stellt der Kunde · Zahlung: 50 % bei Beauftragung, 50 % nach Durchführung · Storno: bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %; ein Ersatztermin innerhalb von 6 Monaten einmalig kostenfrei · Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die Schubart & Dulgeridis GmbH , die Muttergesellschaft von THE GAP Lab.
+Konditionen. Preis je Format = 2.500 € je Tag vor Ort + 800 € Pauschale für Konzeption, Organisation und Reisezeit · Fahrtkosten 0,40 € je km, Hotel nach Aufwand · Raum und Verpflegung stellt der Kunde · Zahlung: 50 % bei Beauftragung, 50 % nach Durchführung · Storno: bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %; ein Ersatztermin innerhalb von 6 Monaten einmalig kostenfrei · Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die Schubart & Dulgeridis GmbH , die Muttergesellschaft von THE GAP Lab.
 Häufige Fragen Kurz beantwortet
 Was ist InnoLab? Fünf Formate für Innovation, Change und Lernen, bei Ihnen vor Ort: InnoLab Sprint , InnoLab Design , Learning Design 4.0 , Change Leadership , Innovation Scorecard .
 Was kostet InnoLab? Festpreise netto: Innovation Scorecard 5.800 €, InnoLab Design, Learning Design 4.0 und Change Leadership je 8.300 €, InnoLab Sprint 13.300 € (2.500 € je Tag + 800 € Pauschale, zuzüglich Fahrtkosten und Hotel). Bündel sparen rund 10 %: Preise .
@@ -400,22 +387,48 @@ Erstgespräch vereinbaren
 URL: https://gap-lab.de/faq
 
 Start FAQ
-Häufige Fragen zu THE GAP Lab Kurze Antworten zu Unternehmen, Zusammenarbeit und Kontakt. Wenn Ihre Frage fehlt, schreiben Sie uns.
-Unternehmen Über die Gesellschaft
-Was macht die The Gap Lab GmbH? Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: Verhandlungsführung & Rhetorik , Leadership & Organisation und Finance & Transformation . Sitz ist Altdorf bei Nürnberg.
-Wer steht hinter THE GAP Lab? Geschäftsführer ist Prof. Dr. Constantin Schubart, Partner sind Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis. THE GAP Lab ist Tochter der Schubart & Dulgeridis GmbH. Mehr auf Über uns .
-Wie unterscheiden sich THE GAP Lab und die Schubart & Dulgeridis GmbH? Die Schubart & Dulgeridis GmbH bietet forschungsbasierte Beratung und Diagnostik (THE GAP, Pulse-Check, Upskilling, Coaching). THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch. Beide stehen im Verbund: schubart-dulgeridis.de .
-Für wen ist das Angebot gedacht? Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklung gezielt planen, durchführen oder einkaufen.
-Wo sitzt THE GAP Lab? In Altdorf bei Nürnberg (Hessenstraße 28, 90518). Alle Angaben im Impressum .
-Zusammenarbeit Ablauf und Kosten
-Wie kommt eine Zusammenarbeit zustande? Am Anfang steht ein kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams) zu Anlass, Ziel und Zielgruppe. Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: Kontakt .
+Häufige Fragen zu THE GAP Lab 38 Antworten zu Unternehmen, Angebot, Fokusfeldern, InnoLab und Kontakt.
+Fragen durchsuchen Alle 38 Unternehmen 6 Leistungen 5 Fokusfelder 8 InnoLab 8 KI-Readiness Check 4 Zusammenarbeit 3 Kontakt und Datenschutz 4
+38 Fragen Alle öffnen Zurücksetzen
+Keine Treffer. Schreiben Sie uns an info@schubart-dulgeridis.de oder buchen Sie ein Erstgespräch . Unternehmen Was macht die The Gap Lab GmbH? Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte sind Verhandlungsführung & Rhetorik , Leadership & Organisation sowie Finance & Transformation . Das Ziel: Strategie kommt im Arbeitsalltag an.
+Wer steht hinter THE GAP Lab? Geschäftsführer ist Prof. Dr. Constantin Schubart, Partner sind Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis. Zwei von ihnen sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule, einer ist promoviert und auf Verhandlungsführung spezialisiert. Profile: Über uns .
+Wie unterscheiden sich THE GAP Lab und die Schubart & Dulgeridis GmbH? Die Schubart & Dulgeridis GmbH bietet forschungsbasierte Beratung und Diagnostik (THE GAP, Pulse-Check, Upskilling, Coaching, Recruiting). THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch. Beide stehen im Verbund, THE GAP Lab ist die Tochtergesellschaft: schubart-dulgeridis.de .
+Für wen ist das Angebot gedacht? Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklung gezielt planen, durchführen oder einkaufen. Auch Kammern, Bildungsträger und Akademien nutzen die InnoLab-Formate .
+Wo sitzt THE GAP Lab? In Altdorf bei Nürnberg (Hessenstraße 28, 90518). Die vollständigen Firmenangaben stehen im Impressum .
+Was ist mit „Gap“ gemeint? Der Abstand zwischen dem, was beschlossen wird, und dem, was im Arbeitsalltag ankommt. An dieser Stelle gehen Strategie, Führung und Wirkung verloren. Die Maßnahmen von THE GAP Lab setzen dort an.
+Leistungen Was bietet The Gap Lab an? Maßnahmen der Personalentwicklung in vier Stufen: Konzeption , Entwicklung , Durchführung und Vermarktung . Inhaltlich arbeiten die Partner in drei Fokusfeldern.
+Muss ich alle vier Stufen beauftragen? Nein. Eine Stufe, mehrere Stufen oder die ganze Kette: Das klären wir im kostenlosen Erstgespräch anhand Ihrer Ausgangslage.
+Welche Ergebnisse erhalte ich? Je nach Stufe ein Konzept mit Zielen und Erfolgskriterien, Materialien und Übungen, eine durchgeführte Maßnahme mit Auswertung oder eine verständliche Angebotsbeschreibung. Den genauen Umfang halten wir im Angebot fest. Übersicht: Leistungen .
+Bieten Sie auch Diagnostik an? Diagnostik wie THE GAP und der Pulse-Check gehört zur Schubart & Dulgeridis GmbH: schubart-dulgeridis.de/the-gap . THE GAP Lab konzentriert sich auf Maßnahmen der Personalentwicklung.
+Was bedeuten die Leitfragen der vier Stufen? Konzeption: Was soll die Maßnahme bewirken, und für wen? Entwicklung: Wie wird aus dem Konzept Praxis für die Teilnehmenden? Durchführung: In welchem Format wirkt die Maßnahme am besten? Vermarktung: Wie werden Nutzen und Zielgruppe verständlich?
+Fokusfelder Was ist Verhandlungsführung? Die zielgerichtete Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und für die Gegenseite tragfähig genug sind, um umgesetzt zu werden. Mehr zum Fokusfeld .
+Was bedeuten BATNA und ZOPA? BATNA ist die beste Alternative ohne Einigung (Best Alternative to a Negotiated Agreement), ZOPA der Bereich, in dem beide Seiten zustimmen könnten (Zone of Possible Agreement). Beide Begriffe erklärt das Glossar .
+Worin unterscheiden sich Verhandlungsführung und Rhetorik? Verhandlungsführung betrifft Strategie und Vorbereitung: Ziele, Alternativen, Spielräume und Gesprächsverlauf. Rhetorik betrifft die Wirkung: Aufbau von Argumenten, Wortwahl und Auftreten. Beides ergänzt sich.
+Was bedeutet Leadership & Organisation? Führung wird nicht als Eigenschaft einzelner Personen verstanden, sondern als Zusammenspiel aus Strategie, Kultur, Rollen und Entscheidungswegen. Ziel sind klare Erwartungen und Entscheidungen, die im Alltag ankommen. Mehr zum Fokusfeld .
+Brauche ich vorab eine Diagnostik? Nicht zwingend. Wer den Abstand zwischen Führungsanspruch und Arbeitsalltag zuerst messen möchte, findet THE GAP bei der Schubart & Dulgeridis GmbH. Maßnahmen lassen sich aber auch ohne vorherige Diagnostik konzipieren.
+Was umfasst Finance & Transformation? Finanzverständnis (Rechnungswesen, Kennzahlen, Wirtschaftlichkeit) verbunden mit der Umsetzung von Veränderung, damit Entscheidungen strategisch plausibel und wirtschaftlich belastbar sind. Mehr zum Fokusfeld .
+Brauchen Führungskräfte betriebswirtschaftliche Vorkenntnisse? Nein. Maßnahmen lassen sich an das Vorwissen der Zielgruppe anpassen. Ziel ist Verständnis, nicht Buchführung.
+Worin unterscheiden sich Gewinn und Cashflow? Der Gewinn ist das Ergebnis der Erfolgsrechnung eines Zeitraums, der Cashflow der Saldo tatsächlicher Zahlungen. Beide können stark voneinander abweichen, etwa wenn Rechnungen erst später bezahlt werden.
+InnoLab Was ist InnoLab? Ein Baukasten aus fünf Workshop-Formaten für Innovation, Change und Lernen, die bei Ihnen vor Ort stattfinden. Jedes Format löst eine typische Aufgabe und endet mit einem Ergebnis, das Sie weiterverwenden. Zur InnoLab-Seite .
+Welche fünf Formate gibt es? InnoLab Sprint (Innovationswoche, 5 Tage), InnoLab Design (Lernraumberatung, 3 Tage), Learning Design 4.0 (Train the Trainer, 3 Tage), Change Leadership (Führungskräftetraining, 2 + 1 Tage) und Innovation Scorecard (Strategieworkshop, 2 Tage).
+Welches InnoLab-Format passt zu uns? Der Sprint passt für Prototypen an einer echten Fragestellung, Design für Lernräume, Learning Design 4.0 für Ausbildende und Trainer, Change Leadership für Führungskräfte und Change Agents, die Scorecard für die Steuerung von Innovation mit Kennzahlen. Im kostenfreien Einstieg klären wir das gemeinsam.
+Wo und wie lange findet InnoLab statt? Alle Formate finden bei Ihnen vor Ort statt und dauern zwischen zwei und fünf Tagen. Raum und Verpflegung stellen Sie, Konzeption, Organisation und Reisezeit sind im Paketpreis enthalten.
+Was brauchen wir als Voraussetzung? Je nach Format: einen flexibel nutzbaren Raum, eine echte Fragestellung und Entscheider am Pitch-Tag (Sprint), ein reales Vorhaben (Change Leadership) oder ein eigenes Seminar, das überarbeitet wird (Learning Design 4.0). Das klären wir im Einstieg.
+Wie sind Preise, Zahlung und Storno geregelt? Alle Preise und Konditionen stehen auf der InnoLab-Seite im Abschnitt Preise .
+Sind die InnoLab-Formate förderfähig? Eine Förderfähigkeit über INQA-Coaching für kleine und mittlere Unternehmen ist auf Anfrage möglich. Ob Ihr Vorhaben förderfähig ist, prüfen wir im Vorgespräch.
+Wer führt InnoLab durch? Dr. Oliver Meschkat, Partner für Innovation und Change. Er hat über die Leistungsfähigkeit deutscher Innovation Labs promoviert und ist seit 2010 als Trainer und Berater tätig. Anbieter der Formate ist die Schubart & Dulgeridis GmbH , die Muttergesellschaft von THE GAP Lab.
+KI-Readiness Check Was ist der KI-Readiness Check? Ein kostenloser Check, der in drei Minuten acht Signale zur KI-Reife Ihrer Organisation abfragt, die Sicht von Management und Mitarbeitenden vergleicht und den KI-Gap sowie das wichtigste Handlungsfeld zeigt. Zum Check .
+Wie lange dauert der Check, und was kostet er? Er dauert etwa drei Minuten, ist kostenlos und braucht kein Login. Das Ergebnis erscheint sofort.
+Was passiert mit meinen Antworten im Check? Ihre Antworten bleiben in Ihrem Browser. Nur wenn Sie die vollständige Auswertung freischalten, speichern wir E-Mail-Adresse, Organisation und Ergebnis, um Ihnen eine Einordnung anzubieten. Details: Datenschutzerklärung .
+Wie belastbar ist das Ergebnis? Es ist eine ehrliche Selbsteinschätzung aus einer Perspektive und damit ein Orientierungssignal, keine Zertifizierung. Wie groß der Gap wirklich ist, zeigt erst die echte Befragung von Führung und Mitarbeitenden.
+Zusammenarbeit Wie kommt eine Zusammenarbeit zustande? Am Anfang steht ein kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams) zu Anlass, Ziel und Zielgruppe. Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: Kontakt .
 Was kostet eine Zusammenarbeit? Nach dem Erstgespräch erhalten Sie ein individuelles Angebot nach Umfang. Die Preise der InnoLab-Formate stehen auf der InnoLab-Seite.
-Muss ich alle vier Stufen beauftragen? Nein. Stufen lassen sich einzeln oder als Kette buchen. Das klären wir im Erstgespräch.
-Wie läuft eine Maßnahme ab? In vier Schritten: Ausgangslage klären, Konzept entwickeln, Maßnahme umsetzen, Wirkung auswerten. Details: Leistungen .
-Kontakt Erreichbarkeit und Termine
-Wie erreiche ich THE GAP Lab? Per E-Mail an info@schubart-dulgeridis.de oder telefonisch unter +49 30 695 19 779 . E-Mail und Telefon werden in der Aufbauphase gemeinsam mit der Muttergesellschaft genutzt.
-Mit wem kann ich ein Erstgespräch führen? Mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis. Gebucht wird über deren Kalender bei der Schubart & Dulgeridis GmbH, freie Zeiten sind live sichtbar.
-Weitere Fragen klären wir im Erstgespräch. Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.
+Wie läuft eine Maßnahme ab? In vier Schritten: Erstgespräch (Anlass, Ziel, Zielgruppe), Konzept (Ziele, Inhalte, Format, Erfolgskriterien), Umsetzung (Entwicklung und Durchführung) und Auswertung (Wirkung prüfen, nächste Schritte klären).
+Kontakt und Datenschutz Wie erreiche ich THE GAP Lab? Per E-Mail an info@schubart-dulgeridis.de oder telefonisch unter +49 30 695 19 779 . E-Mail und Telefon werden in der Aufbauphase gemeinsam mit der Muttergesellschaft genutzt.
+Mit wem kann ich ein Erstgespräch führen? Mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis. Gebucht wird über deren Kalender bei der Schubart & Dulgeridis GmbH, freie Zeiten sind live sichtbar. Nach der Buchung erhalten Sie eine Outlook-Einladung mit Microsoft-Teams-Link.
+Was passiert mit meinen Daten bei der Terminbuchung? Mit dem Klick auf „Termin wählen“ wechseln Sie zur Website der Muttergesellschaft. Dort gilt deren Datenschutzerklärung .
+Setzt die Website Cookies oder Tracking ein? Nein. Die Website setzt keine Cookies und keine Analyse- oder Marketing-Dienste ein. Eine Ausnahme ist der KI-Readiness Check, der den Zwischenstand lokal in Ihrem Browser speichert. Alles dazu in der Datenschutzerklärung .
+Weitere Fragen klären wir im Erstgespräch. Kostenlos, 20 bis 30 Minuten.
 Erstgespräch vereinbaren
 
 ## Impressum — THE GAP Lab (The Gap Lab GmbH)

@@ -50,7 +50,7 @@
 .kic .k-btn-line:hover{border-color: var(--navy);}
 .kic .k-btn-ghost{border-color: rgba(255, 255, 255, .2); color: var(--on-dark-2);}
 .kic .k-btn-ghost:hover:not(:disabled){border-color: rgba(255, 255, 255, .45); color: var(--on-dark);}
-.kic .k-hero{display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: center; padding-block: 64px 72px;}
+.kic .k-hero{display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 56px; align-items: center; padding-block: clamp(22px,2.6vw,34px) 56px;}
 .kic .k-hero .h-xl{margin-top: 20px;}
 .kic .hero-lead{max-width: 560px; margin-top: 24px; font-size: 19px;}
 .kic .hero-cta{display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 32px;}
@@ -261,7 +261,7 @@
 @media (prefers-reduced-motion: reduce){.kic{scroll-behavior: auto;}
 .kic *, .kic *::before, .kic *::after{animation: none !important; transition: none !important;}
 .kic .demo-bar i{width: var(--w);}}
-@media (max-width: 960px){.kic .k-hero{grid-template-columns: 1fr; gap: 40px; padding-block: 44px 56px;}
+@media (max-width: 960px){.kic .k-hero{grid-template-columns: 1fr; gap: 40px; padding-block: 26px 44px;}
 .kic .band-head{grid-template-columns: 1fr; gap: 16px;}
 .kic .how, .kic .get{grid-template-columns: 1fr;}
 .kic .fields{grid-template-columns: 1fr 1fr;}

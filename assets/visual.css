@@ -527,3 +527,24 @@
 .v-olinks a{display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
 
 .v-org-people h3{hyphens:manual;-webkit-hyphens:manual}
+
+/* Zahlenband: vierter Wert ohne unglücklichen Umbruch */
+.v-nums ul{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.7fr)}
+.v-nums li:last-child span{white-space:nowrap}
+@media (max-width:1180px){.v-nums li:last-child span{white-space:normal}}
+@media (max-width:1020px){.v-nums ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---- Über uns: klarer Aufbau ohne Klammerlinien ---- */
+.v-org-people .v-okids{padding-top:0;margin-top:70px;gap:clamp(16px,2.4vw,30px)}
+.v-org-people .v-okids::before,.v-org-people .v-okids li::before{display:none}
+.v-org-people .v-okids li{padding:0 22px 26px;border:1px solid var(--gold-line);border-top:5px solid var(--c);box-shadow:var(--shadow-soft)}
+.v-org-people .v-opic{margin:-56px 0 16px;width:112px;height:112px;box-shadow:0 0 0 6px var(--paper)}
+.v-ocap{width:100%;margin:26px 0 0;text-align:center;position:relative}
+.v-ocap::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--gold-line)}
+.v-ocap span{position:relative;background:var(--paper);padding:0 16px;font-family:var(--font-display);font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text)}
+.v-org-people .v-o1,.v-org-people .v-o2{width:min(100%,520px)}
+.v-org-people .v-oline{height:24px}
+@media (max-width:760px){.v-org-people .v-okids{margin-top:60px;gap:72px}}
+
+.answer+.section-head{margin-top:clamp(28px,4vw,48px)}
+.v-ocap{margin-top:34px}

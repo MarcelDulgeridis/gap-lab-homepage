@@ -214,34 +214,30 @@ def problem_rows():
 
 
 PICK = [
-    ("Ihre Teams sollen eine echte Fragestellung bis zum Prototyp bringen", "sprint", "Prototyp, Business Model Canvas, Pitch"),
-    ("Ihre Räume sollen zum Lernwerkzeug werden", "design", "Reifegradprofil, Roadmap, Budgetrahmen"),
-    ("Ihre Lehre soll aktiv statt frontal werden", "learning-design", "Überarbeitetes Lernformat, Methodenkoffer"),
-    ("Ihre Führungskräfte sollen den Wandel tragen", "change-leadership", "Widerstandsanalyse, Kommunikationsplan, Change-Fahrplan"),
-    ("Ihre Innovation soll mit Kennzahlen steuerbar werden", "scorecard", "Scorecard, Reifegrad-Roadmap, Entscheidungsvorlage"),
+    ("Ideen bleiben Folien", "sprint", "Prototyp, Geschäftsmodell, Pitch"),
+    ("Räume wirken nicht", "design", "Roadmap und Budgetrahmen für Lernräume"),
+    ("Seminare sind Frontalunterricht", "learning-design", "Aktives, überarbeitetes Lernformat"),
+    ("Wandel stockt im Team", "change-leadership", "Change-Fahrplan für Führungskräfte"),
+    ("Innovation ist nicht messbar", "scorecard", "Scorecard und Entscheidungsvorlage"),
 ]
 
 
 def exec_summary():
     fm = {f["id"]: f for f in FORMATS}
     rows = "".join(
-        f'<li><span class="il-task">{esc(t)}</span><a class="il-fmt" href="#{fid}"><strong>{esc(fm[fid]["name"])}</strong><small>{esc(fm[fid]["kind"])}</small></a>'
-        f'<span class="il-res"><span class="il-lab">Ergebnis</span>{esc(res)}</span><span class="il-dur">{esc(fm[fid]["dur"].replace(" vor Ort", ""))}</span></li>'
+        f'<li><span class="il-from"><span class="il-lab">Von</span>{esc(t)}</span><span class="il-arrow" aria-hidden="true">{ARROW}</span>'
+        f'<span class="il-to"><span class="il-lab">Zu</span>{esc(res)}</span>'
+        f'<a class="il-fmt" href="#{fid}"><strong>{esc(fm[fid]["name"])}</strong><small>{esc(fm[fid]["dur"].replace(" vor Ort", ""))}</small></a></li>'
         for t, fid, res in PICK)
-    diff = ("Ihre echte Aufgabe statt Fallbeispiele", "Prototypen statt Folien", "Anwendung statt Frontalunterricht", "Daten statt Bauchgefühl")
-    gain = ("Entscheidungsreife Ergebnisse, die Sie weiterverwenden", "Investitionen mit Begründung nach Nutzen und Kosten", "Akzeptanz, weil Betroffene zu Beteiligten werden", "Fortschritt, der sich messen und belegen lässt")
+    chips = "".join(f"<li>{esc(x)}</li>" for x in ("Ihre echte Aufgabe statt Fallbeispiele", "Prototypen statt Folien", "Anwendung statt Frontalunterricht", "Daten statt Bauchgefühl"))
     return (
-        '<section class="section il-exec" id="auf-einen-blick" aria-labelledby="exec-h"><div class="container">'
-        '<p class="eyebrow">Auf einen Blick</p>'
-        '<h2 id="exec-h">Fünf Formate, 2 bis 5 Tage vor Ort, jedes mit einem Ergebnis zum Weiterverwenden.</h2>'
-        + answer_box("Kurz erklärt", "InnoLab ist ein Portfolio für Innovation, Change und Lernen, durchgeführt bei Ihnen vor Ort. "
-                     "Jedes Format endet mit einem Ergebnis: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset.")
-        + '<div class="il-exec-grid">'
-          '<div class="il-exec-col"><h3>Was InnoLab unterscheidet</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in diff) + "</ul></div>"
-          '<div class="il-exec-col"><h3>Was Sie davon haben</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in gain) + "</ul></div>"
-          "</div>"
-        '<h3 class="il-h3">Welches Format für welche Aufgabe</h3>'
-        f'<ol class="il-pick">{rows}</ol>'
+        '<section class="section il-exec" id="was-ist-innolab" aria-labelledby="exec-h"><div class="container">'
+        '<p class="eyebrow">Was ist InnoLab?</p>'
+        '<h2 id="exec-h">Fünf Workshop-Formate, die Innovationsaufgaben lösen.</h2>'
+        + answer_box("Kurz erklärt", "InnoLab ist ein Baukasten aus fünf Formaten, die bei Ihnen vor Ort stattfinden. "
+                     "Jedes Format löst eine typische Aufgabe und endet mit einem Ergebnis, das Sie weiterverwenden.")
+        + f'<ol class="il-pick">{rows}</ol>'
+        f'<ul class="chips il-usp">{chips}</ul>'
         f'<dl class="il-plate"><div><dt>5</dt><dd>Formate</dd></div><div><dt>2–5</dt><dd>Tage vor Ort</dd></div><div><dt>ab {eur(5800)}</dt><dd>Festpreis netto, Konzeption und Reisezeit inklusive</dd></div><div><dt>Einstieg</dt><dd>kostenfrei, bei InnoLab Design eine angerechnete Raumbegehung</dd></div></dl>'
         "</div></section>")
 
@@ -315,7 +311,7 @@ def price_chart():
             f'<svg class="il-pb" viewBox="0 0 100 10" preserveAspectRatio="none" role="img" aria-label="Paketpreis {eur(f["price"])}"><rect class="tr" width="100" height="10"/><rect class="fg" width="{w}" height="10"/></svg>'
             f'<strong class="il-pv">{eur(f["price"])}</strong></li>')
     return ('<figure class="il-pchart"><figcaption><strong>Dauer und Paketpreis im Vergleich</strong>'
-            '<span>Ein Quadrat je Tag vor Ort. Festpreis netto, Balken ab 0 €.</span></figcaption>'
+            '<span>Ein Quadrat je Tag vor Ort. Festpreis netto, Balken ab 0 €. Preis = 2.500 € je Tag + 800 € Pauschale.</span></figcaption>'
             f'<ul>{"".join(rows)}</ul></figure>')
 
 
@@ -327,53 +323,49 @@ def bundles():
     return '<div class="grid grid-2">' + "".join(cards) + "</div>"
 
 
+def hero_tiles():
+    lis = "".join(f'<li><a href="#{f["id"]}"><b>{f["no"]}</b><span>{esc(f["name"])}</span></a></li>' for f in FORMATS)
+    return f'<aside class="il-tiles" aria-label="Die fünf Formate"><ol>{lis}</ol></aside>'
+
+
+def slider():
+    tabs = "".join(f'<li><a href="#{f["id"]}"><b>{f["no"]}</b><span>{esc(f["name"])}</span></a></li>' for f in FORMATS)
+    panels = "".join(format_block(f) for f in FORMATS)
+    return ('<div class="il-slider" id="formate" data-slider>'
+            '<div class="il-bar"><button class="il-arrow-btn" type="button" data-prev aria-label="Vorheriges Format"><span aria-hidden="true">←</span></button>'
+            f'<nav class="il-tabs" aria-label="Formate wählen"><ol>{tabs}</ol></nav>'
+            '<button class="il-arrow-btn" type="button" data-next aria-label="Nächstes Format"><span aria-hidden="true">→</span></button></div>'
+            '<p class="il-count" data-count aria-live="polite"></p>'
+            f'<div class="il-panels">{panels}</div></div>')
+
+
 def build_body():
-    fm = {f["id"]: f for f in FORMATS}
-    flow = "".join(
-        f'<li><a href="#{f["id"]}"><strong>{esc(f["name"])}</strong><span>{esc(f["kind"])} · {esc(f["dur"])} · {eur(f["price"])}</span></a></li>'
-        for f in FORMATS
-    )
     hero = f"""<section class="hero il-hero"><div class="container hero-grid">
 <div>
 <nav class="breadcrumb" aria-label="Brotkrumen"><ol><li><a href="/">Start</a></li><li aria-current="page">InnoLab</li></ol></nav>
-<p class="eyebrow">InnoLab · Innovation, Change, Personalentwicklung</p>
-<h1>Innovation, die im Unternehmen <span class="accent">ankommt.</span> Nicht nur im Meeting.</h1>
-<p class="lead">Fünf erprobte Formate bei Ihnen vor Ort, zum Festpreis und mit greifbaren Ergebnissen.</p>
-<div class="hero-actions"><a class="btn btn-gold" href="/kontakt">Kostenfreien Einstieg anfragen {ARROW}</a><a class="link-arrow" href="#preise">Preise und Pakete {ARROW}</a></div>
-<p class="hero-note">2 bis 5 Tage vor Ort · Festpreis ab {eur(5800)} netto</p>
+<p class="eyebrow">InnoLab</p>
+<h1>Innovation, die im Unternehmen <span class="accent">ankommt.</span></h1>
+<p class="lead">Fünf Workshop-Formate bei Ihnen vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden.</p>
+<div class="hero-actions"><a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a><a class="link-arrow" href="#formate">Die fünf Formate {ARROW}</a></div>
 </div>
-<aside class="flow-card il-flow" aria-labelledby="il-flow-h"><h2 id="il-flow-h">Die fünf Formate im Überblick</h2><ol class="flow-list">{flow}</ol>
-<div class="flow-foot"><strong>Der Einstieg ist kostenfrei.</strong>Dabei klären wir das passende Format.</div></aside>
+{hero_tiles()}
 </div></section>"""
     summary = exec_summary()
     problem = section(
-        head("01 · Das Problem", "Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.", "", "problem-h")
+        head("01 · Warum jetzt", "Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.", "", "problem-h")
         + '<div class="grid grid-4 il-stats">'
         + stat("41", " %", "Innovatorenquote im Mittelstand.", "KfW-Innovationsbericht Mittelstand 2025")
         + stat("85", " %", "berichten von akuter Veränderungsmüdigkeit (Kommunikationsverantwortliche, DACH).", "Communications Heatmap 2025, FTI Consulting und Quadriga Hochschule Berlin")
         + stat("66", " %", "sehen Führungskräfte als wichtigste Botschafter im Wandel.", "Communications Heatmap 2025")
         + stat("46,4", " Mrd. €", "investierte die Wirtschaft in Weiterbildung.", "IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)")
-        + "</div>"
-        ,
-        "", "problem-h")
-    loesung = section(
-        head("02 · Die Lösung", "Fünf Hebel, einzeln oder als Folge", "", "loesung-h")
-        + '<h3 class="il-h3">Abgestimmte Folgen mit rund 10 % Vorteil</h3>' + journey(),
-        "section-white", "loesung-h")
-    formate_head = section(
-        head("03 · Die Formate", "Ablauf, Nutzen, Ergebnis und Preis je Format", "", "formate-h")
-        + '<nav class="il-jump" aria-label="Formate"><ul class="chips">'
-        + "".join(f'<li><a href="#{f["id"]}">{f["no"]} · {esc(f["name"])}</a></li>' for f in FORMATS) + "</ul></nav>",
-        "il-tight", "formate-h")
-    formate = "".join(
-        f'<div class="il-fwrap {"il-alt" if i % 2 else ""}"><div class="container">{format_block(f)}</div></div>' for i, f in enumerate(FORMATS))
+        + "</div>", "", "problem-h")
+    formate = section(head("02 · Die Formate", "Ein Format wählen, Details ansehen", "", "formate-h") + slider(), "il-formate", "formate-h")
     om = PARTNERS["oliver-meschkat"]
     forschung = section(
-        head("04 · Der Beleg", "Aus der Forschung in die Praxis.", "", "forschung-h")
+        head("03 · Der Beleg", "Aus der Forschung in die Praxis.", "", "forschung-h")
         + '<div class="il-research-grid"><div>'
           '<p class="il-lead">Konzipiert und evaluiert in einem Education Innovation Lab. Die Mehrheit der Befragten bewertete Kreativität, Zusammenarbeit und Freude am Lernen mit gut oder sehr gut.</p>'
-          '<ul class="il-bignums"><li><strong>3</strong><span>qualitative Studien</span></li><li><strong>10</strong><span>Monate Realexperiment</span></li><li><strong>124</strong><span>Teilnehmende</span></li></ul>'
-          '</div>'
+          '<ul class="il-bignums"><li><strong>3</strong><span>qualitative Studien</span></li><li><strong>10</strong><span>Monate Realexperiment</span></li><li><strong>124</strong><span>Teilnehmende</span></li></ul></div>'
           f'<article class="partner-wide il-person"><div class="photo"><img src="{esc(om["img"])}" alt="{esc(om["name"])}" width="448" height="448" loading="lazy" decoding="async"></div>'
           f'<div><span class="role">Partner · Innovation &amp; Change</span><h3>{esc(om["name"])}</h3>'
           "<p>Promotion zur Leistungsfähigkeit deutscher Innovation Labs. Trainer und Berater seit 2010.</p>"
@@ -381,40 +373,35 @@ def build_body():
           "</div>",
         "section-cream", "forschung-h")
     ablauf = section(
-        head("05 · Die Zusammenarbeit", "Von der ersten Frage zum Ergebnis", "", "ablauf-h")
+        head("04 · Die Zusammenarbeit", "Von der ersten Frage zum Ergebnis", "", "ablauf-h")
         + '<ol class="steps il-coop">'
-          "<li><strong>Kostenfreier Einstieg</strong><span>Challenge-Klärung, Format-Check, Vorgespräch oder Erfolgsfaktoren-Check. Bei InnoLab Design eine Raumbegehung.</span></li>"
-          "<li><strong>Festpreisangebot</strong><span>Abgestimmt auf Ihre Ausgangslage, mit Leistungsumfang und Paketpreis.</span></li>"
-          "<li><strong>Durchführung vor Ort</strong><span>Bei Ihnen vor Ort. Konzeption, Organisation und Reisezeit sind im Preis enthalten.</span></li>"
-          "<li><strong>Transfer und Wirkung</strong><span>Ergebnisse und Transferplan. Optional: Wirkungsmessung nach drei Monaten.</span></li>"
+          "<li><strong>Kostenfreier Einstieg</strong><span>Challenge-Klärung, Format-Check, Vorgespräch oder Erfolgsfaktoren-Check.</span></li>"
+          "<li><strong>Festpreisangebot</strong><span>Mit Leistungsumfang und Paketpreis.</span></li>"
+          "<li><strong>Durchführung vor Ort</strong><span>Konzeption, Organisation und Reisezeit sind im Preis enthalten.</span></li>"
+          "<li><strong>Transfer und Wirkung</strong><span>Ergebnisse und Transferplan, optional Wirkungsmessung.</span></li>"
           "</ol>",
         "section-white", "ablauf-h")
     preise = section(
-        head("06 · Die Preise", "Klare Pakete. Klare Preise.",
-             "Festpreis je Format. Alle Preise netto zzgl. gesetzlicher MwSt., Stand September 2026.", "preise-h")
-        + f'<div class="il-calc" role="group" aria-label="So entsteht der Preis"><div><span class="il-lab">Tage vor Ort, je Tag</span><strong>{eur(DAY)}</strong></div><span class="il-op" aria-hidden="true">+</span>'
-          f'<div><span class="il-lab">Pauschale je Modul</span><strong>{eur(FLAT)}</strong><small>Konzeption, Organisation, Reisezeit</small></div><span class="il-op" aria-hidden="true">=</span>'
-          f'<div class="il-calc-res"><span class="il-lab">Paketpreis</span><strong>ab {eur(5800)}</strong><small>zzgl. Fahrtkosten 0,40 € je km und Hotel nach Aufwand</small></div></div>'
+        head("05 · Die Preise", "Klare Pakete. Klare Preise.", "Festpreis je Format, netto zzgl. gesetzlicher MwSt., Stand September 2026.", "preise-h")
         + price_chart()
-        + '<h3 class="il-h3">Bündel</h3>' + bundles()
-        + '<div class="grid grid-2 il-extras">'
+        + '<div class="grid grid-3 il-extras">'
+          '<div class="card"><h3>Bündel</h3><ul class="il-list">'
+          f'<li><strong>InnoLab Journey</strong> (Scorecard, Design, Sprint): {eur(24700)} statt {eur(27400)}</li>'
+          f'<li><strong>Change &amp; Learning</strong> (Change Leadership, Learning Design): {eur(14900)} statt {eur(16600)}</li></ul></div>'
           '<div class="card"><h3>Zusatzmodule</h3><ul class="il-list"><li>Wirkungsmessung nach drei Monaten: <strong>2.100 €</strong></li><li>Hospitation oder zusätzlicher Transfertag: <strong>2.500 €</strong></li><li>Co-Trainer ab 13 bzw. 15 Teilnehmenden, je Tag: <strong>1.300 €</strong></li><li>Zusätzlicher Trainer- oder Beratertag: <strong>2.500 €</strong></li></ul></div>'
           '<div class="card"><h3>Rabatte</h3><ul class="il-list"><li>Zweiter Durchlauf desselben Formats: <strong>−15 %</strong></li><li>Ab drittem Durchlauf oder Rahmenvertrag: <strong>−20 %</strong></li><li>Kammern, Bildungsträger, öffentliche Hand: <strong>−15 %</strong></li><li>Learning Design 4.0 als offenes Seminar, ab 6 Teilnehmenden: <strong>990 € p. P.</strong></li></ul></div>'
           "</div>"
-        + '<div class="notice il-terms"><strong>Konditionen.</strong> Alle Preise netto zzgl. gesetzlicher MwSt. · Fahrtkosten 0,40 € je km, Hotel nach Aufwand · Raum und Verpflegung stellt der Kunde · '
+        + '<div class="notice il-terms"><strong>Konditionen.</strong> Preis je Format = 2.500 € je Tag vor Ort + 800 € Pauschale für Konzeption, Organisation und Reisezeit · Fahrtkosten 0,40 € je km, Hotel nach Aufwand · Raum und Verpflegung stellt der Kunde · '
           'Zahlung: 50 % bei Beauftragung, 50 % nach Durchführung · Storno: bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %; ein Ersatztermin innerhalb von 6 Monaten einmalig kostenfrei · '
           f'Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die Muttergesellschaft von THE GAP Lab.</div>',
         "section-cream", "preise-h")
     faq = section(head("Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS), "section-white", "faq-h")
-    cta = cta_band("Der nächste Schritt ist ein Gespräch.",
-                   "Kostenfreier Einstieg, danach Festpreisangebot.",
-                   "Einstieg anfragen")
+    cta = cta_band("Der nächste Schritt ist ein Gespräch.", "Kostenfreier Einstieg, danach Festpreisangebot.", "Einstieg anfragen")
     problem = problem.replace("<section ", '<section id="problem" ', 1)
-    loesung = loesung.replace("<section ", '<section id="loesung" ', 1)
     ablauf = ablauf.replace("<section ", '<section id="zusammenarbeit" ', 1)
     preise = preise.replace("<section ", '<section id="preise" ', 1)
     faq = faq.replace("<section ", '<section id="faq" ', 1)
-    return '<div class="il">' + hero + summary + problem + loesung + formate_head + formate + forschung + ablauf + preise + faq + cta + "</div>"
+    return '<div class="il">' + hero + summary + problem + formate + forschung + ablauf + preise + faq + cta + "</div>"
 
 
 def schema_nodes():
@@ -441,7 +428,7 @@ def innolab():
         "priority": "0.9", "llms_group": "Leistungen", "faqs": FAQS, "show_stand": False, "journey": "/innolab", "speakable": True, "modified": "2026-11-04",
         "og_image": "/assets/img/og-innolab.jpg", "og_image_height": 630,
         "og_alt": "InnoLab: Innovation, die im Unternehmen ankommt. Fünf Formate vor Ort, Festpreis ab 5.800 Euro netto.",
-        "styles": ["/assets/innolab.css"], "schema_nodes": schema_nodes(),
+        "styles": ["/assets/innolab.css"], "scripts": ["/assets/innolab.js"], "schema_nodes": schema_nodes(),
     }
     page["body"] = build_body()
     return page
