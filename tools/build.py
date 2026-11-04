@@ -73,6 +73,17 @@ def org_node():
         "parentOrganization": {"@id": SITE["parent_id"]},
         "employee": [person_node(k, full=False) for k in PARTNERS],
         "knowsAbout": SITE["knows_about"],
+        "slogan": "Personalentwicklung, die im Arbeitsalltag ankommt.",
+        "alternateName": ["The Gap Lab", "The Gap Lab GmbH"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog", "name": "Leistungen von THE GAP Lab",
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/leistungen#service"}},
+                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/verhandlungsfuehrung#service"}},
+                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/leadership-organisation#service"}},
+                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/finance-transformation#service"}},
+            ],
+        },
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "Anfragen und Erstgespräch",
@@ -132,7 +143,7 @@ def graph_for(page):
         "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")},
     }
     if page.get("speakable"):
-        webpage["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": [".answer p"]}
+        webpage["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": page.get("speakable_selector", [".answer p"])}
     graph = [org_node()]
     website = {
         "@type": "WebSite",
@@ -162,7 +173,7 @@ def header_html(page):
         items.append(f'<li><a{cls} href="{esc(path)}"{cur}>{esc(label)}</a></li>')
     return (
         '<header class="site-header" data-open="false"><div class="container header-inner">'
-        f'<a class="brand" href="/" aria-label="THE GAP Lab — Startseite">THE GAP <span>Lab</span></a>'
+        f'<a class="brand" href="/" aria-label="THE GAP Lab — Startseite">THE GAP <span>Lab</span><em class="brand-tagline">Personalentwicklung</em></a>'
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>'
         f'<nav class="site-nav" id="site-nav" aria-label="Hauptnavigation"><ul>{"".join(items)}</ul></nav>'
         "</div></header>"
@@ -179,6 +190,7 @@ def footer_html():
         '<div class="footer-grid">'
         '<div><a class="brand" href="/">THE GAP <span>Lab</span></a>'
         f'<p>{esc(SITE["legal_name"])}<br>{esc(SITE["street"])}<br>{esc(SITE["zip"])} {esc(SITE["city"])}</p>'
+        '<p class="footer-mission">THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch, damit Strategie im Arbeitsalltag ankommt.</p>'
         '<p>Tochtergesellschaft der Schubart &amp; Dulgeridis GmbH</p></div>'
         + "".join(cols)
         + "</div>"
@@ -220,7 +232,7 @@ def render(page):
     url = url_of(page["path"])
     title = page["title"]
     desc = page["description"]
-    robots = page.get("robots", "index,follow,max-image-preview:large")
+    robots = page.get("robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1")
     og_img = DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")
     og_h = page.get("og_image_height", 630)
     og_alt = esc(page.get("og_alt", "THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis"))
@@ -258,7 +270,8 @@ def render(page):
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
-{extra_css}<script src="/assets/site.js?v={JS_V}"></script>
+{extra_css}<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<script src="/assets/site.js?v={JS_V}" defer></script>
 <script type="application/ld+json">{graph}</script>
 </head>
 """
@@ -334,6 +347,8 @@ def llms(pages):
     lines.append(f"Firmendaten: {SITE['legal_name']}, {SITE['street']}, {SITE['zip']} {SITE['city']}; "
                  f"{SITE['hrb']}, {SITE['court']}; Geschäftsführer: Prof. Dr. Constantin Schubart (einzelvertretungsberechtigt). "
                  f"Muttergesellschaft: Schubart & Dulgeridis GmbH (https://www.schubart-dulgeridis.de/).")
+    lines.append("Kurzfassung: THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch (Konzeption, Entwicklung, Durchführung, Vermarktung) in drei Fokusfeldern: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation. Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte. Konkrete Angebote: fünf InnoLab-Formate (Innovation, Change, Lernen) und der kostenlose KI-Readiness Check. Einstieg: kostenloses Erstgespräch (20 bis 30 Minuten).")
+    lines.append("")
     lines.append(f"Vollständiger Inhalt aller Seiten als Text: {DOMAIN}/llms-full.txt")
     lines.append("")
     groups = {}

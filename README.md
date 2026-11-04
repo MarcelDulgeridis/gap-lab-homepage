@@ -80,3 +80,4 @@ Siehe Abschlussbericht: vollständiger Unternehmensgegenstand und Stammkapital (
 - **Archiv der kompakten Fassung (erste Reduktion):** Tag `archive/kompakt-v1-2026-11-04` (Branch `archiv-kompakt-v1-2026-11-04`).
 - **Archiv der ausführlichen Fassung:** Git-Tag `archive/volltext-2026-11-04` (und Branch `archiv-volltext-2026-11-04`).
   Wiederherstellen: `git checkout archive/volltext-2026-11-04 -- .` (dann `python3 tools/build.py`).
+- **Archiv vor dem visuellen Relaunch:** Tag `archive/kompakt-v2-2026-11-04` (Branch `archiv-kompakt-v2-2026-11-04`).
