@@ -34,6 +34,10 @@ def link_arrow(href, text):
     return f'<a class="link-arrow" href="{esc(href)}">{text} {ARROW}</a>'
 
 
+def faq_more():
+    return '<p class="small">Weitere Antworten: <a href="/faq">FAQ</a>.</p>'
+
+
 def faq_block(items):
     rows = []
     for q, a in items:

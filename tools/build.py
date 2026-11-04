@@ -23,6 +23,8 @@ import pages_glossar  # noqa: E402
 import pages_innolab  # noqa: E402
 import pages_ki  # noqa: E402
 import pages_legal  # noqa: E402
+import seo_meta  # noqa: E402
+import datetime  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = SITE["domain"]
@@ -74,6 +76,8 @@ def org_node():
         "employee": [person_node(k, full=False) for k in PARTNERS],
         "knowsAbout": SITE["knows_about"],
         "slogan": "Personalentwicklung, die im Arbeitsalltag ankommt.",
+        "areaServed": {"@type": "Country", "name": "Deutschland"},
+        "sameAs": [SITE["parent_url"]],
         "alternateName": ["The Gap Lab", "The Gap Lab GmbH"],
         "hasOfferCatalog": {
             "@type": "OfferCatalog", "name": "Leistungen von THE GAP Lab",
@@ -142,6 +146,15 @@ def graph_for(page):
         "dateModified": page.get("modified", SITE["modified"]),
         "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")},
     }
+    if page.get("seo_keywords"):
+        webpage["keywords"] = page["seo_keywords"]
+    topics = page.get("seo_topics")
+    if topics:
+        webpage["about"] = [{"@id": f"{DOMAIN}/#organization"}] + [
+            {"@type": "Thing", "name": t, "sameAs": seo_meta.TOPIC[t]} for t in topics]
+    if page.get("seo_reviewer"):
+        webpage["reviewedBy"] = person_node(page["seo_reviewer"], full=False)
+        webpage["lastReviewed"] = page.get("modified", SITE["modified"])
     if page.get("speakable"):
         webpage["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": page.get("speakable_selector", [".answer p"])}
     graph = [org_node()]
@@ -159,6 +172,8 @@ def graph_for(page):
         graph.append(breadcrumb_node(page))
     graph.append(webpage)
     for extra in page.get("schema_nodes", []):
+        if extra.get("@type") == "Service":
+            extra.setdefault("areaServed", {"@type": "Country", "name": "Deutschland"})
         graph.append(extra)
     if page.get("faqs") and page.get("faq_schema", True):
         graph.append(faq_node(url, page["faqs"]))
@@ -180,7 +195,7 @@ def header_html(page):
     )
 
 
-def footer_html():
+def footer_html(page=None):
     cols = []
     for title, links in FOOTER_LINKS:
         lis = "".join(f'<li><a href="{esc(h)}">{esc(t)}</a></li>' for t, h in links)
@@ -195,7 +210,7 @@ def footer_html():
         + "".join(cols)
         + "</div>"
         f'<div class="footer-bottom"><span>© 2026 {esc(SITE["legal_name"])}</span>'
-        f'<span>Sitz: {esc(SITE["city"])}</span></div>'
+        f'<span>Sitz: {esc(SITE["city"])}' + (f' · Stand: {de_date(page.get("modified", SITE["modified"]))}' if page else "") + '</span></div>'
         "</div></footer>"
     )
 
@@ -294,11 +309,43 @@ def render(page):
         + '<main id="main">'
         + nbsp_brand(stopify(page, with_journey(page)))
         + "</main>"
-        + footer_html()
+        + footer_html(page)
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))
         + "</body></html>\n"
     )
     return head + body
+
+
+def de_date(iso):
+    y, m, d = iso.split("-")
+    months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    return f"{int(d)}. {months[int(m) - 1]} {y}"
+
+
+def assign_lastmod(pages):
+    """Änderungsdatum je Seite aus dem Inhalt: bleibt stehen, solange sich Titel, Beschreibung, Text und FAQ nicht ändern."""
+    store_path = os.path.join(ROOT, "tools", "lastmod.json")
+    try:
+        with open(store_path, encoding="utf-8") as fh:
+            store = json.load(fh)
+    except (OSError, ValueError):
+        store = {}
+    today = datetime.date.today().isoformat()
+    for p in pages:
+        blob = json.dumps([p["title"], p["description"], p["body"], p.get("faqs", []), p.get("seo_keywords", "")], ensure_ascii=False)
+        h = hashlib.sha1(blob.encode("utf-8")).hexdigest()[:12]
+        old = store.get(p["path"])
+        if old and old["hash"] == h:
+            date = old["date"]
+        else:
+            date = today if old else p.get("modified", today)
+            if old:
+                date = today
+        store[p["path"]] = {"hash": h, "date": date}
+        p["modified"] = date
+    with open(store_path, "w", encoding="utf-8") as fh:
+        json.dump(store, fh, ensure_ascii=False, indent=1, sort_keys=True)
+    return pages
 
 
 def all_pages():
@@ -309,7 +356,8 @@ def all_pages():
     pages += pages_innolab.build()
     pages += pages_glossar.build()
     pages += pages_legal.build()
-    return pages
+    seo_meta.apply(pages)
+    return assign_lastmod(pages)
 
 
 def write(rel, content):
@@ -359,6 +407,22 @@ def llms(pages):
     lines.append("")
     lines.append(f"Vollständiger Inhalt aller Seiten als Text: {DOMAIN}/llms-full.txt")
     lines.append("")
+    lines += [
+        "## Fakten",
+        f"- Name: {SITE['brand']} (Firma: {SITE['legal_name']}); Sitz: {SITE['street']}, {SITE['zip']} {SITE['city']}",
+        "- Branche: Personalentwicklung, Weiterbildung, Beratung; Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte, Bildungsträger",
+        "- Leistungen: Konzeption, Entwicklung, Durchführung, Vermarktung von Maßnahmen der Personalentwicklung",
+        "- Fokusfelder: Verhandlungsführung & Rhetorik (Dr. Oliver Meschkat), Leadership & Organisation (Prof. Dr. Constantin Schubart), Finance & Transformation (Prof. Dr. Marcel Dulgeridis)",
+        "- Angebote: fünf InnoLab-Formate vor Ort (Preise ausschließlich auf der InnoLab-Seite), kostenloser KI-Readiness Check, kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams)",
+        f"- Kontakt: {SITE['email']}, {SITE['phone']}; Termin: {DOMAIN}/kontakt",
+        f"- Verbund: Tochtergesellschaft der {SITE['parent_name']} (Diagnostik und Beratung: THE GAP, Pulse-Check)",
+        f"- Stand der Inhalte: {max(p.get('modified', SITE['modified']) for p in pages)}",
+        "",
+        "## Zitierhinweis",
+        f"- Bitte als „{SITE['brand']} ({SITE['legal_name']})“ nennen und auf die jeweilige Seite unter {DOMAIN} verlinken.",
+        "- Preise, Konditionen und Teilnehmerzahlen nur von /innolab übernehmen; Fachbegriffe (BATNA, ZOPA, Cashflow, KI-Gap u. a.) sind im Glossar definiert.",
+        "",
+    ]
     groups = {}
     for p in pages:
         if p.get("llms_group"):
@@ -368,13 +432,23 @@ def llms(pages):
         for p in items:
             lines.append(f"- [{p['short']}]({url_of(p['path'])}): {p['description']}")
         lines.append("")
+    import pages_faq
+    keep = ["Was macht THE GAP Lab?", "Wie unterscheiden sich THE GAP Lab und die Schubart &amp; Dulgeridis GmbH?", "Was ist InnoLab?",
+            "Welche fünf Formate gibt es?", "Was bedeuten BATNA und ZOPA?", "Was ist der KI-Readiness Check?", "Wie kommt eine Zusammenarbeit zustande?"]
+    lines.append("## Kurzantworten")
+    for _c, q, a in pages_faq.ALL:
+        if q in keep:
+            text = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", re.sub(r"</?(?:a|strong|em|b|span)\b[^>]*>", "", a)))).strip()
+            lines.append(f"- {html.unescape(q)} {text}")
+    lines.append(f"- Weitere Antworten: {DOMAIN}/faq")
+    lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 
 def llms_full(pages):
     from helpers import strip_tags
     out = [f"# {SITE['brand']} ({SITE['legal_name']}): vollständiger Inhalt als Text", "",
-           f"> {SITE['llms_summary']}", "", f"Stand: {SITE['modified']}. Quelle: {DOMAIN}", ""]
+           f"> {SITE['llms_summary']}", "", f"Stand: {max(p.get('modified', SITE['modified']) for p in pages)}. Quelle: {DOMAIN}", ""]
     for p in pages:
         if not p.get("sitemap", True) or p["path"] in ("/ki-readiness",):
             continue

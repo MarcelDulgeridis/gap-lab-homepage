@@ -2,7 +2,7 @@
 Portfolio-One-Pager und Preisliste (Stand September 2026), Autor: Dr. Oliver Meschkat. Marktdaten tragen die dort genannten Quellen.
 Der Aufbau folgt der Kundenreise: Problem, Lösung, Formate mit Ablauf, Forschung, Zusammenarbeit, Preise, FAQ."""
 from siteinfo import SITE, PARTNERS
-from helpers import esc, url_of, ARROW, faq_block, cta_band, section, head, answer_box, strip_tags
+from helpers import esc, url_of, ARROW, faq_block, faq_more, cta_band, section, head, answer_box, strip_tags
 
 SD = SITE["parent_url"]
 PATH = "/innolab"
@@ -344,8 +344,8 @@ def build_body():
 <div>
 <nav class="breadcrumb" aria-label="Brotkrumen"><ol><li><a href="/">Start</a></li><li aria-current="page">InnoLab</li></ol></nav>
 <p class="eyebrow">Innovation · Change · Lernen</p>
-<h1>Innovation, die im Unternehmen <span class="accent">ankommt.</span></h1>
-<p class="lead">Fünf Workshop-Formate bei Ihnen vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden.</p>
+<h1>Innovationsworkshops, die im Unternehmen <span class="accent">ankommen.</span></h1>
+<p class="lead">Fünf Innovationsworkshops bei Ihnen vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden.</p>
 <div class="hero-actions"><a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a><a class="link-arrow" href="#formate">Die fünf Formate {ARROW}</a></div>
 </div>
 {hero_tiles()}
@@ -395,7 +395,7 @@ def build_body():
           'Zahlung: 50 % bei Beauftragung, 50 % nach Durchführung · Storno: bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %; ein Ersatztermin innerhalb von 6 Monaten einmalig kostenfrei · '
           f'Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die Muttergesellschaft von THE GAP Lab.</div>',
         "section-cream", "preise-h")
-    faq = section(head("Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS), "section-white", "faq-h")
+    faq = section(head("Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS) + faq_more(), "section-white", "faq-h")
     cta = cta_band("Der nächste Schritt ist ein Gespräch.", "Kostenfreier Einstieg, danach Festpreisangebot.", "Einstieg anfragen")
     problem = problem.replace("<section ", '<section id="problem" ', 1)
     ablauf = ablauf.replace("<section ", '<section id="zusammenarbeit" ', 1)
@@ -423,11 +423,11 @@ def innolab():
     page = {
         "path": PATH, "short": "InnoLab",
         "title": "InnoLab: Innovationsformate für Unternehmen | THE GAP Lab",
-        "og_title": "InnoLab: Innovation, die im Unternehmen ankommt",
+        "og_title": "InnoLab: Innovationsworkshops, die im Unternehmen ankommen",
         "description": "InnoLab: fünf Formate vor Ort für Innovation, Change und Personalentwicklung, vom Sprint mit Prototyp bis zur Innovation Scorecard. Festpreis ab 5.800 € netto.",
         "priority": "0.9", "llms_group": "Leistungen", "faqs": FAQS, "show_stand": False, "journey": "/innolab", "speakable": True, "modified": "2026-11-04",
         "og_image": "/assets/img/og-innolab.jpg", "og_image_height": 630,
-        "og_alt": "InnoLab: Innovation, die im Unternehmen ankommt. Fünf Formate vor Ort, Festpreis ab 5.800 Euro netto.",
+        "og_alt": "InnoLab: Innovationsworkshops, die im Unternehmen ankommen. Fünf Formate vor Ort, Festpreis ab 5.800 Euro netto.",
         "styles": ["/assets/visual.css", "/assets/innolab.css"], "scripts": ["/assets/innolab.js"], "schema_nodes": schema_nodes(),
     }
     page["body"] = build_body()

@@ -338,3 +338,5 @@
 .kic .demo-note{color:#c9d0da}
 .kic .how b,.kic .fields b,.kic .t-legend b{font-size:12px;color:#7a5a27}
 .kic b{min-height:0}
+.kic .k-more{margin-top: 22px; font: 700 14px/1.5 var(--display); color: var(--muted);}
+.kic .k-more a{color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px;}
