@@ -171,6 +171,23 @@ def graph_for(page):
         webpage["breadcrumb"] = {"@id": url + "#breadcrumb"}
         graph.append(breadcrumb_node(page))
     graph.append(webpage)
+    if page["path"] == "/":
+        graph.append({
+            "@type": "HowTo", "@id": url + "#vorgehen", "name": "So läuft die Zusammenarbeit mit THE GAP Lab ab",
+            "description": "Vier Schritte vom kostenlosen Erstgespräch bis zur Auswertung einer Maßnahme der Personalentwicklung.",
+            "inLanguage": "de-DE",
+            "step": [
+                {"@type": "HowToStep", "position": 1, "name": "Erstgespräch", "text": "Anlass, Ziel und Zielgruppe klären (20 bis 30 Minuten, kostenlos). Ergebnis: klarer Auftrag.", "url": url + "#vorgehen-title"},
+                {"@type": "HowToStep", "position": 2, "name": "Konzept", "text": "Ziele, Inhalte, Format und Erfolgskriterien festlegen. Ergebnis: abgestimmtes Konzept.", "url": url + "#vorgehen-title"},
+                {"@type": "HowToStep", "position": 3, "name": "Umsetzung", "text": "Entwicklung und Durchführung entlang der Fokusfelder. Ergebnis: durchgeführte Maßnahme.", "url": url + "#vorgehen-title"},
+                {"@type": "HowToStep", "position": 4, "name": "Auswertung", "text": "Wirkung prüfen und nächste Schritte klären. Ergebnis: Wirkung und nächste Schritte.", "url": url + "#vorgehen-title"},
+            ],
+        })
+        graph.append({
+            "@type": "ItemList", "@id": url + "#stufen", "name": "Die vier Leistungsstufen von THE GAP Lab",
+            "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "url": f"{DOMAIN}/leistungen#{a}"}
+                                for i, (n, a) in enumerate([("Konzeption", "konzeption"), ("Entwicklung", "entwicklung"), ("Durchführung", "durchfuehrung"), ("Vermarktung", "vermarktung")], 1)],
+        })
     for extra in page.get("schema_nodes", []):
         if extra.get("@type") == "Service":
             extra.setdefault("areaServed", {"@type": "Country", "name": "Deutschland"})
@@ -270,6 +287,9 @@ def render(page):
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{url}">
 <meta name="robots" content="{robots}">
+<meta name="author" content="{esc(SITE["legal_name"])}">
+<meta name="geo.region" content="DE-BY">
+<meta name="geo.placename" content="{esc(SITE["city"])}">
 <link rel="alternate" hreflang="de" href="{url}">
 <link rel="alternate" hreflang="x-default" href="{url}">
 <meta property="og:type" content="website">

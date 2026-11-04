@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-04",
-  "hash": "179f897e3e20"
+  "hash": "b8dfaed12b8b"
  },
  "/404": {
   "date": "2026-11-04",
@@ -17,11 +17,11 @@
  },
  "/fokusfelder": {
   "date": "2026-11-04",
-  "hash": "5bc3195633f1"
+  "hash": "58411241171a"
  },
  "/fokusfelder/finance-transformation": {
   "date": "2026-11-04",
-  "hash": "5c6b7202f891"
+  "hash": "bf1b69cb49f8"
  },
  "/fokusfelder/leadership-organisation": {
   "date": "2026-11-04",
@@ -29,7 +29,7 @@
  },
  "/fokusfelder/verhandlungsfuehrung": {
   "date": "2026-11-04",
-  "hash": "950c5e1da6ad"
+  "hash": "4a539d9c45f2"
  },
  "/glossar": {
   "date": "2026-11-04",
@@ -49,7 +49,7 @@
  },
  "/kontakt": {
   "date": "2026-11-04",
-  "hash": "5e1e4e864aff"
+  "hash": "de6b30c9a63f"
  },
  "/leistungen": {
   "date": "2026-11-04",
@@ -57,6 +57,6 @@
  },
  "/ueber-uns": {
   "date": "2026-11-04",
-  "hash": "b73e759d8873"
+  "hash": "fa84d059ed89"
  }
 }

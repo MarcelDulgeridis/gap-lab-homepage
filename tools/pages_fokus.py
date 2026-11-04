@@ -123,9 +123,9 @@ VERHANDLUNG = {
          "<p>Dr. Oliver Meschkat, Partner der The Gap Lab GmbH und Experte für Verhandlungsführung, Rhetorik und Argumentation. Einen Termin buchen Sie auf der Seite <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
     "sources": [
-        "Fisher, R., Ury, W.: <em>Getting to Yes</em> (1981); deutsch: <em>Das Harvard-Konzept</em>. Grundlage der Unterscheidung von Positionen und Interessen sowie des Begriffs BATNA.",
+        "Fisher, R., Ury, W.: <em>Getting to Yes</em> (1981); deutsch: <em>Das Harvard-Konzept</em>. Grundlage der Unterscheidung von Positionen und Interessen sowie des Begriffs BATNA. Überblick: <a href=\"https://de.wikipedia.org/wiki/Harvard-Konzept\" rel=\"noopener\">Harvard-Konzept (Wikipedia)</a>.",
         "Raiffa, H.: <em>The Art and Science of Negotiation</em> (1982). Grundlage des Begriffs der Zone of Possible Agreement.",
-        "Tversky, A., Kahneman, D.: Judgment under Uncertainty: Heuristics and Biases. <em>Science</em> 185 (1974). Beschreibt den Ankereffekt.",
+        "Tversky, A., Kahneman, D.: Judgment under Uncertainty: Heuristics and Biases. <em>Science</em> 185 (1974). Beschreibt den Ankereffekt. <a href=\"https://doi.org/10.1126/science.185.4157.1124\" rel=\"noopener\">DOI 10.1126/science.185.4157.1124</a>.",
     ],
     "cta_title": "Verhandlungen, die vorbereitet beginnen.",
     "service_name": "Verhandlungsführung & Rhetorik: Maßnahmen der Personalentwicklung",
@@ -252,7 +252,7 @@ FINANCE = {
          "<p>Prof. Dr. Marcel Dulgeridis, Partner der The Gap Lab GmbH und Professor für Betriebswirtschaftslehre an der IU Internationalen Hochschule mit Schwerpunkt Rechnungswesen und Finanzberichterstattung. Einen Termin buchen Sie auf der Seite <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
     "sources": [
-        "Handelsrechtlicher Jahresabschluss nach Handelsgesetzbuch (§§ 242 ff. HGB) sowie internationale Rechnungslegung nach IFRS als Grundlage der genannten Begriffe.",
+        "Handelsrechtlicher Jahresabschluss nach Handelsgesetzbuch (<a href=\"https://www.gesetze-im-internet.de/hgb/__242.html\" rel=\"noopener\">§§ 242 ff. HGB</a>) sowie internationale Rechnungslegung nach IFRS als Grundlage der genannten Begriffe.",
     ],
     "cta_title": "Vorhaben mit belastbarer Zahlenbasis.",
     "service_name": "Finance & Transformation: Maßnahmen der Personalentwicklung",

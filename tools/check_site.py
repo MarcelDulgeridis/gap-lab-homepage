@@ -86,6 +86,7 @@ for u, p in info.items():
         W(u, f"Wortdopplung: „{m.group(0)}“")
     for bad in ["  ", " ,", " .", "..", "ae ", "ue ", "oe "]:
         pass
+    if "&amp;amp;" in pages[u] or "&amp;#" in pages[u]: E(u, "doppelt escapte Entität im HTML")
     for pat, why in [(r"\bGap Lab\b", "Markenschreibweise „Gap Lab“ (THE GAP Lab)"), (r"\bInnolab\b", "„Innolab“ statt InnoLab"), (r"\bfuer\b|\bueber\b|\bGroesse\b", "ersetzte Umlaute"), (r"\s[,.;:](?=\s|$)", "Leerzeichen vor Satzzeichen"), (r"(?<!\d)\.\.(?!\.)", "Doppelpunkt-Punkt"), (r"\bdass dass\b|\bdie die\b", "Wortdopplung")]:
         for m in re.finditer(pat, flat):
             W(u, f"{why}: …{flat[max(0,m.start()-25):m.end()+25]}…")

@@ -20,6 +20,8 @@ def person_node(key, full=True):
         "sameAs": p["same_as"],
         "knowsAbout": p["knows_about"],
     })
+    if "IU Internationalen Hochschule" in p["schema_desc"]:
+        node["affiliation"] = {"@type": "CollegeOrUniversity", "name": "IU Internationale Hochschule", "url": "https://www.iu.de/"}
     return node
 
 
