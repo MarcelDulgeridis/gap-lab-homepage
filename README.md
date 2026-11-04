@@ -73,3 +73,9 @@ Empfehlung: datenschutzfreundliches, cookieloses Tool; Events erst nach Anpassun
 ## Offene Punkte (vor/nach Livegang prüfen)
 
 Siehe Abschlussbericht: vollständiger Unternehmensgegenstand und Stammkapital (Registerauszug unvollständig), USt-IdNr., eigene E-Mail-Adresse @gap-lab.de, rechtliche Prüfung von Impressum und Datenschutz, Bestätigung der inhaltlichen Leistungsbeschreibung.
+
+## Textvarianten
+
+- **Aktuell (live):** reduzierte Fassung, kurze Aussagesätze, Details in Unterseiten und Glossar.
+- **Archiv der ausführlichen Fassung:** Git-Tag `archive/volltext-2026-11-04` (und Branch `archiv-volltext-2026-11-04`).
+  Wiederherstellen: `git checkout archive/volltext-2026-11-04 -- .` (dann `python3 tools/build.py`).

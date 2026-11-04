@@ -50,26 +50,19 @@ def fokus_page(cfg):
         + section(V.facts_strip([
             ("Ansprechpartner", f'<a href="/ueber-uns#{cfg["partner"]}">{esc(p["name"])}</a>, {esc(p["role"])}'),
             ("Für wen", cfg["zielgruppe"]),
-            ("Einstieg", "Kostenloses Erstgespräch, 20 bis 30 Minuten per Microsoft Teams"),
+            ("Einstieg", "Kostenloses Erstgespräch, 20 bis 30 Minuten"),
         ], cfg["color"]), "v-tight", "")
-        + section(
-            answer_box(cfg["answer_label"], cfg["answer"])
-            + '<div class="prose">' + cfg["why"] + "</div>", "", "")
+        + section(answer_box(cfg["answer_label"], cfg["answer"]), "v-tight", "")
         + section(head("Zentrale Begriffe", cfg["model_title"], "") + cfg["model"] + defs(cfg["begriffe"]), "section-white", "")
         + section(head("Typische Ausgangslagen", "Wann dieses Fokusfeld relevant wird", "") + V.situations(cfg["ausgangslagen"], cfg["color"]), "", "")
         + section(
-            head("Mögliche Bausteine", "Was eine Maßnahme enthalten kann",
-                 "Die Bausteine lassen sich in drei Phasen ordnen. Welche sinnvoll sind, hängt von Ziel und Zielgruppe ab.")
-            + V.phases(cfg["color"], cfg["phases"])
-            + f'<p class="muted">Das Konzept entsteht nach dem Erstgespräch in der <a href="/leistungen#konzeption">Konzeption</a>.</p>'
-            f'<p><strong>Für wen:</strong> {cfg["zielgruppe"]}</p>', "section-white", "")
-        + section(head("Weiterführend", "Passende Formate und Begriffe", "Konkrete Angebote und die Begriffe dieses Fokusfelds im Glossar.") + V.related_formats(cfg["related"]), "", "")
-        + section(head("Ansprechpartner", f"Ihr Ansprechpartner: {esc(p['name'])}", "") + partner_wide(cfg["partner"]), "section-cream", "")
+            head("Mögliche Bausteine", "Drei Phasen einer Maßnahme", "")
+            + V.phases(cfg["color"], cfg["phases"]), "section-white", "")
+        + section(head("Weiterführend", "Passende Formate und Begriffe", "") + V.related_formats(cfg["related"]), "", "")
+        + section(head("Ansprechpartner", esc(p["name"]), "") + partner_wide(cfg["partner"]), "section-cream", "")
         + section(head("Häufige Fragen", "Fragen zu diesem Fokusfeld") + faqs_html, "", "")
-        + section(
-            '<div class="sources"><h2 class="h2">Quellen und weiterführend</h2><ul>' + sources + "</ul></div>"
-            + "<div>" + head("Weitere Fokusfelder", "Das könnte ebenfalls relevant sein", "") + related(cfg["path"]) + "</div>", "section-white", "")
-        + cta_band(cfg["cta_title"], "Im kostenlosen Erstgespräch (20 bis 30 Minuten) ordnen wir Ihre Ausgangslage ein.")
+        + section('<div class="sources"><h2 class="h2">Quellen</h2><ul>' + sources + "</ul></div>", "section-white v-tight", "")
+        + cta_band(cfg["cta_title"], "20 bis 30 Minuten, kostenlos und unverbindlich.")
     )
     return page
 
@@ -265,6 +258,88 @@ FINANCE = {
     "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Finanzverständnis, Kennzahlen und wirtschaftlicher Bewertung von Veränderungsvorhaben.",
     "audience_type": "Geschäftsleitungen, Führungskräfte, Projektverantwortliche",
 }
+
+
+
+# ------------------------------------------------------------------ Kurzfassungen (Volltext: Git-Tag archive/volltext-2026-11-04)
+VERHANDLUNG.update({
+    "h1": "Verhandlungsführung und Rhetorik: vorbereitet verhandeln, überzeugend argumentieren",
+    "lead": "Verhandlungen entscheiden über Preise, Budgets und Zusammenarbeit.",
+    "answer": "Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und tragfähig genug sind, um umgesetzt zu werden.",
+    "begriffe": [
+        ("Interessen und Positionen", "Die Position ist die Forderung, das Interesse der Grund dahinter. Wer Interessen kennt, findet mehr Lösungen."),
+        ("Alternative zum Verhandlungsergebnis (BATNA)", "Die beste Alternative ohne Einigung (Best Alternative to a Negotiated Agreement). Sie bestimmt, bis wann ein Angebot akzeptabel ist."),
+        ("Verhandlungsspielraum (ZOPA)", "Der Bereich, in dem beide Seiten zustimmen könnten (Zone of Possible Agreement). Ohne Überschneidung ist eine Einigung unwahrscheinlich."),
+        ("Anker", "Die erste konkrete Zahl im Gespräch. Sie prägt häufig den weiteren Verlauf."),
+        ("Argumentationsaufbau", "Behauptung, Begründung und Beleg, sodass Zuhörende sie nachvollziehen können."),
+    ],
+    "ausgangslagen": [
+        ("Preis- und Konditionengespräche", "Spielräume sind vorab nicht abgesteckt."),
+        ("Vertragsverhandlungen", "Viele Beteiligte, viele Details, Zeitdruck."),
+        ("Interne Verhandlungen", "Budgets und Prioritäten zwischen Bereichen."),
+        ("Gespräche unter Druck", "Einwände, Eskalation, ungleiche Machtverteilung."),
+    ],
+    "faqs": [
+        ("Worin unterscheiden sich Verhandlungsführung und Rhetorik?",
+         "<p>Verhandlungsführung betrifft Strategie und Vorbereitung, Rhetorik die Wirkung von Argumenten und Auftreten. Beides ergänzt sich.</p>"),
+        ("Kann eine Maßnahme an eigenen Verhandlungsfällen ansetzen?",
+         "<p>Ja. Fälle lassen sich in Übungen aufgreifen, auch anonymisiert.</p>"),
+        ("Wer ist Ansprechpartner?",
+         "<p>Dr. Oliver Meschkat, Partner der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
+    ],
+})
+LEADERSHIP.update({
+    "h1": "Leadership und Organisation: Führung im Zusammenspiel von Strategie, Kultur und Rollen",
+    "lead": "Führung wirkt dort, wo Strategie, Kultur, Rollen und Entscheidungswege zusammenpassen.",
+    "answer": "Führung ist kein Merkmal einzelner Personen, sondern das Zusammenspiel aus Strategie, Kultur, Rollen und Entscheidungswegen. Ziel: klare Erwartungen und Entscheidungen, die im Alltag ankommen.",
+    "begriffe": [
+        ("Rollenklarheit", "Alle wissen, welche Aufgaben, Verantwortung und Erwartungen zu einer Rolle gehören."),
+        ("Entscheidungsrechte", "Wer entscheidet, wer wird einbezogen, wer nur informiert."),
+        ("Führungskultur", "Die im Alltag gelebten Normen: Was wird belohnt, toleriert, besprochen?"),
+        ("Umsetzungslücke", "Der Abstand zwischen beschlossener Strategie und Arbeitsalltag."),
+        ("Führungsgespräch", "Strukturiertes Gespräch über Ziele, Erwartungen und Entwicklung."),
+    ],
+    "ausgangslagen": [
+        ("Neue Führungsrolle", "Eine Fachkraft wird Führungskraft oder übernimmt mehr Verantwortung."),
+        ("Strategie wird nicht gelebt", "Ziele sind kommuniziert, alte Abläufe bleiben."),
+        ("Unklare Zuständigkeiten", "Entscheidungen verzögern sich."),
+        ("Veränderungsvorhaben stocken", "Widerstand und Unsicherheit bremsen."),
+    ],
+    "faqs": [
+        ("Brauche ich vorab eine Diagnostik?",
+         f"<p>Nicht zwingend. Wer den Abstand zwischen Anspruch und Alltag zuerst messen möchte, findet <a href=\"{SD}the-gap\">THE GAP</a> bei der Schubart &amp; Dulgeridis GmbH.</p>"),
+        ("Für welche Führungsebenen eignet sich das?",
+         "<p>Für Geschäftsleitungen, Bereichsleitungen und Teamleitungen, jeweils angepasst an die Zielgruppe.</p>"),
+        ("Wer ist Ansprechpartner?",
+         "<p>Prof. Dr. Constantin Schubart, Geschäftsführer der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
+    ],
+})
+FINANCE.update({
+    "h1": "Finance und Transformation: Veränderung wirtschaftlich fundiert umsetzen",
+    "lead": "Veränderung kostet Geld und soll wirken. Finanzverständnis macht Entscheidungen belastbar.",
+    "answer": "Finanzverständnis (Rechnungswesen, Kennzahlen, Wirtschaftlichkeit) verbunden mit der Umsetzung von Veränderung. Entscheidungen werden strategisch plausibel und wirtschaftlich belastbar.",
+    "begriffe": [
+        ("Gewinn- und Verlustrechnung (GuV)", "Erträge und Aufwendungen eines Zeitraums im Vergleich."),
+        ("Bilanz", "Vermögen (Aktiva) und Kapital (Passiva) zu einem Stichtag."),
+        ("Cashflow", "Zu- und Abflüsse von Zahlungsmitteln. Gewinn und Liquidität können auseinanderfallen."),
+        ("Kennzahlen", "Verdichtete Messgrößen wie Marge oder Eigenkapitalquote. Sie brauchen Kontext."),
+        ("Business Case", "Wirtschaftliche Begründung eines Vorhabens: Kosten, Nutzen, Annahmen, Risiken."),
+    ],
+    "ausgangslagen": [
+        ("Budgetverantwortung ohne Finanzbrille", "Berichte werden nicht sicher gelesen."),
+        ("Veränderung ohne Business Case", "Kosten und Nutzen sind nicht belastbar beschrieben."),
+        ("Zahlen ohne Entscheidung", "Berichte liegen vor, werden aber nicht umgesetzt."),
+        ("Transformation stockt", "Der Nutzen ist nicht nachvollziehbar belegt."),
+    ],
+    "faqs": [
+        ("Brauchen Führungskräfte betriebswirtschaftliche Vorkenntnisse?",
+         "<p>Nein. Maßnahmen passen sich dem Vorwissen an. Ziel ist Verständnis, nicht Buchführung.</p>"),
+        ("Worin unterscheiden sich Gewinn und Cashflow?",
+         "<p>Gewinn ist das Ergebnis der Erfolgsrechnung, Cashflow der Saldo tatsächlicher Zahlungen. Beide können stark abweichen.</p>"),
+        ("Wer ist Ansprechpartner?",
+         "<p>Prof. Dr. Marcel Dulgeridis, Partner der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
+    ],
+})
 
 
 def build():
