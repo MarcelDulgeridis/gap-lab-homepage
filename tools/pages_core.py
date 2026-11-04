@@ -92,7 +92,7 @@ def home():
         "path": "/", "short": "Start",
         "title": "THE GAP Lab — Personalentwicklung | Altdorf bei Nürnberg",
         "description": "The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.",
-        "og_title": "THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis",
+        "og_title": "THE GAP Lab — Personalentwicklung, die verbindet.",
         "priority": "1.0", "changefreq": "weekly", "llms_group": "Unternehmen",
         "faqs": FAQ_HOME, "show_stand": False,
     }
