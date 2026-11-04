@@ -33,15 +33,12 @@ def gap_bridge():
         ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Zielgruppe nicht.", "/leistungen#konzeption"),
     ]
     cols = "".join(
-        f'<li class="v-break {c}"><span class="v-dot" aria-hidden="true"></span><span class="v-tagline">{t}</span>'
+        f'<li class="v-break {c}"><span class="v-bigno" aria-hidden="true">{i:02d}</span><span class="v-tagline">{t}</span>'
         f'<h3><a href="{href}">{h}</a></h3><p>{p}</p></li>'
-        for c, t, h, p, href in breaks
+        for i, (c, t, h, p, href) in enumerate(breaks, 1)
     )
     return (
         '<div class="v-gap">'
-        '<div class="v-gapline" aria-hidden="true"><span class="v-end">Beschlossen<small>Strategie, Konzept, Programm</small></span>'
-        '<span class="v-bridge"><i>Hier geht Wirkung verloren</i></span>'
-        '<span class="v-end v-end-r">Im Alltag<small>Verhalten, Entscheidungen, Ergebnisse</small></span></div>'
         f'<ol class="v-breaks">{cols}</ol></div>'
     )
 
@@ -71,7 +68,7 @@ def venn(with_links=True):
     rows = []
     for c, path, name, short, key, text in FIELDS:
         p = PARTNERS[key]
-        inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><span><strong>{name}</strong>'
+        inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><img class="v-port" src="{esc(p["img"])}" alt="" width="72" height="72" loading="lazy" decoding="async"><span><strong>{name}</strong>'
                  f'<em>{esc(p["name"])}</em></span>')
         rows.append(f'<li><a class="v-frow {c}" href="{path}">{inner}</a></li>' if with_links else f'<li><div class="v-frow {c}">{inner}</div></li>')
     return f'<div class="v-venn-wrap">{svg}<ul class="v-flist">{"".join(rows)}</ul></div>'
@@ -280,3 +277,25 @@ def partner_compact(key):
 
 
 FIELD_CLS = {"oliver-meschkat": "f1", "constantin-schubart": "f2", "marcel-dulgeridis": "f3"}
+
+
+def hero_gap():
+    """Hero-Grafik: Beschlossen und Im Alltag, dazwischen die Lücke, an der THE GAP Lab ansetzt."""
+    return ('<figure class="v-hgap"><svg viewBox="0 0 480 360" role="img" aria-labelledby="hg-t hg-d">'
+            '<title id="hg-t">Die Lücke zwischen Beschlossenem und Arbeitsalltag</title>'
+            '<desc id="hg-d">Links der Block Beschlossen, rechts der Block Im Alltag, dazwischen eine unterbrochene Brücke mit der Marke THE GAP.</desc>'
+            '<rect class="hg-l" x="14" y="120" width="176" height="210"/>'
+            '<rect class="hg-r" x="290" y="120" width="176" height="210"/>'
+            '<text class="hg-t1" x="102" y="215" text-anchor="middle">Beschlossen</text><text class="hg-t2" x="102" y="242" text-anchor="middle">Strategie · Konzept</text>'
+            '<text class="hg-t3" x="378" y="215" text-anchor="middle">Im Alltag</text><text class="hg-t4" x="378" y="242" text-anchor="middle">Verhalten · Ergebnis</text>'
+            '<path class="hg-b" d="M190 120H222M258 120H290"/>'
+            '<path class="hg-tick" d="M222 106V134M258 106V134"/>'
+            '<rect class="hg-d" x="233" y="107" width="14" height="14" transform="rotate(45 240 114)"/>'
+            '<text class="hg-gap" x="240" y="70" text-anchor="middle">THE GAP</text>'
+            '<rect class="hg-bar" x="218" y="82" width="44" height="3"/>'
+            '</svg><figcaption>Hier setzt THE GAP Lab an: Beschlossenes kommt im Alltag an.</figcaption></figure>')
+
+
+def numbers_band(items):
+    return ('<section class="v-nums" aria-label="Das Wichtigste auf einen Blick"><div class="container"><ul>'
+            + "".join(f'<li><b>{n}</b><span>{l}</span></li>' for n, l in items) + '</ul></div></section>')

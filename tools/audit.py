@@ -156,7 +156,7 @@ for u in sm_urls:
 
 ALL_DEF = set()
 for f, (txt, p) in pages.items():
-    for m in re.finditer(r'"@id":"([^"]+)","@type"', txt): ALL_DEF.add(m.group(1))
+    for m in re.finditer(r'"@id":"([^"]+)","@type"|"@type":"[A-Za-z]+","@id":"([^"]+)"', txt): ALL_DEF.add(m.group(1) or m.group(2))
 for f, (txt, p) in pages.items():
     rel = os.path.relpath(f, ROOT)
     ids_defined, ids_ref = set(), set()
@@ -174,7 +174,7 @@ for f, (txt, p) in pages.items():
             walk({k: v for k, v in n.items() if k != "@id"}, False)
     for r in ids_ref:
         if r not in ids_defined and r not in ALL_DEF and not r.startswith("https://www.schubart-dulgeridis.de/"): errors.append(f"{rel}: Schema-Referenz {r} ohne Definition")
-    if '"speakable"' in txt and 'class="answer"' not in txt: errors.append(f"{rel}: speakable ohne .answer")
+    if '"speakable"' in txt and 'class="answer"' not in txt and 'class="lead"' not in txt: errors.append(f"{rel}: speakable ohne .answer")
     if rel not in ("404.html",) and "datePublished" in txt and not re.search(r'"dateModified":"2026-11-04"', txt) and rel in ("index.html","leistungen.html"): errors.append(f"{rel}: dateModified veraltet")
 
 # S&D-Palette: in den Stylesheets nur Markenfarben erlaubt

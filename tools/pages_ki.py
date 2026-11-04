@@ -32,7 +32,15 @@ def ki_readiness():
         "show_stand": False, "modified": "2026-11-04",
         "og_image": "/assets/img/og-ki-readiness.jpg", "og_image_height": 627,
         "og_alt": "KI-Readiness Check von THE GAP Lab: Management- und Mitarbeitendensicht im Vergleich",
-        "styles": ["/assets/ki-readiness.css"], "scripts": ["/assets/ki-readiness.js"],
+        "styles": ["/assets/ki-readiness.css"], "scripts": ["/assets/ki-readiness.js"], "speakable": False,
+        "schema_nodes": [{
+            "@type": "WebApplication", "@id": "https://gap-lab.de/ki-readiness#app", "name": "KI-Readiness Check",
+            "url": "https://gap-lab.de/ki-readiness", "applicationCategory": "BusinessApplication", "operatingSystem": "Browser",
+            "inLanguage": "de-DE", "isAccessibleForFree": True,
+            "description": "Kostenloser Check in drei Minuten: acht Signale zur KI-Reife einer Organisation, Management- und Mitarbeitendensicht, KI-Gap und Handlungsfeld.",
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
+            "provider": {"@id": "https://gap-lab.de/#organization"},
+        }],
         "body": '<div class="kic">' + body + "</div>",
     }
 
