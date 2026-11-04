@@ -296,6 +296,49 @@ def hero_gap():
             '</svg><figcaption>Hier setzt THE GAP Lab an: Beschlossenes kommt im Alltag an.</figcaption></figure>')
 
 
-def numbers_band(items):
-    return ('<section class="v-nums" aria-label="Das Wichtigste auf einen Blick"><div class="container"><ul>'
+def numbers_band(items, cls=""):
+    return (f'<section class="v-nums {cls}" aria-label="Das Wichtigste auf einen Blick"><div class="container"><ul>'
             + "".join(f'<li><b>{n}</b><span>{l}</span></li>' for n, l in items) + '</ul></div></section>')
+
+
+STAGE_DETAIL = {
+    "konzeption": ("Anlass, Ziel und Zielgruppe klären, Programme sichten, Konzept ableiten.",
+                   ["Zielbild und Zielgruppe", "Konzeptpapier mit Lernzielen und Ablauf", "Format- und Zeitplan", "Erfolgskriterien"]),
+    "entwicklung": ("Inhalte, Übungen und Fallbeispiele auf die Praxis der Teilnehmenden zuschneiden.",
+                    ["Unterlagen für Workshop oder Training", "Übungen und Fallbeispiele", "Leitfäden und Checklisten für den Transfer", "Ablaufplan"]),
+    "durchfuehrung": ("Workshop, Training oder Begleitung, durchgeführt von den Partnern.",
+                      ["Durchgeführte Maßnahme", "Unterlagen für Teilnehmende", "Kurze Auswertung mit Empfehlungen"]),
+    "vermarktung": ("Die Maßnahme als verständliches Angebot beschreiben und platzieren.",
+                    ["Angebotsbeschreibung", "Zielgruppenansprache", "Informationsmaterial"]),
+}
+
+
+def stage_matrix():
+    """Vier Stufen in einer Matrix: Leitfrage, Tun, Ergebnisse. Zeilen laufen über alle Spalten aligned (Subgrid)."""
+    cols = []
+    for i, (aid, name, q, _res) in enumerate(STAGES, 1):
+        tun, erg = STAGE_DETAIL[aid]
+        lis = "".join(f"<li>{e}</li>" for e in erg)
+        cols.append(
+            f'<li class="v-stage v-mcol s{i}" id="{aid}"><div class="v-chev"><span>{i:02d} · Stufe</span><strong>{name}</strong></div>'
+            f'<div class="v-mc q"><span class="v-lab">Leitfrage</span><p>{q}</p></div>'
+            f'<div class="v-mc t"><span class="v-lab">Was wir tun</span><p>{tun}</p></div>'
+            f'<div class="v-mc out"><span class="v-lab">Ergebnisse</span><ul>{lis}</ul></div></li>')
+    return '<ol class="v-matrix">' + "".join(cols) + "</ol>"
+
+
+def org_people():
+    """Aufbau und Team in einem Bild: S&D, Lab, drei Partner mit Porträt."""
+    kids = ""
+    for c, path, name, short, key, text in FIELDS:
+        p = PARTNERS[key]
+        kids += (f'<li class="{c}" id="{key}"><img class="v-opic" src="{esc(p["img"])}" alt="{esc(p["name"])}" width="112" height="112" loading="lazy" decoding="async">'
+                 f'<span class="v-lab">{short} · {esc(p["role"])}</span><h3>{esc(p["name"])}</h3>'
+                 f'<p class="v-ofield"><a href="{path}">{name}</a></p><p class="v-obio">{esc(p["short_bio"])}</p>'
+                 f'<span class="v-olinks"><a href="{path}">Fokusfeld {ARROW}</a><a href="{esc(p["linkedin"])}" rel="noopener noreferrer">LinkedIn</a></span></li>')
+    return (f'<figure class="v-org v-org-people"><figcaption class="sr-only">Muttergesellschaft, Tochtergesellschaft und drei Partner</figcaption>'
+            f'<div class="v-o1"><span class="v-lab">Muttergesellschaft</span><h3><a href="{SD}">Schubart &amp; Dulgeridis GmbH</a></h3><p>Forschungsbasierte Beratung und Diagnostik</p></div>'
+            '<div class="v-oline" aria-hidden="true"></div>'
+            '<div class="v-o2"><span class="v-lab">Tochtergesellschaft · Altdorf bei Nürnberg</span><h3>The Gap Lab GmbH</h3><p>Maßnahmen der Personalentwicklung</p></div>'
+            '<div class="v-oline v-oline2" aria-hidden="true"></div>'
+            f'<ul class="v-okids">{kids}</ul></figure>')

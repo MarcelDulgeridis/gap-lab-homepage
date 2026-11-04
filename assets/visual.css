@@ -480,3 +480,50 @@
 @media (max-width:1020px){.v-venn-wrap{grid-template-columns:1fr}}
 
 @media (max-width:480px){.hero-home h1{font-size:1.75rem}}
+
+/* ============ Stufen-Matrix (Leistungen) ============ */
+.v-matrix{list-style:none;margin:clamp(22px,3vw,34px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:auto auto auto 1fr;gap:0}
+.v-mcol{margin:0;min-width:0;grid-row:span 4;display:grid;grid-template-rows:subgrid;scroll-margin-top:96px}
+.v-mc{padding:18px 20px 18px 10px;min-width:0}
+.v-mc p{margin:0;color:#27344a;font-size:1rem;line-height:1.5}
+.v-mc.q p{font-family:var(--font-display);font-weight:800;color:var(--navy);font-size:1.08rem;line-height:1.3}
+.v-mc.t{border-top:1px solid var(--line)}
+.v-mc.out{background:var(--navy);color:var(--on-navy);padding:18px 20px;border-left:1px solid rgba(255,255,255,.14)}
+.v-mcol.s1 .v-mc.out{border-left:0}
+.v-mc.out .v-lab{color:var(--gold-mid)}
+.v-mc.out ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.v-mc.out li{margin:0;position:relative;padding-left:20px;color:var(--on-navy);font-size:.98rem;line-height:1.4}
+.v-mc.out li::before{content:"";position:absolute;left:3px;top:.55em;width:6px;height:6px;border:1px solid var(--gold-mid);transform:rotate(45deg)}
+@media (max-width:1020px){
+  .v-matrix{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;row-gap:26px}
+  .v-mcol{grid-row:auto;grid-template-rows:none;display:flex;flex-direction:column}
+  .v-mcol .v-chev{clip-path:none;margin-right:0}
+  .v-mc.out{border-left:0}
+  .v-mc.out{flex:1}
+}
+@media (max-width:640px){.v-matrix{grid-template-columns:1fr}}
+
+/* ============ Über uns: Aufbau mit Porträts ============ */
+.v-org-people .v-okids{grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
+.v-org-people .v-okids li{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px 24px;border-top:5px solid var(--c);background:var(--white);border:1px solid var(--line);border-top:5px solid var(--c)}
+.v-org-people .v-opic{width:112px;height:112px;border-radius:50%;object-fit:cover;border:3px solid var(--c);margin:-34px 0 14px;background:var(--cream)}
+.v-org-people .v-okids .v-lab{color:var(--c)}
+.v-org-people h3{font-size:1.25rem;line-height:1.2;margin-bottom:4px}
+.v-ofield{margin:0 0 10px;font-family:var(--font-display);font-weight:800;color:var(--c)}
+.v-ofield a{color:var(--c);text-decoration:none}
+.v-ofield a:hover{text-decoration:underline;text-underline-offset:3px}
+.v-obio{margin:0 0 14px;color:var(--muted);font-size:.96rem;line-height:1.45}
+.v-olinks{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:.9rem}
+.v-olinks a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-line);padding-bottom:2px}
+.v-olinks a:hover{border-bottom-color:var(--gold)}
+.v-org-people .v-okids li::before{top:-37px}
+.v-nums.n3 ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+.v-nums.n3 li:last-child b{font-size:clamp(2.6rem,5vw,4.4rem)}
+@media (max-width:760px){
+  .v-org-people .v-okids{grid-template-columns:1fr;gap:52px;margin-top:30px}
+  .v-nums.n3 ul{grid-template-columns:1fr}.v-nums.n3 li{border-left:0;border-top:1px solid rgba(255,255,255,.16);padding-left:0}.v-nums.n3 li:first-child{border-top:0}
+}
+
+.v-olinks a{display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
+
+.v-org-people h3{hyphens:manual;-webkit-hyphens:manual}

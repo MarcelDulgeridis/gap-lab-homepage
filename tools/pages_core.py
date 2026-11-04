@@ -145,48 +145,13 @@ def leistungen():
     ]
     page["faqs"] = faqs
 
-    def service(num, anchor, title, ausgang, tun, ergebnisse, geeignet):
-        erg = "".join(f"<li>{e}</li>" for e in ergebnisse)
-        return f"""<article class="v-service" id="{anchor}">
-  <div class="v-shead"><span class="big" aria-hidden="true">{num:02d}</span><div><span>{num:02d} · Stufe</span><h2>{title}</h2></div></div>
-  <div class="v-sflow two">
-    <div class="v-sbox mid"><span class="v-lab">Was wir tun</span><p>{tun}</p></div>
-    <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
-    <div class="v-sbox out"><span class="v-lab">Ergebnisse</span><ul>{erg}</ul></div>
-  </div>
-</article>"""
-
-    services = (
-        service(1, "konzeption", "Konzeption",
-                "Was die Maßnahme bewirken soll, ist offen.",
-                "Anlass, Ziel und Zielgruppe klären, vorhandene Programme sichten, ein Konzept ableiten.",
-                ["Zielbild und Zielgruppe", "Konzeptpapier mit Lernzielen und Ablauf", "Format- und Zeitplan", "Erfolgskriterien"],
-                "eine Maßnahme neu aufgesetzt oder überarbeitet wird.")
-        + service(2, "entwicklung", "Entwicklung",
-                  "Das Konzept steht, Inhalte und Materialien fehlen.",
-                  "Inhalte, Übungen und Fallbeispiele erarbeiten, zugeschnitten auf die Praxis der Teilnehmenden.",
-                  ["Unterlagen für Workshop oder Training", "Übungen und Fallbeispiele", "Leitfäden und Checklisten für den Transfer", "Ablaufplan"],
-                  "bisherige Materialien zu allgemein sind.")
-        + service(3, "durchfuehrung", "Durchführung",
-                  "Die Maßnahme soll mit hoher Qualität umgesetzt werden.",
-                  "Workshop, Training oder Begleitung im vereinbarten Format, durchgeführt von den Partnern.",
-                  ["Durchgeführte Maßnahme", "Unterlagen für Teilnehmende", "Kurze Auswertung mit Empfehlungen"],
-                  "Teams oder Führungskräfte in konkreten Situationen handlungsfähiger werden sollen.")
-        + service(4, "vermarktung", "Vermarktung",
-                  "Gute Maßnahmen bleiben unsichtbar, wenn Nutzen und Zielgruppe unklar sind.",
-                  "Die Maßnahme als verständliches Angebot beschreiben und platzieren.",
-                  ["Angebotsbeschreibung", "Zielgruppenansprache", "Informationsmaterial"],
-                  "ein Entwicklungsangebot verständlich beschrieben werden soll.")
-    )
-
     body = (
         page_hero(page, "Leistungen von der Konzeption bis zur Vermarktung", "Vier Stufen von der Idee zur Maßnahme.")
         + section(
             answer_box("Kurzantwort: Was bietet The Gap Lab an?",
                        "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
-            + head("Überblick", "Vier Stufen, vier Leitfragen", "")
-            + V.value_chain(results=False)
-            + services, "", "")
+            + head("Die vier Stufen", "Von der Leitfrage zum Ergebnis", "")
+            + V.stage_matrix(), "", "")
         + section(V.innolab_strip(), "section-white v-tight", "")
         + section(
             head("Abgrenzung", "Messen und Entwickeln",
@@ -248,30 +213,13 @@ def ueber_uns():
     }
     page["schema_nodes"] = person_nodes()
 
-    def wide(key):
-        p = PARTNERS[key]
-        return f"""<article class="partner-wide" id="{key}">
-  <div class="photo"><img src="{esc(p['img'])}" alt="{esc(p['name'])}" width="448" height="448" loading="lazy" decoding="async"></div>
-  <div>
-    <span class="role">{esc(p['role'])} · {esc(p['focus'])}</span>
-    <h3>{esc(p['name'])}</h3>
-    <p>{esc(p['short_bio'])}</p>
-    <div class="hero-actions">
-      {link_arrow(p['fokus_path'], 'Fokusfeld ansehen')}
-      <a class="link-arrow" href="{esc(p['linkedin'])}" rel="noopener noreferrer">LinkedIn</a>
-    </div>
-  </div>
-</article>"""
-
     page["body"] = (
         page_hero(page, "Drei Partner, eine Gesellschaft für Personalentwicklung", "Tochter der Schubart &amp; Dulgeridis GmbH.")
+        + V.numbers_band([("3", "Partner<br>mit Namen"), ("2", "Professoren für BWL<br>an der IU"), ("1", "Verbund mit der<br>Schubart &amp; Dulgeridis GmbH")], "n3")
         + section(
             answer_box("Kurzantwort: Wer ist THE GAP Lab?",
-                       f"Die Marke der The Gap Lab GmbH in {SITE['city']}, Tochter der Schubart &amp; Dulgeridis GmbH.")
-            + head("Aufbau", "Gesellschaft, Verbund und Fokusfelder", "", "aufbau-title") + V.org(), "", "aufbau-title")
-        + section(head("Die Partner", "Wer hinter THE GAP Lab steht", "", "partner-title")
-                  + '<div class="grid">' + wide("constantin-schubart") + wide("oliver-meschkat") + wide("marcel-dulgeridis") + "</div>",
-                  "section-cream", "partner-title")
+                       f"Die Marke der The Gap Lab GmbH in {SITE['city']}, Tochter der Schubart &amp; Dulgeridis GmbH. Geschäftsführer ist Prof. Dr. Constantin Schubart.")
+            + head("Aufbau und Team", "Wer hinter THE GAP Lab steht", "", "aufbau-title") + V.org_people(), "", "aufbau-title")
         + cta_band("Wir lernen uns im Gespräch kennen.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page

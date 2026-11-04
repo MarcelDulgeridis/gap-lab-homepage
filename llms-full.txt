@@ -45,21 +45,17 @@ URL: https://gap-lab.de/leistungen
 Start Leistungen
 Leistungen von der Konzeption bis zur Vermarktung Vier Stufen von der Idee zur Maßnahme.
 Kurzantwort: Was bietet The Gap Lab an? Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung & Rhetorik, Leadership & Organisation sowie Finance & Transformation.
-Überblick Vier Stufen, vier Leitfragen
+Die vier Stufen Von der Leitfrage zum Ergebnis
 01 · Stufe Konzeption Leitfrage Was soll die Maßnahme bewirken, und für wen?
-02 · Stufe Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
-03 · Stufe Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
-04 · Stufe Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
-01 01 · Stufe Konzeption
-Was wir tun Anlass, Ziel und Zielgruppe klären, vorhandene Programme sichten, ein Konzept ableiten.
+Was wir tun Anlass, Ziel und Zielgruppe klären, Programme sichten, Konzept ableiten.
 Ergebnisse Zielbild und Zielgruppe Konzeptpapier mit Lernzielen und Ablauf Format- und Zeitplan Erfolgskriterien
-02 02 · Stufe Entwicklung
-Was wir tun Inhalte, Übungen und Fallbeispiele erarbeiten, zugeschnitten auf die Praxis der Teilnehmenden.
+02 · Stufe Entwicklung Leitfrage Wie wird aus dem Konzept Praxis für die Teilnehmenden?
+Was wir tun Inhalte, Übungen und Fallbeispiele auf die Praxis der Teilnehmenden zuschneiden.
 Ergebnisse Unterlagen für Workshop oder Training Übungen und Fallbeispiele Leitfäden und Checklisten für den Transfer Ablaufplan
-03 03 · Stufe Durchführung
-Was wir tun Workshop, Training oder Begleitung im vereinbarten Format, durchgeführt von den Partnern.
+03 · Stufe Durchführung Leitfrage In welchem Format wirkt die Maßnahme am besten?
+Was wir tun Workshop, Training oder Begleitung, durchgeführt von den Partnern.
 Ergebnisse Durchgeführte Maßnahme Unterlagen für Teilnehmende Kurze Auswertung mit Empfehlungen
-04 04 · Stufe Vermarktung
+04 · Stufe Vermarktung Leitfrage Wie werden Nutzen und Zielgruppe verständlich?
 Was wir tun Die Maßnahme als verständliches Angebot beschreiben und platzieren.
 Ergebnisse Angebotsbeschreibung Zielgruppenansprache Informationsmaterial
 InnoLab · konkret beauftragbar Fünf Formate vor Ort. Alle Formate ansehen
@@ -105,17 +101,12 @@ URL: https://gap-lab.de/ueber-uns
 
 Start Über uns
 Drei Partner, eine Gesellschaft für Personalentwicklung Tochter der Schubart & Dulgeridis GmbH.
-Kurzantwort: Wer ist THE GAP Lab? Die Marke der The Gap Lab GmbH in Altdorf bei Nürnberg, Tochter der Schubart & Dulgeridis GmbH.
-Aufbau Gesellschaft, Verbund und Fokusfelder
-Struktur: Muttergesellschaft, Tochtergesellschaft und drei Fokusfelder mit Partnern Muttergesellschaft Schubart & Dulgeridis GmbH Forschungsbasierte Beratung und Diagnostik
+3 Partner mit Namen 2 Professoren für BWL an der IU 1 Verbund mit der Schubart & Dulgeridis GmbH
+Kurzantwort: Wer ist THE GAP Lab? Die Marke der The Gap Lab GmbH in Altdorf bei Nürnberg, Tochter der Schubart & Dulgeridis GmbH. Geschäftsführer ist Prof. Dr. Constantin Schubart.
+Aufbau und Team Wer hinter THE GAP Lab steht
+Muttergesellschaft, Tochtergesellschaft und drei Partner Muttergesellschaft Schubart & Dulgeridis GmbH Forschungsbasierte Beratung und Diagnostik
 Tochtergesellschaft · Altdorf bei Nürnberg The Gap Lab GmbH Maßnahmen der Personalentwicklung
-Verhandeln Verhandlungsführung & Rhetorik Dr. Oliver Meschkat Partner
-Führen Leadership & Organisation Prof. Dr. Constantin Schubart Geschäftsführer
-Wirtschaften Finance & Transformation Prof. Dr. Marcel Dulgeridis Partner
-Die Partner Wer hinter THE GAP Lab steht
-Geschäftsführer · Leadership & Organisation Prof. Dr. Constantin Schubart Professor für BWL an der IU. Rollen im Zusammenspiel von Strategie, Kultur und Führung. Fokusfeld ansehen LinkedIn
-Partner · Verhandlungsführung & Rhetorik Dr. Oliver Meschkat Experte für Verhandlungsführung, Rhetorik und Argumentation. Fokusfeld ansehen LinkedIn
-Partner · Finance & Transformation Prof. Dr. Marcel Dulgeridis Professor für BWL an der IU. Schwerpunkt Rechnungswesen und Finanzberichterstattung. Fokusfeld ansehen LinkedIn
+Verhandeln · Partner Dr. Oliver Meschkat Verhandlungsführung & Rhetorik Experte für Verhandlungsführung, Rhetorik und Argumentation. Fokusfeld LinkedIn Führen · Geschäftsführer Prof. Dr. Constantin Schubart Leadership & Organisation Professor für BWL an der IU. Rollen im Zusammenspiel von Strategie, Kultur und Führung. Fokusfeld LinkedIn Wirtschaften · Partner Prof. Dr. Marcel Dulgeridis Finance & Transformation Professor für BWL an der IU. Schwerpunkt Rechnungswesen und Finanzberichterstattung. Fokusfeld LinkedIn
 Wir lernen uns im Gespräch kennen. Kostenlos, 20 bis 30 Minuten.
 Erstgespräch vereinbaren
 
@@ -293,11 +284,7 @@ Einstieg kostenfrei, bei InnoLab Design eine angerechnete Raumbegehung
 85 % berichten von akuter Veränderungsmüdigkeit (Kommunikationsverantwortliche, DACH). Quelle: Communications Heatmap 2025, FTI Consulting und Quadriga Hochschule Berlin
 66 % sehen Führungskräfte als wichtigste Botschafter im Wandel. Quelle: Communications Heatmap 2025
 46,4 Mrd. € investierte die Wirtschaft in Weiterbildung. Quelle: IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)
-02 · Die Lösung Ein Portfolio, fünf Hebel Einzeln buchbar oder als abgestimmte Folge.
-01 · Prinzip Eine echte Aufgabe Ihre eigene Fragestellung statt Fallbeispiele.
-02 · Prinzip Erst erleben, dann übertragen Kurze Inputs, lange Anwendung.
-03 · Prinzip Ergebnis statt Teilnahme Unterlagen, die weiter genutzt werden.
-04 · Prinzip Forschungsbasiert Evaluiert mit 124 Teilnehmenden über 10 Monate.
+02 · Die Lösung Fünf Hebel, einzeln oder als Folge
 Abgestimmte Folgen mit rund 10 % Vorteil InnoLab Journey Strategie → Raum → Innovationswoche
 Schritt 1 · 2 Tage Innovation Scorecard Ausrichten, messen, steuern Schritt 2 · 3 Tage InnoLab Design Raum analysieren und mitgestalten Schritt 3 · 5 Tage InnoLab Sprint Verstehen, bauen, pitchen
 24.700 € statt 27.400 € netto, rund 10 % Vorteil
@@ -306,55 +293,55 @@ Format A · 2 + 1 Tage Change Leadership Führungskräfte tragen den Wandel Form
 14.900 € statt 16.600 € netto
 03 · Die Formate Ablauf, Nutzen, Ergebnis und Preis je Format
 01 · InnoLab Sprint 02 · InnoLab Design 03 · Learning Design 4.0 04 · Change Leadership 05 · Innovation Scorecard
-Format 01 von 05 · Innovationswoche InnoLab Sprint Ideen entstehen nicht im Meeting. Sondern am Prototyp.
-5 Tage vor Ort 8–12 Teilnehmende Festpreis 13.300 € netto
-Fünf Tage, in denen Ihre Teams eine echte Fragestellung bis zum präsentationsfähigen Prototyp entwickeln. Fünf Tage, ein Spannungsbogen nach dem Design-Thinking-Prozess
+01 Innovationswoche InnoLab Sprint Ideen entstehen nicht im Meeting. Sondern am Prototyp.
+5 Tage vor Ort 8–12 Teilnehmende
+Fünf Tage, in denen Ihre Teams eine echte Fragestellung bis zum präsentationsfähigen Prototyp entwickeln.
 Tag 1 · Challenge Kreative Zerstörung Fragestellung schärfen, Ziele nach OKR vereinbaren, erster Bau mit LEGO® Serious Play®. Tag 2 · Verstehen Kunde und Markt Persona, Kaufmotive, PESTEL, Five Forces, Point of View. Tag 3 · Ideen Vom Einfall zum Modell Brainwriting, Morphologischer Kasten, Walt-Disney-Methode, Prototyp in 3D. Tag 4 · Umsetzen Geschäftsmodell Business Model Canvas, Nutzenpyramide, Kernbotschaften, Kanban und Scrum. Tag 5 · Pitch Die Höhle der Löwen Fünf-Minuten-Pitch vor Entscheidern, gemeinsame Bewertung, Transferplan.
+Nutzen
+Prototypen statt Folien. Future Skills im Ernstfall. Teams über Grenzen hinweg.
 Für wen Nachwuchs- und Führungskräfte, Trainees, Auszubildende, interdisziplinäre Projektteams
 Ergebnis Prototyp · Business Model Canvas · Pitch · Transferplan mit Verantwortlichen
 Voraussetzung Ein flexibel nutzbarer Raum, eine echte Fragestellung, Entscheider am Pitch-Tag
-Nutzen
-Prototypen statt Folien. Future Skills im Ernstfall. Teams über Grenzen hinweg.
 Paketpreis 13.300 € netto · ca. 1.108 € pro Person* Einstieg: Challenge-Klärung (60 Minuten, kostenfrei) Einstieg anfragen
-Format 02 von 05 · Lernraumberatung InnoLab Design Ein Raum ist keine Kulisse. Sondern ein Lernwerkzeug.
-3 Tage vor Ort Projektteam Festpreis 8.300 € netto
-Wir analysieren Ihre Schulungs-, Meeting- oder Projekträume und entwickeln mit den Nutzenden ein Konzept für ein Innovation Lab, priorisiert nach Wirkung und Budget. Drei Tage, ein entscheidungsreifes Konzept
+02 Lernraumberatung InnoLab Design Ein Raum ist keine Kulisse. Sondern ein Lernwerkzeug.
+3 Tage vor Ort Projektteam
+Wir analysieren Ihre Schulungs-, Meeting- oder Projekträume und entwickeln mit den Nutzenden ein Konzept für ein Innovation Lab, priorisiert nach Wirkung und Budget.
 Tag 1 · Ist-Analyse Reifegrad sichtbar machen Begehung, Bewertung aller Gestaltungsparameter, Kurzbefragung der Nutzenden. Tag 2 · Co-Design Betroffene zu Beteiligten Workshop mit allen Nutzergruppen, Zielbild je Parameter, erste Entwürfe. Tag 3 · Roadmap Wirkung vor Aufwand Kosten-Nutzen-Bewertung, Priorisierung nach Eisenhower, Quick Wins und Ausbaustufen. Ergebnis Entscheidungsvorlage Reifegradprofil, Maßnahmenplan und Budgetrahmen, für Geschäftsführung oder Förderantrag.
+Nutzen
+Investitionen mit Begründung. Akzeptanz statt Widerstand. Ein Raum, der mitwächst.
 Für wen Bildungszentren, Kammern, Akademien, HR- und L&D-Abteilungen, Unternehmen mit Projektflächen
 Ergebnis Reifegradprofil · Zielbild · priorisierte Roadmap · Budgetrahmen
 Optional Umsetzungsbegleitung und Evaluation nach dem ersten Betriebsquartal
-Nutzen
-Investitionen mit Begründung. Akzeptanz statt Widerstand. Ein Raum, der mitwächst.
 Paketpreis 8.300 € netto Einstieg: Raumbegehung und Erstgespräch (½ Tag vor Ort, 1.250 €, bei Beauftragung angerechnet) Einstieg anfragen
-Format 03 von 05 · Train the Trainer Learning Design 4.0 Wissen wird nicht übertragen. Sondern konstruiert.
-3 Tage vor Ort 6–12 Teilnehmende Festpreis 8.300 € netto
-Für Ausbildende, interne Trainer und Dozierende, die ihre Lernformate vom Frontalunterricht zu aktivem, spielerischem und kompetenzorientiertem Lernen weiterentwickeln wollen. Sechs Module, vom Erleben zum eigenen Format (Ermöglichungsdidaktik statt Stoffvermittlung)
+03 Train the Trainer Learning Design 4.0 Wissen wird nicht übertragen. Sondern konstruiert.
+3 Tage vor Ort 6–12 Teilnehmende
+Für Ausbildende, interne Trainer und Dozierende, die ihre Lernformate vom Frontalunterricht zu aktivem, spielerischem und kompetenzorientiertem Lernen weiterentwickeln wollen.
 Modul 1 Constructive Alignment Lernziele, Methoden und Prüfung aus einem Guss gestalten. Modul 2 Dramaturgie Spannungsbogen über Tage, Inputs von höchstens 20 bis 30 Minuten. Modul 3 Game-Based Learning Zwölf Erfolgsfaktoren für Spiele mit Lernwirkung, inklusive LEGO® Serious Play®. Modul 4 Methodenkoffer Rund 40 erprobte Kreativ-, Analyse- und Reflexionsmethoden gezielt auswählen. Modul 5 Lernen auf Augenhöhe Moderation, Pausenautonomie, Fehlerkultur und emotionale Intelligenz im Seminar. Transfer Erproben und evaluieren Eigenes Format überarbeiten, im Team testen, mit Feedback auswerten.
+Nutzen
+Aktivierung statt Frontalunterricht. Sofort einsetzbar. Wirkung, die sich zeigen lässt.
 Für wen Ausbildende nach AEVO, interne Trainer, Dozierende an Akademien und Kammern, L&D-Teams
 Ergebnis Überarbeitetes Lernformat · Methodenkoffer · Evaluationsbogen · Transferplan
 Ergänzung Hospitation und Feedback im ersten Durchlauf des neuen Formats
-Nutzen
-Aktivierung statt Frontalunterricht. Sofort einsetzbar. Wirkung, die sich zeigen lässt.
 Paketpreis 8.300 € netto · ca. 692 € pro Person* Einstieg: Format-Check eines Seminars (kostenfrei) Einstieg anfragen
-Format 04 von 05 · Führungskräftetraining Change Leadership Wandel scheitert selten am Konzept. Sondern an dem, was er Menschen abverlangt.
-2 + 1 Tage vor Ort 8–14 Teilnehmende Festpreis 8.300 € netto
-Für Führungskräfte und Change Agents, die Innovationen nicht nur beschließen, sondern im Team zum Tragen bringen. Fünf Bausteine: zwei Trainingstage und ein Transfertag (wollen, können, dürfen)
+04 Führungskräftetraining Change Leadership Wandel scheitert selten am Konzept. Sondern an dem, was er Menschen abverlangt.
+2 + 1 Tage vor Ort 8–14 Teilnehmende
+Für Führungskräfte und Change Agents, die Innovationen nicht nur beschließen, sondern im Team zum Tragen bringen.
 Standort Innovationstypen Aktiv, passiv, reaktiv oder zufällig: Wo steht Ihre Organisation? Diagnose Widerstand verstehen Nicht-Wissen und Nicht-Wollen, sachliche, machtpolitische und persönliche Gründe. Haltung Emotionale Intelligenz Gefühle erkennen, Sinn vermitteln, psychologische Sicherheit schaffen. Kommunikation Change-Kommunikation Storytelling, Kernbotschaften, schnelle Erfolge sichtbar machen. Nach 6 Wochen Transfertag Eigenes Vorhaben reflektieren, nachsteuern, Fehlerkultur verankern.
+Nutzen
+Beteiligte statt Betroffene. Klarheit statt Informationsflut. Umsetzung statt Absicht.
 Für wen Führungskräfte aller Ebenen, Projektleitungen, Innovations- und Change-Verantwortliche, Multiplikatoren
 Ergebnis Stakeholder- und Widerstandsanalyse · Kommunikationsplan · persönlicher Change-Fahrplan
 Methoden Fallarbeit, LEGO® Serious Play®, Rollenspiel, kollegiale Beratung
-Nutzen
-Beteiligte statt Betroffene. Klarheit statt Informationsflut. Umsetzung statt Absicht.
 Paketpreis 8.300 € netto · ca. 692 € pro Person* Einstieg: Vorgespräch zu Ihrem Vorhaben (kostenfrei) Einstieg anfragen
-Format 05 von 05 · Strategieworkshop Innovation Scorecard Innovation braucht keinen Glauben. Sondern Kennzahlen.
-2 Tage vor Ort 4–10 Teilnehmende Festpreis 5.800 € netto
-Für Geschäftsführung, Innovations-, HR- und Bildungsverantwortliche, die Innovation Labs, Lernformate oder Innovationsprogramme strategisch verankern und ihren Erfolg belegen wollen. Vier Arbeitsblöcke an zwei Tagen, mit Ihren Entscheidern an Ihren Zahlen
+05 Strategieworkshop Innovation Scorecard Innovation braucht keinen Glauben. Sondern Kennzahlen.
+2 Tage vor Ort 4–10 Teilnehmende
+Für Geschäftsführung, Innovations-, HR- und Bildungsverantwortliche, die Innovation Labs, Lernformate oder Innovationsprogramme strategisch verankern und ihren Erfolg belegen wollen.
 Tag 1 · Vormittag Standortbestimmung Innovationstyp, bestehende Aktivitäten, Check an 13 empirisch abgeleiteten Erfolgsfaktoren. Tag 1 · Nachmittag Strategie und Mandat Vision, Mission, Zielgruppen, und was mit Ergebnissen geschieht: Kerngeschäft, Inkubator oder Stopp. Tag 2 · Vormittag Kennzahlen Prozessbegleitende Bewertung, Nutzungs-, Lern- und Marktkennzahlen, Evaluation auf Mikro- und Makroebene. Tag 2 · Nachmittag Business Case Kosten-Nutzen-Rechnung, Reifegrad-Roadmap, Entscheidungsvorlage und Förderlogik.
+Nutzen
+Daten statt Bauchgefühl. Rückhalt statt Rechtfertigung. Ressourcen, die bleiben.
 Für wen Geschäftsführung, Innovations-, HR- und Bildungsverantwortliche, Controlling
 Ergebnis Innovation Scorecard · Strategie-Canvas · Reifegrad-Roadmap · Entscheidungsvorlage
 Kombinierbar Als Auftakt vor InnoLab Design oder zur Wirkungsmessung nach dem InnoLab Sprint
-Nutzen
-Daten statt Bauchgefühl. Rückhalt statt Rechtfertigung. Ressourcen, die bleiben.
 Paketpreis 5.800 € netto Einstieg: Erfolgsfaktoren-Check (90 Minuten, kostenfrei) Einstieg anfragen
 04 · Der Beleg Aus der Forschung in die Praxis.
 Konzipiert und evaluiert in einem Education Innovation Lab. Die Mehrheit der Befragten bewertete Kreativität, Zusammenarbeit und Freude am Lernen mit gut oder sehr gut.

@@ -81,3 +81,4 @@ Siehe Abschlussbericht: vollständiger Unternehmensgegenstand und Stammkapital (
 - **Archiv der ausführlichen Fassung:** Git-Tag `archive/volltext-2026-11-04` (und Branch `archiv-volltext-2026-11-04`).
   Wiederherstellen: `git checkout archive/volltext-2026-11-04 -- .` (dann `python3 tools/build.py`).
 - **Archiv vor dem visuellen Relaunch:** Tag `archive/kompakt-v2-2026-11-04` (Branch `archiv-kompakt-v2-2026-11-04`).
+- **Archiv vor Überarbeitung von Leistungen, Über uns, InnoLab:** Tag `archive/relaunch-v1-2026-11-04` (Branch `archiv-relaunch-v1-2026-11-04`).
