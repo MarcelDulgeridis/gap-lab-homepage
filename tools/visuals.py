@@ -27,10 +27,10 @@ STAGES = [
 
 def gap_bridge():
     breaks = [
-        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben offen.", "/fokusfelder/verhandlungsfuehrung"),
-        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind unklar.", "/fokusfelder/leadership-organisation"),
-        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Entscheidungen ohne Bild der Finanzwirkung.", "/fokusfelder/finance-transformation"),
         ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Zielgruppe nicht.", "/leistungen#konzeption"),
+        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind unklar.", "/fokusfelder/leadership-organisation"),
+        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben offen.", "/fokusfelder/verhandlungsfuehrung"),
+        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Entscheidungen ohne Bild der Finanzwirkung.", "/fokusfelder/finance-transformation"),
     ]
     cols = "".join(
         f'<li class="v-break {c}"><span class="v-bigno" aria-hidden="true">{i:02d}</span><span class="v-tagline">{t}</span>'
@@ -340,5 +340,5 @@ def org_people():
             f'<div class="v-o1"><span class="v-lab">Muttergesellschaft</span><h3><a href="{SD}">Schubart &amp; Dulgeridis GmbH</a></h3><p>Forschungsbasierte Beratung und Diagnostik</p></div>'
             '<div class="v-oline" aria-hidden="true"></div>'
             '<div class="v-o2"><span class="v-lab">Tochtergesellschaft · Altdorf bei Nürnberg</span><h3>The Gap Lab GmbH</h3><p>Maßnahmen der Personalentwicklung</p></div>'
-            '<div class="v-oline v-oline2" aria-hidden="true"></div>'
+            '<p class="v-ocap"><span>Drei Fokusfelder, drei Partner</span></p>'
             f'<ul class="v-okids">{kids}</ul></figure>')

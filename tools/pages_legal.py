@@ -7,24 +7,6 @@ from pages_core import FAQ_COMPANY, FAQ_COOPERATION, FAQ_CONTACT, FAQ_ALL, MAIL,
 SD = SITE["parent_url"]
 
 
-def faq():
-    page = {
-        "path": "/faq", "short": "FAQ",
-        "title": "FAQ — Häufige Fragen zu THE GAP Lab",
-        "description": "Antworten auf häufige Fragen: Was macht THE GAP Lab, wer steht dahinter, wie läuft eine Zusammenarbeit ab und wie komme ich zum Erstgespräch?",
-        "priority": "0.7", "llms_group": "Unternehmen", "faqs": FAQ_ALL, "speakable": True, "speakable_selector": [".page-hero .lead"],
-    }
-    page["body"] = (
-        page_hero(page, "Häufige Fragen zu THE GAP Lab",
-                  "Kurze Antworten zu Unternehmen, Zusammenarbeit und Kontakt. Wenn Ihre Frage fehlt, schreiben Sie uns.")
-        + section(head("Unternehmen", "Über die Gesellschaft", "") + faq_block(FAQ_COMPANY), "", "")
-        + section(head("Zusammenarbeit", "Ablauf und Kosten", "") + faq_block(FAQ_COOPERATION), "section-white", "")
-        + section(head("Kontakt", "Erreichbarkeit und Termine", "") + faq_block(FAQ_CONTACT), "", "")
-        + cta_band("Weitere Fragen klären wir im Erstgespräch.", "Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.")
-    )
-    return page
-
-
 def impressum():
     page = {
         "path": "/impressum", "short": "Impressum",
@@ -121,4 +103,5 @@ def notfound():
 
 
 def build():
-    return [faq(), impressum(), datenschutz(), notfound()]
+    import pages_faq
+    return [pages_faq.faq(), impressum(), datenschutz(), notfound()]

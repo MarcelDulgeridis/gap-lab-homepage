@@ -11,7 +11,7 @@ Vollständiger Inhalt aller Seiten als Text: https://gap-lab.de/llms-full.txt
 - [Start](https://gap-lab.de/): The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.
 - [Über uns](https://gap-lab.de/ueber-uns): Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.
 - [Kontakt](https://gap-lab.de/kontakt): Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.
-- [FAQ](https://gap-lab.de/faq): Antworten auf häufige Fragen: Was macht THE GAP Lab, wer steht dahinter, wie läuft eine Zusammenarbeit ab und wie komme ich zum Erstgespräch?
+- [FAQ](https://gap-lab.de/faq): 38 Antworten zu THE GAP Lab: Angebot, Fokusfelder, InnoLab, KI-Readiness Check, Zusammenarbeit und Datenschutz. Mit Suche und Themenfilter.
 
 ## Leistungen
 - [Leistungen](https://gap-lab.de/leistungen): Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.

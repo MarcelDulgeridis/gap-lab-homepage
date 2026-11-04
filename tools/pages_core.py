@@ -79,7 +79,7 @@ def home():
 </div></div></section>
 """
 
-    nums = V.numbers_band([("3", "Disziplinen<br>in einer Gesellschaft"), ("3", "Partner<br>mit Namen"), ("5", "InnoLab-Formate<br>vor Ort"), ("20–30", "Minuten Erstgespräch<br>kostenlos")])
+    nums = V.numbers_band([("3", "Disziplinen<br>in einer Gesellschaft"), ("3", "Partner<br>mit Namen"), ("5", "InnoLab-Formate<br>vor Ort"), ("20–30", "Minuten Erstgespräch,<br>kostenlos")])
 
     problem = section(
         head("01 · Das Problem", "Wirkung geht an vier Stellen verloren", "", "problem-title") + V.gap_bridge(), "", "problem-title")
