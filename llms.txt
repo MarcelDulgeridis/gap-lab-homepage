@@ -5,30 +5,30 @@
 Firmendaten: The Gap Lab GmbH, Hessenstraße 28, 90518 Altdorf bei Nürnberg; HRB 46649, Amtsgericht Nürnberg; Geschäftsführer: Prof. Dr. Constantin Schubart (einzelvertretungsberechtigt). Muttergesellschaft: Schubart & Dulgeridis GmbH (https://www.schubart-dulgeridis.de/).
 Kurzfassung: THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch (Konzeption, Entwicklung, Durchführung, Vermarktung) in drei Fokusfeldern: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation. Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte. Konkrete Angebote: fünf InnoLab-Formate (Innovation, Change, Lernen) und der kostenlose KI-Readiness Check. Einstieg: kostenloses Erstgespräch (20 bis 30 Minuten).
 
-Vollständiger Inhalt aller Seiten als Text: https://gap-lab.de/llms-full.txt
+Vollständiger Inhalt aller Seiten als Text: https://www.gap-lab.de/llms-full.txt
 
 ## Unternehmen
-- [Start](https://gap-lab.de/): The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.
-- [Über uns](https://gap-lab.de/ueber-uns): Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.
-- [Kontakt](https://gap-lab.de/kontakt): Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.
-- [FAQ](https://gap-lab.de/faq): 38 Antworten zu THE GAP Lab: Angebot, Fokusfelder, InnoLab, KI-Readiness Check, Zusammenarbeit und Datenschutz. Mit Suche und Themenfilter.
+- [Start](https://www.gap-lab.de/): The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.
+- [Über uns](https://www.gap-lab.de/ueber-uns): Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.
+- [Kontakt](https://www.gap-lab.de/kontakt): Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.
+- [FAQ](https://www.gap-lab.de/faq): 38 Antworten zu THE GAP Lab: Angebot, Fokusfelder, InnoLab, KI-Readiness Check, Zusammenarbeit und Datenschutz. Mit Suche und Themenfilter.
 
 ## Leistungen
-- [Leistungen](https://gap-lab.de/leistungen): Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.
-- [InnoLab](https://gap-lab.de/innolab): InnoLab: fünf Formate vor Ort für Innovation, Change und Personalentwicklung, vom Sprint mit Prototyp bis zur Innovation Scorecard. Festpreis ab 5.800 € netto.
+- [Leistungen](https://www.gap-lab.de/leistungen): Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.
+- [InnoLab](https://www.gap-lab.de/innolab): InnoLab: fünf Formate vor Ort für Innovation, Change und Personalentwicklung, vom Sprint mit Prototyp bis zur Innovation Scorecard. Festpreis ab 5.800 € netto.
 
 ## Fokusfelder
-- [Fokusfelder](https://gap-lab.de/fokusfelder): Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.
-- [Verhandlungsführung & Rhetorik](https://gap-lab.de/fokusfelder/verhandlungsfuehrung): Verhandlungsführung und Rhetorik: Begriffe, typische Ausgangslagen und mögliche Bausteine einer Maßnahme — mit Dr. Oliver Meschkat als Ansprechpartner.
-- [Leadership & Organisation](https://gap-lab.de/fokusfelder/leadership-organisation): Leadership & Organisation: Begriffe, typische Ausgangslagen und mögliche Bausteine für Führungsklarheit — mit Prof. Dr. Constantin Schubart als Ansprechpartner.
-- [Finance & Transformation](https://gap-lab.de/fokusfelder/finance-transformation): Finance & Transformation: Finanzverständnis für Führungskräfte, Kennzahlen und wirtschaftliche Bewertung von Veränderung — mit Prof. Dr. Marcel Dulgeridis.
+- [Fokusfelder](https://www.gap-lab.de/fokusfelder): Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.
+- [Verhandlungsführung & Rhetorik](https://www.gap-lab.de/fokusfelder/verhandlungsfuehrung): Verhandlungsführung und Rhetorik: Begriffe, typische Ausgangslagen und mögliche Bausteine einer Maßnahme — mit Dr. Oliver Meschkat als Ansprechpartner.
+- [Leadership & Organisation](https://www.gap-lab.de/fokusfelder/leadership-organisation): Leadership & Organisation: Begriffe, typische Ausgangslagen und mögliche Bausteine für Führungsklarheit — mit Prof. Dr. Constantin Schubart als Ansprechpartner.
+- [Finance & Transformation](https://www.gap-lab.de/fokusfelder/finance-transformation): Finance & Transformation: Finanzverständnis für Führungskräfte, Kennzahlen und wirtschaftliche Bewertung von Veränderung — mit Prof. Dr. Marcel Dulgeridis.
 
 ## Werkzeuge
-- [KI-Readiness](https://gap-lab.de/ki-readiness): Kostenloser KI-Readiness Check in 3 Minuten: Acht Signale, Management- und Mitarbeitendensicht und Ihr KI-Gap, ohne Login und mit sofortigem Ergebnis.
+- [KI-Readiness](https://www.gap-lab.de/ki-readiness): Kostenloser KI-Readiness Check in 3 Minuten: Acht Signale, Management- und Mitarbeitendensicht und Ihr KI-Gap, ohne Login und mit sofortigem Ergebnis.
 
 ## Wissen
-- [Glossar](https://gap-lab.de/glossar): 19 Begriffe kurz erklärt: BATNA, ZOPA, Cashflow, Business Case, Rollenklarheit, KI-Gap und mehr, mit Link zum passenden Fokusfeld.
+- [Glossar](https://www.gap-lab.de/glossar): 19 Begriffe kurz erklärt: BATNA, ZOPA, Cashflow, Business Case, Rollenklarheit, KI-Gap und mehr, mit Link zum passenden Fokusfeld.
 
 ## Rechtliches
-- [Impressum](https://gap-lab.de/impressum): Impressum der The Gap Lab GmbH, Altdorf bei Nürnberg: Anschrift, Geschäftsführer, Handelsregister HRB 46649 (Amtsgericht Nürnberg) und Kontakt.
-- [Datenschutz](https://gap-lab.de/datenschutz): Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.
+- [Impressum](https://www.gap-lab.de/impressum): Impressum der The Gap Lab GmbH, Altdorf bei Nürnberg: Anschrift, Geschäftsführer, Handelsregister HRB 46649 (Amtsgericht Nürnberg) und Kontakt.
+- [Datenschutz](https://www.gap-lab.de/datenschutz): Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.

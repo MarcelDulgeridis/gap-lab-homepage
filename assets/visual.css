@@ -553,3 +553,5 @@
 .v-org-people .v-olinks{margin-top:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;padding-top:6px}
 .v-term dd a{white-space:nowrap}
 .v-term dd a .icon{display:inline-block;vertical-align:-.15em;margin-left:.3em}
+.v-break{padding-top:14px}
+@media (max-width:1024px){.v-breaks{padding-top:0}}

@@ -280,3 +280,12 @@
   .il .il-tabs ol{grid-template-columns:repeat(5,minmax(124px,1fr));overflow-x:auto;padding-bottom:6px}
 }
 @media (max-width:560px){.il .il-tiles a{grid-template-columns:46px minmax(0,1fr)}}
+@media (max-width:900px){
+  .il .il-hsteps{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));row-gap:22px}
+  .il .il-person{grid-template-columns:132px minmax(0,1fr);align-items:center}
+  .il .il-person .photo{max-width:132px}
+}
+@media (max-width:560px){
+  .il .il-hsteps{grid-template-columns:1fr}
+  .il .il-person{grid-template-columns:minmax(0,1fr);align-items:start}
+}
