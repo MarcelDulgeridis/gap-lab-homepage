@@ -213,6 +213,39 @@ def problem_rows():
     return '<ol class="il-problems">' + "".join(lis) + "</ol>"
 
 
+PICK = [
+    ("Ihre Teams sollen eine echte Fragestellung bis zum Prototyp bringen", "sprint", "Prototyp, Business Model Canvas, Pitch"),
+    ("Ihre Räume sollen zum Lernwerkzeug werden", "design", "Reifegradprofil, Roadmap, Budgetrahmen"),
+    ("Ihre Lehre soll aktiv statt frontal werden", "learning-design", "Überarbeitetes Lernformat, Methodenkoffer"),
+    ("Ihre Führungskräfte sollen den Wandel tragen", "change-leadership", "Widerstandsanalyse, Kommunikationsplan, Change-Fahrplan"),
+    ("Ihre Innovation soll mit Kennzahlen steuerbar werden", "scorecard", "Scorecard, Reifegrad-Roadmap, Entscheidungsvorlage"),
+]
+
+
+def exec_summary():
+    fm = {f["id"]: f for f in FORMATS}
+    rows = "".join(
+        f'<li><span class="il-task">{esc(t)}</span><a class="il-fmt" href="#{fid}"><strong>{esc(fm[fid]["name"])}</strong><small>{esc(fm[fid]["kind"])}</small></a>'
+        f'<span class="il-res"><span class="il-lab">Ergebnis</span>{esc(res)}</span><span class="il-dur">{esc(fm[fid]["dur"].replace(" vor Ort", ""))}</span></li>'
+        for t, fid, res in PICK)
+    diff = ("Ihre echte Aufgabe statt Fallbeispiele", "Prototypen statt Folien", "Anwendung statt Frontalunterricht", "Daten statt Bauchgefühl")
+    gain = ("Entscheidungsreife Ergebnisse, die Sie weiterverwenden", "Investitionen mit Begründung nach Nutzen und Kosten", "Akzeptanz, weil Betroffene zu Beteiligten werden", "Fortschritt, der sich messen und belegen lässt")
+    return (
+        '<section class="section il-exec" id="auf-einen-blick" aria-labelledby="exec-h"><div class="container">'
+        '<p class="eyebrow">Auf einen Blick</p>'
+        '<h2 id="exec-h">Fünf Formate, 2 bis 5 Tage vor Ort, jedes mit einem Ergebnis zum Weiterverwenden.</h2>'
+        + answer_box("Kurz erklärt", "InnoLab ist ein Portfolio für Innovation, Change und Lernen, durchgeführt bei Ihnen vor Ort. "
+                     "Jedes Format endet mit einem Ergebnis: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset.")
+        + '<div class="il-exec-grid">'
+          '<div class="il-exec-col"><h3>Was InnoLab unterscheidet</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in diff) + "</ul></div>"
+          '<div class="il-exec-col"><h3>Was Sie davon haben</h3><ul>' + "".join(f"<li>{esc(x)}</li>" for x in gain) + "</ul></div>"
+          "</div>"
+        '<h3 class="il-h3">Welches Format für welche Aufgabe</h3>'
+        f'<ol class="il-pick">{rows}</ol>'
+        f'<dl class="il-plate"><div><dt>5</dt><dd>Formate</dd></div><div><dt>2–5</dt><dd>Tage vor Ort</dd></div><div><dt>ab {eur(5800)}</dt><dd>Festpreis netto, Konzeption und Reisezeit inklusive</dd></div><div><dt>Einstieg</dt><dd>kostenfrei, bei InnoLab Design eine angerechnete Raumbegehung</dd></div></dl>'
+        "</div></section>")
+
+
 def journey():
     def node(cls, label, name, meta):
         return f'<li class="il-node {cls}"><span class="il-lab">{label}</span><strong>{name}</strong><span>{meta}</span></li>'
@@ -317,17 +350,7 @@ def build_body():
 <aside class="flow-card il-flow" aria-labelledby="il-flow-h"><h2 id="il-flow-h">Die fünf Formate im Überblick</h2><ol class="flow-list">{flow}</ol>
 <div class="flow-foot"><strong>Der Einstieg ist kostenfrei.</strong>Dabei klären wir das passende Format.</div></aside>
 </div></section>"""
-    trust = """<section class="trust" aria-label="InnoLab in Zahlen"><div class="container"><div class="trust-grid">
-<div class="trust-item"><strong>5 Formate</strong><span>Innovation, Raum, Lernen, Führung, Steuerung</span></div>
-<div class="trust-item"><strong>Bei Ihnen vor Ort</strong><span>2 bis 5 Tage, Konzeption und Reisezeit im Preis</span></div>
-<div class="trust-item"><strong>Festpreis ab 5.800&nbsp;€</strong><span>netto, Bündel mit rund 10 % Vorteil</span></div>
-<div class="trust-item"><strong>124 Teilnehmende</strong><span>im Realexperiment über 10 Monate</span></div>
-</div></div></section>"""
-    answer = section(
-        answer_box("Kurz erklärt",
-                   "InnoLab ist ein Portfolio aus fünf Formaten für Innovation, Change und Lernen, durchgeführt bei Ihnen vor Ort. "
-                   "Sie erhalten greifbare Ergebnisse: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset."),
-        "section-white il-tight", "")
+    summary = exec_summary()
     problem = section(
         head("01 · Das Problem", "Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.", "", "problem-h")
         + '<div class="grid grid-4 il-stats">'
@@ -336,7 +359,7 @@ def build_body():
         + stat("66", " %", "sehen Führungskräfte als wichtigste Botschafter im Wandel.", "Communications Heatmap 2025")
         + stat("46,4", " Mrd. €", "investierte die Wirtschaft in Weiterbildung.", "IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)")
         + "</div>"
-        + '<h3 class="il-h3">Fünf Bruchstellen, fünf Antworten</h3>' + problem_rows(),
+        ,
         "", "problem-h")
     loesung = section(
         head("02 · Die Lösung", "Ein Portfolio, fünf Hebel", "Einzeln buchbar oder als abgestimmte Folge.", "loesung-h")
@@ -402,7 +425,7 @@ def build_body():
     ablauf = ablauf.replace("<section ", '<section id="zusammenarbeit" ', 1)
     preise = preise.replace("<section ", '<section id="preise" ', 1)
     faq = faq.replace("<section ", '<section id="faq" ', 1)
-    return '<div class="il">' + hero + trust + answer + problem + loesung + formate_head + formate + forschung + ablauf + preise + faq + cta + "</div>"
+    return '<div class="il">' + hero + summary + problem + loesung + formate_head + formate + forschung + ablauf + preise + faq + cta + "</div>"
 
 
 def schema_nodes():

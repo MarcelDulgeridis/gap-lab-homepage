@@ -36,7 +36,7 @@ FAQ_COOPERATION = [
      "<p>Am Anfang steht ein kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams) zu Anlass, Ziel und Zielgruppe. "
      "Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ("Was kostet eine Zusammenarbeit?",
-     "<p>Für die <a href=\"/innolab#preise\">InnoLab-Formate</a> gelten Festpreise ab 5.800 € netto. Alle anderen Maßnahmen erhalten nach dem Erstgespräch ein individuelles Angebot nach Umfang.</p>"),
+     "<p>Nach dem Erstgespräch erhalten Sie ein individuelles Angebot nach Umfang. Die Preise der <a href=\"/innolab#preise\">InnoLab-Formate</a> stehen auf der InnoLab-Seite.</p>"),
     ("Muss ich alle vier Stufen beauftragen?",
      "<p>Nein. Stufen lassen sich einzeln oder als Kette buchen. Das klären wir im Erstgespräch.</p>"),
     ("Wie läuft eine Maßnahme ab?",
@@ -80,7 +80,7 @@ def home():
     <ol class="flow-list">
       <li><div><strong>Drei Disziplinen</strong><span>Verhandeln, Führen, Wirtschaften.</span></div></li>
       <li><div><strong>Drei Partner mit Namen</strong><span>Zwei Professoren, ein Dr.</span></div></li>
-      <li><div><strong>Festpreis ab 5.800&nbsp;€</strong><span>InnoLab, netto, vor Ort.</span></div></li>
+      <li><div><strong>InnoLab: fünf Formate</strong><span>Konkret beauftragbar, vor Ort.</span></div></li>
       <li><div><strong>Kostenloses Erstgespräch</strong><span>20 bis 30 Minuten.</span></div></li>
     </ol>
     <div class="flow-foot"><strong>Tochter der Schubart &amp; Dulgeridis GmbH.</strong>Altdorf bei Nürnberg.</div>

@@ -192,6 +192,13 @@ for css in glob.glob(os.path.join(ROOT, "assets", "*.css")):
 rawcss = open(os.path.join(ROOT, "assets", "visual.css"), encoding="utf-8").read()
 if "border-radius:50%" in rawcss.replace("object-fit:cover","") and "v-fc footer img{width:56px;height:56px;border-radius:50%" not in rawcss: errors.append("visual.css: runde Formen außer Porträts")
 
+# Preise nur auf der InnoLab-Seite
+for f, (txt, p_) in pages.items():
+    rel = os.path.relpath(f, ROOT)
+    if rel == "innolab.html": continue
+    body = re.sub(r'<script type="application/ld\+json">.*?</script>', "", txt, flags=re.S)
+    if re.search(r"\d[\d.,]*\s*(?:&nbsp;)?(?:€|Euro)|Festpreis", html.unescape(re.sub(r"<[^>]+>", " ", body))): errors.append(f"{rel}: Preis oder Festpreis außerhalb der InnoLab-Seite")
+
 print()
 for w in warns: print("WARN ", w)
 for e in errors: print("FEHLER", e)
