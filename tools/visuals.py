@@ -27,7 +27,7 @@ STAGES = [
 
 def gap_bridge():
     breaks = [
-        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Zielgruppe nicht.", "/leistungen#konzeption"),
+        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate gehen an der Zielgruppe vorbei.", "/leistungen#konzeption"),
         ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind unklar.", "/fokusfelder/leadership-organisation"),
         ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben offen.", "/fokusfelder/verhandlungsfuehrung"),
         ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Entscheidungen ohne Bild der Finanzwirkung.", "/fokusfelder/finance-transformation"),
