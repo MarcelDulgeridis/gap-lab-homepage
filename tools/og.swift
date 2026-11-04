@@ -13,8 +13,8 @@ func draw(_ s: String, _ size: CGFloat, _ weight: NSFont.Weight, _ color: NSColo
 }
 draw("THE GAP LAB", 104, .black, .white, 80, 300, kern: -3)
 gold.set(); NSRect(x: 84, y: 270, width: 120, height: 5).fill()
-draw("Personalentwicklung mit Verhandlungsstärke,", 38, .semibold, NSColor(white: 0.92, alpha: 1), 80, 196)
-draw("Führungsklarheit und Finanzverständnis.", 38, .semibold, NSColor(white: 0.92, alpha: 1), 80, 146)
+draw("Personalentwicklung, die verbindet.", 52, .bold, NSColor(white: 0.95, alpha: 1), 80, 190)
+draw("Verhandlungsstärke, Führungsklarheit und Finanzverständnis.", 30, .regular, NSColor(white: 0.8, alpha: 1), 80, 140)
 draw("The Gap Lab GmbH · Altdorf bei Nürnberg · gap-lab.de", 26, .regular, gold, 80, 60)
 img.unlockFocus()
 let rep = NSBitmapImageRep(data: img.tiffRepresentation!)!

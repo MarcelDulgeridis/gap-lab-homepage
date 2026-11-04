@@ -56,7 +56,7 @@ def org_node():
         "legalName": SITE["legal_name"],
         "url": f"{DOMAIN}/",
         "logo": {"@type": "ImageObject", "url": f"{DOMAIN}/assets/img/icon-512.png", "width": 512, "height": 512},
-        "image": f"{DOMAIN}/assets/img/og-the-gap-lab.jpg",
+        "image": f"{DOMAIN}/assets/img/og-start.jpg",
         "description": SITE["org_description"],
         "email": SITE["email"],
         "telephone": SITE["phone_e164"],
@@ -144,7 +144,7 @@ def graph_for(page):
         "about": {"@id": f"{DOMAIN}/#organization"},
         "datePublished": SITE["published"],
         "dateModified": page.get("modified", SITE["modified"]),
-        "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")},
+        "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-start.jpg")},
     }
     if page.get("seo_keywords"):
         webpage["keywords"] = page["seo_keywords"]
@@ -273,9 +273,9 @@ def render(page):
     title = page["title"]
     desc = page["description"]
     robots = page.get("robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1")
-    og_img = DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")
+    og_img = DOMAIN + page.get("og_image", "/assets/img/og-start.jpg")
     og_h = page.get("og_image_height", 630)
-    og_alt = esc(page.get("og_alt", "THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis"))
+    og_alt = esc(page.get("og_alt", "THE GAP Lab: Personalentwicklung, die verbindet. Verhandlungsstärke, Führungsklarheit und Finanzverständnis."))
     extra_css = "".join(f'<link rel="stylesheet" href="{versioned(c)}">\n' for c in page.get("styles", []))
     graph = json.dumps(graph_for(page), ensure_ascii=False, separators=(",", ":"))
     head = f"""<!DOCTYPE html>
