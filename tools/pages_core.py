@@ -68,7 +68,7 @@ def home():
 <section class="hero hero-home"><div class="container"><div class="hero-grid">
   <div>
     <p class="eyebrow">Personalentwicklung · Altdorf bei Nürnberg</p>
-    <h1>Personal&shy;entwicklung, die <span class="accent">Verhandlungs&shy;stärke, Führungs&shy;klarheit und Finanz&shy;verständnis</span> verbindet.</h1>
+    <h1>Personal&shy;entwicklung, die <span class="accent">Verhandlungs&shy;stärke, Führungs&shy;klarheit und Finanz&shy;verständnis verbindet.</span></h1>
     <p class="lead">THE GAP Lab entwickelt und führt Maßnahmen durch, die im Arbeitsalltag ankommen.</p>
     <div class="hero-actions">
       <a class="btn" href="/kontakt">Erstgespräch vereinbaren {ARROW}</a>
