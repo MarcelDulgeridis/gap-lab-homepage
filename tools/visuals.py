@@ -99,7 +99,7 @@ def teasers():
     rows = "".join(
         f'<li><a href="/innolab#{f["id"]}"><span class="v-days" role="img" aria-label="{f["days"]} Tage">'
         + "".join('<i></i>' for _ in range(f["days"])) +
-        f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])}</small></span><span class="v-fp">{eur(f["price"])}</span></a></li>'
+        f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])}</small></span><span class="v-fp">{esc(f["dur"].replace(" vor Ort",""))}</span></a></li>'
         for f in FORMATS)
     demo = ('<div class="v-gapdemo" role="img" aria-label="Beispiel: Management bewertet 82, Mitarbeitende bewerten 41, Gap 41 Punkte">'
             '<div><span>Management</span><svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true"><rect class="tr" width="100" height="8"/><rect class="b1" width="82" height="8"/></svg><b>82</b></div>'
@@ -108,7 +108,7 @@ def teasers():
     return (
         '<div class="v-duo">'
         '<article class="v-panel"><p class="v-kick">InnoLab · Innovation, Change, Personalentwicklung</p>'
-        '<h3>Fünf Formate vor Ort, zum Festpreis.</h3>'
+        '<h3>Fünf Formate vor Ort.</h3>'
         f'<ul class="v-minilist" aria-label="Formate mit Dauer und Preis">{rows}</ul>'
         f'<a class="btn btn-gold" href="/innolab">InnoLab ansehen {ARROW}</a></article>'
         '<article class="v-panel v-panel-dark"><p class="v-kick">KI-Readiness Check · kostenlos</p>'
@@ -261,9 +261,9 @@ def innolab_strip():
     from pages_innolab import FORMATS, eur
     rows = "".join(
         f'<li><a href="/innolab#{f["id"]}"><span class="v-days" role="img" aria-label="{f["days"]} Tage">' + "".join("<i></i>" for _ in range(f["days"])) +
-        f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])} · {esc(f["people"])}</small></span><span class="v-fp">{eur(f["price"])}</span></a></li>'
+        f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])} · {esc(f["people"])}</small></span><span class="v-fp">{esc(f["dur"].replace(" vor Ort",""))}</span></a></li>'
         for f in FORMATS)
-    return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate zum Festpreis.</h3>'
+    return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate vor Ort.</h3>'
             f'<a class="btn" href="/innolab">Alle Formate ansehen {ARROW}</a></div><ul class="v-minilist" aria-label="InnoLab-Formate">{rows}</ul></div>')
 
 

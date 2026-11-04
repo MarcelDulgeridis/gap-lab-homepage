@@ -27,7 +27,7 @@ def terms():
     out += [
         ("THE GAP Lab", "Marke der The Gap Lab GmbH mit Sitz in Altdorf bei Nürnberg. Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung und ist eine Tochtergesellschaft der Schubart & Dulgeridis GmbH.", "f4", "THE GAP Lab", "/ueber-uns"),
         ("Fokusfeld", "Eines der drei inhaltlichen Schwerpunktgebiete von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation sowie Finance & Transformation. Jedes Fokusfeld hat einen benannten Partner als Ansprechpartner.", "f4", "THE GAP Lab", "/fokusfelder"),
-        ("InnoLab", "Portfolio aus fünf Formaten vor Ort für Innovation, Change und Personalentwicklung (InnoLab Sprint, InnoLab Design, Learning Design 4.0, Change Leadership, Innovation Scorecard), jeweils zum Festpreis.", "f4", "THE GAP Lab", "/innolab"),
+        ("InnoLab", "Portfolio aus fünf Formaten vor Ort für Innovation, Change und Personalentwicklung (InnoLab Sprint, InnoLab Design, Learning Design 4.0, Change Leadership, Innovation Scorecard), jeweils mit eigenem Ergebnis.", "f4", "THE GAP Lab", "/innolab"),
         ("KI-Gap", "Der Abstand zwischen der Einschätzung der Führung und der Einschätzung der Mitarbeitenden zur KI-Reife der eigenen Organisation. Der kostenlose KI-Readiness Check macht ihn in drei Minuten sichtbar.", "f4", "THE GAP Lab", "/ki-readiness"),
     ]
     return sorted(out, key=lambda t: t[0].lower().replace("ä", "a").replace("ö", "o").replace("ü", "u"))
