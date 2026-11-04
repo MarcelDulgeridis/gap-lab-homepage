@@ -410,3 +410,13 @@
 .sources ul{list-style:none;padding-left:1.1em}.sources li{position:relative}.sources li::before{content:"";position:absolute;left:-1em;top:.7em;width:5px;height:5px;border:1px solid var(--gold);transform:rotate(45deg)}
 .v-dark .section-head p.eyebrow{color:var(--gold-mid)}
 .il .il-list li::before{content:none}
+
+/* ---- Kompaktes Partnerelement ---- */
+.v-pc{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--gold-line);border-left:5px solid var(--c);padding:16px 22px;max-width:560px}
+.v-pc img{width:80px;height:80px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.v-pc strong{display:block;font-family:var(--font-display);font-weight:800;font-size:1.12rem;line-height:1.25}
+.v-pc span{display:block;color:var(--muted);font-size:.95rem;margin:2px 0 6px}
+/* Leistungsmodul mit zwei Boxen */
+.v-sflow.two{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr)}
+@media (max-width:1020px){.v-sflow.two{grid-template-columns:1fr}}
+.v-flist .v-frow strong{margin-bottom:2px}

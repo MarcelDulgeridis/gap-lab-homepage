@@ -151,3 +151,7 @@
 .il .il-defs-main div{border-top:0;padding:16px 0}
 .il .il-defs-main div:last-child{border-bottom:0}
 @media (max-width:760px){.il .il-defs-main{grid-template-columns:1fr}.il .il-defs-main div{border-top:1px solid var(--line)}}
+
+.il .il-prow2{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.il .il-pn small{display:block;font-family:var(--font-text);font-weight:600;font-size:.82rem;color:var(--muted)}
+@media (max-width:980px){.il .il-prow2{grid-template-columns:1fr}}

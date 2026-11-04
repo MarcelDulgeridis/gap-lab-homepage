@@ -54,9 +54,7 @@ def breadcrumb_html(page):
 
 def partner_card(key, with_fokus=True):
     p = PARTNERS[key]
-    links = [f'<a href="{esc(p["sd_url"])}">Profil bei Schubart &amp; Dulgeridis</a>']
-    if with_fokus:
-        links.insert(0, f'<a href="{esc(p["fokus_path"])}">Fokusfeld ansehen</a>')
+    links = [f'<a href="{esc(p["fokus_path"])}">Fokusfeld ansehen</a>']
     return (
         '<article class="partner">'
         f'<div class="photo"><img src="{esc(p["img"])}" alt="{esc(p["name"])}" width="448" height="448" loading="lazy" decoding="async"></div>'
@@ -64,7 +62,6 @@ def partner_card(key, with_fokus=True):
         f'<span class="role">{esc(p["role"])}</span>'
         f'<h3>{esc(p["name"])}</h3>'
         f'<p class="focus">{esc(p["focus"])}</p>'
-        f'<p>{esc(p["short_bio"])}</p>'
         f'<div class="links">{"".join(links)}</div>'
         "</div></article>"
     )
