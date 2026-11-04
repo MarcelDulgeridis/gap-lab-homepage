@@ -63,8 +63,8 @@ def venn(with_links=True):
 <title id="venn-t">Drei Disziplinen überschneiden sich in der Entscheidung</title>
 <desc id="venn-d">Venn-Diagramm: Verhandeln, Führen und Wirtschaften überschneiden sich in der Entscheidung im Alltag.</desc>
 <circle class="vn vn1" cx="190" cy="165" r="140"/><circle class="vn vn2" cx="330" cy="165" r="140"/><circle class="vn vn3" cx="260" cy="285" r="140"/>
-<text class="vt" x="128" y="120" text-anchor="middle">Verhandeln</text>
-<text class="vt" x="392" y="120" text-anchor="middle">Führen</text>
+<text class="vt" x="140" y="118" text-anchor="middle">Verhandeln</text>
+<text class="vt" x="382" y="118" text-anchor="middle">Führen</text>
 <text class="vt" x="260" y="378" text-anchor="middle">Wirtschaften</text>
 <text class="vt vc" x="260" y="205" text-anchor="middle">Entscheidung</text><text class="vt vc" x="260" y="230" text-anchor="middle">im Alltag</text>
 </svg>"""
@@ -73,7 +73,7 @@ def venn(with_links=True):
         p = PARTNERS[key]
         inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><span><strong>{name}</strong>'
                  f'<small>{text}</small><em>{esc(p["name"])}</em></span>')
-        rows.append(f'<li><a class="v-frow {c}" href="{path}">{inner}</a></li>' if with_links else f"<li>{inner}</li>")
+        rows.append(f'<li><a class="v-frow {c}" href="{path}">{inner}</a></li>' if with_links else f'<li><div class="v-frow {c}">{inner}</div></li>')
     return f'<div class="v-venn-wrap">{svg}<ul class="v-flist">{"".join(rows)}</ul></div>'
 
 
@@ -81,7 +81,7 @@ def statements():
     items = [
         ("3", "Disziplinen in einer Gesellschaft", "Verhandlung, Führung und Finanzen greifen in einer Gesellschaft ineinander, statt in getrennten Projekten mit getrennten Ansprechpartnern behandelt zu werden."),
         ("3", "Partner mit Namen", "Die Partner sind öffentlich benannt. Zwei sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule, einer ist promoviert und auf Verhandlungsführung spezialisiert."),
-        ("1", "Verbund mit Beratung und Diagnostik", f'Als Tochtergesellschaft steht THE GAP Lab im Verbund mit der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die forschungsbasierte Beratung und Diagnostik anbietet (THE GAP).'),
+        ("1", "Verbund mit Beratung", f'Als Tochtergesellschaft steht THE GAP Lab im Verbund mit der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die forschungsbasierte Beratung und Diagnostik anbietet (THE GAP).'),
     ]
     return '<div class="v-statements">' + "".join(
         f'<div class="v-st"><span class="v-bignum">{n}</span><h3>{h}</h3><p>{p}</p></div>' for n, h, p in items) + "</div>"
@@ -115,7 +115,9 @@ def teasers():
         '<article class="v-panel v-panel-dark"><p class="v-kick">KI-Readiness Check · kostenlos</p>'
         '<h3>Ihre KI-Strategie steht. Steht Ihre Organisation auch?</h3>'
         '<p>In drei Minuten sehen Sie, wie groß die Lücke zwischen Führungsplan und Arbeitsalltag bei Ihrer KI-Einführung ist. Ohne Login, mit sofortigem Ergebnis.</p>'
-        + demo + f'<a class="btn btn-gold" href="/ki-readiness">KI-Gap messen {ARROW}</a></article></div>')
+        + demo
+        + '<ol class="v-mini3" aria-label="So funktioniert der Check"><li><b>1</b>Acht Aussagen bewerten</li><li><b>2</b>Zwei Sichten angeben</li><li><b>3</b>KI-Gap erhalten</li></ol>'
+        + f'<a class="btn btn-gold" href="/ki-readiness">KI-Gap messen {ARROW}</a></article></div>')
 
 
 def measure_develop():

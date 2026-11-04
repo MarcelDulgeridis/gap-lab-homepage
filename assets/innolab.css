@@ -16,8 +16,8 @@
 .il .il-stats{margin-top:clamp(28px,4vw,44px)}
 .il .il-stat{border-top:3px solid var(--gold);padding-top:16px}
 .il .il-stat p{margin:0;color:#27344a;font-size:1rem}
-.il .il-num{font-family:var(--font-display);font-weight:900;font-size:clamp(2.4rem,4vw,3.4rem);letter-spacing:-.03em;line-height:1;color:var(--navy)!important;margin-bottom:10px!important}
-.il .il-num span{font-size:.45em;letter-spacing:0;color:var(--gold-text);font-weight:800}
+.il .il-stat .il-num{font-family:var(--font-display);font-weight:900;font-size:clamp(2.4rem,4vw,3.4rem);letter-spacing:-.03em;line-height:1;color:var(--navy)!important;margin-bottom:10px!important}
+.il .il-stat .il-num span{font-size:.45em;letter-spacing:0;color:var(--gold-text);font-weight:800}
 .il .il-stat .il-src{margin-top:10px;font-size:.85rem;color:var(--muted)}
 .il .il-problems{list-style:none;margin:0;padding:0}
 .il .il-prow{margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,.9fr);gap:12px clamp(18px,3vw,40px);padding:22px 0;border-top:1px solid var(--line);align-items:start}
@@ -80,9 +80,9 @@
 .il .il-defs div{grid-template-columns:1fr;gap:2px;padding:14px 0}
 .il .il-defs dt{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text)}
 .il .il-defs dd{font-size:.98rem}
-.il .il-research{background:var(--navy);border-color:var(--navy);color:var(--on-navy-muted)}
-.il .il-research .il-lab{color:var(--gold-mid)}
-.il .il-research p{margin:0;color:var(--on-navy);font-size:.98rem;line-height:1.55}
+.il .il-box.il-research,.il .il-alt .il-box.il-research{background:var(--navy);border-color:var(--navy);color:var(--on-navy-muted)}
+.il .il-box.il-research .il-lab{color:var(--gold-mid)}
+.il .il-box.il-research p{margin:0;color:var(--on-navy);font-size:.98rem;line-height:1.55}
 .il .il-price{border-top:4px solid var(--gold-mid)}
 .il .il-price .il-in{margin:14px 0 18px;font-size:.96rem;color:#27344a;line-height:1.5}
 .il .il-price .btn{width:100%}
@@ -146,3 +146,8 @@
   .il .il-table{min-width:600px}
 }
 @media print{.il .il-jump{display:none}}
+
+.il .il-defs-main{margin-top:clamp(26px,3vw,36px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(16px,2vw,28px);border-top:3px solid var(--gold)}
+.il .il-defs-main div{border-top:0;padding:16px 0}
+.il .il-defs-main div:last-child{border-bottom:0}
+@media (max-width:760px){.il .il-defs-main{grid-template-columns:1fr}.il .il-defs-main div{border-top:1px solid var(--line)}}

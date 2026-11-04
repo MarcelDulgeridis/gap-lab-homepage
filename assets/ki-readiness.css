@@ -331,3 +331,10 @@
 .kic .teaser-row i.w60{width:60%}.kic .teaser-row i.w70{width:70%}
 .kic .t-bar i{opacity:.85}
 @media print{.site-header,.site-footer,.skip-link,.rule-top,.cta-band,.stand{display:none!important}}
+
+/* Barrierefreiheit (gap-lab.de): Mindestgrößen und Kontrast für Kleinschrift */
+.kic .k-eyebrow{font-size:12px;color:#7a5a27}
+.kic .k-tag{font-size:12px}
+.kic .demo-note{color:#c9d0da}
+.kic .how b,.kic .fields b,.kic .t-legend b{font-size:12px;color:#7a5a27}
+.kic b{min-height:0}
