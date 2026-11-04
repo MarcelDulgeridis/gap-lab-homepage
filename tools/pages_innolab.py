@@ -428,7 +428,7 @@ def innolab():
         "priority": "0.9", "llms_group": "Leistungen", "faqs": FAQS, "show_stand": False, "journey": "/innolab", "speakable": True, "modified": "2026-11-04",
         "og_image": "/assets/img/og-innolab.jpg", "og_image_height": 630,
         "og_alt": "InnoLab: Innovation, die im Unternehmen ankommt. Fünf Formate vor Ort, Festpreis ab 5.800 Euro netto.",
-        "styles": ["/assets/innolab.css"], "scripts": ["/assets/innolab.js"], "schema_nodes": schema_nodes(),
+        "styles": ["/assets/visual.css", "/assets/innolab.css"], "scripts": ["/assets/innolab.js"], "schema_nodes": schema_nodes(),
     }
     page["body"] = build_body()
     return page
