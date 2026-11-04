@@ -14,7 +14,7 @@
       if (r.right > vw + 1.5 && cs.position !== "fixed") out.push(["off-right", sel(e) + " right=" + Math.round(r.right)]);
       if (r.left < -1.5) out.push(["off-left", sel(e) + " left=" + Math.round(r.left)]);
       if (!e.matches(".hero,.page-hero") && (cs.overflow === "hidden" || cs.overflowX === "hidden") && e.scrollWidth > e.clientWidth + 2 && e.clientWidth > 0 && !/^(svg|img)$/i.test(e.tagName)) out.push(["clipped-x", sel(e) + " " + e.scrollWidth + ">" + e.clientWidth]);
-      if ((cs.overflow === "hidden" || cs.overflowY === "hidden") && e.scrollHeight > e.clientHeight + 2 && e.clientHeight > 0 && !/^(svg|img)$/i.test(e.tagName)) out.push(["clipped-y", sel(e) + " " + e.scrollHeight + ">" + e.clientHeight]);
+      if (!e.matches(".hero,.page-hero") && (cs.overflow === "hidden" || cs.overflowY === "hidden") && e.scrollHeight > e.clientHeight + 2 && e.clientHeight > 0 && !/^(svg|img)$/i.test(e.tagName)) out.push(["clipped-y", sel(e) + " " + e.scrollHeight + ">" + e.clientHeight]);
     });
     // Text-Blätter
     var leaves = all.filter(function (e) {
