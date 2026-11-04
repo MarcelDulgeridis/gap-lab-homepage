@@ -173,37 +173,23 @@ assert 5800 + 8300 + 13300 == 27400 and 8300 + 8300 == 16600
 
 FAQS = [
     ("Was ist InnoLab?",
-     "<p>InnoLab ist ein Portfolio aus fünf Formaten für Innovation, Change und Personalentwicklung, die bei Ihnen vor Ort stattfinden: "
-     "<a href=\"#sprint\">InnoLab Sprint</a> (Innovationswoche), <a href=\"#design\">InnoLab Design</a> (Lernraumberatung), "
-     "<a href=\"#learning-design\">Learning Design 4.0</a> (Train the Trainer), <a href=\"#change-leadership\">Change Leadership</a> (Führungskräftetraining) "
-     "und <a href=\"#scorecard\">Innovation Scorecard</a> (Strategieworkshop). Die Formate wurden in einem Education Innovation Lab konzipiert und evaluiert.</p>"),
+     "<p>Ein Portfolio aus fünf Formaten für Innovation, Change und Lernen, bei Ihnen vor Ort: "
+     "<a href=\"#sprint\">InnoLab Sprint</a>, <a href=\"#design\">InnoLab Design</a>, <a href=\"#learning-design\">Learning Design 4.0</a>, "
+     "<a href=\"#change-leadership\">Change Leadership</a> und <a href=\"#scorecard\">Innovation Scorecard</a>.</p>"),
     ("Was kostet InnoLab?",
-     "<p>Alle Formate gibt es zum Festpreis, netto zzgl. gesetzlicher MwSt.: Innovation Scorecard 5.800 €, InnoLab Design, Learning Design 4.0 und Change Leadership je 8.300 €, InnoLab Sprint 13.300 €. "
-     "Der Preis setzt sich aus 2.500 € je Tag vor Ort und 800 € Pauschale für Konzeption, Organisation und Reisezeit zusammen. Zusätzlich fallen Fahrtkosten (0,40 € je km) und Hotel nach Aufwand an. "
-     "Die Bündel InnoLab Journey (24.700 €) und Change &amp; Learning (14.900 €) sparen rund 10 %. Details: <a href=\"#preise\">Preise und Pakete</a>.</p>"),
+     "<p>Festpreise netto: Innovation Scorecard 5.800 €, InnoLab Design, Learning Design 4.0 und Change Leadership je 8.300 €, InnoLab Sprint 13.300 €. "
+     "Preis = 2.500 € je Tag vor Ort + 800 € Pauschale. Zusätzlich Fahrtkosten (0,40 € je km) und Hotel nach Aufwand. Bündel sparen rund 10 %: <a href=\"#preise\">Preise und Pakete</a>.</p>"),
     ("Welches Format passt zu uns?",
-     "<p>Der Sprint passt, wenn Teams an einer echten Fragestellung bis zum Prototyp arbeiten sollen. InnoLab Design passt, wenn Räume zum Lernwerkzeug werden sollen. "
-     "Learning Design 4.0 passt für Ausbildende und Trainer, Change Leadership für Führungskräfte und Change Agents, die Scorecard für die Geschäftsführung, die Innovation mit Kennzahlen steuern will. "
-     "Im kostenfreien Einstieg klären wir gemeinsam, womit Sie beginnen.</p>"),
+     "<p>Sprint für Prototypen an einer echten Fragestellung, Design für Räume, Learning Design 4.0 für Ausbildende und Trainer, Change Leadership für Führungskräfte, Scorecard für die Steuerung mit Kennzahlen. Im kostenfreien Einstieg klären wir das gemeinsam.</p>"),
     ("Wie läuft eine Zusammenarbeit ab?",
-     "<p>Am Anfang steht ein kostenfreier Einstieg, zum Beispiel eine Challenge-Klärung in 60 Minuten oder ein Erfolgsfaktoren-Check in 90 Minuten. "
-     "Danach erhalten Sie ein Festpreisangebot, abgestimmt auf Ihre Ausgangslage. Die Durchführung findet bei Ihnen vor Ort statt, am Ende stehen konkrete Ergebnisse wie Prototyp, Entscheidungsvorlage oder Transferplan.</p>"),
-    ("Wo und mit wie vielen Personen findet InnoLab statt?",
-     "<p>Alle Formate finden bei Ihnen vor Ort statt. Raum und Verpflegung stellen Sie. Die Gruppengrößen: InnoLab Sprint 8 bis 12, Learning Design 4.0 6 bis 12, Change Leadership 8 bis 14, Innovation Scorecard 4 bis 10 Teilnehmende; InnoLab Design arbeitet mit einem Projektteam und den Nutzergruppen des Raums.</p>"),
-    ("Was brauchen wir als Voraussetzung?",
-     "<p>Für den InnoLab Sprint: einen flexibel nutzbaren Raum, eine echte Fragestellung und Entscheider am Pitch-Tag. Für Change Leadership: ein reales Vorhaben, an dem trainiert wird. "
-     "Für Learning Design 4.0: ein eigenes Seminar, das überarbeitet wird. Das klären wir im kostenfreien Einstieg.</p>"),
+     "<p>Kostenfreier Einstieg, Festpreisangebot, Durchführung bei Ihnen vor Ort, Ergebnisse und Transferplan.</p>"),
     ("Sind die Formate förderfähig?",
-     "<p>Eine Förderfähigkeit über INQA-Coaching für kleine und mittlere Unternehmen ist auf Anfrage möglich. Das Programm des Bundesarbeitsministeriums unterstützt KMU ausdrücklich beim Aufbau von Lern- und Experimentierräumen. Ob Ihr Vorhaben förderfähig ist, prüfen wir gemeinsam im Vorgespräch.</p>"),
-    ("Gibt es Rabatte?",
-     "<p>Ja: 15 % für einen zweiten Durchlauf desselben Formats, 20 % ab dem dritten Durchlauf oder bei einem Rahmenvertrag, 15 % für Kammern, Bildungsträger und die öffentliche Hand. "
-     "Learning Design 4.0 gibt es zusätzlich als offenes Seminar ab 6 Teilnehmenden für 990 € pro Person.</p>"),
-    ("Wie sind Zahlung und Stornierung geregelt?",
-     "<p>Die Zahlung erfolgt zu 50 % bei Beauftragung und zu 50 % nach Durchführung. Die Stornierung ist bis 8 Wochen vorher kostenfrei, bis 4 Wochen vorher fallen 50 % an, danach 90 %. "
-     "Ein Ersatztermin innerhalb von 6 Monaten ist einmalig kostenfrei.</p>"),
+     "<p>Eine Förderung über INQA-Coaching für KMU ist auf Anfrage möglich. Wir prüfen das im Vorgespräch.</p>"),
+    ("Gibt es Rabatte, und wie sind Zahlung und Storno geregelt?",
+     "<p>Rabatte: 15 % für den zweiten Durchlauf, 20 % ab dem dritten oder bei Rahmenvertrag, 15 % für Kammern, Bildungsträger und öffentliche Hand. "
+     "Zahlung 50 % bei Beauftragung, 50 % nach Durchführung. Storno bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %.</p>"),
     ("Wer führt InnoLab durch?",
-     "<p>Dr. Oliver Meschkat, Partner für Innovation und Change. Er hat über die Leistungsfähigkeit deutscher Innovation Labs promoviert und ist seit 2010 als Trainer und Berater tätig. "
-     "Anbieter der Formate ist die Schubart &amp; Dulgeridis GmbH, die Muttergesellschaft von THE GAP Lab.</p>"),
+     "<p>Dr. Oliver Meschkat, Partner für Innovation und Change, promoviert zur Leistungsfähigkeit deutscher Innovation Labs. Anbieter ist die Schubart &amp; Dulgeridis GmbH, die Muttergesellschaft von THE GAP Lab.</p>"),
 ]
 
 
@@ -254,7 +240,8 @@ def format_block(f):
     steps = "".join(
         f'<li><span class="il-lab">{esc(a)}</span><strong>{esc(b)}</strong><span>{esc(c)}</span></li>' for a, b, c in f["ablauf"]
     )
-    nutzen = "".join(f"<li><strong>{esc(a)}</strong><span>{esc(b)}</span></li>" for a, b in f["nutzen"])
+    nutzen = "".join(f"<li><strong>{esc(a)}</strong></li>" for a, b in f["nutzen"])
+    forschung1 = f["forschung"].split(". ")[0].rstrip(".") + "."
     facts = "".join(f"<div><dt>{esc(a)}</dt><dd>{esc(b)}</dd></div>" for a, b in f["facts"])
     en, ed, et = f["einstieg"]
     pp = f' · {esc(f["pp"])} pro Person*' if f["pp"] else ""
@@ -268,15 +255,13 @@ def format_block(f):
 <div class="il-fgrid">
 <div class="il-fmain">
 <p class="il-lead">{esc(f['teaser'])}</p>
-<p>{esc(f['intro'])}</p>
-<div class="il-ask"><span class="il-lab">Das Problem dahinter</span><p>{esc(f['problem'])}</p></div>
 <h4>{esc(f['ablauf_head'])}</h4>
 <ol class="il-steps">{steps}</ol>
 <dl class="defs il-defs il-defs-main">{facts}</dl>
 </div>
 <aside class="il-fside">
-<div class="il-box"><h4>Was Sie davon haben</h4><ul class="il-benefits">{nutzen}</ul></div>
-<div class="il-box il-research"><span class="il-lab">Aus der Forschung in die Praxis</span><p>{esc(f['forschung'])}</p></div>
+<div class="il-box"><h4>Nutzen</h4><ul class="il-benefits">{nutzen}</ul></div>
+<div class="il-box il-research"><span class="il-lab">Aus der Forschung in die Praxis</span><p>{esc(forschung1)}</p></div>
 <div class="il-box il-price"><span class="il-lab">Paketpreis</span><p class="il-big">{eur(f['price'])} <small>netto{pp}</small></p>
 <p class="il-in"><strong>Einstieg: {esc(en)}</strong> <span>({esc(ed)})</span><br>{esc(et)}</p>
 <a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a></div>
@@ -334,12 +319,12 @@ def build_body():
 <nav class="breadcrumb" aria-label="Brotkrumen"><ol><li><a href="/">Start</a></li><li aria-current="page">InnoLab</li></ol></nav>
 <p class="eyebrow">InnoLab · Innovation, Change, Personalentwicklung</p>
 <h1>Innovation, die im Unternehmen <span class="accent">ankommt.</span> Nicht nur im Meeting.</h1>
-<p class="lead">InnoLab bringt fünf erprobte Formate zu Ihnen vor Ort: von der Innovationswoche mit Prototyp und Pitch über Lernraumberatung und Train the Trainer bis zu Change Leadership und einer Innovation Scorecard. Zum Festpreis, mit konkreten Ergebnissen.</p>
+<p class="lead">Fünf erprobte Formate bei Ihnen vor Ort, zum Festpreis und mit greifbaren Ergebnissen.</p>
 <div class="hero-actions"><a class="btn btn-gold" href="/kontakt">Kostenfreien Einstieg anfragen {ARROW}</a><a class="link-arrow" href="#preise">Preise und Pakete {ARROW}</a></div>
-<p class="hero-note">Fünf Formate · 2 bis 5 Tage vor Ort · Festpreis ab {eur(5800)} netto · Konzeption und Reisezeit inklusive</p>
+<p class="hero-note">2 bis 5 Tage vor Ort · Festpreis ab {eur(5800)} netto</p>
 </div>
 <aside class="flow-card il-flow" aria-labelledby="il-flow-h"><h2 id="il-flow-h">Die fünf Formate im Überblick</h2><ol class="flow-list">{flow}</ol>
-<div class="flow-foot"><strong>Nicht sicher, wo Sie anfangen?</strong>Im kostenfreien Einstieg klären wir Ausgangslage, Ziel und das passende Format.</div></aside>
+<div class="flow-foot"><strong>Der Einstieg ist kostenfrei.</strong>Dabei klären wir das passende Format.</div></aside>
 </div></section>"""
     trust = """<section class="trust" aria-label="InnoLab in Zahlen"><div class="container"><div class="trust-grid">
 <div class="trust-item"><strong>5 Formate</strong><span>Innovation, Raum, Lernen, Führung, Steuerung</span></div>
@@ -349,37 +334,31 @@ def build_body():
 </div></div></section>"""
     answer = section(
         answer_box("Kurz erklärt",
-                   "InnoLab ist das Portfolio für Unternehmen, Kammern und Bildungsträger, die Innovation nicht nur beschließen, sondern umsetzen wollen. "
-                   "Sie wählen aus fünf Formaten (InnoLab Sprint, InnoLab Design, Learning Design 4.0, Change Leadership, Innovation Scorecard), "
-                   "wir führen sie bei Ihnen vor Ort durch und Sie erhalten greifbare Ergebnisse: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset.")
-        + '<p class="il-note">Die Formate wurden im Rahmen einer Promotion zur Leistungsfähigkeit deutscher Innovation Labs konzipiert und in einem Education Innovation Lab evaluiert.</p>',
+                   "InnoLab ist ein Portfolio aus fünf Formaten für Innovation, Change und Lernen, durchgeführt bei Ihnen vor Ort. "
+                   "Sie erhalten greifbare Ergebnisse: Prototyp, Entscheidungsvorlage, Lernformat, Change-Fahrplan oder Kennzahlenset."),
         "section-white il-tight", "")
     problem = section(
-        head("1 · Das Problem", "Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.",
-             "Die Innovatorenquote im Mittelstand ist auf 41 % gestiegen, Produktinnovationen legen wieder zu. Zugleich nehmen Hemmnisse wie Bürokratie, Finanzierung und fehlende Kompetenzen weiter zu.", "problem-h")
+        head("01 · Das Problem", "Der Mittelstand innoviert wieder. Die Kompetenzlücke bleibt.", "", "problem-h")
         + '<div class="grid grid-4 il-stats">'
-        + stat("41", " %", "Innovatorenquote im Mittelstand. Gleichzeitig wachsen Hemmnisse wie fehlende Kompetenzen.", "KfW-Innovationsbericht Mittelstand 2025")
-        + stat("85", " %", "der befragten Kommunikationsverantwortlichen in der DACH-Region berichten von akuter Veränderungsmüdigkeit.", "Communications Heatmap 2025, FTI Consulting und Quadriga Hochschule Berlin")
-        + stat("66", " %", "sehen Führungskräfte und interne Meinungsbildner als wichtigste Botschafter im Wandel.", "Communications Heatmap 2025")
-        + stat("46,4", " Mrd. €", "investierte die Wirtschaft in Weiterbildung. Erfolgreich wird sie erst mit klarer strategischer Ausrichtung.", "IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)")
+        + stat("41", " %", "Innovatorenquote im Mittelstand.", "KfW-Innovationsbericht Mittelstand 2025")
+        + stat("85", " %", "berichten von akuter Veränderungsmüdigkeit (Kommunikationsverantwortliche, DACH).", "Communications Heatmap 2025, FTI Consulting und Quadriga Hochschule Berlin")
+        + stat("66", " %", "sehen Führungskräfte als wichtigste Botschafter im Wandel.", "Communications Heatmap 2025")
+        + stat("46,4", " Mrd. €", "investierte die Wirtschaft in Weiterbildung.", "IW-Weiterbildungserhebung 2023 (Bezugsjahr 2022)")
         + "</div>"
         + '<h3 class="il-h3">Fünf Bruchstellen, fünf Antworten</h3>' + problem_rows(),
         "", "problem-h")
     loesung = section(
-        head("2 · Die Lösung", "Ein Portfolio, fünf Hebel: vom Mandat bis zum Prototyp.",
-             "InnoLab setzt dort an, wo Innovation im Alltag scheitert. Jedes Format liefert ein konkretes Ergebnis und lässt sich allein oder in einer abgestimmten Folge buchen.", "loesung-h")
+        head("02 · Die Lösung", "Ein Portfolio, fünf Hebel", "Einzeln buchbar oder als abgestimmte Folge.", "loesung-h")
         + '<div class="grid grid-4 il-principles">'
-        '<div class="card"><span class="tag">01 · Prinzip</span><h3>Eine echte Aufgabe</h3><p>Gearbeitet wird an Ihrer eigenen Fragestellung, Ihrem Raum, Ihrem Seminar, nicht an Fallbeispielen.</p></div>'
-        '<div class="card"><span class="tag">02 · Prinzip</span><h3>Erst erleben, dann übertragen</h3><p>Wissensinputs bleiben kurz, der Großteil der Zeit gehört der Anwendung. Methoden werden zuerst selbst erlebt.</p></div>'
-        '<div class="card"><span class="tag">03 · Prinzip</span><h3>Ergebnis statt Teilnahme</h3><p>Prototyp, Canvas, Roadmap, Transferplan: Jedes Format endet mit Unterlagen, die weiter genutzt werden.</p></div>'
-        '<div class="card"><span class="tag">04 · Prinzip</span><h3>Forschungsbasiert</h3><p>Entwickelt und evaluiert in einem Education Innovation Lab, mit 124 Teilnehmenden über 10 Monate.</p></div>'
+        '<div class="card"><span class="tag">01 · Prinzip</span><h3>Eine echte Aufgabe</h3><p>Ihre eigene Fragestellung statt Fallbeispiele.</p></div>'
+        '<div class="card"><span class="tag">02 · Prinzip</span><h3>Erst erleben, dann übertragen</h3><p>Kurze Inputs, lange Anwendung.</p></div>'
+        '<div class="card"><span class="tag">03 · Prinzip</span><h3>Ergebnis statt Teilnahme</h3><p>Unterlagen, die weiter genutzt werden.</p></div>'
+        '<div class="card"><span class="tag">04 · Prinzip</span><h3>Forschungsbasiert</h3><p>Evaluiert mit 124 Teilnehmenden über 10 Monate.</p></div>'
         "</div>"
         + '<h3 class="il-h3">Abgestimmte Folgen mit rund 10 % Vorteil</h3>' + journey(),
         "section-white", "loesung-h")
     formate_head = section(
-        head("3 · Die Formate im Ablauf", "Jedes Format im Detail: Ablauf, Nutzen, Ergebnis, Preis.",
-             "Springen Sie direkt zu Ihrem Thema oder gehen Sie die fünf Formate der Reihe nach durch."
-             , "formate-h")
+        head("03 · Die Formate", "Ablauf, Nutzen, Ergebnis und Preis je Format", "", "formate-h")
         + '<nav class="il-jump" aria-label="Formate"><ul class="chips">'
         + "".join(f'<li><a href="#{f["id"]}">{f["no"]} · {esc(f["name"])}</a></li>' for f in FORMATS) + "</ul></nav>",
         "il-tight", "formate-h")
@@ -387,29 +366,29 @@ def build_body():
         f'<div class="il-fwrap {"il-alt" if i % 2 else ""}"><div class="container">{format_block(f)}</div></div>' for i, f in enumerate(FORMATS))
     om = PARTNERS["oliver-meschkat"]
     forschung = section(
-        head("4 · Der Beleg", "Aus der Forschung in die Praxis.", "", "forschung-h")
+        head("04 · Der Beleg", "Aus der Forschung in die Praxis.", "", "forschung-h")
         + '<div class="il-research-grid"><div>'
-          '<p class="il-lead">Das Portfolio wurde in einem Education Innovation Lab konzipiert und evaluiert. Die Mehrheit der Befragten bewertete Kreativität, Zusammenarbeit und Freude am Lernen mit gut oder sehr gut.</p>'
+          '<p class="il-lead">Konzipiert und evaluiert in einem Education Innovation Lab. Die Mehrheit der Befragten bewertete Kreativität, Zusammenarbeit und Freude am Lernen mit gut oder sehr gut.</p>'
           '<ul class="il-bignums"><li><strong>3</strong><span>qualitative Studien</span></li><li><strong>10</strong><span>Monate Realexperiment</span></li><li><strong>124</strong><span>Teilnehmende</span></li></ul>'
-          '<p class="small">Im Realexperiment wurde ein über Jahrzehnte kaum veränderter Seminarraum mit überschaubarem Budget umgebaut. Die Ergebnisse überzeugten die Leitung, weitere Räume umzurüsten und sich um eine Förderung des Bundesforschungsministeriums zu bewerben.</p></div>'
+          '</div>'
           f'<article class="partner-wide il-person"><div class="photo"><img src="{esc(om["img"])}" alt="{esc(om["name"])}" width="448" height="448" loading="lazy" decoding="async"></div>'
           f'<div><span class="role">Partner · Innovation &amp; Change</span><h3>{esc(om["name"])}</h3>'
-          "<p>Promotion zur Leistungsfähigkeit deutscher Innovation Labs. Trainer und Berater seit 2010. Konzipiert und leitet die InnoLab-Formate.</p>"
+          "<p>Promotion zur Leistungsfähigkeit deutscher Innovation Labs. Trainer und Berater seit 2010.</p>"
           f'<div class="hero-actions"><a class="link-arrow" href="{esc(om["sd_url"])}">Profil bei Schubart &amp; Dulgeridis</a><a class="link-arrow" href="{esc(om["linkedin"])}" rel="noopener noreferrer">LinkedIn</a></div></div></article>'
           "</div>",
         "section-cream", "forschung-h")
     ablauf = section(
-        head("5 · Zusammenarbeit", "So kommen Sie von der ersten Frage zum Ergebnis.", "Klare Schritte, Festpreis, keine Überraschungen.", "ablauf-h")
+        head("05 · Die Zusammenarbeit", "Von der ersten Frage zum Ergebnis", "", "ablauf-h")
         + '<ol class="steps il-coop">'
-          "<li><strong>Kostenfreier Einstieg</strong><span>Challenge-Klärung (60 Min.), Format-Check, Vorgespräch oder Erfolgsfaktoren-Check (90 Min.). Bei InnoLab Design eine Raumbegehung (½ Tag, 1.250 €, bei Beauftragung angerechnet).</span></li>"
-          "<li><strong>Festpreisangebot</strong><span>Nach dem Vorgespräch erhalten Sie ein Angebot, abgestimmt auf Ihre Ausgangslage, mit Leistungsumfang und Paketpreis.</span></li>"
-          "<li><strong>Durchführung vor Ort</strong><span>Das Format findet bei Ihnen statt. Raum und Verpflegung stellen Sie, Konzeption, Organisation und Reisezeit sind im Preis enthalten.</span></li>"
-          "<li><strong>Transfer und Wirkung</strong><span>Sie erhalten Ergebnisse und Transferplan. Optional: Wirkungsmessung nach drei Monaten sowie Hospitation oder zusätzlicher Transfertag.</span></li>"
+          "<li><strong>Kostenfreier Einstieg</strong><span>Challenge-Klärung, Format-Check, Vorgespräch oder Erfolgsfaktoren-Check. Bei InnoLab Design eine Raumbegehung.</span></li>"
+          "<li><strong>Festpreisangebot</strong><span>Abgestimmt auf Ihre Ausgangslage, mit Leistungsumfang und Paketpreis.</span></li>"
+          "<li><strong>Durchführung vor Ort</strong><span>Bei Ihnen vor Ort. Konzeption, Organisation und Reisezeit sind im Preis enthalten.</span></li>"
+          "<li><strong>Transfer und Wirkung</strong><span>Ergebnisse und Transferplan. Optional: Wirkungsmessung nach drei Monaten.</span></li>"
           "</ol>",
         "section-white", "ablauf-h")
     preise = section(
-        head("6 · Preise und Pakete", "Klare Pakete. Klare Preise.",
-             "Alle Formate zum Festpreis, durchgeführt bei Ihnen vor Ort. Konzeption, Organisation und Reisezeit sind im Paketpreis enthalten. Alle Preise netto zzgl. gesetzlicher MwSt. Stand: September 2026.", "preise-h")
+        head("06 · Die Preise", "Klare Pakete. Klare Preise.",
+             "Festpreis je Format. Alle Preise netto zzgl. gesetzlicher MwSt., Stand September 2026.", "preise-h")
         + f'<div class="il-calc" role="group" aria-label="So entsteht der Preis"><div><span class="il-lab">Tage vor Ort, je Tag</span><strong>{eur(DAY)}</strong></div><span class="il-op" aria-hidden="true">+</span>'
           f'<div><span class="il-lab">Pauschale je Modul</span><strong>{eur(FLAT)}</strong><small>Konzeption, Organisation, Reisezeit</small></div><span class="il-op" aria-hidden="true">=</span>'
           f'<div class="il-calc-res"><span class="il-lab">Paketpreis</span><strong>ab {eur(5800)}</strong><small>zzgl. Fahrtkosten 0,40 € je km und Hotel nach Aufwand</small></div></div>'
@@ -424,9 +403,9 @@ def build_body():
           'Zahlung: 50 % bei Beauftragung, 50 % nach Durchführung · Storno: bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %; ein Ersatztermin innerhalb von 6 Monaten einmalig kostenfrei · '
           f'Förderfähigkeit über INQA-Coaching für KMU auf Anfrage. Anbieter und Vertragspartner ist die <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die Muttergesellschaft von THE GAP Lab.</div>',
         "section-cream", "preise-h")
-    faq = section(head("7 · Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS), "section-white", "faq-h")
+    faq = section(head("Häufige Fragen", "Kurz beantwortet", "", "faq-h") + faq_block(FAQS), "section-white", "faq-h")
     cta = cta_band("Der nächste Schritt ist ein Gespräch.",
-                   "Im kostenfreien Einstieg klären wir Ausgangslage, Ziel und das passende Format. Danach erhalten Sie ein Festpreisangebot.",
+                   "Kostenfreier Einstieg, danach Festpreisangebot.",
                    "Einstieg anfragen")
     problem = problem.replace("<section ", '<section id="problem" ', 1)
     loesung = loesung.replace("<section ", '<section id="loesung" ', 1)

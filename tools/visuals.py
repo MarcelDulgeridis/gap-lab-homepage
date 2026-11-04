@@ -7,11 +7,11 @@ from helpers import esc, ARROW
 SD = SITE["parent_url"]
 FIELDS = [
     ("f1", "/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik", "Verhandeln", "oliver-meschkat",
-     "Verhandlungen vorbereiten, führen und überzeugend argumentieren, auch in kritischen Gesprächen."),
+     "Verhandlungen vorbereiten und überzeugend führen."),
     ("f2", "/fokusfelder/leadership-organisation", "Leadership &amp; Organisation", "Führen", "constantin-schubart",
-     "Rollen, Erwartungen und Entscheidungswege klären, im Zusammenspiel von Strategie, Kultur und Führung."),
+     "Rollen, Erwartungen und Entscheidungswege klären."),
     ("f3", "/fokusfelder/finance-transformation", "Finance &amp; Transformation", "Wirtschaften", "marcel-dulgeridis",
-     "Finanzielle Zusammenhänge verstehen und Veränderung wirtschaftlich fundiert umsetzen."),
+     "Finanzwirkung verstehen, Veränderung wirtschaftlich umsetzen."),
 ]
 STAGES = [
     ("konzeption", "Konzeption", "Was soll die Maßnahme bewirken, und für wen?",
@@ -27,10 +27,10 @@ STAGES = [
 
 def gap_bridge():
     breaks = [
-        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Entscheider verhandeln mit Kunden, Lieferanten oder intern, ohne Ziele, Alternativen und Spielräume vorab zu klären. Das Ergebnis sind Zugeständnisse, die vermeidbar gewesen wären.", "/fokusfelder/verhandlungsfuehrung"),
-        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen, Entscheidungsrechte und Erwartungen sind nicht eindeutig. Beschlossene Strategie und gelebte Kultur laufen auseinander.", "/fokusfelder/leadership-organisation"),
-        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Führungskräfte entscheiden über Budgets und Veränderungen, ohne die finanzielle Wirkung belastbar einschätzen zu können.", "/fokusfelder/finance-transformation"),
-        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen nicht die Situation der Teilnehmenden und bleiben deshalb ohne Wirkung im Alltag.", "/leistungen#konzeption"),
+        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben ungeklärt. Das kostet vermeidbare Zugeständnisse.", "/fokusfelder/verhandlungsfuehrung"),
+        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind offen. Strategie und gelebte Kultur laufen auseinander.", "/fokusfelder/leadership-organisation"),
+        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Budgets und Veränderungen werden ohne belastbares Bild der finanziellen Wirkung entschieden.", "/fokusfelder/finance-transformation"),
+        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Situation der Teilnehmenden nicht.", "/leistungen#konzeption"),
     ]
     cols = "".join(
         f'<li class="v-break {c}"><span class="v-dot" aria-hidden="true"></span><span class="v-tagline">{t}</span>'
@@ -79,9 +79,9 @@ def venn(with_links=True):
 
 def statements():
     items = [
-        ("3", "Disziplinen in einer Gesellschaft", "Verhandlung, Führung und Finanzen greifen in einer Gesellschaft ineinander, statt in getrennten Projekten mit getrennten Ansprechpartnern behandelt zu werden."),
-        ("3", "Partner mit Namen", "Die Partner sind öffentlich benannt. Zwei sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule, einer ist promoviert und auf Verhandlungsführung spezialisiert."),
-        ("1", "Verbund mit Beratung", f'Als Tochtergesellschaft steht THE GAP Lab im Verbund mit der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die forschungsbasierte Beratung und Diagnostik anbietet (THE GAP).'),
+        ("3", "Disziplinen, eine Gesellschaft", "Verhandlung, Führung und Finanzen greifen ineinander, statt in getrennten Projekten zu laufen."),
+        ("3", "Partner mit Namen", "Zwei Professoren für BWL an der IU, ein promovierter Verhandlungsexperte."),
+        ("1", "Verbund mit Beratung", f'Tochter der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a> mit forschungsbasierter Beratung und Diagnostik (THE GAP).'),
     ]
     return '<div class="v-statements">' + "".join(
         f'<div class="v-st"><span class="v-bignum">{n}</span><h3>{h}</h3><p>{p}</p></div>' for n, h, p in items) + "</div>"
@@ -108,13 +108,13 @@ def teasers():
     return (
         '<div class="v-duo">'
         '<article class="v-panel"><p class="v-kick">InnoLab · Innovation, Change, Personalentwicklung</p>'
-        '<h3>Fünf Formate vor Ort, vom Sprint bis zur Scorecard.</h3>'
-        '<p>Innovation, die im Unternehmen ankommt: zum Festpreis, mit konkreten Ergebnissen wie Prototyp, Entscheidungsvorlage oder Change-Fahrplan.</p>'
+        '<h3>Fünf Formate vor Ort, zum Festpreis.</h3>'
+        '<p>Prototyp, Entscheidungsvorlage oder Change-Fahrplan statt Abschlussbericht.</p>'
         f'<ul class="v-minilist" aria-label="Formate mit Dauer und Preis">{rows}</ul>'
         f'<a class="btn btn-gold" href="/innolab">InnoLab ansehen {ARROW}</a></article>'
         '<article class="v-panel v-panel-dark"><p class="v-kick">KI-Readiness Check · kostenlos</p>'
-        '<h3>Ihre KI-Strategie steht. Steht Ihre Organisation auch?</h3>'
-        '<p>In drei Minuten sehen Sie, wie groß die Lücke zwischen Führungsplan und Arbeitsalltag bei Ihrer KI-Einführung ist. Ohne Login, mit sofortigem Ergebnis.</p>'
+        '<h3>Die KI-Lücke in drei Minuten sichtbar.</h3>'
+        '<p>Acht Signale, zwei Sichten, sofortiges Ergebnis. Ohne Login.</p>'
         + demo
         + '<ol class="v-mini3" aria-label="So funktioniert der Check"><li><b>1</b>Acht Aussagen bewerten</li><li><b>2</b>Zwei Sichten angeben</li><li><b>3</b>KI-Gap erhalten</li></ol>'
         + f'<a class="btn btn-gold" href="/ki-readiness">KI-Gap messen {ARROW}</a></article></div>')
@@ -128,8 +128,7 @@ def measure_develop():
         '<div class="v-m2d-arrow" aria-hidden="true">' + ARROW + '</div>'
         '<div class="v-m2d-b"><span class="v-lab">Entwickeln</span><h3>Maßnahmen der Personalentwicklung</h3>'
         '<p class="v-who">The Gap Lab GmbH</p><ul><li>Konzeption, Entwicklung, Durchführung, Vermarktung</li><li>Fokusfelder Verhandlung, Leadership, Finance</li><li>Format, Dauer und Ort nach Ihrer Ausgangslage</li></ul>'
-        '<a class="link-arrow" href="/kontakt">Erstgespräch vereinbaren ' + ARROW + '</a></div></div>'
-        '<p class="small muted">Wenn Sie zuerst messen möchten, wo Anspruch und Alltag auseinanderliegen, ist die Diagnostik der Muttergesellschaft der passende Einstieg.</p>')
+        '<a class="link-arrow" href="/kontakt">Erstgespräch vereinbaren ' + ARROW + '</a></div></div>')
 
 
 def decision_help():
@@ -227,10 +226,10 @@ def org():
 
 
 def contact_flow():
-    steps = [("1", "Partner und Termin wählen", "Freie Zeiten werden live angezeigt."),
-             ("2", "Einladung erhalten", "Outlook-Einladung mit Microsoft-Teams-Link."),
-             ("3", "Gespräch, 20 bis 30 Minuten", "Anlass, Ziel und Zielgruppe klären. Kostenlos und unverbindlich."),
-             ("4", "Angebot", "Danach erhalten Sie ein Angebot nach Umfang.")]
+    steps = [("1", "Termin wählen", "Freie Zeiten live."),
+             ("2", "Einladung erhalten", "Outlook mit Teams-Link."),
+             ("3", "Gespräch", "20 bis 30 Minuten, kostenlos."),
+             ("4", "Angebot", "Nach Umfang.")]
     lis = "".join(f'<li><span class="v-n">{n}</span><strong>{h}</strong><p>{p}</p></li>' for n, h, p in steps)
     return f'<ol class="v-cflow">{lis}</ol>'
 
@@ -268,7 +267,7 @@ def innolab_strip():
         f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])} · {esc(f["people"])}</small></span><span class="v-fp">{eur(f["price"])}</span></a></li>'
         for f in FORMATS)
     return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate zum Festpreis, bei Ihnen vor Ort.</h3>'
-            '<p>Wer eine fertig geschnürte Maßnahme sucht, findet im InnoLab fünf Formate für Innovation, Change und Lernen. Jedes liefert ein eigenes Ergebnis, von der Innovationswoche mit Prototyp bis zur Innovation Scorecard.</p>'
+            '<p>Innovation, Change und Lernen, jeweils mit eigenem Ergebnis.</p>'
             f'<a class="btn" href="/innolab">Alle Formate ansehen {ARROW}</a></div><ul class="v-minilist" aria-label="InnoLab-Formate">{rows}</ul></div>')
 
 
