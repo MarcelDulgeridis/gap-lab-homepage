@@ -96,6 +96,11 @@ def home():
 </div></div></section>
 """
 
+    kurz = section(answer_box("Kurz erklärt: Was ist THE GAP Lab?",
+        f"THE GAP Lab ist die Marke der The Gap Lab GmbH mit Sitz in {SITE['city']}. Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung, "
+        "damit Strategie im Arbeitsalltag ankommt. Drei Fokusfelder tragen die Arbeit: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation. "
+        'Konkret beauftragbar sind die fünf <a href="/innolab">InnoLab-Formate</a>; für den Einstieg gibt es das kostenlose Erstgespräch und den <a href="/ki-readiness">KI-Readiness Check</a>.'),
+        "v-tight", "")
     trust = f"""
 <section class="trust" aria-label="Fakten zur Gesellschaft"><div class="container"><div class="trust-grid">
   <div class="trust-item"><strong>Kostenloses Erstgespräch</strong><span>20 bis 30 Minuten per Microsoft Teams mit einem der Partner</span></div>
@@ -106,19 +111,19 @@ def home():
 """
 
     problem = section(
-        head("Ausgangslage", "Wenn Entwicklung im Arbeitsalltag nicht ankommt",
+        head("Ausgangslage", "Wirkung geht an vier Stellen verloren, bevor Entwicklung im Alltag ankommt",
              "Viele Organisationen investieren in Trainings und Programme und sehen im Alltag wenig davon. An vier Stellen geht die Wirkung typischerweise verloren:", "problem-title")
         + V.gap_bridge(), "", "problem-title")
 
     leistungen = section(
-        head("Leistungen", "Vier Stufen von der Konzeption bis zur Vermarktung",
+        head("Leistungen", "Vier Stufen, jede mit eigenem Ergebnis: von der Konzeption bis zur Vermarktung",
              "Jede Stufe beantwortet eine andere Frage und liefert ein eigenes Ergebnis. Sie können sie einzeln oder verbunden betrachten.", "leistungen-title")
         + V.value_chain()
         + '<p class="small"><a class="link-arrow" href="/leistungen">Alle Stufen im Detail ' + ARROW + "</a></p>", "section-white", "leistungen-title")
 
     fokus = section(
-        head("Fokusfelder", "Drei Disziplinen, die im Alltag zusammenhängen",
-             "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern in denselben Situationen aufeinander. Jedes Fokusfeld hat einen klar benannten Ansprechpartner.", "fokus-title")
+        head("Fokusfelder", "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern zusammen",
+             "Sie begegnen sich in denselben Situationen: Verhandeln, Führen und Wirtschaften treffen bei Entscheidern in denselben Situationen aufeinander. Jedes Fokusfeld hat einen klar benannten Ansprechpartner.", "fokus-title")
         + V.venn(), "", "fokus-title")
 
     angebote = section(
@@ -127,11 +132,11 @@ def home():
         + V.teasers(), "section-cream", "angebote-title")
 
     warum = section(
-        head("Warum THE GAP Lab", "Was die Gesellschaft von einer Einzelmaßnahme unterscheidet", "", "warum-title")
+        head("Warum THE GAP Lab", "Drei Disziplinen, drei Partner, ein Verbund", "", "warum-title")
         + V.statements(), "v-dark", "warum-title")
 
     vorgehen = section(
-        head("Vorgehen", "So läuft eine Zusammenarbeit typischerweise ab",
+        head("Vorgehen", "In vier Schritten vom Gespräch zur ausgewerteten Maßnahme",
              "Umfang und Taktung richten sich nach Ihrer Ausgangslage. Der Ablauf bleibt in der Struktur gleich.", "vorgehen-title")
         + V.timeline([
             ("Schritt 1 · 20 bis 30 Minuten", "Erstgespräch", "Anlass, Ziel und Zielgruppe klären. Kostenlos und unverbindlich.", "Klarer Anlass, Ziel und Zielgruppe"),
@@ -156,8 +161,10 @@ def home():
                    "Sprechen Sie 20 bis 30 Minuten mit einem der Partner: kostenlos, unverbindlich, per Microsoft Teams.",
                    secondary="Die Terminbuchung läuft über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH.")
 
-    page["body"] = hero + trust + problem + leistungen + fokus + angebote + warum + vorgehen + partner + faq + cta
+    page["body"] = hero + trust + kurz + problem + leistungen + fokus + angebote + warum + vorgehen + partner + faq + cta
     page["styles"] = ["/assets/visual.css"]
+    page["journey"] = "/"
+    page["speakable"] = True
     return page
 
 
@@ -167,7 +174,7 @@ def leistungen():
         "title": "Leistungen — Konzeption bis Vermarktung | THE GAP Lab",
         "description": "Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.",
         "priority": "0.9", "llms_group": "Leistungen", "schema_type": "CollectionPage",
-        "styles": ["/assets/visual.css"],
+        "styles": ["/assets/visual.css"], "journey": "/leistungen", "speakable": True,
     }
     faqs = [
         ("Was bietet The Gap Lab GmbH an?",
@@ -224,10 +231,11 @@ def leistungen():
         + section(
             answer_box("Kurzantwort: Was bietet The Gap Lab an?",
                        "The Gap Lab GmbH konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Inhaltlich arbeiten die Partner in drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
-            + head("Überblick", "Vier Stufen, vier Leitfragen", "Jede Stufe liefert ein eigenes Ergebnis. Die Stufen bauen aufeinander auf, lassen sich aber einzeln beauftragen.")
+            + head("Überblick", "Vier Stufen beantworten vier Leitfragen und liefern je ein Ergebnis", "Jede Stufe liefert ein eigenes Ergebnis. Die Stufen bauen aufeinander auf, lassen sich aber einzeln beauftragen.")
             + V.value_chain()
             + '<h3 class="v-h3">Welche Stufe brauchen Sie?</h3>' + V.decision_help()
             + services, "", "")
+        + section(V.innolab_strip(), "section-white v-tight", "")
         + section(
             head("Fokusfelder", "Wo die Stufen inhaltlich ansetzen", "Jede Stufe lässt sich auf eines oder mehrere der drei Fokusfelder beziehen.")
             + '<ul class="chips"><li><a href="/fokusfelder/verhandlungsfuehrung">Verhandlungsführung &amp; Rhetorik</a></li>'
@@ -243,6 +251,11 @@ def leistungen():
     )
     page["body"] = body
     page["schema_nodes"] = [{
+        "@type": "ItemList", "@id": url_of("/leistungen") + "#stufen", "name": "Vier Leistungsstufen von THE GAP Lab",
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "url": url_of("/leistungen") + "#" + a}
+                            for i, (a, n) in enumerate([("konzeption", "Konzeption"), ("entwicklung", "Entwicklung"), ("durchfuehrung", "Durchführung"), ("vermarktung", "Vermarktung")], 1)],
+    }, {
         "@type": "Service", "@id": url_of("/leistungen") + "#service",
         "name": "Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung, Vermarktung",
         "serviceType": "Personalentwicklung",
@@ -260,8 +273,13 @@ def fokusfelder_hub():
         "title": "Fokusfelder — Verhandlung, Leadership, Finance | THE GAP Lab",
         "description": "Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.",
         "priority": "0.8", "llms_group": "Fokusfelder", "schema_type": "CollectionPage",
-        "styles": ["/assets/visual.css"],
+        "styles": ["/assets/visual.css"], "journey": "/fokusfelder", "speakable": True,
     }
+    page["schema_nodes"] = [{
+        "@type": "ItemList", "@id": url_of("/fokusfelder") + "#felder", "name": "Die drei Fokusfelder von THE GAP Lab",
+        "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "url": url_of(u)}
+                            for i, (u, n) in enumerate([("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung & Rhetorik"), ("/fokusfelder/leadership-organisation", "Leadership & Organisation"), ("/fokusfelder/finance-transformation", "Finance & Transformation")], 1)],
+    }]
     page["body"] = (
         page_hero(page, "Drei Fokusfelder, drei Ansprechpartner",
                   "Verhandeln, Führen und Wirtschaften hängen im Alltag von Entscheidern zusammen. THE GAP Lab behandelt sie in einer Gesellschaft, jeweils mit einem benannten Partner.")
@@ -281,7 +299,7 @@ def ueber_uns():
         "title": "Über uns — Drei Partner, eine Gesellschaft | THE GAP Lab",
         "description": "Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.",
         "priority": "0.8", "llms_group": "Unternehmen", "schema_type": "AboutPage",
-        "styles": ["/assets/visual.css"],
+        "styles": ["/assets/visual.css"], "journey": "/ueber-uns", "speakable": True,
     }
     page["schema_nodes"] = person_nodes()
 

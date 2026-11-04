@@ -19,6 +19,7 @@ from helpers import esc, strip_tags, url_of, ARROW  # noqa: E402
 from schema_nodes import person_node  # noqa: E402
 import pages_core  # noqa: E402
 import pages_fokus  # noqa: E402
+import pages_glossar  # noqa: E402
 import pages_innolab  # noqa: E402
 import pages_ki  # noqa: E402
 import pages_legal  # noqa: E402
@@ -130,6 +131,8 @@ def graph_for(page):
         "dateModified": page.get("modified", SITE["modified"]),
         "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")},
     }
+    if page.get("speakable"):
+        webpage["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": [".answer p"]}
     graph = [org_node()]
     website = {
         "@type": "WebSite",
@@ -183,6 +186,16 @@ def footer_html():
         f'<span>Sitz: {esc(SITE["city"])}</span></div>'
         "</div></footer>"
     )
+
+
+def with_journey(page):
+    body = page["body"]
+    if page.get("journey"):
+        import visuals
+        marker = '<section class="cta-band"'
+        if marker in body:
+            body = body.replace(marker, visuals.journey(page["journey"]) + marker, 1)
+    return body
 
 
 def render(page):
@@ -240,7 +253,7 @@ def render(page):
         '<div class="rule-top" aria-hidden="true"></div>'
         + header_html(page)
         + '<main id="main">'
-        + page["body"]
+        + with_journey(page)
         + "</main>"
         + footer_html()
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))
@@ -255,6 +268,7 @@ def all_pages():
     pages += pages_fokus.build()
     pages += pages_ki.build()
     pages += pages_innolab.build()
+    pages += pages_glossar.build()
     pages += pages_legal.build()
     return pages
 
@@ -302,6 +316,7 @@ def llms(pages):
     lines.append(f"Firmendaten: {SITE['legal_name']}, {SITE['street']}, {SITE['zip']} {SITE['city']}; "
                  f"{SITE['hrb']}, {SITE['court']}; Geschäftsführer: Prof. Dr. Constantin Schubart (einzelvertretungsberechtigt). "
                  f"Muttergesellschaft: Schubart & Dulgeridis GmbH (https://www.schubart-dulgeridis.de/).")
+    lines.append(f"Vollständiger Inhalt aller Seiten als Text: {DOMAIN}/llms-full.txt")
     lines.append("")
     groups = {}
     for p in pages:
@@ -315,6 +330,23 @@ def llms(pages):
     return "\n".join(lines).rstrip() + "\n"
 
 
+def llms_full(pages):
+    from helpers import strip_tags
+    out = [f"# {SITE['brand']} ({SITE['legal_name']}): vollständiger Inhalt als Text", "",
+           f"> {SITE['llms_summary']}", "", f"Stand: {SITE['modified']}. Quelle: {DOMAIN}", ""]
+    for p in pages:
+        if not p.get("sitemap", True) or p["path"] in ("/ki-readiness",):
+            continue
+        out += [f"## {p['title']}", f"URL: {url_of(p['path'])}", ""]
+        body = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", p["body"], flags=re.S)
+        body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|span|strong|small|b|em|a)>\s*(?=<(?:p|li|h[1-6]|div|section|dt|dd|tr|article|details|summary|span|strong|small|b|em|a)\b)", " ", body)
+        body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|details|ul|ol|dl)>", "¶", body)
+        text = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)))
+        out += [t.strip() for t in text.split("¶") if t.strip()]
+        out.append("")
+    return "\n".join(out).rstrip() + "\n"
+
+
 def main():
     pages = all_pages()
     seen_paths = set()
@@ -325,6 +357,7 @@ def main():
     write("sitemap.xml", sitemap(pages))
     write("robots.txt", robots())
     write("llms.txt", llms(pages))
+    write("llms-full.txt", llms_full(pages))
     print(f"{len(pages)} Seiten erzeugt (css v={CSS_V}, js v={JS_V}).")
 
 

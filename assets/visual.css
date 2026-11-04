@@ -1,16 +1,18 @@
 /* THE GAP Lab: Visual-System (Modelle, Diagramme, Prozesse). Ergänzt site.css, alle Klassen mit v- Präfix. Keine Inline-Styles (CSP). */
 :root{
-  --f1:#8E6C34;--f1-t:#f4ebd8;
+  --f1:#85642C;--f1-t:#f4ebd8;
   --f2:#2c5a8c;--f2-t:#e3ecf6;
   --f3:#2a6b5e;--f3-t:#dcefe9;
   --f4:#24406a;
 }
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.v-lab{display:block;font-family:var(--font-display);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:6px}
+.v-lab{display:block;font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:6px}
 .v-kick{margin:0 0 12px;font-family:var(--font-display);font-weight:800;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text)}
 .f1{--c:var(--f1);--ct:var(--f1-t)}.f2{--c:var(--f2);--ct:var(--f2-t)}.f3{--c:var(--f3);--ct:var(--f3-t)}.f4{--c:var(--f4);--ct:#e5e9f1}
 
 /* ---- Allgemein */
+.section.v-tight{padding-block:clamp(26px,3.6vw,44px)}
+.v-tight .answer{margin-bottom:0}
 .v-h3{font-family:var(--font-display);font-weight:800;font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.015em;margin:clamp(34px,4vw,52px) 0 0}
 /* ---- Gap-Brücke (Ausgangslage) ---- */
 .v-gapline{display:flex;align-items:stretch;gap:0;margin:clamp(24px,3vw,36px) 0 0}
@@ -31,7 +33,7 @@
 .v-breaks::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:2px solid var(--gold-line)}
 .v-break{padding-top:42px}
 .v-break::before{top:0;height:42px}
-.v-tagline{font-family:var(--font-display);font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin-bottom:6px}
+.v-tagline{font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin-bottom:6px}
 .v-break h3{font-weight:800;font-size:1.15rem;line-height:1.25;margin-bottom:8px}
 .v-break p{color:#27344a;font-size:.98rem;margin-bottom:14px}
 .v-break .link-arrow{margin-top:auto;align-self:flex-start;color:var(--c);border-bottom-color:var(--c)}
@@ -43,7 +45,7 @@
 .v-stage.s1 .v-chev{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);padding-left:22px;background:#101D33}
 .v-stage.s2 .v-chev{background:#1b2f4d}.v-stage.s3 .v-chev{background:#24406a}
 .v-stage.s4 .v-chev{background:#7A5A27;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,22px 50%);margin-right:0}
-.v-chev span{display:block;font-family:var(--font-display);font-weight:800;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale)}
+.v-chev span{display:block;font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale)}
 .v-chev strong{display:block;font-family:var(--font-display);font-weight:900;font-size:1.3rem;line-height:1.15}
 .v-chev a{color:inherit;text-decoration:none}
 .v-chev a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -90,7 +92,7 @@
 .v-timeline p{color:#27344a;font-size:.98rem;margin-bottom:12px}
 .v-out{margin-top:auto;display:block;padding:10px 12px;background:var(--white);border-left:3px solid var(--gold);font-size:.9rem;color:#27344a;line-height:1.45}
 .section-white .v-out,.section-cream .v-out{background:var(--paper)}
-.v-out b{display:block;font-family:var(--font-display);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:2px}
+.v-out b{display:block;font-family:var(--font-display);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:2px}
 
 /* ---- Teaser Duo ---- */
 .v-duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,3vw,32px)}
@@ -279,6 +281,63 @@
 .v-check li::before{content:"";position:absolute;left:18px;top:50%;width:14px;height:8px;margin-top:-7px;border-left:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(-45deg)}
 
 /* ---- Responsive ---- */
+/* ---- Roter Faden (Journey) ---- */
+.v-journey{background:var(--cream);border-top:1px solid var(--line);padding:clamp(26px,3.4vw,40px) 0}
+.v-journey .container{display:grid;gap:14px}
+.v-journey ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;position:relative}
+.v-journey li{margin:0;position:relative}
+.v-journey li:not(:last-child)::after{content:"";position:absolute;left:50%;right:-50%;top:19px;border-top:3px solid var(--gold-line);z-index:0}
+.v-journey li.j-done:not(:last-child)::after{border-top-color:var(--gold)}
+.v-journey ol a{position:relative;z-index:1;display:grid;justify-items:center;gap:8px;text-align:center;text-decoration:none;color:var(--navy);padding:0 4px}
+.v-jn{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--white);border:3px solid var(--gold-line);font-family:var(--font-display);font-weight:900;font-size:.95rem;color:var(--muted)}
+.j-done .v-jn{background:var(--gold);border-color:var(--gold);color:#fff}
+.j-now .v-jn{background:var(--navy);border-color:var(--navy);color:var(--on-navy);box-shadow:0 0 0 4px rgba(207,173,107,.45)}
+.j-next .v-jn{border-color:var(--gold);color:var(--gold-text)}
+.v-jt b{display:block;font-family:var(--font-display);font-weight:800;font-size:.95rem;line-height:1.2}
+.v-jt small{display:block;color:var(--muted);font-size:.84rem;line-height:1.3}
+.v-journey ol a:hover .v-jt b{text-decoration:underline;text-underline-offset:3px}
+.v-journey .btn{justify-self:center;margin-top:10px}
+
+/* ---- Steckbrief ---- */
+.v-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0;background:var(--white);border:1px solid var(--gold-line);border-top:4px solid var(--c,var(--gold))}
+.v-facts div{padding:16px 22px;border-left:1px solid var(--line)}
+.v-facts div:first-child{border-left:0}
+.v-facts dt{font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--gold-text));margin-bottom:4px}
+.v-facts dd{margin:0;font-size:1rem;color:var(--navy);line-height:1.45}
+.v-facts a{font-weight:700}
+
+/* ---- InnoLab-Streifen und Verwandtes ---- */
+.v-iostrip{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;background:var(--white);border:1px solid var(--gold-line);border-left:6px solid var(--gold);padding:clamp(22px,3vw,40px);margin-top:clamp(28px,3.4vw,44px)}
+.v-iostrip h3{font-weight:900;font-size:clamp(1.3rem,2.2vw,1.7rem);letter-spacing:-.02em;line-height:1.2;margin-bottom:10px}
+.v-iostrip p{color:#27344a}
+.v-iostrip .v-minilist{margin:0}
+.v-related{list-style:none;margin:clamp(22px,3vw,34px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.v-related li{margin:0}
+.v-related a{display:grid;gap:4px;height:100%;padding:16px 20px;background:var(--white);border:1px solid var(--line);border-left:5px solid var(--gold);text-decoration:none;color:inherit}
+.v-related a:hover{border-color:var(--gold);box-shadow:var(--shadow-soft)}
+.v-related strong{font-family:var(--font-display);font-weight:800;font-size:1.1rem}
+.v-related span:last-child{color:#27344a;font-size:.97rem}
+
+/* ---- Glossar ---- */
+.v-az{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 clamp(22px,3vw,34px);padding:0}
+.v-az li{margin:0}
+.v-az a{display:grid;place-items:center;min-width:42px;height:42px;padding:0 10px;border:1px solid var(--gold-line);background:var(--white);font-family:var(--font-display);font-weight:800;text-decoration:none;color:var(--navy)}
+.v-az a:hover{background:var(--navy);color:var(--on-navy)}
+.v-gloss{margin:0;display:grid}
+.v-term{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);gap:8px clamp(20px,4vw,56px);scroll-margin-top:96px}
+.v-term:last-child{border-bottom:1px solid var(--line)}
+.v-term dt{font-family:var(--font-display);font-weight:800;font-size:1.2rem;line-height:1.25}
+.v-term dt span{display:block;margin-top:6px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c,var(--gold-text))}
+.v-term dd{margin:0;color:#27344a}
+.v-term dd a{font-weight:700}
+
+@media (max-width:1020px){
+  .v-journey ol{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:22px}
+  .v-journey li:nth-child(3)::after,.v-journey li:not(:last-child)::after{display:none}
+  .v-facts{grid-template-columns:1fr}.v-facts div{border-left:0;border-top:1px solid var(--line)}.v-facts div:first-child{border-top:0}
+  .v-iostrip{grid-template-columns:1fr}
+  .v-term{grid-template-columns:1fr}
+}
 @media (max-width:1020px){
   .v-breaks,.v-chain,.v-timeline,.v-cflow{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
   .v-timeline::before,.v-breaks::before,.v-cflow li::after{display:none}
