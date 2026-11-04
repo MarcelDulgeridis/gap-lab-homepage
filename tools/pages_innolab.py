@@ -173,23 +173,16 @@ assert 5800 + 8300 + 13300 == 27400 and 8300 + 8300 == 16600
 
 FAQS = [
     ("Was ist InnoLab?",
-     "<p>Ein Portfolio aus fünf Formaten für Innovation, Change und Lernen, bei Ihnen vor Ort: "
+     "<p>Fünf Formate für Innovation, Change und Lernen, bei Ihnen vor Ort: "
      "<a href=\"#sprint\">InnoLab Sprint</a>, <a href=\"#design\">InnoLab Design</a>, <a href=\"#learning-design\">Learning Design 4.0</a>, "
-     "<a href=\"#change-leadership\">Change Leadership</a> und <a href=\"#scorecard\">Innovation Scorecard</a>.</p>"),
+     "<a href=\"#change-leadership\">Change Leadership</a>, <a href=\"#scorecard\">Innovation Scorecard</a>.</p>"),
     ("Was kostet InnoLab?",
-     "<p>Festpreise netto: Innovation Scorecard 5.800 €, InnoLab Design, Learning Design 4.0 und Change Leadership je 8.300 €, InnoLab Sprint 13.300 €. "
-     "Preis = 2.500 € je Tag vor Ort + 800 € Pauschale. Zusätzlich Fahrtkosten (0,40 € je km) und Hotel nach Aufwand. Bündel sparen rund 10 %: <a href=\"#preise\">Preise und Pakete</a>.</p>"),
-    ("Welches Format passt zu uns?",
-     "<p>Sprint für Prototypen an einer echten Fragestellung, Design für Räume, Learning Design 4.0 für Ausbildende und Trainer, Change Leadership für Führungskräfte, Scorecard für die Steuerung mit Kennzahlen. Im kostenfreien Einstieg klären wir das gemeinsam.</p>"),
-    ("Wie läuft eine Zusammenarbeit ab?",
-     "<p>Kostenfreier Einstieg, Festpreisangebot, Durchführung bei Ihnen vor Ort, Ergebnisse und Transferplan.</p>"),
+     "<p>Festpreise netto: Innovation Scorecard 5.800 €, InnoLab Design, Learning Design 4.0 und Change Leadership je 8.300 €, InnoLab Sprint 13.300 € "
+     "(2.500 € je Tag + 800 € Pauschale, zuzüglich Fahrtkosten und Hotel). Bündel sparen rund 10 %: <a href=\"#preise\">Preise</a>.</p>"),
     ("Sind die Formate förderfähig?",
-     "<p>Eine Förderung über INQA-Coaching für KMU ist auf Anfrage möglich. Wir prüfen das im Vorgespräch.</p>"),
-    ("Gibt es Rabatte, und wie sind Zahlung und Storno geregelt?",
-     "<p>Rabatte: 15 % für den zweiten Durchlauf, 20 % ab dem dritten oder bei Rahmenvertrag, 15 % für Kammern, Bildungsträger und öffentliche Hand. "
-     "Zahlung 50 % bei Beauftragung, 50 % nach Durchführung. Storno bis 8 Wochen vorher kostenfrei, bis 4 Wochen 50 %, danach 90 %.</p>"),
+     "<p>Eine Förderung über INQA-Coaching für KMU ist auf Anfrage möglich.</p>"),
     ("Wer führt InnoLab durch?",
-     "<p>Dr. Oliver Meschkat, Partner für Innovation und Change, promoviert zur Leistungsfähigkeit deutscher Innovation Labs. Anbieter ist die Schubart &amp; Dulgeridis GmbH, die Muttergesellschaft von THE GAP Lab.</p>"),
+     "<p>Dr. Oliver Meschkat, Partner für Innovation und Change. Anbieter ist die Schubart &amp; Dulgeridis GmbH, die Muttergesellschaft von THE GAP Lab.</p>"),
 ]
 
 
@@ -201,20 +194,19 @@ def stat(num, unit, text, source):
 
 def problem_rows():
     rows = [
-        ("Ideen bleiben Folien.", "Innovation entsteht im Meeting, nicht am Prototyp. Es fehlen Geschäftsmodell und Entscheidungsvorlage.", "sprint"),
-        ("Der Raum arbeitet gegen das Lernen.", "Innovationsräume entstehen vielerorts, Erfahrung mit ihrer Gestaltung ist selten.", "design"),
-        ("Seminare vermitteln Stoff.", "Im Ausgangsfall waren 50 bis 70 Prozent der Unterrichtszeit Frontalunterricht.", "learning-design"),
-        ("Wandel stockt im Team.", "85 % der Befragten berichten von akuter Veränderungsmüdigkeit. Führungskräfte sind die wichtigsten Botschafter.", "change-leadership"),
-        ("Innovation lässt sich nicht belegen.", "Labs scheitern an fehlender Ausrichtung am Geschäft, fehlenden Kennzahlen und unausgewogenen Teams.", "scorecard"),
+        ("Ideen bleiben Folien.", "sprint"),
+        ("Der Raum arbeitet gegen das Lernen.", "design"),
+        ("Seminare vermitteln Stoff.", "learning-design"),
+        ("Wandel stockt im Team.", "change-leadership"),
+        ("Innovation lässt sich nicht belegen.", "scorecard"),
     ]
     fm = {f["id"]: f for f in FORMATS}
     lis = []
-    for sym, cause, fid in rows:
+    for sym, fid in rows:
         f = fm[fid]
         lis.append(
-            '<li class="il-prow">'
+            '<li class="il-prow il-prow2">'
             f'<div><span class="il-lab">Problem</span><strong>{esc(sym)}</strong></div>'
-            f'<div><span class="il-lab">Ursache</span><p>{esc(cause)}</p></div>'
             f'<div><span class="il-lab">InnoLab-Antwort</span><a href="#{fid}"><strong>{esc(f["name"])}</strong>'
             f'<span>{esc(f["kind"])} · {esc(f["dur"])}</span></a></div></li>'
         )
@@ -261,9 +253,8 @@ def format_block(f):
 </div>
 <aside class="il-fside">
 <div class="il-box"><h4>Nutzen</h4><ul class="il-benefits">{nutzen}</ul></div>
-<div class="il-box il-research"><span class="il-lab">Aus der Forschung in die Praxis</span><p>{esc(forschung1)}</p></div>
 <div class="il-box il-price"><span class="il-lab">Paketpreis</span><p class="il-big">{eur(f['price'])} <small>netto{pp}</small></p>
-<p class="il-in"><strong>Einstieg: {esc(en)}</strong> <span>({esc(ed)})</span><br>{esc(et)}</p>
+<p class="il-in"><strong>Einstieg: {esc(en)}</strong> <span>({esc(ed)})</span></p>
 <a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a></div>
 </aside>
 </div>
@@ -291,12 +282,12 @@ def price_chart():
         w = round(f["price"] / top * 100, 1)
         days = "".join("<i></i>" for _ in range(f["days"]))
         rows.append(
-            f'<li><a class="il-pn" href="#{f["id"]}">{esc(f["name"])}</a>'
+            f'<li><a class="il-pn" href="#{f["id"]}">{esc(f["name"])}<small>{esc(f["people"])}</small></a>'
             f'<span class="il-pd" role="img" aria-label="{f["days"]} Tage vor Ort">{days}</span>'
             f'<svg class="il-pb" viewBox="0 0 100 10" preserveAspectRatio="none" role="img" aria-label="Paketpreis {eur(f["price"])}"><rect class="tr" width="100" height="10"/><rect class="fg" width="{w}" height="10"/></svg>'
             f'<strong class="il-pv">{eur(f["price"])}</strong></li>')
     return ('<figure class="il-pchart"><figcaption><strong>Dauer und Paketpreis im Vergleich</strong>'
-            '<span>Jedes Quadrat steht für einen Tag vor Ort. Die Balken beginnen bei 0 € und zeigen den Festpreis netto.</span></figcaption>'
+            '<span>Ein Quadrat je Tag vor Ort. Festpreis netto, Balken ab 0 €.</span></figcaption>'
             f'<ul>{"".join(rows)}</ul></figure>')
 
 
@@ -392,10 +383,9 @@ def build_body():
         + f'<div class="il-calc" role="group" aria-label="So entsteht der Preis"><div><span class="il-lab">Tage vor Ort, je Tag</span><strong>{eur(DAY)}</strong></div><span class="il-op" aria-hidden="true">+</span>'
           f'<div><span class="il-lab">Pauschale je Modul</span><strong>{eur(FLAT)}</strong><small>Konzeption, Organisation, Reisezeit</small></div><span class="il-op" aria-hidden="true">=</span>'
           f'<div class="il-calc-res"><span class="il-lab">Paketpreis</span><strong>ab {eur(5800)}</strong><small>zzgl. Fahrtkosten 0,40 € je km und Hotel nach Aufwand</small></div></div>'
-        + price_chart() + price_table()
+        + price_chart()
         + '<h3 class="il-h3">Bündel</h3>' + bundles()
-        + '<div class="grid grid-3 il-extras">'
-          '<div class="card"><h3>Einstieg</h3><ul class="il-list"><li>Challenge-Klärung, 60 Min. (Sprint): <strong>kostenfrei</strong></li><li>Format-Check (Learning Design 4.0): <strong>kostenfrei</strong></li><li>Vorgespräch (Change Leadership): <strong>kostenfrei</strong></li><li>Erfolgsfaktoren-Check, 90 Min. (Scorecard): <strong>kostenfrei</strong></li><li>Raumbegehung, ½ Tag (Design), bei Beauftragung angerechnet: <strong>1.250 €</strong></li></ul></div>'
+        + '<div class="grid grid-2 il-extras">'
           '<div class="card"><h3>Zusatzmodule</h3><ul class="il-list"><li>Wirkungsmessung nach drei Monaten: <strong>2.100 €</strong></li><li>Hospitation oder zusätzlicher Transfertag: <strong>2.500 €</strong></li><li>Co-Trainer ab 13 bzw. 15 Teilnehmenden, je Tag: <strong>1.300 €</strong></li><li>Zusätzlicher Trainer- oder Beratertag: <strong>2.500 €</strong></li></ul></div>'
           '<div class="card"><h3>Rabatte</h3><ul class="il-list"><li>Zweiter Durchlauf desselben Formats: <strong>−15 %</strong></li><li>Ab drittem Durchlauf oder Rahmenvertrag: <strong>−20 %</strong></li><li>Kammern, Bildungsträger, öffentliche Hand: <strong>−15 %</strong></li><li>Learning Design 4.0 als offenes Seminar, ab 6 Teilnehmenden: <strong>990 € p. P.</strong></li></ul></div>'
           "</div>"

@@ -59,7 +59,7 @@ def fokus_page(cfg):
             head("Mögliche Bausteine", "Drei Phasen einer Maßnahme", "")
             + V.phases(cfg["color"], cfg["phases"]), "section-white", "")
         + section(head("Weiterführend", "Passende Formate und Begriffe", "") + V.related_formats(cfg["related"]), "", "")
-        + section(head("Ansprechpartner", esc(p["name"]), "") + partner_wide(cfg["partner"]), "section-cream", "")
+        + section(V.partner_compact(cfg["partner"]), "section-cream v-tight", "")
         + section(head("Häufige Fragen", "Fragen zu diesem Fokusfeld") + faqs_html, "", "")
         + section('<div class="sources"><h2 class="h2">Quellen</h2><ul>' + sources + "</ul></div>", "section-white v-tight", "")
         + cta_band(cfg["cta_title"], "20 bis 30 Minuten, kostenlos und unverbindlich.")
@@ -284,8 +284,6 @@ VERHANDLUNG.update({
          "<p>Verhandlungsführung betrifft Strategie und Vorbereitung, Rhetorik die Wirkung von Argumenten und Auftreten. Beides ergänzt sich.</p>"),
         ("Kann eine Maßnahme an eigenen Verhandlungsfällen ansetzen?",
          "<p>Ja. Fälle lassen sich in Übungen aufgreifen, auch anonymisiert.</p>"),
-        ("Wer ist Ansprechpartner?",
-         "<p>Dr. Oliver Meschkat, Partner der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
 })
 LEADERSHIP.update({
@@ -310,8 +308,6 @@ LEADERSHIP.update({
          f"<p>Nicht zwingend. Wer den Abstand zwischen Anspruch und Alltag zuerst messen möchte, findet <a href=\"{SD}the-gap\">THE GAP</a> bei der Schubart &amp; Dulgeridis GmbH.</p>"),
         ("Für welche Führungsebenen eignet sich das?",
          "<p>Für Geschäftsleitungen, Bereichsleitungen und Teamleitungen, jeweils angepasst an die Zielgruppe.</p>"),
-        ("Wer ist Ansprechpartner?",
-         "<p>Prof. Dr. Constantin Schubart, Geschäftsführer der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
 })
 FINANCE.update({
@@ -336,8 +332,6 @@ FINANCE.update({
          "<p>Nein. Maßnahmen passen sich dem Vorwissen an. Ziel ist Verständnis, nicht Buchführung.</p>"),
         ("Worin unterscheiden sich Gewinn und Cashflow?",
          "<p>Gewinn ist das Ergebnis der Erfolgsrechnung, Cashflow der Saldo tatsächlicher Zahlungen. Beide können stark abweichen.</p>"),
-        ("Wer ist Ansprechpartner?",
-         "<p>Prof. Dr. Marcel Dulgeridis, Partner der The Gap Lab GmbH. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
 })
 

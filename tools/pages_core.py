@@ -51,7 +51,7 @@ FAQ_CONTACT = [
 ]
 
 FAQ_ALL = FAQ_COMPANY + FAQ_COOPERATION + FAQ_CONTACT
-FAQ_HOME = [FAQ_COMPANY[0], FAQ_COMPANY[1], FAQ_COOPERATION[0], FAQ_COOPERATION[1]]
+FAQ_HOME = [FAQ_COMPANY[0], FAQ_COMPANY[1], FAQ_COOPERATION[1]]
 
 
 def home():
@@ -76,30 +76,20 @@ def home():
     </div>
   </div>
   <aside class="flow-card" aria-labelledby="flow-title">
-    <h2 id="flow-title">Vom Konzept zur Maßnahme</h2>
+    <h2 id="flow-title">Das Wichtigste</h2>
     <ol class="flow-list">
-      <li><div><strong>Konzeption</strong><span>Ziel und Zielgruppe klären.</span></div></li>
-      <li><div><strong>Entwicklung</strong><span>Inhalte und Übungen erarbeiten.</span></div></li>
-      <li><div><strong>Durchführung</strong><span>Maßnahme umsetzen.</span></div></li>
-      <li><div><strong>Vermarktung</strong><span>Angebot klar beschreiben.</span></div></li>
+      <li><div><strong>Drei Disziplinen</strong><span>Verhandeln, Führen, Wirtschaften.</span></div></li>
+      <li><div><strong>Drei Partner mit Namen</strong><span>Zwei Professoren, ein Dr.</span></div></li>
+      <li><div><strong>Festpreis ab 5.800&nbsp;€</strong><span>InnoLab, netto, vor Ort.</span></div></li>
+      <li><div><strong>Kostenloses Erstgespräch</strong><span>20 bis 30 Minuten.</span></div></li>
     </ol>
-    <div class="flow-foot"><strong>Vier Stufen, eine Gesellschaft.</strong>Von der Idee bis zum fertigen Angebot.</div>
+    <div class="flow-foot"><strong>Tochter der Schubart &amp; Dulgeridis GmbH.</strong>Altdorf bei Nürnberg.</div>
   </aside>
 </div></div></section>
 """
 
-    trust = """
-<section class="trust" aria-label="Das Wichtigste auf einen Blick"><div class="container"><div class="trust-grid">
-  <div class="trust-item"><strong>Drei Disziplinen</strong><span>Verhandeln, Führen, Wirtschaften in einer Gesellschaft</span></div>
-  <div class="trust-item"><strong>Drei Partner mit Namen</strong><span>Zwei Professoren (BWL), ein promovierter Verhandlungsexperte</span></div>
-  <div class="trust-item"><strong>Festpreis ab 5.800&nbsp;€</strong><span>InnoLab: fünf Formate vor Ort, netto</span></div>
-  <div class="trust-item"><strong>Kostenloses Erstgespräch</strong><span>20 bis 30 Minuten per Microsoft Teams</span></div>
-</div></div></section>
-"""
-
     kurz = section(answer_box("Kurz erklärt",
-        f"THE GAP Lab ist die Marke der The Gap Lab GmbH ({SITE['city']}), Tochter der Schubart &amp; Dulgeridis GmbH. "
-        'Sie entwickelt und führt Maßnahmen der Personalentwicklung durch, damit Strategie im Alltag ankommt. '
+        "THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch, damit Strategie im Alltag ankommt. "
         'Einstiege: <a href="/kontakt">Erstgespräch</a>, <a href="/innolab">InnoLab</a>, <a href="/ki-readiness">KI-Readiness Check</a>.'),
         "v-tight", "")
 
@@ -108,22 +98,18 @@ def home():
 
     leistungen = section(
         head("02 · Die Lösung", "Vier Stufen, jede mit eigenem Ergebnis", "Einzeln buchbar oder als Kette.", "leistungen-title")
-        + V.value_chain()
-        + '<p class="small"><a class="link-arrow" href="/leistungen">Alle Stufen im Detail ' + ARROW + "</a></p>", "section-white", "leistungen-title")
+        + V.value_chain(results=False)
+        + '<p class="small"><a class="link-arrow" href="/leistungen">Ergebnisse je Stufe ' + ARROW + "</a></p>", "section-white", "leistungen-title")
 
     fokus = section(
-        head("03 · Die Fokusfelder", "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern zusammen",
-             "Ein benannter Partner je Fokusfeld.", "fokus-title")
+        head("03 · Die Fokusfelder", "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern zusammen", "", "fokus-title")
         + V.venn(), "", "fokus-title")
 
     angebote = section(
         head("04 · Das Angebot", "Zwei Einstiege ohne Vorgespräch", "", "angebote-title") + V.teasers(), "section-cream", "angebote-title")
 
-    warum = section(
-        head("05 · Warum THE GAP Lab", "Drei Disziplinen statt drei Projekte", "", "warum-title") + V.statements(), "v-dark", "warum-title")
-
     vorgehen = section(
-        head("06 · Das Vorgehen", "Vier Schritte vom Gespräch zur Auswertung", "", "vorgehen-title")
+        head("05 · Das Vorgehen", "Vier Schritte vom Gespräch zur Auswertung", "", "vorgehen-title")
         + V.timeline([
             ("Schritt 1 · 20 bis 30 Minuten", "Erstgespräch", "Anlass, Ziel, Zielgruppe.", "Klarer Auftrag"),
             ("Schritt 2", "Konzept", "Ziele, Inhalte, Format, Erfolgskriterien.", "Abgestimmtes Konzept"),
@@ -143,9 +129,9 @@ def home():
         + '<p class="small">Weitere Antworten: <a href="/faq">FAQ</a>.</p>', "", "faq-title")
 
     cta = cta_band("Entwicklung, die in Ihrer Organisation ankommt.",
-                   "20 bis 30 Minuten mit einem der Partner. Kostenlos und unverbindlich.")
+                   "Kostenloses Erstgespräch, 20 bis 30 Minuten.")
 
-    page["body"] = hero + trust + kurz + problem + leistungen + fokus + angebote + warum + vorgehen + partner + faq + cta
+    page["body"] = hero + kurz + problem + leistungen + fokus + angebote + vorgehen + partner + faq + cta
     page["styles"] = ["/assets/visual.css"]
     page["journey"] = "/"
     page["speakable"] = True
@@ -164,9 +150,7 @@ def leistungen():
         ("Was bietet The Gap Lab GmbH an?",
          "<p>Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung in drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation, Finance &amp; Transformation.</p>"),
         ("Muss ich alle vier Stufen beauftragen?",
-         "<p>Nein. Eine Stufe, mehrere Stufen oder die ganze Kette: Das klären wir im kostenlosen Erstgespräch.</p>"),
-        ("Welche Ergebnisse erhalte ich?",
-         "<p>Je nach Stufe ein Konzept mit Erfolgskriterien, Materialien und Übungen, eine durchgeführte Maßnahme mit Auswertung oder eine Angebotsbeschreibung. Der Umfang steht im Angebot.</p>"),
+         "<p>Nein. Einzeln oder als Kette, das klärt das Erstgespräch.</p>"),
         ("Bieten Sie auch Diagnostik an?",
          f"<p>Diagnostik wie THE GAP und der Pulse-Check gehört zur Schubart &amp; Dulgeridis GmbH: <a href=\"{SD}the-gap\">schubart-dulgeridis.de/the-gap</a>.</p>"),
     ]
@@ -176,9 +160,7 @@ def leistungen():
         erg = "".join(f"<li>{e}</li>" for e in ergebnisse)
         return f"""<article class="v-service" id="{anchor}">
   <div class="v-shead"><span class="big" aria-hidden="true">{num:02d}</span><div><span>{num:02d} · Stufe</span><h2>{title}</h2></div></div>
-  <div class="v-sflow">
-    <div class="v-sbox"><span class="v-lab">Ausgangslage</span><p>{ausgang}</p></div>
-    <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
+  <div class="v-sflow two">
     <div class="v-sbox mid"><span class="v-lab">Was wir tun</span><p>{tun}</p></div>
     <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
     <div class="v-sbox out"><span class="v-lab">Ergebnisse</span><ul>{erg}</ul></div>
@@ -209,13 +191,12 @@ def leistungen():
     )
 
     body = (
-        page_hero(page, "Leistungen von der Konzeption bis zur Vermarktung", "Vier Stufen, einzeln oder als Kette.")
+        page_hero(page, "Leistungen von der Konzeption bis zur Vermarktung")
         + section(
             answer_box("Kurzantwort: Was bietet The Gap Lab an?",
                        "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
-            + head("Überblick", "Vier Stufen beantworten vier Leitfragen", "")
-            + V.value_chain()
-            + '<h3 class="v-h3">Die passende Stufe</h3>' + V.decision_help()
+            + head("Überblick", "Vier Stufen, vier Leitfragen", "")
+            + V.value_chain(results=False)
             + services, "", "")
         + section(V.innolab_strip(), "section-white v-tight", "")
         + section(
@@ -223,7 +204,7 @@ def leistungen():
                  "Diagnostik und Beratung liegen bei der Muttergesellschaft, Maßnahmen bei THE GAP Lab.") + V.measure_develop(), "", "")
         + section(
             head("Häufige Fragen", "Fragen zu den Leistungen") + faq_block(faqs), "section-white", "")
-        + cta_band("Die passende Stufe klärt das Erstgespräch.", "20 bis 30 Minuten, kostenlos und unverbindlich.")
+        + cta_band("Die passende Stufe klärt das Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
     page["body"] = body
     page["schema_nodes"] = [{
@@ -257,13 +238,13 @@ def fokusfelder_hub():
                             for i, (u, n) in enumerate([("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung & Rhetorik"), ("/fokusfelder/leadership-organisation", "Leadership & Organisation"), ("/fokusfelder/finance-transformation", "Finance & Transformation")], 1)],
     }]
     page["body"] = (
-        page_hero(page, "Drei Fokusfelder, drei Ansprechpartner", "Verhandeln, Führen und Wirtschaften hängen im Alltag zusammen.")
+        page_hero(page, "Drei Fokusfelder, drei Ansprechpartner")
         + section(
             answer_box("Kurzantwort: In welchen Feldern arbeitet THE GAP Lab?",
-                       "Verhandlungsführung &amp; Rhetorik (Dr. Oliver Meschkat), Leadership &amp; Organisation (Prof. Dr. Constantin Schubart) sowie Finance &amp; Transformation (Prof. Dr. Marcel Dulgeridis).")
+                       "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation, je mit einem benannten Partner.")
             + V.venn(with_links=False), "", "")
         + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "", "cmp-title") + V.fokus_compare(), "section-white", "cmp-title")
-        + cta_band("Das passende Fokusfeld klärt das Erstgespräch.", "20 bis 30 Minuten, kostenlos und unverbindlich.")
+        + cta_band("Das passende Fokusfeld klärt das Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page
 
@@ -285,25 +266,24 @@ def ueber_uns():
   <div>
     <span class="role">{esc(p['role'])} · {esc(p['focus'])}</span>
     <h3>{esc(p['name'])}</h3>
-    <p>{esc(p['long_bio'])}</p>
+    <p>{esc(p['short_bio'])}</p>
     <div class="hero-actions">
       {link_arrow(p['fokus_path'], 'Fokusfeld ansehen')}
-      <a class="link-arrow" href="{esc(p['sd_url'])}">Profil bei S&amp;D</a>
       <a class="link-arrow" href="{esc(p['linkedin'])}" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </div>
 </article>"""
 
     page["body"] = (
-        page_hero(page, "Drei Partner, eine Gesellschaft für Personalentwicklung", "Tochter der Schubart &amp; Dulgeridis GmbH, ein Partner je Fokusfeld.")
+        page_hero(page, "Drei Partner, eine Gesellschaft für Personalentwicklung")
         + section(
             answer_box("Kurzantwort: Wer ist THE GAP Lab?",
-                       f"Die Marke der The Gap Lab GmbH in {SITE['city']}. Geschäftsführer: Prof. Dr. Constantin Schubart. Partner: Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis.")
+                       f"Die Marke der The Gap Lab GmbH in {SITE['city']}, Tochter der Schubart &amp; Dulgeridis GmbH.")
             + head("Aufbau", "Gesellschaft, Verbund und Fokusfelder", "", "aufbau-title") + V.org(), "", "aufbau-title")
         + section(head("Die Partner", "Wer hinter THE GAP Lab steht", "", "partner-title")
                   + '<div class="grid">' + wide("constantin-schubart") + wide("oliver-meschkat") + wide("marcel-dulgeridis") + "</div>",
                   "section-cream", "partner-title")
-        + cta_band("Wir lernen uns im Gespräch kennen.", "20 bis 30 Minuten, kostenlos.")
+        + cta_band("Wir lernen uns im Gespräch kennen.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page
 
@@ -314,7 +294,7 @@ def kontakt():
         "title": "Kontakt & Erstgespräch | THE GAP Lab",
         "description": "Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.",
         "priority": "0.9", "llms_group": "Unternehmen", "schema_type": "ContactPage",
-        "faqs": FAQ_CONTACT, "faq_schema": True, "styles": ["/assets/visual.css"],
+        "styles": ["/assets/visual.css"],
     }
 
     def booking(key):
@@ -328,10 +308,10 @@ def kontakt():
 </article>"""
 
     page["body"] = (
-        page_hero(page, "Kontakt und Erstgespräch", "20 bis 30 Minuten mit einem der Partner. Kostenlos und unverbindlich.")
+        page_hero(page, "Kontakt und Erstgespräch", "20 bis 30 Minuten mit einem der Partner, kostenlos.")
         + section(
             head("Termin buchen", "Drei Ansprechpartner, ein Termin",
-                 "Gebucht wird über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH, freie Zeiten sind live sichtbar.", "termin-title")
+                 "Buchung über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH.", "termin-title")
             + '<div class="grid grid-3">' + booking("constantin-schubart") + booking("oliver-meschkat") + booking("marcel-dulgeridis") + "</div>"
             + '<p class="small">Mit dem Klick wechseln Sie zur Website der Muttergesellschaft, dort gilt deren <a href="' + SD + 'datenschutz">Datenschutzerklärung</a>.</p>',
             "", "termin-title")
@@ -353,7 +333,6 @@ def kontakt():
                 "<strong>Bisherige Erfahrungen</strong>",
             ]) + """
 </div></div>""", "section-cream", "")
-        + section(head("Häufige Fragen", "Zum Kontakt") + faq_block(FAQ_CONTACT), "", "")
     )
     return page
 

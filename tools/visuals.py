@@ -27,14 +27,14 @@ STAGES = [
 
 def gap_bridge():
     breaks = [
-        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben ungeklärt. Das kostet vermeidbare Zugeständnisse.", "/fokusfelder/verhandlungsfuehrung"),
-        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind offen. Strategie und gelebte Kultur laufen auseinander.", "/fokusfelder/leadership-organisation"),
-        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Budgets und Veränderungen werden ohne belastbares Bild der finanziellen Wirkung entschieden.", "/fokusfelder/finance-transformation"),
-        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Situation der Teilnehmenden nicht.", "/leistungen#konzeption"),
+        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben offen.", "/fokusfelder/verhandlungsfuehrung"),
+        ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind unklar.", "/fokusfelder/leadership-organisation"),
+        ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Entscheidungen ohne Bild der Finanzwirkung.", "/fokusfelder/finance-transformation"),
+        ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate treffen die Zielgruppe nicht.", "/leistungen#konzeption"),
     ]
     cols = "".join(
         f'<li class="v-break {c}"><span class="v-dot" aria-hidden="true"></span><span class="v-tagline">{t}</span>'
-        f'<h3>{h}</h3><p>{p}</p><a class="link-arrow" href="{href}">Ansehen {ARROW}</a></li>'
+        f'<h3><a href="{href}">{h}</a></h3><p>{p}</p></li>'
         for c, t, h, p, href in breaks
     )
     return (
@@ -46,14 +46,14 @@ def gap_bridge():
     )
 
 
-def value_chain(with_links=True):
+def value_chain(with_links=True, results=True):
     lis = []
     for i, (aid, name, q, res) in enumerate(STAGES, 1):
         title = f'<a href="/leistungen#{aid}">{name}</a>' if with_links else name
         lis.append(
             f'<li class="v-stage s{i}"><div class="v-chev"><span>{i:02d} · Stufe</span><strong>{title}</strong></div>'
             f'<div class="v-stage-body"><div><span class="v-lab">Leitfrage</span><p>{q}</p></div>'
-            f'<div><span class="v-lab">Ergebnis</span><p>{res}</p></div></div></li>'
+            + (f'<div><span class="v-lab">Ergebnis</span><p>{res}</p></div>' if results else "") + '</div></li>'
         )
     return '<ol class="v-chain">' + "".join(lis) + "</ol>"
 
@@ -72,7 +72,7 @@ def venn(with_links=True):
     for c, path, name, short, key, text in FIELDS:
         p = PARTNERS[key]
         inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><span><strong>{name}</strong>'
-                 f'<small>{text}</small><em>{esc(p["name"])}</em></span>')
+                 f'<em>{esc(p["name"])}</em></span>')
         rows.append(f'<li><a class="v-frow {c}" href="{path}">{inner}</a></li>' if with_links else f'<li><div class="v-frow {c}">{inner}</div></li>')
     return f'<div class="v-venn-wrap">{svg}<ul class="v-flist">{"".join(rows)}</ul></div>'
 
@@ -109,12 +109,10 @@ def teasers():
         '<div class="v-duo">'
         '<article class="v-panel"><p class="v-kick">InnoLab · Innovation, Change, Personalentwicklung</p>'
         '<h3>Fünf Formate vor Ort, zum Festpreis.</h3>'
-        '<p>Prototyp, Entscheidungsvorlage oder Change-Fahrplan statt Abschlussbericht.</p>'
         f'<ul class="v-minilist" aria-label="Formate mit Dauer und Preis">{rows}</ul>'
         f'<a class="btn btn-gold" href="/innolab">InnoLab ansehen {ARROW}</a></article>'
         '<article class="v-panel v-panel-dark"><p class="v-kick">KI-Readiness Check · kostenlos</p>'
         '<h3>Die KI-Lücke in drei Minuten sichtbar.</h3>'
-        '<p>Acht Signale, zwei Sichten, sofortiges Ergebnis. Ohne Login.</p>'
         + demo
         + '<ol class="v-mini3" aria-label="So funktioniert der Check"><li><b>1</b>Acht Aussagen bewerten</li><li><b>2</b>Zwei Sichten angeben</li><li><b>3</b>KI-Gap erhalten</li></ol>'
         + f'<a class="btn btn-gold" href="/ki-readiness">KI-Gap messen {ARROW}</a></article></div>')
@@ -123,11 +121,11 @@ def teasers():
 def measure_develop():
     return (
         '<div class="v-m2d"><div class="v-m2d-a"><span class="v-lab">Messen und beraten</span><h3>Diagnostik und Beratung</h3>'
-        f'<p class="v-who">Schubart &amp; Dulgeridis GmbH</p><ul><li>THE GAP und Pulse-Check</li><li>Re- und Upskilling-Programme</li><li>Coaching und Recruiting</li></ul>'
+        f'<p class="v-who">Schubart &amp; Dulgeridis GmbH</p><ul><li>THE GAP und Pulse-Check</li><li>Upskilling, Coaching, Recruiting</li></ul>'
         f'<a class="link-arrow" href="{SD}">Zur Muttergesellschaft {ARROW}</a></div>'
         '<div class="v-m2d-arrow" aria-hidden="true">' + ARROW + '</div>'
         '<div class="v-m2d-b"><span class="v-lab">Entwickeln</span><h3>Maßnahmen der Personalentwicklung</h3>'
-        '<p class="v-who">The Gap Lab GmbH</p><ul><li>Konzeption, Entwicklung, Durchführung, Vermarktung</li><li>Fokusfelder Verhandlung, Leadership, Finance</li><li>Format, Dauer und Ort nach Ihrer Ausgangslage</li></ul>'
+        '<p class="v-who">The Gap Lab GmbH</p><ul><li>Konzeption bis Vermarktung</li><li>Verhandlung, Leadership, Finance</li></ul>'
         '<a class="link-arrow" href="/kontakt">Erstgespräch vereinbaren ' + ARROW + '</a></div></div>')
 
 
@@ -159,7 +157,6 @@ def fokus_compare():
         cols.append(
             f'<article class="v-fc {c}"><header><span class="v-fc-n">{short}</span><h3><a href="{path}">{name}</a></h3></header>'
             f'<div><span class="v-lab">Leitfrage</span><p class="v-q">{q}</p></div>'
-            f'<div><span class="v-lab">Typische Situationen</span><ul>{"".join(f"<li>{s}</li>" for s in situ)}</ul></div>'
             f'<div><span class="v-lab">Zentrale Begriffe</span><ul class="v-terms">{"".join(f"<li>{t}</li>" for t in terms)}</ul></div>'
             f'<footer><img src="{esc(p["img"])}" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>{esc(p["name"])}</strong><small>{esc(p["role"])}</small></span></footer></article>')
     return '<div class="v-fcmp">' + "".join(cols) + "</div>"
@@ -220,7 +217,7 @@ def org():
     return (f'<figure class="v-org"><figcaption class="sr-only">Struktur: Muttergesellschaft, Tochtergesellschaft und drei Fokusfelder mit Partnern</figcaption>'
             f'<div class="v-o1"><span class="v-lab">Muttergesellschaft</span><h3><a href="{SD}">Schubart &amp; Dulgeridis GmbH</a></h3><p>Forschungsbasierte Beratung und Diagnostik</p></div>'
             '<div class="v-oline" aria-hidden="true"></div>'
-            '<div class="v-o2"><span class="v-lab">Tochtergesellschaft · Altdorf bei Nürnberg</span><h3>The Gap Lab GmbH</h3><p>Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung. Geschäftsführer: Prof. Dr. Constantin Schubart.</p></div>'
+            '<div class="v-o2"><span class="v-lab">Tochtergesellschaft · Altdorf bei Nürnberg</span><h3>The Gap Lab GmbH</h3><p>Maßnahmen der Personalentwicklung</p></div>'
             '<div class="v-oline v-oline2" aria-hidden="true"></div>'
             f'<ul class="v-okids">{kids}</ul></figure>')
 
@@ -266,11 +263,20 @@ def innolab_strip():
         f'<li><a href="/innolab#{f["id"]}"><span class="v-days" role="img" aria-label="{f["days"]} Tage">' + "".join("<i></i>" for _ in range(f["days"])) +
         f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])} · {esc(f["people"])}</small></span><span class="v-fp">{eur(f["price"])}</span></a></li>'
         for f in FORMATS)
-    return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate zum Festpreis, bei Ihnen vor Ort.</h3>'
-            '<p>Innovation, Change und Lernen, jeweils mit eigenem Ergebnis.</p>'
+    return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate zum Festpreis.</h3>'
             f'<a class="btn" href="/innolab">Alle Formate ansehen {ARROW}</a></div><ul class="v-minilist" aria-label="InnoLab-Formate">{rows}</ul></div>')
 
 
 def related_formats(items):
-    lis = "".join(f'<li><a href="{h}"><span class="v-lab">{k}</span><strong>{n}</strong><span>{t}</span></a></li>' for h, k, n, t in items)
+    lis = "".join(f'<li><a href="{h}"><span class="v-lab">{k}</span><strong>{n}</strong></a></li>' for h, k, n, t in items)
     return f'<ul class="v-related">{lis}</ul>'
+
+
+def partner_compact(key):
+    p = PARTNERS[key]
+    return (f'<div class="v-pc {FIELD_CLS.get(key, "f1")}"><img src="{esc(p["img"])}" alt="{esc(p["name"])}" width="96" height="96" loading="lazy" decoding="async">'
+            f'<div><strong>{esc(p["name"])}</strong><span>{esc(p["role"])} · {esc(p["focus"])}</span>'
+            f'<a class="link-arrow" href="/ueber-uns#{key}">Profil {ARROW}</a></div></div>')
+
+
+FIELD_CLS = {"oliver-meschkat": "f1", "constantin-schubart": "f2", "marcel-dulgeridis": "f3"}
