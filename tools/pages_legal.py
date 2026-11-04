@@ -12,7 +12,7 @@ def faq():
         "path": "/faq", "short": "FAQ",
         "title": "FAQ — Häufige Fragen zu THE GAP Lab",
         "description": "Antworten auf häufige Fragen: Was macht THE GAP Lab, wer steht dahinter, wie läuft eine Zusammenarbeit ab und wie komme ich zum Erstgespräch?",
-        "priority": "0.7", "llms_group": "Unternehmen", "faqs": FAQ_ALL,
+        "priority": "0.7", "llms_group": "Unternehmen", "faqs": FAQ_ALL, "speakable": True, "speakable_selector": [".page-hero .lead"],
     }
     page["body"] = (
         page_hero(page, "Häufige Fragen zu THE GAP Lab",

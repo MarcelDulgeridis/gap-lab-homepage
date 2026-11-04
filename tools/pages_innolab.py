@@ -263,33 +263,28 @@ def journey():
 
 def format_block(f):
     steps = "".join(
-        f'<li><span class="il-lab">{esc(a)}</span><strong>{esc(b)}</strong><span>{esc(c)}</span></li>' for a, b, c in f["ablauf"]
+        f'<li><span class="il-lab">{esc(a)}</span><strong>{esc(b)}</strong><span class="il-st">{esc(c)}</span></li>' for a, b, c in f["ablauf"]
     )
-    nutzen = "".join(f"<li><strong>{esc(a)}</strong></li>" for a, b in f["nutzen"])
-    forschung1 = f["forschung"].split(". ")[0].rstrip(".") + "."
+    nutzen = "".join(f"<li>{esc(a)}</li>" for a, b in f["nutzen"])
     facts = "".join(f"<div><dt>{esc(a)}</dt><dd>{esc(b)}</dd></div>" for a, b in f["facts"])
     en, ed, et = f["einstieg"]
     pp = f' · {esc(f["pp"])} pro Person*' if f["pp"] else ""
+    days = "".join("<i></i>" for _ in range(f["days"]))
     return f"""<article class="il-format" id="{f['id']}" aria-labelledby="{f['id']}-h">
-<header class="il-fhead">
-<p class="il-kicker">Format {f['no']} von 05 · {esc(f['kind'])}</p>
-<h3 id="{f['id']}-h">{esc(f['name'])}</h3>
-<p class="il-claim"><span>{esc(f['tag1'])}</span> <em>{esc(f['tag2'])}</em></p>
-<ul class="chips il-chips"><li>{esc(f['dur'])}</li><li>{esc(f['people'])}</li><li>Festpreis {eur(f['price'])} netto</li></ul>
+<header class="il-fh">
+<span class="il-no" aria-hidden="true">{f['no']}</span>
+<div class="il-ft"><p class="il-kicker">{esc(f['kind'])}</p><h3 id="{f['id']}-h">{esc(f['name'])}</h3>
+<p class="il-claim"><span>{esc(f['tag1'])}</span> <em>{esc(f['tag2'])}</em></p></div>
+<div class="il-fm"><span class="il-days" role="img" aria-label="{f['days']} Tage vor Ort">{days}</span><span>{esc(f['dur'])}</span><span>{esc(f['people'])}</span></div>
 </header>
-<div class="il-fgrid">
-<div class="il-fmain">
 <p class="il-lead">{esc(f['teaser'])}</p>
-<h4>{esc(f['ablauf_head'])}</h4>
-<ol class="il-steps">{steps}</ol>
-<dl class="defs il-defs il-defs-main">{facts}</dl>
-</div>
-<aside class="il-fside">
-<div class="il-box"><h4>Nutzen</h4><ul class="il-benefits">{nutzen}</ul></div>
+<ol class="il-hsteps">{steps}</ol>
+<div class="il-fbot">
+<div class="il-box"><h4>Nutzen</h4><ul class="il-gains">{nutzen}</ul></div>
+<dl class="il-facts">{facts}</dl>
 <div class="il-box il-price"><span class="il-lab">Paketpreis</span><p class="il-big">{eur(f['price'])} <small>netto{pp}</small></p>
-<p class="il-in"><strong>Einstieg: {esc(en)}</strong> <span>({esc(ed)})</span></p>
+<p class="il-in"><strong>Einstieg:</strong> {esc(en)} <span>({esc(ed)})</span></p>
 <a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a></div>
-</aside>
 </div>
 </article>"""
 
@@ -362,13 +357,7 @@ def build_body():
         ,
         "", "problem-h")
     loesung = section(
-        head("02 · Die Lösung", "Ein Portfolio, fünf Hebel", "Einzeln buchbar oder als abgestimmte Folge.", "loesung-h")
-        + '<div class="grid grid-4 il-principles">'
-        '<div class="card"><span class="tag">01 · Prinzip</span><h3>Eine echte Aufgabe</h3><p>Ihre eigene Fragestellung statt Fallbeispiele.</p></div>'
-        '<div class="card"><span class="tag">02 · Prinzip</span><h3>Erst erleben, dann übertragen</h3><p>Kurze Inputs, lange Anwendung.</p></div>'
-        '<div class="card"><span class="tag">03 · Prinzip</span><h3>Ergebnis statt Teilnahme</h3><p>Unterlagen, die weiter genutzt werden.</p></div>'
-        '<div class="card"><span class="tag">04 · Prinzip</span><h3>Forschungsbasiert</h3><p>Evaluiert mit 124 Teilnehmenden über 10 Monate.</p></div>'
-        "</div>"
+        head("02 · Die Lösung", "Fünf Hebel, einzeln oder als Folge", "", "loesung-h")
         + '<h3 class="il-h3">Abgestimmte Folgen mit rund 10 % Vorteil</h3>' + journey(),
         "section-white", "loesung-h")
     formate_head = section(
