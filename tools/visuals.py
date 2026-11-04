@@ -342,3 +342,15 @@ def org_people():
             '<div class="v-o2"><span class="v-lab">Tochtergesellschaft · Altdorf bei Nürnberg</span><h3>The Gap Lab GmbH</h3><p>Maßnahmen der Personalentwicklung</p></div>'
             '<p class="v-ocap"><span>Drei Fokusfelder, drei Partner</span></p>'
             f'<ul class="v-okids">{kids}</ul></figure>')
+
+
+def term_links(items):
+    """Fachbegriffe als Links ins Glossar (interne Verlinkung, Begriffs-Abdeckung)."""
+    lis = "".join(f'<li><a href="/glossar#{a}">{esc(t)}</a></li>' for a, t in items)
+    return f'<ul class="v-termlinks">{lis}</ul>'
+
+
+def choose(items):
+    """Entscheidungshilfe: Ausgangslage -> passendes Fokusfeld."""
+    lis = "".join(f'<li class="{c}"><span>{esc(sit)}</span><a href="{h}">{n} {ARROW}</a></li>' for c, sit, h, n in items)
+    return f'<ul class="v-choose">{lis}</ul>'

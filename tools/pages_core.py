@@ -51,7 +51,40 @@ FAQ_CONTACT = [
 ]
 
 FAQ_ALL = FAQ_COMPANY + FAQ_COOPERATION + FAQ_CONTACT
-FAQ_HOME = [FAQ_COMPANY[0], FAQ_COMPANY[1], FAQ_COOPERATION[1]]
+FAQ_HOME = [
+    FAQ_COMPANY[0],
+    ("Für wen ist THE GAP Lab gedacht?",
+     "<p>Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklung gezielt planen oder einkaufen, sowie für Kammern, Bildungsträger und Akademien.</p>"),
+    ("Welches Fokusfeld passt zu welcher Aufgabe?",
+     "<p><a href=\"/fokusfelder/verhandlungsfuehrung\">Verhandlungsführung &amp; Rhetorik</a> bei Preis-, Vertrags- und internen Verhandlungen, <a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> bei unklaren Rollen und Entscheidungswegen, <a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>, wenn Zahlen Entscheidungen tragen sollen.</p>"),
+    ("Was passiert im kostenlosen Erstgespräch?",
+     "<p>In 20 bis 30 Minuten per Microsoft Teams klären wir Anlass, Ziel und Zielgruppe. Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
+    FAQ_COOPERATION[1],
+]
+FAQ_FOKUS = [
+    ("Welches Fokusfeld passt zu welcher Aufgabe?",
+     "<p>Verhandlungsführung &amp; Rhetorik bei Preis-, Vertrags- und internen Verhandlungen, Leadership &amp; Organisation bei unklaren Rollen, Entscheidungswegen und stockender Veränderung, Finance &amp; Transformation, wenn Zahlen Entscheidungen tragen sollen. Das Erstgespräch klärt die Zuordnung.</p>"),
+    ("Wer ist Ansprechpartner je Fokusfeld?",
+     "<p>Dr. Oliver Meschkat für Verhandlungsführung &amp; Rhetorik, Prof. Dr. Constantin Schubart für Leadership &amp; Organisation, Prof. Dr. Marcel Dulgeridis für Finance &amp; Transformation.</p>"),
+    ("Lassen sich Fokusfelder kombinieren?",
+     "<p>Ja. Maßnahmen lassen sich feldübergreifend konzipieren. Welche Kombination zur Ausgangslage passt, klärt das kostenlose Erstgespräch.</p>"),
+]
+FAQ_ABOUT = [
+    ("Wer leitet THE GAP Lab?",
+     "<p>Geschäftsführer der The Gap Lab GmbH ist Prof. Dr. Constantin Schubart. Partner sind Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis.</p>"),
+    ("Welche Qualifikation haben die Partner?",
+     "<p>Constantin Schubart und Marcel Dulgeridis sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule. Oliver Meschkat promovierte zur Leistungsfähigkeit deutscher Innovation Labs und ist seit 2010 als Trainer und Berater tätig.</p>"),
+    ("Wie hängen THE GAP Lab und die Schubart & Dulgeridis GmbH zusammen?",
+     f"<p>THE GAP Lab ist die Tochtergesellschaft. Diagnostik und Beratung liegen bei der <a href=\"{SD}\">Schubart &amp; Dulgeridis GmbH</a>, Maßnahmen der Personalentwicklung bei THE GAP Lab.</p>"),
+]
+FAQ_KONTAKT = [
+    ("Kostet das Erstgespräch etwas?",
+     "<p>Nein. Das Erstgespräch dauert 20 bis 30 Minuten, findet per Microsoft Teams statt und ist kostenlos und unverbindlich.</p>"),
+    ("Wie buche ich einen Termin?",
+     "<p>Über die Kalender der Partner: Termin wählen, Einladung per Outlook mit Teams-Link erhalten. Die Buchung läuft über die Website der Muttergesellschaft.</p>"),
+    ("Was sollte ich vorbereiten?",
+     "<p>Vier Stichworte genügen: Anlass und Ziel, Zielgruppe und ungefähre Zahl, Zeitrahmen bis zur Wirkung und bisherige Erfahrungen.</p>"),
+]
 
 
 def home():
@@ -61,7 +94,7 @@ def home():
         "description": "The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.",
         "og_title": "THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis",
         "priority": "1.0", "changefreq": "weekly", "llms_group": "Unternehmen",
-        "faqs": FAQ_HOME, "faq_schema": False, "show_stand": False,
+        "faqs": FAQ_HOME, "show_stand": False,
     }
 
     hero = f"""
@@ -81,11 +114,23 @@ def home():
 
     nums = V.numbers_band([("3", "Disziplinen<br>in einer Gesellschaft"), ("3", "Partner<br>mit Namen"), ("5", "InnoLab-Formate<br>vor Ort"), ("20–30", "Minuten Erstgespräch,<br>kostenlos")])
 
+    kurz = section(
+        answer_box("Kurzantwort: Was ist THE GAP Lab?",
+                   "THE GAP Lab konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung in drei Fokusfeldern: "
+                   "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation. "
+                   "Konkrete Angebote sind fünf InnoLab-Workshops vor Ort und der kostenlose KI-Readiness Check.")
+        + V.facts_strip([
+            ("Wer", "The Gap Lab GmbH, Tochter der Schubart &amp; Dulgeridis GmbH"),
+            ("Für wen", "Geschäftsleitungen, Personalverantwortliche, Führungskräfte, Bildungsträger"),
+            ("Wo", f"{SITE['street']}, {SITE['zip']} {SITE['city']}"),
+            ("Einstieg", "Kostenloses Erstgespräch, 20 bis 30 Minuten"),
+        ], "n4"), "v-tight", "")
+
     problem = section(
-        head("01 · Das Problem", "Wirkung geht an vier Stellen verloren", "", "problem-title") + V.gap_bridge(), "", "problem-title")
+        head("01 · Das Problem", "Personalentwicklung verliert an vier Stellen ihre Wirkung", "", "problem-title") + V.gap_bridge(), "", "problem-title")
 
     leistungen = section(
-        head("02 · Die Lösung", "Vier Stufen, jede mit eigenem Ergebnis", "Einzeln buchbar oder als Kette.", "leistungen-title")
+        head("02 · Die Lösung", "Vier Stufen der Personalentwicklung, jede mit eigenem Ergebnis", "Einzeln buchbar oder als Kette.", "leistungen-title")
         + V.value_chain(results=False)
         + '<p class="small"><a class="link-arrow" href="/leistungen">Ergebnisse je Stufe ' + ARROW + "</a></p>", "section-white", "leistungen-title")
 
@@ -94,7 +139,7 @@ def home():
         + V.venn(), "", "fokus-title")
 
     angebote = section(
-        head("04 · Das Angebot", "Zwei Einstiege ohne Vorgespräch", "", "angebote-title") + V.teasers(), "section-cream", "angebote-title")
+        head("04 · Das Angebot", "Innovationsworkshops und KI-Check: zwei Einstiege ohne Vorgespräch", "", "angebote-title") + V.teasers(), "section-cream", "angebote-title")
 
     vorgehen = section(
         head("05 · Das Vorgehen", "Vier Schritte vom Gespräch zur Auswertung", "", "vorgehen-title")
@@ -111,6 +156,13 @@ def home():
         + partner_card("constantin-schubart") + partner_card("oliver-meschkat") + partner_card("marcel-dulgeridis")
         + "</div>", "section-cream", "partner-title")
 
+    begriffe = section(
+        head("Fachbegriffe", "Neun Begriffe, die Entscheidungen tragen", "Kurz erklärt im Glossar, mit Link zum passenden Fokusfeld.", "begriffe-title")
+        + V.term_links([("alternative-zum-verhandlungsergebnis-batna", "BATNA"), ("verhandlungsspielraum-zopa", "ZOPA"), ("anker", "Anker"),
+                        ("rollenklarheit", "Rollenklarheit"), ("entscheidungsrechte", "Entscheidungsrechte"), ("umsetzungsluecke", "Umsetzungslücke"),
+                        ("cashflow", "Cashflow"), ("business-case", "Business Case"), ("ki-gap", "KI-Gap")])
+        + '<p class="small"><a class="link-arrow" href="/glossar">Zum Glossar ' + ARROW + "</a></p>", "section-cream", "begriffe-title")
+
     faq = section(
         head("Häufige Fragen", "Antworten in Kürze", "", "faq-title")
         + faq_block(FAQ_HOME)
@@ -119,7 +171,7 @@ def home():
     cta = cta_band("Entwicklung, die in Ihrer Organisation ankommt.",
                    "Kostenloses Erstgespräch, 20 bis 30 Minuten.")
 
-    page["body"] = hero + nums + problem + leistungen + fokus + angebote + vorgehen + faq + cta
+    page["body"] = hero + nums + kurz + problem + leistungen + fokus + angebote + vorgehen + begriffe + faq + cta
     page["speakable_selector"] = [".hero .lead"]
     page["styles"] = ["/assets/visual.css"]
     page["journey"] = "/"
@@ -183,7 +235,7 @@ def fokusfelder_hub():
         "path": "/fokusfelder", "short": "Fokusfelder",
         "title": "Fokusfelder — Verhandlung, Leadership, Finance | THE GAP Lab",
         "description": "Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.",
-        "priority": "0.8", "llms_group": "Fokusfelder", "schema_type": "CollectionPage",
+        "priority": "0.8", "llms_group": "Fokusfelder", "schema_type": "CollectionPage", "faqs": FAQ_FOKUS,
         "styles": ["/assets/visual.css"], "journey": "/fokusfelder", "speakable": True,
     }
     page["schema_nodes"] = [{
@@ -197,7 +249,13 @@ def fokusfelder_hub():
             answer_box("Kurzantwort: In welchen Feldern arbeitet THE GAP Lab?",
                        "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation, je mit einem benannten Partner.")
             + V.venn(with_links=False), "", "")
+        + section(head("Orientierung", "Welches Fokusfeld passt zur Aufgabe", "", "wahl-title") + V.choose([
+            ("f1", "Preis-, Vertrags- oder interne Verhandlungen stehen an", "/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik"),
+            ("f2", "Rollen, Entscheidungswege oder Führung sind unklar", "/fokusfelder/leadership-organisation", "Leadership &amp; Organisation"),
+            ("f3", "Zahlen sollen Entscheidungen und Vorhaben tragen", "/fokusfelder/finance-transformation", "Finance &amp; Transformation"),
+        ]), "", "wahl-title")
         + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "", "cmp-title") + V.fokus_compare() + '<p class="small">Begriffe nachlesen: <a href="/glossar">Glossar</a>. Konkrete Formate: <a href="/innolab">InnoLab</a>. Einstieg: <a href="/kontakt">Erstgespräch</a>.</p>', "section-white", "cmp-title")
+        + section(head("Häufige Fragen", "Fragen zu den Fokusfeldern") + faq_block(FAQ_FOKUS) + faq_more(), "", "")
         + cta_band("Das passende Fokusfeld klärt das Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page
@@ -212,6 +270,7 @@ def ueber_uns():
         "styles": ["/assets/visual.css"], "journey": "/ueber-uns", "speakable": True,
     }
     page["schema_nodes"] = person_nodes()
+    page["faqs"] = FAQ_ABOUT
 
     page["body"] = (
         page_hero(page, "Drei Partner, eine Gesellschaft für Personalentwicklung", "Tochter der Schubart &amp; Dulgeridis GmbH.")
@@ -220,6 +279,12 @@ def ueber_uns():
             answer_box("Kurzantwort: Wer ist THE GAP Lab?",
                        f"Die Marke der The Gap Lab GmbH in {SITE['city']}, Tochter der Schubart &amp; Dulgeridis GmbH. Geschäftsführer ist Prof. Dr. Constantin Schubart.")
             + head("Aufbau und Team", "Wer hinter THE GAP Lab steht", "", "aufbau-title") + V.org_people(), "", "aufbau-title")
+        + section(head("Arbeitsweise", "Wie THE GAP Lab arbeitet", "", "arbeit-title") + V.facts_strip([
+            ("Ansatz", "Maßnahmen, die an der Ausgangslage der Teilnehmenden ansetzen und mit einem Ergebnis enden."),
+            ("Verbund", "Diagnostik und Beratung bei der Schubart &amp; Dulgeridis GmbH, Maßnahmen bei THE GAP Lab."),
+            ("Ansprechpartner", "Ein benannter Partner je Fokusfeld, das Erstgespräch ist kostenlos."),
+        ]), "section-white", "arbeit-title")
+        + section(head("Häufige Fragen", "Fragen zum Team") + faq_block(FAQ_ABOUT) + faq_more(), "", "")
         + cta_band("Wir lernen uns im Gespräch kennen.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page
@@ -231,7 +296,7 @@ def kontakt():
         "title": "Kontakt & Erstgespräch | THE GAP Lab",
         "description": "Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.",
         "priority": "0.9", "llms_group": "Unternehmen", "schema_type": "ContactPage",
-        "styles": ["/assets/visual.css"], "speakable": True,
+        "styles": ["/assets/visual.css"], "speakable": True, "faqs": FAQ_KONTAKT,
     }
 
     def booking(key):
@@ -272,6 +337,7 @@ def kontakt():
             ]) + """
 <p class="small">Vorab informieren: <a href="/leistungen">Leistungen</a>, <a href="/fokusfelder">Fokusfelder</a>, <a href="/innolab">InnoLab</a>, <a href="/faq">häufige Fragen</a>.</p>
 </div></div>""", "section-cream", "")
+        + section(head("Häufige Fragen", "Fragen zum Erstgespräch") + faq_block(FAQ_KONTAKT) + faq_more(), "", "")
     )
     return page
 
