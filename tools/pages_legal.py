@@ -20,7 +20,7 @@ def faq():
         + section(head("Unternehmen", "Über die Gesellschaft", "") + faq_block(FAQ_COMPANY), "", "")
         + section(head("Zusammenarbeit", "Ablauf und Kosten", "") + faq_block(FAQ_COOPERATION), "section-white", "")
         + section(head("Kontakt", "Erreichbarkeit und Termine", "") + faq_block(FAQ_CONTACT), "", "")
-        + cta_band("Ihre Frage ist nicht dabei?", "Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.")
+        + cta_band("Weitere Fragen klären wir im Erstgespräch.", "Im Erstgespräch beantworten wir sie direkt, kostenlos und unverbindlich.")
     )
     return page
 

@@ -134,7 +134,7 @@ VERHANDLUNG = {
         "Raiffa, H.: <em>The Art and Science of Negotiation</em> (1982). Grundlage des Begriffs der Zone of Possible Agreement.",
         "Tversky, A., Kahneman, D.: Judgment under Uncertainty: Heuristics and Biases. <em>Science</em> 185 (1974). Beschreibt den Ankereffekt.",
     ],
-    "cta_title": "Welche Verhandlung soll besser werden?",
+    "cta_title": "Verhandlungen, die vorbereitet beginnen.",
     "service_name": "Verhandlungsführung & Rhetorik: Maßnahmen der Personalentwicklung",
     "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Verhandlungsführung, Rhetorik und Argumentation für Entscheider und Führungskräfte.",
     "audience_type": "Geschäftsleitungen, Führungskräfte, Fachverantwortliche",
@@ -197,7 +197,7 @@ LEADERSHIP = {
     "sources": [
         f"THE GAP — Diagnostik der Differenz zwischen Führungserwartung und Arbeitsrealität (Schubart &amp; Dulgeridis GmbH): <a href=\"{SD}the-gap\">schubart-dulgeridis.de/the-gap</a>.",
     ],
-    "cta_title": "Wo klemmt es zwischen Anspruch und Alltag?",
+    "cta_title": "Anspruch und Alltag zusammenbringen.",
     "service_name": "Leadership & Organisation: Maßnahmen der Personalentwicklung",
     "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Führung, Rollenklarheit, Entscheidungswegen und Organisation.",
     "audience_type": "Geschäftsleitungen, Bereichsleitungen, Teamleitungen, Personalverantwortliche",
@@ -260,7 +260,7 @@ FINANCE = {
     "sources": [
         "Handelsrechtlicher Jahresabschluss nach Handelsgesetzbuch (§§ 242 ff. HGB) sowie internationale Rechnungslegung nach IFRS als Grundlage der genannten Begriffe.",
     ],
-    "cta_title": "Welches Vorhaben braucht eine belastbare Zahlenbasis?",
+    "cta_title": "Vorhaben mit belastbarer Zahlenbasis.",
     "service_name": "Finance & Transformation: Maßnahmen der Personalentwicklung",
     "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Finanzverständnis, Kennzahlen und wirtschaftlicher Bewertung von Veränderungsvorhaben.",
     "audience_type": "Geschäftsleitungen, Führungskräfte, Projektverantwortliche",

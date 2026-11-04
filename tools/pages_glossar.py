@@ -64,7 +64,7 @@ def glossar():
         + section(
             answer_box("Kurz erklärt", f"Das Glossar erklärt {len(ts)} Begriffe aus Verhandlungsführung (zum Beispiel BATNA, ZOPA, Anker), Leadership &amp; Organisation (zum Beispiel Rollenklarheit, Umsetzungslücke) und Finance &amp; Transformation (zum Beispiel Cashflow, Business Case) sowie zentrale Begriffe von THE GAP Lab. Jeder Eintrag verweist auf die Seite, die ihn im Zusammenhang erklärt.")
             + az + f'<dl class="v-gloss">{"".join(rows)}</dl>', "", "")
-        + cta_band("Ein Begriff, den Sie in Ihrer Organisation klären möchten?", "Im Erstgespräch ordnen wir ein, welcher Begriff und welches Fokusfeld für Ihre Ausgangslage zählt.")
+        + cta_band("Begriffe, die in Ihrer Organisation geklärt sind.", "Im Erstgespräch ordnen wir ein, welcher Begriff und welches Fokusfeld für Ihre Ausgangslage zählt.")
     )
     return page
 

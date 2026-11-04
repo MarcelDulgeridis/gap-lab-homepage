@@ -157,7 +157,7 @@ def home():
         + faq_block(FAQ_HOME)
         + f'<p class="small">Weitere Antworten finden Sie in den <a href="/faq">FAQ</a>.</p>', "", "faq-title")
 
-    cta = cta_band("Welche Entwicklung soll in Ihrer Organisation ankommen?",
+    cta = cta_band("Entwicklung, die in Ihrer Organisation ankommt.",
                    "Sprechen Sie 20 bis 30 Minuten mit einem der Partner: kostenlos, unverbindlich, per Microsoft Teams.",
                    secondary="Die Terminbuchung läuft über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH.")
 
@@ -191,7 +191,7 @@ def leistungen():
     def service(num, anchor, title, ausgang, tun, ergebnisse, geeignet):
         erg = "".join(f"<li>{e}</li>" for e in ergebnisse)
         return f"""<article class="v-service" id="{anchor}">
-  <div class="v-shead"><span class="big" aria-hidden="true">{num}</span><div><span>Stufe {num}</span><h2>{title}</h2></div></div>
+  <div class="v-shead"><span class="big" aria-hidden="true">{num:02d}</span><div><span>{num:02d} · Stufe</span><h2>{title}</h2></div></div>
   <div class="v-sflow">
     <div class="v-sbox"><span class="v-lab">Ausgangslage</span><p>{ausgang}</p></div>
     <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
@@ -233,7 +233,7 @@ def leistungen():
                        "The Gap Lab GmbH konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Inhaltlich arbeiten die Partner in drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
             + head("Überblick", "Vier Stufen beantworten vier Leitfragen und liefern je ein Ergebnis", "Jede Stufe liefert ein eigenes Ergebnis. Die Stufen bauen aufeinander auf, lassen sich aber einzeln beauftragen.")
             + V.value_chain()
-            + '<h3 class="v-h3">Welche Stufe brauchen Sie?</h3>' + V.decision_help()
+            + '<h3 class="v-h3">Die passende Stufe.</h3>' + V.decision_help()
             + services, "", "")
         + section(V.innolab_strip(), "section-white v-tight", "")
         + section(
@@ -247,7 +247,7 @@ def leistungen():
                  "THE GAP Lab konzentriert sich auf Maßnahmen der Personalentwicklung in den drei Fokusfeldern.") + V.measure_develop(), "", "")
         + section(
             head("Häufige Fragen", "Fragen zu den Leistungen") + faq_block(faqs), "section-white", "")
-        + cta_band("Welche Stufe brauchen Sie?", "Im Erstgespräch klären wir, wo Ihre Ausgangslage liegt und welche Stufen sinnvoll sind.")
+        + cta_band("Die passende Stufe klärt das Erstgespräch.", "Im Erstgespräch klären wir, wo Ihre Ausgangslage liegt und welche Stufen sinnvoll sind.")
     )
     page["body"] = body
     page["schema_nodes"] = [{
@@ -288,7 +288,7 @@ def fokusfelder_hub():
                        "In drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik (Dr. Oliver Meschkat), Leadership &amp; Organisation (Prof. Dr. Constantin Schubart) sowie Finance &amp; Transformation (Prof. Dr. Marcel Dulgeridis).")
             + V.venn(with_links=False), "", "")
         + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "Leitfrage, typische Situationen, zentrale Begriffe und Ansprechpartner auf einen Blick.", "cmp-title") + V.fokus_compare(), "section-white", "cmp-title")
-        + cta_band("Nicht sicher, welches Fokusfeld passt?", "Im Erstgespräch ordnen wir Ihre Ausgangslage gemeinsam ein.")
+        + cta_band("Das passende Fokusfeld klärt das Erstgespräch.", "Im Erstgespräch ordnen wir Ihre Ausgangslage gemeinsam ein.")
     )
     return page
 
@@ -340,7 +340,7 @@ def ueber_uns():
                        "Alle Angaben entsprechen den veröffentlichten Profilen auf schubart-dulgeridis.de.", "partner-title")
                   + '<div class="grid">' + wide("constantin-schubart") + wide("oliver-meschkat") + wide("marcel-dulgeridis") + "</div>",
                   "section-cream", "partner-title")
-        + cta_band("Lernen Sie uns im Gespräch kennen", "Das Erstgespräch dauert 20 bis 30 Minuten und ist kostenlos.")
+        + cta_band("Wir lernen uns im Gespräch kennen.", "Das Erstgespräch dauert 20 bis 30 Minuten und ist kostenlos.")
     )
     return page
 
@@ -368,7 +368,7 @@ def kontakt():
         page_hero(page, "Kontakt und Erstgespräch",
                   "Sprechen Sie 20 bis 30 Minuten mit einem der Partner. Das Gespräch ist kostenlos und unverbindlich.")
         + section(
-            head("Termin buchen", "Wählen Sie Ihren Ansprechpartner",
+            head("Termin buchen", "Drei Ansprechpartner, ein Termin",
                  "Die Buchung läuft über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH. Dort wählen Sie die Person und sehen freie Zeiten live. Nach der Buchung erhalten Sie eine Outlook-Einladung mit Microsoft-Teams-Link.", "termin-title")
             + '<div class="grid grid-3">' + booking("constantin-schubart") + booking("oliver-meschkat") + booking("marcel-dulgeridis") + "</div>"
             + '<p class="small">Mit dem Klick verlassen Sie gap-lab.de und wechseln zur Website der Muttergesellschaft; dort gilt deren <a href="' + SD + 'datenschutz">Datenschutzerklärung</a>.</p>',

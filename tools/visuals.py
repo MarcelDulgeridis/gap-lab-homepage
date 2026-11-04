@@ -51,7 +51,7 @@ def value_chain(with_links=True):
     for i, (aid, name, q, res) in enumerate(STAGES, 1):
         title = f'<a href="/leistungen#{aid}">{name}</a>' if with_links else name
         lis.append(
-            f'<li class="v-stage s{i}"><div class="v-chev"><span>Stufe {i}</span><strong>{title}</strong></div>'
+            f'<li class="v-stage s{i}"><div class="v-chev"><span>{i:02d} · Stufe</span><strong>{title}</strong></div>'
             f'<div class="v-stage-body"><div><span class="v-lab">Leitfrage</span><p>{q}</p></div>'
             f'<div><span class="v-lab">Ergebnis</span><p>{res}</p></div></div></li>'
         )

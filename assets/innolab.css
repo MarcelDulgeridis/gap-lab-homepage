@@ -66,7 +66,7 @@
 .il .il-steps{list-style:none;margin:0;padding:0;counter-reset:ils}
 .il .il-steps li{margin:0;position:relative;padding:0 0 22px 38px;border-left:2px solid var(--gold-line);margin-left:13px;counter-increment:ils}
 .il .il-steps li:last-child{padding-bottom:0;border-left-color:transparent}
-.il .il-steps li::before{content:counter(ils);position:absolute;left:-15px;top:-2px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-family:var(--font-display);font-weight:800;font-size:.82rem;display:grid;place-items:center}
+.il .il-steps li::before{content:counter(ils);position:absolute;left:-15px;top:-2px;width:28px;height:28px;background:var(--navy);color:var(--on-navy);font-family:var(--font-display);font-weight:800;font-size:.82rem;display:grid;place-items:center}
 .il .il-steps strong{display:block;font-family:var(--font-display);font-weight:800;font-size:1.1rem;line-height:1.25}
 .il .il-steps li>span:last-child{display:block;margin-top:3px;color:#27344a}
 .il .il-fside{display:grid;gap:18px}
