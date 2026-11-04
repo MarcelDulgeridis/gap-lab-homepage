@@ -14,7 +14,7 @@ TEL = f'<a href="tel:{SITE["phone_e164"]}">{SITE["phone"]}</a>'
 
 # ------------------------------------------------------------------ FAQ-Daten
 FAQ_COMPANY = [
-    ("Was macht die The Gap Lab GmbH?",
+    ("Was macht THE GAP Lab?",
      "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: "
      "<a href=\"/fokusfelder/verhandlungsfuehrung\">Verhandlungsführung &amp; Rhetorik</a>, "
      "<a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> und "
@@ -148,7 +148,7 @@ def leistungen():
     body = (
         page_hero(page, "Leistungen von der Konzeption bis zur Vermarktung", "Vier Stufen von der Idee zur Maßnahme.")
         + section(
-            answer_box("Kurzantwort: Was bietet The Gap Lab an?",
+            answer_box("Kurzantwort: Was bietet THE GAP Lab an?",
                        "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
             + head("Die vier Stufen", "Von der Leitfrage zum Ergebnis", "")
             + V.stage_matrix(), "", "")

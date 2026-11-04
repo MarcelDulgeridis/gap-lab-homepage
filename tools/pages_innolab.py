@@ -264,7 +264,7 @@ def format_block(f):
     nutzen = "".join(f"<li>{esc(a)}</li>" for a, b in f["nutzen"])
     facts = "".join(f"<div><dt>{esc(a)}</dt><dd>{esc(b)}</dd></div>" for a, b in f["facts"])
     en, ed, et = f["einstieg"]
-    pp = f' · {esc(f["pp"])} pro Person*' if f["pp"] else ""
+    pp = f' · {esc(f["pp"])} pro Person bei 12 Teilnehmenden' if f["pp"] else ""
     days = "".join("<i></i>" for _ in range(f["days"]))
     return f"""<article class="il-format" id="{f['id']}" aria-labelledby="{f['id']}-h">
 <header class="il-fh">
@@ -343,7 +343,7 @@ def build_body():
     hero = f"""<section class="hero il-hero"><div class="container hero-grid">
 <div>
 <nav class="breadcrumb" aria-label="Brotkrumen"><ol><li><a href="/">Start</a></li><li aria-current="page">InnoLab</li></ol></nav>
-<p class="eyebrow">InnoLab</p>
+<p class="eyebrow">Innovation · Change · Lernen</p>
 <h1>Innovation, die im Unternehmen <span class="accent">ankommt.</span></h1>
 <p class="lead">Fünf Workshop-Formate bei Ihnen vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden.</p>
 <div class="hero-actions"><a class="btn btn-gold" href="/kontakt">Einstieg anfragen {ARROW}</a><a class="link-arrow" href="#formate">Die fünf Formate {ARROW}</a></div>

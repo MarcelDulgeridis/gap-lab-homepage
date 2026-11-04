@@ -548,3 +548,8 @@
 
 .answer+.section-head{margin-top:clamp(28px,4vw,48px)}
 .v-ocap{margin-top:34px}
+.v-org .v-ocap{margin-top:40px}
+.v-org-people .v-obio{flex:1 1 auto;margin-bottom:14px}
+.v-org-people .v-olinks{margin-top:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;padding-top:6px}
+.v-term dd a{white-space:nowrap}
+.v-term dd a .icon{display:inline-block;vertical-align:-.15em;margin-left:.3em}

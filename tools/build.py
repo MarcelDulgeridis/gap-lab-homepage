@@ -218,6 +218,14 @@ def stopify(page, html_body):
     return html_body
 
 
+def nbsp_brand(html_body):
+    """Markenname darf nicht mitten im Namen umbrechen (nur in Textknoten, nie in Attributen, Skripten oder Stilen)."""
+    parts = re.split(r"(<script.*?</script>|<style.*?</style>|<[^>]+>)", html_body, flags=re.S)
+    for i in range(0, len(parts), 2):
+        parts[i] = parts[i].replace("THE GAP Lab", "THE\u00a0GAP\u00a0Lab").replace("THE GAP", "THE\u00a0GAP")
+    return "".join(parts)
+
+
 def with_journey(page):
     body = page["body"]
     if page.get("journey"):
@@ -284,7 +292,7 @@ def render(page):
         '<div class="rule-top" aria-hidden="true"></div>'
         + header_html(page)
         + '<main id="main">'
-        + stopify(page, with_journey(page))
+        + nbsp_brand(stopify(page, with_journey(page)))
         + "</main>"
         + footer_html()
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))

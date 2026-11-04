@@ -16,7 +16,7 @@
   var cat = "all";
 
   function norm(s) {
-    return String(s).toLowerCase()
+    return String(s).toLowerCase().replace(/\u00a0/g, " ")
       .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
       .replace(/[̀-ͯ]/g, "");
   }
