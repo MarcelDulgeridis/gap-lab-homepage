@@ -18,3 +18,6 @@ Firmendaten: The Gap Lab GmbH, Hessenstraße 28, 90518 Altdorf bei Nürnberg; HR
 - [Verhandlungsführung & Rhetorik](https://gap-lab.de/fokusfelder/verhandlungsfuehrung): Verhandlungsführung und Rhetorik: Begriffe, typische Ausgangslagen und mögliche Bausteine einer Maßnahme — mit Dr. Oliver Meschkat als Ansprechpartner.
 - [Leadership & Organisation](https://gap-lab.de/fokusfelder/leadership-organisation): Leadership & Organisation: Begriffe, typische Ausgangslagen und mögliche Bausteine für Führungsklarheit — mit Prof. Dr. Constantin Schubart als Ansprechpartner.
 - [Finance & Transformation](https://gap-lab.de/fokusfelder/finance-transformation): Finance & Transformation: Finanzverständnis für Führungskräfte, Kennzahlen und wirtschaftliche Bewertung von Veränderung — mit Prof. Dr. Marcel Dulgeridis.
+
+## Werkzeuge
+- [KI-Readiness](https://gap-lab.de/ki-readiness): Kostenloser KI-Readiness Check in 3 Minuten: Acht Signale, Management- und Mitarbeitendensicht und Ihr KI-Gap, ohne Login und mit sofortigem Ergebnis.

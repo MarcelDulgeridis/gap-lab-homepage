@@ -61,7 +61,7 @@ def datenschutz():
     page = {
         "path": "/datenschutz", "short": "Datenschutz",
         "title": "Datenschutzerklärung — THE GAP Lab",
-        "description": "Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, Ihre Rechte nach DSGVO.",
+        "description": "Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.",
         "priority": "0.3", "changefreq": "yearly", "show_stand": False,
     }
     page["body"] = (
@@ -71,7 +71,7 @@ def datenschutz():
 <p>{SITE['legal_name']}, {SITE['street']}, {SITE['zip']} {SITE['city']}, vertreten durch den Geschäftsführer Prof. Dr. Constantin Schubart.<br>E-Mail: {MAIL}<br>Telefon: {TEL}</p>
 
 <h2>2. Überblick</h2>
-<p>Diese Website setzt keine Cookies und keine Analyse-, Tracking- oder Marketing-Dienste ein. Schriftarten und Bilder werden von gap-lab.de selbst ausgeliefert; es werden keine Inhalte von Drittanbietern nachgeladen. Da keine Informationen auf Ihrem Endgerät gespeichert oder ausgelesen werden, ist kein Cookie-Banner erforderlich (§ 25 TDDDG).</p>
+<p>Diese Website setzt keine Cookies und keine Analyse-, Tracking- oder Marketing-Dienste ein. Schriftarten und Bilder werden von gap-lab.de selbst ausgeliefert. Eine Ausnahme ist der <a href="#ki-readiness-check">KI-Readiness Check</a>: Er speichert Ihren Zwischenstand lokal im Browser und verbindet sich nur dann mit einem Datenbank-Dienst, wenn Sie eine Auswertung freischalten oder ein Teambild nutzen (Abschnitt 6).</p>
 
 <h2>3. Hosting und Server-Logfiles</h2>
 <p>Die Website wird bei Vercel Inc. (USA) gehostet. Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Zugriffsdaten: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Referrer, Browsertyp und Statuscode. Zweck ist die Auslieferung, Stabilität und Sicherheit der Website. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren, funktionsfähigen Webauftritt). Die Daten werden nur so lange gespeichert, wie es für diesen Zweck erforderlich ist. Für die Datenübermittlung in die USA nutzen wir die vom Anbieter bereitgestellten Garantien nach Art. 44 ff. DSGVO.</p>
@@ -82,14 +82,22 @@ def datenschutz():
 <h2>5. Terminbuchung</h2>
 <p>Die Buchung eines Erstgesprächs erfolgt auf der Website unserer Muttergesellschaft, der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>. Beim Klick auf „Termin wählen“ verlassen Sie gap-lab.de. Für die dortige Verarbeitung gilt deren <a href="{SD}datenschutz">Datenschutzerklärung</a>.</p>
 
-<h2>6. Externe Links</h2>
-<p>Diese Website verlinkt auf externe Seiten, zum Beispiel LinkedIn-Profile der Partner oder die Website der Muttergesellschaft. Es werden keine Plugins oder Einbettungen genutzt; Daten werden erst übertragen, wenn Sie einen Link anklicken. Für die verlinkten Seiten sind deren Betreiber verantwortlich.</p>
+<h2 id="ki-readiness-check">6. KI-Readiness Check</h2>
+<p>Auf der Seite <a href="/ki-readiness">KI-Readiness Check</a> beantworten Sie acht Aussagen. Das Ergebnis berechnet Ihr Browser selbst; die Antworten verlassen dabei Ihr Gerät nicht.</p>
+<p><strong>Lokale Speicherung.</strong> Damit Sie unterbrechen und fortsetzen können, speichert der Check Ihren Zwischenstand im lokalen Speicher (localStorage) und im Sitzungsspeicher (sessionStorage) Ihres Browsers, etwa Antworten, Ergebnis und gegebenenfalls Kampagnenparameter aus dem aufgerufenen Link. Diese Daten werden nicht an uns übertragen. Sie können sie jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+<p><strong>Freischaltung der Auswertung.</strong> Wenn Sie die vollständige Auswertung freischalten, übermitteln wir Ihre E-Mail-Adresse, Ihre Organisation, gegebenenfalls Ihre Rolle, Ihre Antwortwerte und das Ergebnis an einen Datenbank-Dienst (Supabase). Zweck ist, Ihnen eine Einordnung Ihres Ergebnisses anzubieten. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie im Formular per Häkchen erteilen und jederzeit mit Wirkung für die Zukunft widerrufen können. Die Daten werden gemeinsam mit der Schubart &amp; Dulgeridis GmbH ({SD}) verarbeitet. Einen Newsletter versenden wir nicht.</p>
+<p><strong>Teambild.</strong> Wenn Sie ein Teambild erstellen, werden nur die acht Antwortwerte ohne Name und ohne E-Mail-Adresse gespeichert. Sichtbar wird nur der Durchschnitt ab fünf Antworten. Die Daten werden nach 90 Tagen automatisch gelöscht.</p>
+<p><strong>Einladung zum Vergleich.</strong> Der Einladungslink enthält Ihre acht Antwortwerte, aber keinen Namen und keine E-Mail-Adresse. Wen Sie einladen, entscheiden Sie selbst.</p>
+<p>Beim Verbindungsaufbau zum Datenbank-Dienst werden technisch notwendige Verbindungsdaten (zum Beispiel die IP-Adresse) an dessen Server übertragen.</p>
 
-<h2>7. Ihre Rechte</h2>
+<h2>7. Externe Links</h2>
+<p>Diese Website verlinkt auf externe Seiten, zum Beispiel LinkedIn-Profile der Partner oder die Website der Muttergesellschaft. Es werden keine Plugins oder Einbettungen von Drittanbietern genutzt; Daten werden erst übertragen, wenn Sie einen Link anklicken. Für die verlinkten Seiten sind deren Betreiber verantwortlich.</p>
+
+<h2>8. Ihre Rechte</h2>
 <p>Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Zur Ausübung Ihrer Rechte wenden Sie sich an die oben genannte Kontaktadresse.</p>
 <p>Sie haben außerdem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig für uns ist das Bayerische Landesamt für Datenschutzaufsicht (BayLDA), Promenade 18, 91522 Ansbach.</p>
 
-<h2>8. Änderungen</h2>
+<h2>9. Änderungen</h2>
 <p>Wir passen diese Erklärung an, wenn sich Technik oder Rechtslage ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
 </div>""", "", ""))
     return page

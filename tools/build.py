@@ -19,6 +19,7 @@ from helpers import esc, strip_tags, url_of, ARROW  # noqa: E402
 from schema_nodes import person_node  # noqa: E402
 import pages_core  # noqa: E402
 import pages_fokus  # noqa: E402
+import pages_ki  # noqa: E402
 import pages_legal  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -32,6 +33,10 @@ def asset_hash(rel):
 
 CSS_V = asset_hash("assets/site.css")
 JS_V = asset_hash("assets/site.js")
+
+
+def versioned(path):
+    return f"{path}?v={asset_hash(path.lstrip('/'))}"
 
 
 def out_file(path):
@@ -122,7 +127,7 @@ def graph_for(page):
         "about": {"@id": f"{DOMAIN}/#organization"},
         "datePublished": SITE["published"],
         "dateModified": page.get("modified", SITE["modified"]),
-        "primaryImageOfPage": {"@type": "ImageObject", "url": f"{DOMAIN}/assets/img/og-the-gap-lab.jpg"},
+        "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")},
     }
     graph = [org_node()]
     website = {
@@ -184,7 +189,10 @@ def render(page):
     title = page["title"]
     desc = page["description"]
     robots = page.get("robots", "index,follow,max-image-preview:large")
-    og_img = f"{DOMAIN}/assets/img/og-the-gap-lab.jpg"
+    og_img = DOMAIN + page.get("og_image", "/assets/img/og-the-gap-lab.jpg")
+    og_h = page.get("og_image_height", 630)
+    og_alt = esc(page.get("og_alt", "THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis"))
+    extra_css = "".join(f'<link rel="stylesheet" href="{versioned(c)}">\n' for c in page.get("styles", []))
     graph = json.dumps(graph_for(page), ensure_ascii=False, separators=(",", ":"))
     head = f"""<!DOCTYPE html>
 <html lang="de">
@@ -204,8 +212,8 @@ def render(page):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{og_img}">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="THE GAP Lab — Personalentwicklung mit Verhandlungsstärke, Führungsklarheit und Finanzverständnis">
+<meta property="og:image:height" content="{og_h}">
+<meta property="og:image:alt" content="{og_alt}">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(page.get("og_title", title))}">
@@ -218,7 +226,7 @@ def render(page):
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
-<script src="/assets/site.js?v={JS_V}"></script>
+{extra_css}<script src="/assets/site.js?v={JS_V}"></script>
 <script type="application/ld+json">{graph}</script>
 </head>
 """
@@ -234,6 +242,7 @@ def render(page):
         + page["body"]
         + "</main>"
         + footer_html()
+        + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))
         + "</body></html>\n"
     )
     return head + body
@@ -243,6 +252,7 @@ def all_pages():
     pages = []
     pages += pages_core.build()
     pages += pages_fokus.build()
+    pages += pages_ki.build()
     pages += pages_legal.build()
     return pages
 

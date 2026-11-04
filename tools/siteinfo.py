@@ -107,6 +107,7 @@ PARTNERS = {
 NAV = [
     ("Leistungen", "/leistungen", False),
     ("Fokusfelder", "/fokusfelder", False),
+    ("KI-Readiness", "/ki-readiness", False),
     ("Über uns", "/ueber-uns", False),
     ("FAQ", "/faq", False),
     ("Erstgespräch", "/kontakt", True),
@@ -126,6 +127,7 @@ FOOTER_LINKS = [
     ]),
     ("Unternehmen", [
         ("Über uns", "/ueber-uns"),
+        ("KI-Readiness Check", "/ki-readiness"),
         ("FAQ", "/faq"),
         ("Kontakt", "/kontakt"),
         ("Impressum", "/impressum"),
