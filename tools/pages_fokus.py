@@ -1,7 +1,7 @@
 """Die drei Fokusfeld-Seiten. Inhalte: allgemeines Fachwissen, belegte Personenangaben, keine erfundenen Kennzahlen."""
 from siteinfo import SITE, PARTNERS
 import visuals as V
-from helpers import (esc, url_of, ARROW, faq_block, cta_band, page_hero, section, head, answer_box, partner_wide)
+from helpers import (esc, url_of, ARROW, faq_block, faq_more, cta_band, page_hero, section, head, answer_box, partner_wide)
 
 SD = SITE["parent_url"]
 
@@ -43,7 +43,7 @@ def fokus_page(cfg):
         }],
     }
     p = PARTNERS[cfg["partner"]]
-    faqs_html = faq_block(cfg["faqs"])
+    faqs_html = faq_block(cfg["faqs"]) + faq_more()
     sources = "".join(f"<li>{s}</li>" for s in cfg["sources"])
     page["body"] = (
         page_hero(page, cfg["h1"], cfg["lead"])
@@ -94,7 +94,7 @@ VERHANDLUNG = {
         ("Argumentationsaufbau", "Eine Behauptung wird durch Begründung und Beleg gestützt, sodass Zuhörende sie nachvollziehen können."),
     ],
     "ausgangslagen": [
-        ("Preis- und Konditionengespräche", "Verhandlungen mit Kunden oder Lieferanten, bei denen Spielräume vorab nicht abgesteckt sind."),
+        ("Preisverhandlungen und Konditionen", "Verhandlungen mit Kunden oder Lieferanten, bei denen Spielräume vorab nicht abgesteckt sind."),
         ("Vertragsverhandlungen", "Mehrere Beteiligte, viele Details und der Druck, zeitnah abzuschließen."),
         ("Interne Verhandlungen", "Budgets, Ressourcen und Prioritäten zwischen Bereichen: Hier verhandeln Menschen, die danach weiter zusammenarbeiten."),
         ("Gespräche unter Druck", "Kritische Situationen mit Einwänden, Eskalation oder ungleicher Machtverteilung."),
@@ -176,7 +176,8 @@ LEADERSHIP = {
     "zielgruppe": "Geschäftsleitungen, Bereichsleitungen und Teamleitungen sowie Personalverantwortliche, die Führung gezielt entwickeln möchten.",
     "related": [("/innolab#change-leadership", "InnoLab", "Change Leadership", "Führungskräftetraining, 2 + 1 Tage: Widerstände erkennen, Wandel kommunizieren, am eigenen Vorhaben arbeiten."),
                 ("/innolab#scorecard", "InnoLab", "Innovation Scorecard", "Strategieworkshop für Geschäftsführung: Ausrichtung, Kennzahlen und Entscheidungsvorlage."),
-                ("/glossar#umsetzungsluecke", "Glossar", "Umsetzungslücke", "Der Abstand zwischen beschlossener Strategie und Arbeitsalltag.")],
+                ("/glossar#umsetzungsluecke", "Glossar", "Umsetzungslücke", "Der Abstand zwischen beschlossener Strategie und Arbeitsalltag."),
+                ("/ki-readiness", "Werkzeug", "KI-Readiness Check", "Kostenlos: Wie groß ist der Abstand zwischen Führungs- und Teamsicht bei KI?")],
     "faqs": [
         ("Worin unterscheiden sich Führungskräfteentwicklung und Organisationsentwicklung?",
          "<p>Führungskräfteentwicklung stärkt Personen in ihrer Rolle. Organisationsentwicklung verändert Strukturen, Abläufe und Kultur. Beides greift ineinander, deshalb betrachtet dieses Fokusfeld beide Seiten.</p>"),
@@ -200,7 +201,7 @@ FINANCE = {
     "path": "/fokusfelder/finance-transformation", "short": "Finance & Transformation",
     "title": "Finance & Transformation — THE GAP Lab",
     "description": "Finance & Transformation: Finanzverständnis für Führungskräfte, Kennzahlen und wirtschaftliche Bewertung von Veränderung — mit Prof. Dr. Marcel Dulgeridis.",
-    "h1": "Finance und Transformation: Veränderung wirtschaftlich fundiert umsetzen",
+    "h1": "Finance und Transformation: Finanzverständnis für wirtschaftlich fundierte Veränderung",
     "lead": "Veränderung kostet Geld und soll Wirkung erzielen. Dieses Fokusfeld verbindet finanzielles Verständnis mit der Umsetzung von Vorhaben.",
     "partner": "marcel-dulgeridis", "color": "f3",
     "model_title": "Drei Blickwinkel auf die Zahlen eines Unternehmens",
@@ -264,7 +265,7 @@ FINANCE = {
 # ------------------------------------------------------------------ Kurzfassungen (Volltext: Git-Tag archive/volltext-2026-11-04)
 VERHANDLUNG.update({
     "h1": "Verhandlungsführung und Rhetorik: vorbereitet verhandeln, überzeugend argumentieren",
-    "lead": "Verhandlungen entscheiden über Preise, Budgets und Zusammenarbeit.",
+    "lead": "Verhandlungen entscheiden über Preise, Budgets und Zusammenarbeit. Verhandlungstraining bereitet darauf vor.",
     "answer": "Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und tragfähig genug sind, um umgesetzt zu werden.",
     "begriffe": [
         ("Interessen und Positionen", "Die Position ist die Forderung, das Interesse der Grund dahinter. Wer Interessen kennt, findet mehr Lösungen."),
@@ -274,7 +275,7 @@ VERHANDLUNG.update({
         ("Argumentationsaufbau", "Behauptung, Begründung und Beleg, sodass Zuhörende sie nachvollziehen können."),
     ],
     "ausgangslagen": [
-        ("Preis- und Konditionengespräche", "Spielräume sind vorab nicht abgesteckt."),
+        ("Preisverhandlungen und Konditionen", "Spielräume sind vorab nicht abgesteckt."),
         ("Vertragsverhandlungen", "Viele Beteiligte, viele Details, Zeitdruck."),
         ("Interne Verhandlungen", "Budgets und Prioritäten zwischen Bereichen."),
         ("Gespräche unter Druck", "Einwände, Eskalation, ungleiche Machtverteilung."),
@@ -288,7 +289,7 @@ VERHANDLUNG.update({
 })
 LEADERSHIP.update({
     "h1": "Leadership und Organisation: Führung im Zusammenspiel von Strategie, Kultur und Rollen",
-    "lead": "Führung wirkt dort, wo Strategie, Kultur, Rollen und Entscheidungswege zusammenpassen.",
+    "lead": "Führung wirkt dort, wo Strategie, Kultur, Rollen und Entscheidungswege zusammenpassen. Führungskräfteentwicklung setzt dort an.",
     "answer": "Führung ist kein Merkmal einzelner Personen, sondern das Zusammenspiel aus Strategie, Kultur, Rollen und Entscheidungswegen. Ziel: klare Erwartungen und Entscheidungen, die im Alltag ankommen.",
     "begriffe": [
         ("Rollenklarheit", "Alle wissen, welche Aufgaben, Verantwortung und Erwartungen zu einer Rolle gehören."),
@@ -311,7 +312,7 @@ LEADERSHIP.update({
     ],
 })
 FINANCE.update({
-    "h1": "Finance und Transformation: Veränderung wirtschaftlich fundiert umsetzen",
+    "h1": "Finance und Transformation: Finanzverständnis für wirtschaftlich fundierte Veränderung",
     "lead": "Veränderung kostet Geld und soll wirken. Finanzverständnis macht Entscheidungen belastbar.",
     "answer": "Finanzverständnis (Rechnungswesen, Kennzahlen, Wirtschaftlichkeit) verbunden mit der Umsetzung von Veränderung. Entscheidungen werden strategisch plausibel und wirtschaftlich belastbar.",
     "begriffe": [

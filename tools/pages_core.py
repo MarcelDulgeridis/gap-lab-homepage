@@ -4,7 +4,7 @@ Die ausführliche Textvariante liegt im Git-Tag archive/volltext-2026-11-04."""
 from siteinfo import SITE, PARTNERS
 from schema_nodes import person_nodes
 import visuals as V
-from helpers import (esc, url_of, ARROW, btn, link_arrow, faq_block, partner_card, cta_band,
+from helpers import (esc, url_of, ARROW, btn, link_arrow, faq_block, faq_more, partner_card, cta_band,
                      page_hero, section, head, answer_box)
 
 SD = SITE["parent_url"]
@@ -15,7 +15,7 @@ TEL = f'<a href="tel:{SITE["phone_e164"]}">{SITE["phone"]}</a>'
 # ------------------------------------------------------------------ FAQ-Daten
 FAQ_COMPANY = [
     ("Was macht THE GAP Lab?",
-     "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: "
+     "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung, etwa Verhandlungstraining, Führungskräfteentwicklung und Finanzverständnis. Schwerpunkte: "
      "<a href=\"/fokusfelder/verhandlungsfuehrung\">Verhandlungsführung &amp; Rhetorik</a>, "
      "<a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> und "
      "<a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>. Sitz ist Altdorf bei Nürnberg.</p>"),
@@ -152,12 +152,12 @@ def leistungen():
                        "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
             + head("Die vier Stufen", "Von der Leitfrage zum Ergebnis", "")
             + V.stage_matrix(), "", "")
-        + section(V.innolab_strip(), "section-white v-tight", "")
+        + section(V.innolab_strip() + '<p class="small">Kostenlos dazu: <a href="/ki-readiness">KI-Readiness Check</a> in drei Minuten. Begriffe nachlesen: <a href="/glossar">Glossar</a>.</p>', "section-white v-tight", "")
         + section(
             head("Abgrenzung", "Messen und Entwickeln",
                  "Diagnostik und Beratung liegen bei der Muttergesellschaft, Maßnahmen bei THE GAP Lab.") + V.measure_develop(), "", "")
         + section(
-            head("Häufige Fragen", "Fragen zu den Leistungen") + faq_block(faqs), "section-white", "")
+            head("Häufige Fragen", "Fragen zu den Leistungen") + faq_block(faqs) + faq_more(), "section-white", "")
         + cta_band("Die passende Stufe klärt das Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
     page["body"] = body
@@ -192,12 +192,12 @@ def fokusfelder_hub():
                             for i, (u, n) in enumerate([("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung & Rhetorik"), ("/fokusfelder/leadership-organisation", "Leadership & Organisation"), ("/fokusfelder/finance-transformation", "Finance & Transformation")], 1)],
     }]
     page["body"] = (
-        page_hero(page, "Drei Fokusfelder, drei Ansprechpartner", "Ein benannter Partner je Fokusfeld.")
+        page_hero(page, "Drei Fokusfelder der Personalentwicklung", "Je Fokusfeld ein benannter Ansprechpartner.")
         + section(
             answer_box("Kurzantwort: In welchen Feldern arbeitet THE GAP Lab?",
                        "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation, je mit einem benannten Partner.")
             + V.venn(with_links=False), "", "")
-        + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "", "cmp-title") + V.fokus_compare(), "section-white", "cmp-title")
+        + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "", "cmp-title") + V.fokus_compare() + '<p class="small">Begriffe nachlesen: <a href="/glossar">Glossar</a>. Konkrete Formate: <a href="/innolab">InnoLab</a>. Einstieg: <a href="/kontakt">Erstgespräch</a>.</p>', "section-white", "cmp-title")
         + cta_band("Das passende Fokusfeld klärt das Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
     return page
@@ -270,6 +270,7 @@ def kontakt():
                 "<strong>Zeitrahmen</strong> bis zur Wirkung",
                 "<strong>Bisherige Erfahrungen</strong>",
             ]) + """
+<p class="small">Vorab informieren: <a href="/leistungen">Leistungen</a>, <a href="/fokusfelder">Fokusfelder</a>, <a href="/innolab">InnoLab</a>, <a href="/faq">häufige Fragen</a>.</p>
 </div></div>""", "section-cream", "")
     )
     return page

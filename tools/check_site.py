@@ -91,6 +91,25 @@ for u, p in info.items():
             W(u, f"{why}: …{flat[max(0,m.start()-25):m.end()+25]}…")
             break
 
+
+# ---- SEO/GEO-Prüfung je Seite
+titles, descs = {}, {}
+for u, h in pages.items():
+    if u == "/404": continue
+    t = html.unescape(re.search(r"<title>(.*?)</title>", h).group(1)); d = html.unescape(re.search(r'name="description" content="(.*?)"', h).group(1))
+    if t in titles: E(u, f"Title doppelt mit {titles[t]}")
+    if d in descs: E(u, f"Description doppelt mit {descs[d]}")
+    titles[t] = u; descs[d] = u
+    if len(t) > 62: W(u, f"Title {len(t)} Zeichen (max. 62)")
+    if len(d) > 160: W(u, f"Description {len(d)} Zeichen (max. 160)")
+    img = re.search(r'og:image" content="https://www\.gap-lab\.de(/[^"]+)"', h)
+    if not img or not os.path.isfile(ROOT + img.group(1)): E(u, "og:image-Datei fehlt")
+    if u not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-the-gap-lab" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
+    if '"dateModified"' not in h: E(u, "dateModified fehlt")
+    # Haupt-Suchbegriff in H1 oder Title
+    m1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S); h1t = html.unescape(re.sub(r"<[^>]+>", "", m1.group(1))).replace("\u00ad", "")
+    if u not in ("/impressum", "/datenschutz", "/ki-readiness") and not set(re.findall(r"\w{6,}", t.lower())) & set(re.findall(r"\w{6,}", h1t.lower())): W(u, "Title und H1 teilen kein Schlüsselwort")
+
 # Sitemap vs Seiten
 sm = open(ROOT + "/sitemap.xml").read()
 smu = set(re.findall(r"https://www.gap-lab\.de(/[^<]*)</loc>", sm))

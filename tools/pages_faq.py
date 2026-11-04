@@ -21,7 +21,7 @@ A = lambda path, text: f'<a href="{path}">{text}</a>'
 
 CATS = [
     ("unternehmen", "Unternehmen", [
-        ("Was macht THE GAP Lab?", "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte sind " + A("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik") + ", " + A("/fokusfelder/leadership-organisation", "Leadership &amp; Organisation") + " sowie " + A("/fokusfelder/finance-transformation", "Finance &amp; Transformation") + ". Das Ziel: Strategie kommt im Arbeitsalltag an.</p>"),
+        ("Was macht THE GAP Lab?", "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung, etwa Verhandlungstraining, Führungskräfteentwicklung und Finanzverständnis. Schwerpunkte sind " + A("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik") + ", " + A("/fokusfelder/leadership-organisation", "Leadership &amp; Organisation") + " sowie " + A("/fokusfelder/finance-transformation", "Finance &amp; Transformation") + ". Das Ziel: Strategie kommt im Arbeitsalltag an.</p>"),
         ("Wer steht hinter THE GAP Lab?", "<p>Geschäftsführer ist Prof. Dr. Constantin Schubart, Partner sind Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis. Constantin Schubart und Marcel Dulgeridis sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule, Oliver Meschkat ist auf Verhandlungsführung sowie Innovation und Change spezialisiert. Profile: " + A("/ueber-uns", "Über uns") + ".</p>"),
         ("Wie unterscheiden sich THE GAP Lab und die Schubart &amp; Dulgeridis GmbH?", f"<p>Die Schubart &amp; Dulgeridis GmbH bietet forschungsbasierte Beratung und Diagnostik (THE GAP, Pulse-Check, Upskilling, Coaching, Recruiting). THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch. Beide stehen im Verbund, THE GAP Lab ist die Tochtergesellschaft: <a href=\"{SD}\">schubart-dulgeridis.de</a>.</p>"),
         ("Für wen ist das Angebot gedacht?", "<p>Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklung gezielt planen, durchführen oder einkaufen. Auch Kammern, Bildungsträger und Akademien nutzen die " + A("/innolab", "InnoLab-Formate") + ".</p>"),
@@ -100,7 +100,7 @@ def build_body(page):
         '<p class="faq-empty" data-empty hidden>Keine Treffer. Schreiben Sie uns an ' + MAIL + " oder buchen Sie ein " + A("/kontakt", "Erstgespräch") + ".</p>"
         f'<div class="faq-groups">{groups}</div></div>')
     return (
-        page_hero(page, "Häufige Fragen zu THE GAP Lab", f"{total} Antworten zu Unternehmen, Angebot, Fokusfeldern, InnoLab und Kontakt.")
+        page_hero(page, "Häufige Fragen zu Personalentwicklung und THE GAP Lab", f"{total} Antworten zu Unternehmen, Angebot, Fokusfeldern, InnoLab und Kontakt.")
         + section(tool, "", "")
         + cta_band("Weitere Fragen klären wir im Erstgespräch.", "Kostenlos, 20 bis 30 Minuten.")
     )
