@@ -37,7 +37,7 @@ FAQ_COOPERATION = [
      "<p>Am Anfang steht ein kostenloses Erstgespräch von 20 bis 30 Minuten per Microsoft Teams. Dort klären wir Anlass, Ziel und Zielgruppe. "
      "Danach erhalten Sie ein Angebot mit klar beschriebenem Leistungsumfang. Den Termin buchen Sie auf der Seite <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ("Was kostet eine Zusammenarbeit?",
-     "<p>Wir nennen keine Pauschalpreise, weil Zielgruppe, Umfang und Format sehr unterschiedlich sein können. "
+     "<p>Für die <a href=\"/innolab#preise\">InnoLab-Formate</a> nennen wir Festpreise ab 5.800 € netto. Für alle anderen Maßnahmen gibt es keine Pauschalpreise, weil Zielgruppe, Umfang und Format sehr unterschiedlich sein können. "
      "Nach dem Erstgespräch erhalten Sie ein individuelles Angebot nach Umfang.</p>"),
     ("Kann ich einzelne Leistungsstufen beauftragen?",
      "<p>Die Gesellschaft ist auf vier Stufen ausgerichtet: Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen. "

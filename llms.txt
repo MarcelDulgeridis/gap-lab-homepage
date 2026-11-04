@@ -12,6 +12,7 @@ Firmendaten: The Gap Lab GmbH, Hessenstraße 28, 90518 Altdorf bei Nürnberg; HR
 
 ## Leistungen
 - [Leistungen](https://gap-lab.de/leistungen): Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.
+- [InnoLab](https://gap-lab.de/innolab): InnoLab: fünf Formate vor Ort für Innovation, Change und Personalentwicklung, vom Sprint mit Prototyp bis zur Innovation Scorecard. Festpreis ab 5.800 € netto.
 
 ## Fokusfelder
 - [Fokusfelder](https://gap-lab.de/fokusfelder): Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.
