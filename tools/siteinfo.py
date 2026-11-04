@@ -107,6 +107,7 @@ PARTNERS = {
 NAV = [
     ("Leistungen", "/leistungen", False),
     ("Fokusfelder", "/fokusfelder", False),
+    ("InnoLab", "/innolab", False),
     ("KI-Readiness", "/ki-readiness", False),
     ("Über uns", "/ueber-uns", False),
     ("FAQ", "/faq", False),
@@ -115,6 +116,7 @@ NAV = [
 
 FOOTER_LINKS = [
     ("Leistungen", [
+        ("InnoLab", "/innolab"),
         ("Konzeption", "/leistungen#konzeption"),
         ("Entwicklung", "/leistungen#entwicklung"),
         ("Durchführung", "/leistungen#durchfuehrung"),

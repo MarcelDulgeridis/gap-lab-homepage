@@ -19,6 +19,7 @@ from helpers import esc, strip_tags, url_of, ARROW  # noqa: E402
 from schema_nodes import person_node  # noqa: E402
 import pages_core  # noqa: E402
 import pages_fokus  # noqa: E402
+import pages_innolab  # noqa: E402
 import pages_ki  # noqa: E402
 import pages_legal  # noqa: E402
 
@@ -253,6 +254,7 @@ def all_pages():
     pages += pages_core.build()
     pages += pages_fokus.build()
     pages += pages_ki.build()
+    pages += pages_innolab.build()
     pages += pages_legal.build()
     return pages
 
