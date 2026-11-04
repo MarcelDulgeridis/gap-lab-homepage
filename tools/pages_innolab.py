@@ -457,7 +457,7 @@ def innolab():
         "title": "InnoLab: Innovationsformate für Unternehmen | THE GAP Lab",
         "og_title": "InnoLab: Innovation, die im Unternehmen ankommt",
         "description": "InnoLab: fünf Formate vor Ort für Innovation, Change und Personalentwicklung, vom Sprint mit Prototyp bis zur Innovation Scorecard. Festpreis ab 5.800 € netto.",
-        "priority": "0.9", "llms_group": "Leistungen", "faqs": FAQS, "show_stand": False, "modified": "2026-11-04",
+        "priority": "0.9", "llms_group": "Leistungen", "faqs": FAQS, "show_stand": False, "journey": "/innolab", "speakable": True, "modified": "2026-11-04",
         "og_image": "/assets/img/og-innolab.jpg", "og_image_height": 630,
         "og_alt": "InnoLab: Innovation, die im Unternehmen ankommt. Fünf Formate vor Ort, Festpreis ab 5.800 Euro netto.",
         "styles": ["/assets/innolab.css"], "schema_nodes": schema_nodes(),

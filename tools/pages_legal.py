@@ -30,7 +30,7 @@ def impressum():
         "path": "/impressum", "short": "Impressum",
         "title": "Impressum — THE GAP Lab (The Gap Lab GmbH)",
         "description": "Impressum der The Gap Lab GmbH, Altdorf bei Nürnberg: Anschrift, Geschäftsführer, Handelsregister HRB 46649 (Amtsgericht Nürnberg) und Kontakt.",
-        "priority": "0.3", "changefreq": "yearly", "show_stand": False,
+        "priority": "0.3", "changefreq": "yearly", "show_stand": False, "llms_group": "Rechtliches",
     }
     page["body"] = (
         page_hero(page, "Impressum")
@@ -62,7 +62,7 @@ def datenschutz():
         "path": "/datenschutz", "short": "Datenschutz",
         "title": "Datenschutzerklärung — THE GAP Lab",
         "description": "Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.",
-        "priority": "0.3", "changefreq": "yearly", "show_stand": False,
+        "priority": "0.3", "changefreq": "yearly", "show_stand": False, "llms_group": "Rechtliches",
     }
     page["body"] = (
         page_hero(page, "Datenschutzerklärung", f"Stand: {SITE['modified_de']}")

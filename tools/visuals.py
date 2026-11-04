@@ -235,3 +235,41 @@ def contact_flow():
 
 def checklist(items):
     return '<ul class="v-check">' + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
+
+
+JOURNEY = [("/", "Verstehen", "Start"), ("/leistungen", "Leistungen", "Vier Stufen"), ("/fokusfelder", "Fokusfelder", "Drei Disziplinen"),
+           ("/innolab", "Angebote", "InnoLab"), ("/ueber-uns", "Team", "Über uns"), ("/kontakt", "Gespräch", "Kontakt")]
+
+
+def journey(current):
+    """Roter Faden: sichtbare Reise über die Seiten, mit hervorgehobenem nächsten Schritt."""
+    idx = next((i for i, (p, _, _) in enumerate(JOURNEY) if p == current), 0)
+    lis = []
+    for i, (path, step, name) in enumerate(JOURNEY):
+        state = "done" if i < idx else ("now" if i == idx else ("next" if i == idx + 1 else "todo"))
+        cur = ' aria-current="page"' if i == idx else ""
+        lis.append(f'<li class="j-{state}"><a href="{path}"{cur}><span class="v-jn">{i + 1}</span><span class="v-jt"><b>{step}</b><small>{name}</small></span></a></li>')
+    nxt = JOURNEY[idx + 1] if idx + 1 < len(JOURNEY) else None
+    more = (f'<a class="btn" href="{nxt[0]}">Weiter: {nxt[2]} {ARROW}</a>' if nxt else "")
+    return ('<section class="v-journey" aria-label="Ihr Weg durch THE GAP Lab"><div class="container"><p class="v-lab">Ihr Weg durch THE GAP Lab</p>'
+            f'<ol>{"".join(lis)}</ol>{more}</div></section>')
+
+
+def facts_strip(items, cls=""):
+    return f'<dl class="v-facts {cls}">' + "".join(f"<div><dt>{t}</dt><dd>{d}</dd></div>" for t, d in items) + "</dl>"
+
+
+def innolab_strip():
+    from pages_innolab import FORMATS, eur
+    rows = "".join(
+        f'<li><a href="/innolab#{f["id"]}"><span class="v-days" role="img" aria-label="{f["days"]} Tage">' + "".join("<i></i>" for _ in range(f["days"])) +
+        f'</span><span class="v-fn">{esc(f["name"])}<small>{esc(f["kind"])} · {esc(f["people"])}</small></span><span class="v-fp">{eur(f["price"])}</span></a></li>'
+        for f in FORMATS)
+    return ('<div class="v-iostrip"><div><p class="v-kick">InnoLab · konkret beauftragbar</p><h3>Fünf Formate zum Festpreis, bei Ihnen vor Ort.</h3>'
+            '<p>Wer eine fertig geschnürte Maßnahme sucht, findet im InnoLab fünf Formate für Innovation, Change und Lernen. Jedes liefert ein eigenes Ergebnis, von der Innovationswoche mit Prototyp bis zur Innovation Scorecard.</p>'
+            f'<a class="btn" href="/innolab">Alle Formate ansehen {ARROW}</a></div><ul class="v-minilist" aria-label="InnoLab-Formate">{rows}</ul></div>')
+
+
+def related_formats(items):
+    lis = "".join(f'<li><a href="{h}"><span class="v-lab">{k}</span><strong>{n}</strong><span>{t}</span></a></li>' for h, k, n, t in items)
+    return f'<ul class="v-related">{lis}</ul>'

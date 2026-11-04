@@ -2,7 +2,7 @@
 .il .section.il-tight{padding-block:clamp(28px,4vw,48px)}
 .il .il-note{margin:0;color:var(--muted);font-size:.98rem}
 .il .il-h3{font-weight:800;font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.015em;margin:clamp(36px,5vw,56px) 0 18px}
-.il .il-lab{display:block;font-family:var(--font-display);font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:6px}
+.il .il-lab{display:block;font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-text);margin-bottom:6px}
 .il .il-lead{font-size:clamp(1.1rem,1.5vw,1.25rem);line-height:1.55;color:var(--navy);font-weight:600;margin:0 0 1em}
 .il .il-big{font-family:var(--font-display);font-weight:800;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.02em;color:var(--navy);margin:6px 0 0;line-height:1.1}
 .il .il-big small{font-size:.9rem;font-weight:600;letter-spacing:0;color:var(--muted)}

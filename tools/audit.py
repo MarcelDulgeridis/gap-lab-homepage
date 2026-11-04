@@ -113,6 +113,71 @@ sm = open(os.path.join(ROOT, "sitemap.xml"), encoding="utf-8").read()
 for loc in re.findall(r"<loc>(.*?)</loc>", sm):
     if not route_to_file(loc[len(DOMAIN):] or "/"): errors.append(f"Sitemap-URL ohne Seite: {loc}")
 
+
+# ------------------------------------------------------------------ Tiefenprüfungen (GEO/SEO, Story, Kontrast)
+def lum(hexc):
+    h = hexc.lstrip("#"); r, g, b = [int(h[i:i+2], 16) / 255 for i in (0, 2, 4)]
+    f = lambda c: c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+
+def contrast(a, b):
+    la, lb = sorted((lum(a), lum(b)), reverse=True)
+    return (la + 0.05) / (lb + 0.05)
+
+for fg, bg, label, need in [
+    ("#7A5A27", "#fbf8f2", "gold-text auf paper", 4.5), ("#7A5A27", "#f2eadf", "gold-text auf cream", 4.5), ("#7A5A27", "#fffefa", "gold-text auf white", 4.5),
+    ("#85642C", "#fffefa", "f1 auf white", 4.5), ("#85642C", "#f4ebd8", "f1 auf f1-tint", 4.5),
+    ("#2c5a8c", "#fffefa", "f2 auf white", 4.5), ("#2c5a8c", "#e3ecf6", "f2 auf f2-tint", 4.5),
+    ("#2a6b5e", "#fffefa", "f3 auf white", 4.5), ("#2a6b5e", "#dcefe9", "f3 auf f3-tint", 4.5),
+    ("#FDFCFA", "#101D33", "on-navy auf navy", 4.5), ("#C9D0DA", "#101D33", "on-navy-muted auf navy", 4.5), ("#CFAD6B", "#101D33", "gold-mid auf navy", 4.5),
+    ("#4f5b6e", "#fbf8f2", "muted auf paper", 4.5), ("#4f5b6e", "#f2eadf", "muted auf cream", 4.5),
+    ("#FFFFFF", "#85642C", "weiss auf f1", 4.5), ("#FFFFFF", "#2c5a8c", "weiss auf f2", 4.5), ("#FFFFFF", "#2a6b5e", "weiss auf f3", 4.5),
+    ("#FFFFFF", "#4a79ab", "weiss auf Ebene 3", 3.0), ("#FFFFFF", "#7a5a27", "weiss auf Ebene 4", 4.5),
+]:
+    c = contrast(fg, bg)
+    if c < need: errors.append(f"Kontrast {label}: {c:.2f} < {need}")
+
+sm_urls = re.findall(r"<loc>(.*?)</loc>", sm)
+llms = open(os.path.join(ROOT, "llms.txt"), encoding="utf-8").read()
+for u in sm_urls:
+    if u not in llms: errors.append(f"llms.txt ohne {u}")
+if not os.path.isfile(os.path.join(ROOT, "llms-full.txt")): errors.append("llms-full.txt fehlt")
+
+inbound = {}
+for f, (txt, p) in pages.items():
+    for href in set(p.hrefs):
+        if href.startswith(("mailto:", "tel:", "#", "http")) and not href.startswith(DOMAIN): continue
+        tgt = href.replace(DOMAIN, "").split("#")[0].split("?")[0] or "/"
+        if os.path.relpath(f, ROOT) != (("index.html" if tgt == "/" else tgt.lstrip("/") + ".html")):
+            inbound.setdefault(tgt, set()).add(os.path.relpath(f, ROOT))
+for u in sm_urls:
+    path = u.replace(DOMAIN, "") or "/"
+    n = len(inbound.get(path, ()))
+    if n < 4: errors.append(f"zu wenige interne Links auf {path}: {n}")
+
+ALL_DEF = set()
+for f, (txt, p) in pages.items():
+    for m in re.finditer(r'"@id":"([^"]+)","@type"', txt): ALL_DEF.add(m.group(1))
+for f, (txt, p) in pages.items():
+    rel = os.path.relpath(f, ROOT)
+    ids_defined, ids_ref = set(), set()
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', txt, re.S):
+        g = json.loads(m.group(1)).get("@graph", [])
+        def walk(o, top):
+            if isinstance(o, dict):
+                if "@id" in o and len(o) == 1: ids_ref.add(o["@id"])
+                elif "@id" in o and top: ids_defined.add(o["@id"])
+                for v in o.values(): walk(v, False)
+            elif isinstance(o, list):
+                for v in o: walk(v, top)
+        for n in g:
+            if "@id" in n: ids_defined.add(n["@id"])
+            walk({k: v for k, v in n.items() if k != "@id"}, False)
+    for r in ids_ref:
+        if r not in ids_defined and r not in ALL_DEF and not r.startswith("https://www.schubart-dulgeridis.de/"): errors.append(f"{rel}: Schema-Referenz {r} ohne Definition")
+    if '"speakable"' in txt and 'class="answer"' not in txt: errors.append(f"{rel}: speakable ohne .answer")
+    if rel not in ("404.html",) and "datePublished" in txt and not re.search(r'"dateModified":"2026-11-04"', txt) and rel in ("index.html","leistungen.html"): errors.append(f"{rel}: dateModified veraltet")
+
 print()
 for w in warns: print("WARN ", w)
 for e in errors: print("FEHLER", e)

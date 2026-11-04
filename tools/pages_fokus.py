@@ -32,7 +32,7 @@ def fokus_page(cfg):
     page = {
         "path": cfg["path"], "short": cfg["short"], "title": cfg["title"], "description": cfg["description"],
         "crumbs": [("Fokusfelder", "/fokusfelder")], "priority": "0.8", "llms_group": "Fokusfelder",
-        "faqs": cfg["faqs"], "styles": ["/assets/visual.css"],
+        "faqs": cfg["faqs"], "styles": ["/assets/visual.css"], "journey": "/fokusfelder", "speakable": True,
         "schema_nodes": [{
             "@type": "Service", "@id": url_of(cfg["path"]) + "#service",
             "name": cfg["service_name"], "serviceType": "Personalentwicklung",
@@ -47,6 +47,11 @@ def fokus_page(cfg):
     sources = "".join(f"<li>{s}</li>" for s in cfg["sources"])
     page["body"] = (
         page_hero(page, cfg["h1"], cfg["lead"])
+        + section(V.facts_strip([
+            ("Ansprechpartner", f'<a href="/ueber-uns#{cfg["partner"]}">{esc(p["name"])}</a>, {esc(p["role"])}'),
+            ("Für wen", cfg["zielgruppe"]),
+            ("Einstieg", "Kostenloses Erstgespräch, 20 bis 30 Minuten per Microsoft Teams"),
+        ], cfg["color"]), "v-tight", "")
         + section(
             answer_box(cfg["answer_label"], cfg["answer"])
             + '<div class="prose">' + cfg["why"] + "</div>", "", "")
@@ -58,6 +63,7 @@ def fokus_page(cfg):
             + V.phases(cfg["color"], cfg["phases"])
             + f'<p class="muted">Das Konzept entsteht nach dem Erstgespräch in der <a href="/leistungen#konzeption">Konzeption</a>.</p>'
             f'<p><strong>Für wen:</strong> {cfg["zielgruppe"]}</p>', "section-white", "")
+        + section(head("Weiterführend", "Passende Formate und Begriffe", "Konkrete Angebote und die Begriffe dieses Fokusfelds im Glossar.") + V.related_formats(cfg["related"]), "", "")
         + section(head("Ansprechpartner", f"Ihr Ansprechpartner: {esc(p['name'])}", "") + partner_wide(cfg["partner"]), "section-cream", "")
         + section(head("Häufige Fragen", "Fragen zu diesem Fokusfeld") + faqs_html, "", "")
         + section(
@@ -110,6 +116,9 @@ VERHANDLUNG = {
         "Auswertung und Transfer in den Alltag",
     ],
     "zielgruppe": "Geschäftsleitungen, Führungskräfte und Fachverantwortliche, die regelmäßig verhandeln oder überzeugen müssen.",
+    "related": [("/glossar#alternative-zum-verhandlungsergebnis-batna", "Glossar", "BATNA und ZOPA", "Die Begriffe hinter Verhandlungsspielraum und Alternative nachlesen."),
+                ("/glossar#anker", "Glossar", "Anker", "Warum die erste Zahl im Gespräch den Verlauf prägt."),
+                ("/innolab#sprint", "InnoLab", "InnoLab Sprint", "Teams pitchen am fünften Tag vor Entscheidern: Argumentieren am eigenen Prototyp.")],
     "faqs": [
         ("Worin unterscheiden sich Verhandlungsführung und Rhetorik?",
          "<p>Verhandlungsführung betrifft Strategie und Vorbereitung: Ziele, Alternativen, Spielräume und Gesprächsverlauf. Rhetorik betrifft die Wirkung: Aufbau von Argumenten, Wortwahl und Auftreten. Beides ergänzt sich.</p>"),
@@ -172,6 +181,9 @@ LEADERSHIP = {
         "Reflexion an eigenen Führungssituationen",
     ],
     "zielgruppe": "Geschäftsleitungen, Bereichsleitungen und Teamleitungen sowie Personalverantwortliche, die Führung gezielt entwickeln möchten.",
+    "related": [("/innolab#change-leadership", "InnoLab", "Change Leadership", "Führungskräftetraining, 2 + 1 Tage: Widerstände erkennen, Wandel kommunizieren, am eigenen Vorhaben arbeiten."),
+                ("/innolab#scorecard", "InnoLab", "Innovation Scorecard", "Strategieworkshop für Geschäftsführung: Ausrichtung, Kennzahlen und Entscheidungsvorlage."),
+                ("/glossar#umsetzungsluecke", "Glossar", "Umsetzungslücke", "Der Abstand zwischen beschlossener Strategie und Arbeitsalltag.")],
     "faqs": [
         ("Worin unterscheiden sich Führungskräfteentwicklung und Organisationsentwicklung?",
          "<p>Führungskräfteentwicklung stärkt Personen in ihrer Rolle. Organisationsentwicklung verändert Strukturen, Abläufe und Kultur. Beides greift ineinander, deshalb betrachtet dieses Fokusfeld beide Seiten.</p>"),
@@ -232,6 +244,9 @@ FINANCE = {
         "Übung an Fallbeispielen",
     ],
     "zielgruppe": "Geschäftsleitungen, Führungskräfte und Projektverantwortliche, die Budgets, Investitionen oder Veränderungsvorhaben verantworten.",
+    "related": [("/innolab#scorecard", "InnoLab", "Innovation Scorecard", "Kennzahlen, Kosten-Nutzen-Rechnung und Entscheidungsvorlage für Innovationsvorhaben."),
+                ("/glossar#cashflow", "Glossar", "Cashflow, GuV und Bilanz", "Die drei Blickwinkel auf die Zahlen eines Unternehmens im Glossar."),
+                ("/glossar#business-case", "Glossar", "Business Case", "Die wirtschaftliche Begründung eines Vorhabens: Kosten, Nutzen, Annahmen, Risiken.")],
     "faqs": [
         ("Brauchen Führungskräfte betriebswirtschaftliche Vorkenntnisse?",
          "<p>Nein. Maßnahmen lassen sich an das Vorwissen der Zielgruppe anpassen. Ziel ist Verständnis, nicht Buchführung.</p>"),
