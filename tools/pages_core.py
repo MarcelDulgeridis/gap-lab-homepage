@@ -1,6 +1,7 @@
 """Kernseiten: Start, Leistungen, Fokusfelder-Übersicht, Über uns, Kontakt."""
 from siteinfo import SITE, PARTNERS
 from schema_nodes import person_nodes
+import visuals as V
 from helpers import (esc, url_of, ARROW, btn, link_arrow, faq_block, partner_card, cta_band,
                      page_hero, section, head, answer_box)
 
@@ -106,50 +107,38 @@ def home():
 
     problem = section(
         head("Ausgangslage", "Wenn Entwicklung im Arbeitsalltag nicht ankommt",
-             "Viele Organisationen investieren in Trainings und Programme und sehen im Alltag wenig davon. Typische Muster:", "problem-title")
-        + """<ul class="feature-list">
-  <li><strong>Verhandlungen laufen ohne Strategie</strong><span>Entscheider verhandeln mit Kunden, Lieferanten oder intern, ohne Ziele, Alternativen und Spielräume vorab zu klären. Das Ergebnis sind Zugeständnisse, die vermeidbar gewesen wären.</span></li>
-  <li><strong>Führung bleibt unscharf</strong><span>Rollen, Entscheidungsrechte und Erwartungen sind nicht eindeutig. Beschlossene Strategie und gelebte Kultur laufen auseinander.</span></li>
-  <li><strong>Zahlen werden nicht verstanden</strong><span>Führungskräfte entscheiden über Budgets und Veränderungen, ohne die finanzielle Wirkung belastbar einschätzen zu können.</span></li>
-  <li><strong>Maßnahmen passen nicht zur Zielgruppe</strong><span>Standardformate treffen nicht die Situation der Teilnehmenden und bleiben deshalb ohne Wirkung im Alltag.</span></li>
-</ul>""", "", "problem-title")
+             "Viele Organisationen investieren in Trainings und Programme und sehen im Alltag wenig davon. An vier Stellen geht die Wirkung typischerweise verloren:", "problem-title")
+        + V.gap_bridge(), "", "problem-title")
 
     leistungen = section(
         head("Leistungen", "Vier Stufen von der Konzeption bis zur Vermarktung",
-             "Jede Stufe beantwortet eine andere Frage. Sie können sie einzeln oder verbunden betrachten.", "leistungen-title")
-        + """<div class="grid grid-4">
-  <a class="card card-link" href="/leistungen#konzeption"><span class="tag">Stufe 1</span><h3>Konzeption</h3><p>Was soll die Maßnahme bewirken, und für wen? Ergebnis: ein Konzept mit Zielen, Zielgruppe, Format und Erfolgskriterien.</p><span class="more">Mehr erfahren</span></a>
-  <a class="card card-link" href="/leistungen#entwicklung"><span class="tag">Stufe 2</span><h3>Entwicklung</h3><p>Aus dem Konzept werden Inhalte, Materialien und Übungen, abgestimmt auf die Praxis der Teilnehmenden.</p><span class="more">Mehr erfahren</span></a>
-  <a class="card card-link" href="/leistungen#durchfuehrung"><span class="tag">Stufe 3</span><h3>Durchführung</h3><p>Die Maßnahme wird in dem Format umgesetzt, das zu Ausgangslage und Ziel passt.</p><span class="more">Mehr erfahren</span></a>
-  <a class="card card-link" href="/leistungen#vermarktung"><span class="tag">Stufe 4</span><h3>Vermarktung</h3><p>Maßnahmen werden als verständliches Angebot beschrieben, damit Zielgruppe und Nutzen klar sind.</p><span class="more">Mehr erfahren</span></a>
-</div>""", "section-white", "leistungen-title")
+             "Jede Stufe beantwortet eine andere Frage und liefert ein eigenes Ergebnis. Sie können sie einzeln oder verbunden betrachten.", "leistungen-title")
+        + V.value_chain()
+        + '<p class="small"><a class="link-arrow" href="/leistungen">Alle Stufen im Detail ' + ARROW + "</a></p>", "section-white", "leistungen-title")
 
     fokus = section(
         head("Fokusfelder", "Drei Disziplinen, die im Alltag zusammenhängen",
              "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern in denselben Situationen aufeinander. Jedes Fokusfeld hat einen klar benannten Ansprechpartner.", "fokus-title")
-        + f"""<div class="grid grid-3">
-  <a class="card card-link" href="/fokusfelder/verhandlungsfuehrung"><span class="tag">Fokusfeld</span><h3>Verhandlungsführung &amp; Rhetorik</h3><p>Verhandlungen vorbereiten, führen und überzeugend argumentieren, auch in kritischen Gesprächen.</p><p class="small"><strong>{esc(PARTNERS['oliver-meschkat']['name'])}</strong></p><span class="more">Fokusfeld ansehen</span></a>
-  <a class="card card-link" href="/fokusfelder/leadership-organisation"><span class="tag">Fokusfeld</span><h3>Leadership &amp; Organisation</h3><p>Rollen, Erwartungen und Entscheidungswege klären, im Zusammenspiel von Strategie, Kultur und Führung.</p><p class="small"><strong>{esc(PARTNERS['constantin-schubart']['name'])}</strong></p><span class="more">Fokusfeld ansehen</span></a>
-  <a class="card card-link" href="/fokusfelder/finance-transformation"><span class="tag">Fokusfeld</span><h3>Finance &amp; Transformation</h3><p>Finanzielle Zusammenhänge verstehen und Veränderung wirtschaftlich fundiert umsetzen.</p><p class="small"><strong>{esc(PARTNERS['marcel-dulgeridis']['name'])}</strong></p><span class="more">Fokusfeld ansehen</span></a>
-</div>""", "", "fokus-title")
+        + V.venn(), "", "fokus-title")
+
+    angebote = section(
+        head("Angebote im Fokus", "Zwei Einstiege, die Sie ohne Vorgespräch ansehen können",
+             "Das Formatportfolio InnoLab und der KI-Readiness Check zeigen, wie THE GAP Lab Wirkung greifbar macht.", "angebote-title")
+        + V.teasers(), "section-cream", "angebote-title")
 
     warum = section(
         head("Warum THE GAP Lab", "Was die Gesellschaft von einer Einzelmaßnahme unterscheidet", "", "warum-title")
-        + f"""<ul class="feature-list">
-  <li><strong>Drei Disziplinen in einer Gesellschaft</strong><span>Verhandlung, Führung und Finanzen greifen in einer Gesellschaft ineinander, statt in getrennten Projekten mit getrennten Ansprechpartnern behandelt zu werden.</span></li>
-  <li><strong>Namentlich bekannte Verantwortliche</strong><span>Die Partner sind öffentlich benannt. Zwei sind Professoren für Betriebswirtschaftslehre an der IU Internationalen Hochschule, einer ist promoviert und auf Verhandlungsführung spezialisiert.</span></li>
-  <li><strong>Verbund mit forschungsbasierter Beratung</strong><span>Als Tochtergesellschaft steht THE GAP Lab im Verbund mit der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a>, die forschungsbasierte Beratung und Diagnostik anbietet (THE GAP).</span></li>
-</ul>""", "section-white", "warum-title")
+        + V.statements(), "v-dark", "warum-title")
 
     vorgehen = section(
         head("Vorgehen", "So läuft eine Zusammenarbeit typischerweise ab",
              "Umfang und Taktung richten sich nach Ihrer Ausgangslage. Der Ablauf bleibt in der Struktur gleich.", "vorgehen-title")
-        + """<ol class="steps">
-  <li><strong>Erstgespräch</strong><span>20 bis 30 Minuten: Anlass, Ziel und Zielgruppe klären. Kostenlos und unverbindlich.</span></li>
-  <li><strong>Konzept</strong><span>Wir leiten ein Konzept mit Zielen, Inhalten, Format und Erfolgskriterien ab und stimmen es mit Ihnen ab.</span></li>
-  <li><strong>Umsetzung</strong><span>Inhalte werden entwickelt und die Maßnahme wird durchgeführt, entlang der Fokusfelder der Partner.</span></li>
-  <li><strong>Auswertung</strong><span>Gemeinsam prüfen wir, was die Maßnahme bewirkt hat und welche nächsten Schritte sinnvoll sind.</span></li>
-</ol>""", "", "vorgehen-title")
+        + V.timeline([
+            ("Schritt 1 · 20 bis 30 Minuten", "Erstgespräch", "Anlass, Ziel und Zielgruppe klären. Kostenlos und unverbindlich.", "Klarer Anlass, Ziel und Zielgruppe"),
+            ("Schritt 2", "Konzept", "Wir leiten ein Konzept mit Zielen, Inhalten, Format und Erfolgskriterien ab und stimmen es mit Ihnen ab.", "Abgestimmtes Konzept mit Erfolgskriterien"),
+            ("Schritt 3", "Umsetzung", "Inhalte werden entwickelt und die Maßnahme wird durchgeführt, entlang der Fokusfelder der Partner.", "Entwickelte und durchgeführte Maßnahme"),
+            ("Schritt 4", "Auswertung", "Gemeinsam prüfen wir, was die Maßnahme bewirkt hat und welche nächsten Schritte sinnvoll sind.", "Wirkung und nächste Schritte"),
+        ]), "", "vorgehen-title")
 
     partner = section(
         head("Partner", "Drei Partner, ein Ansprechkreis",
@@ -167,7 +156,8 @@ def home():
                    "Sprechen Sie 20 bis 30 Minuten mit einem der Partner: kostenlos, unverbindlich, per Microsoft Teams.",
                    secondary="Die Terminbuchung läuft über die Kalender der Partner bei der Schubart &amp; Dulgeridis GmbH.")
 
-    page["body"] = hero + trust + problem + leistungen + fokus + warum + vorgehen + partner + faq + cta
+    page["body"] = hero + trust + problem + leistungen + fokus + angebote + warum + vorgehen + partner + faq + cta
+    page["styles"] = ["/assets/visual.css"]
     return page
 
 
@@ -177,6 +167,7 @@ def leistungen():
         "title": "Leistungen — Konzeption bis Vermarktung | THE GAP Lab",
         "description": "Vier Leistungsstufen für Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Ablauf, mögliche Ergebnisse, FAQ.",
         "priority": "0.9", "llms_group": "Leistungen", "schema_type": "CollectionPage",
+        "styles": ["/assets/visual.css"],
     }
     faqs = [
         ("Was bietet The Gap Lab GmbH an?",
@@ -192,14 +183,16 @@ def leistungen():
 
     def service(num, anchor, title, ausgang, tun, ergebnisse, geeignet):
         erg = "".join(f"<li>{e}</li>" for e in ergebnisse)
-        return f"""<article class="service" id="{anchor}">
-  <div><span class="num">Stufe {num}</span><h2>{title}</h2></div>
-  <div class="service-body">
-    <h3>Ausgangslage</h3><p>{ausgang}</p>
-    <h3>Was wir tun</h3><p>{tun}</p>
-    <h3>Mögliche Ergebnisse</h3><ul>{erg}</ul>
-    <h3>Geeignet, wenn</h3><p>{geeignet}</p>
+        return f"""<article class="v-service" id="{anchor}">
+  <div class="v-shead"><span class="big" aria-hidden="true">{num}</span><div><span>Stufe {num}</span><h2>{title}</h2></div></div>
+  <div class="v-sflow">
+    <div class="v-sbox"><span class="v-lab">Ausgangslage</span><p>{ausgang}</p></div>
+    <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
+    <div class="v-sbox mid"><span class="v-lab">Was wir tun</span><p>{tun}</p></div>
+    <div class="v-sarrow" aria-hidden="true">{ARROW}</div>
+    <div class="v-sbox out"><span class="v-lab">Mögliche Ergebnisse</span><ul>{erg}</ul></div>
   </div>
+  <p class="v-sfit"><b>Geeignet, wenn</b> {geeignet}</p>
 </article>"""
 
     services = (
@@ -231,6 +224,9 @@ def leistungen():
         + section(
             answer_box("Kurzantwort: Was bietet The Gap Lab an?",
                        "The Gap Lab GmbH konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung. Inhaltlich arbeiten die Partner in drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
+            + head("Überblick", "Vier Stufen, vier Leitfragen", "Jede Stufe liefert ein eigenes Ergebnis. Die Stufen bauen aufeinander auf, lassen sich aber einzeln beauftragen.")
+            + V.value_chain()
+            + '<h3 class="v-h3">Welche Stufe brauchen Sie?</h3>' + V.decision_help()
             + services, "", "")
         + section(
             head("Fokusfelder", "Wo die Stufen inhaltlich ansetzen", "Jede Stufe lässt sich auf eines oder mehrere der drei Fokusfelder beziehen.")
@@ -238,9 +234,9 @@ def leistungen():
               '<li><a href="/fokusfelder/leadership-organisation">Leadership &amp; Organisation</a></li>'
               '<li><a href="/fokusfelder/finance-transformation">Finance &amp; Transformation</a></li></ul>', "section-white", "")
         + section(
-            head("Abgrenzung", "THE GAP Lab und die Muttergesellschaft",
+            head("Abgrenzung", "Messen und Entwickeln: THE GAP Lab und die Muttergesellschaft",
                  f"Diagnostik wie THE GAP und der Pulse-Check, Re- und Upskilling-Programme, Coaching und Recruiting gehören zur <a href=\"{SD}\">Schubart &amp; Dulgeridis GmbH</a>. "
-                 "THE GAP Lab konzentriert sich auf Maßnahmen der Personalentwicklung in den drei Fokusfeldern. Wenn Sie zuerst messen möchten, wo Anspruch und Alltag auseinanderliegen, ist die Diagnostik der Muttergesellschaft der passende Einstieg."), "", "")
+                 "THE GAP Lab konzentriert sich auf Maßnahmen der Personalentwicklung in den drei Fokusfeldern.") + V.measure_develop(), "", "")
         + section(
             head("Häufige Fragen", "Fragen zu den Leistungen") + faq_block(faqs), "section-white", "")
         + cta_band("Welche Stufe brauchen Sie?", "Im Erstgespräch klären wir, wo Ihre Ausgangslage liegt und welche Stufen sinnvoll sind.")
@@ -264,6 +260,7 @@ def fokusfelder_hub():
         "title": "Fokusfelder — Verhandlung, Leadership, Finance | THE GAP Lab",
         "description": "Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.",
         "priority": "0.8", "llms_group": "Fokusfelder", "schema_type": "CollectionPage",
+        "styles": ["/assets/visual.css"],
     }
     page["body"] = (
         page_hero(page, "Drei Fokusfelder, drei Ansprechpartner",
@@ -271,11 +268,8 @@ def fokusfelder_hub():
         + section(
             answer_box("Kurzantwort: In welchen Themenfeldern arbeitet THE GAP Lab?",
                        "In drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik (Dr. Oliver Meschkat), Leadership &amp; Organisation (Prof. Dr. Constantin Schubart) sowie Finance &amp; Transformation (Prof. Dr. Marcel Dulgeridis).")
-            + f"""<div class="grid grid-3">
-  <a class="card card-link" href="/fokusfelder/verhandlungsfuehrung"><span class="tag">Fokusfeld 1</span><h2 class="card-title">Verhandlungsführung &amp; Rhetorik</h2><p>Interessen klären, Alternativen kennen, Gespräche steuern und überzeugend argumentieren.</p><p class="small"><strong>Ansprechpartner:</strong> {esc(PARTNERS['oliver-meschkat']['name'])}</p><span class="more">Fokusfeld ansehen</span></a>
-  <a class="card card-link" href="/fokusfelder/leadership-organisation"><span class="tag">Fokusfeld 2</span><h2 class="card-title">Leadership &amp; Organisation</h2><p>Rollen, Entscheidungswege und Erwartungen klären und Strategie im Alltag verankern.</p><p class="small"><strong>Ansprechpartner:</strong> {esc(PARTNERS['constantin-schubart']['name'])}</p><span class="more">Fokusfeld ansehen</span></a>
-  <a class="card card-link" href="/fokusfelder/finance-transformation"><span class="tag">Fokusfeld 3</span><h2 class="card-title">Finance &amp; Transformation</h2><p>Kennzahlen verstehen, Wirtschaftlichkeit bewerten und Veränderung finanziell fundiert umsetzen.</p><p class="small"><strong>Ansprechpartner:</strong> {esc(PARTNERS['marcel-dulgeridis']['name'])}</p><span class="more">Fokusfeld ansehen</span></a>
-</div>""", "", "")
+            + V.venn(with_links=False), "", "")
+        + section(head("Im Vergleich", "Drei Fokusfelder nebeneinander", "Leitfrage, typische Situationen, zentrale Begriffe und Ansprechpartner auf einen Blick.", "cmp-title") + V.fokus_compare(), "section-white", "cmp-title")
         + cta_band("Nicht sicher, welches Fokusfeld passt?", "Im Erstgespräch ordnen wir Ihre Ausgangslage gemeinsam ein.")
     )
     return page
@@ -287,6 +281,7 @@ def ueber_uns():
         "title": "Über uns — Drei Partner, eine Gesellschaft | THE GAP Lab",
         "description": "Die Menschen hinter THE GAP Lab: Geschäftsführer, Partner und der Verbund mit der Schubart & Dulgeridis GmbH. Profile und Fokusfelder.",
         "priority": "0.8", "llms_group": "Unternehmen", "schema_type": "AboutPage",
+        "styles": ["/assets/visual.css"],
     }
     page["schema_nodes"] = person_nodes()
 
@@ -322,6 +317,7 @@ def ueber_uns():
               "Jede Disziplin hat einen Partner, der sie fachlich verantwortet.</p>"
               f"<p>Die Gesellschaft steht im Verbund mit der <a href=\"{SD}\">Schubart &amp; Dulgeridis GmbH</a>, die forschungsbasierte Beratung und Diagnostik anbietet.</p>"
               "</div></div>", "", "")
+        + section(head("Aufbau", "Gesellschaft, Verbund und Fokusfelder", "Die Gesellschaft ist Tochter der Schubart &amp; Dulgeridis GmbH und ordnet jedem Fokusfeld einen Partner zu.", "aufbau-title") + V.org(), "section-white", "aufbau-title")
         + section(head("Die Partner", "Wer hinter THE GAP Lab steht",
                        "Alle Angaben entsprechen den veröffentlichten Profilen auf schubart-dulgeridis.de.", "partner-title")
                   + '<div class="grid">' + wide("constantin-schubart") + wide("oliver-meschkat") + wide("marcel-dulgeridis") + "</div>",
@@ -337,7 +333,7 @@ def kontakt():
         "title": "Kontakt & Erstgespräch | THE GAP Lab",
         "description": "Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen — oder per E-Mail und Telefon anfragen.",
         "priority": "0.9", "llms_group": "Unternehmen", "schema_type": "ContactPage",
-        "faqs": FAQ_CONTACT, "faq_schema": True,
+        "faqs": FAQ_CONTACT, "faq_schema": True, "styles": ["/assets/visual.css"],
     }
 
     def booking(key):
@@ -359,6 +355,7 @@ def kontakt():
             + '<div class="grid grid-3">' + booking("constantin-schubart") + booking("oliver-meschkat") + booking("marcel-dulgeridis") + "</div>"
             + '<p class="small">Mit dem Klick verlassen Sie gap-lab.de und wechseln zur Website der Muttergesellschaft; dort gilt deren <a href="' + SD + 'datenschutz">Datenschutzerklärung</a>.</p>',
             "", "termin-title")
+        + section(head("Ablauf", "So läuft das Erstgespräch ab", "", "ablauf-title") + V.contact_flow(), "section-white", "ablauf-title")
         + section(
             '<div class="contact-grid"><div>'
             + head("Direkt anfragen", "E-Mail und Telefon", "", "direkt-title")
@@ -370,14 +367,13 @@ def kontakt():
 <p class="small muted">Während der Aufbauphase werden E-Mail und Telefon gemeinsam mit der Muttergesellschaft genutzt.</p>
 </div><div>"""
             + head("Gut vorbereitet", "Was Sie für das Gespräch mitbringen können", "", "prep-title")
-            + """<ul>
-  <li><strong>Anlass und Ziel:</strong> Was soll sich in Ihrer Organisation verändern?</li>
-  <li><strong>Zielgruppe:</strong> Wer soll teilnehmen, und wie viele Personen sind es ungefähr?</li>
-  <li><strong>Zeitrahmen:</strong> Bis wann soll die Maßnahme wirken?</li>
-  <li><strong>Bisherige Erfahrungen:</strong> Was wurde schon versucht, und was hat nicht funktioniert?</li>
-</ul>
-<p class="muted">Nichts davon ist Pflicht. Auch ein erstes Stichwort genügt.</p>
-</div></div>""", "section-white", "")
+            + V.checklist([
+                "<strong>Anlass und Ziel:</strong> Was soll sich in Ihrer Organisation verändern?",
+                "<strong>Zielgruppe:</strong> Wer soll teilnehmen, und wie viele Personen sind es ungefähr?",
+                "<strong>Zeitrahmen:</strong> Bis wann soll die Maßnahme wirken?",
+                "<strong>Bisherige Erfahrungen:</strong> Was wurde schon versucht, und was hat nicht funktioniert?",
+            ]) + """<p class="muted">Nichts davon ist Pflicht. Auch ein erstes Stichwort genügt.</p>
+</div></div>""", "section-cream", "")
         + section(head("Häufige Fragen", "Zum Kontakt") + faq_block(FAQ_CONTACT), "", "")
     )
     return page

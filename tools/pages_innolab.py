@@ -299,6 +299,22 @@ def price_table():
             '<p class="small muted">* Rechnerischer Wert bei 12 Teilnehmenden. Paketpreis inklusive Pauschale für Konzeption, Organisation und Reisezeit.</p>')
 
 
+def price_chart():
+    top = max(f["price"] for f in FORMATS)
+    rows = []
+    for f in FORMATS:
+        w = round(f["price"] / top * 100, 1)
+        days = "".join("<i></i>" for _ in range(f["days"]))
+        rows.append(
+            f'<li><a class="il-pn" href="#{f["id"]}">{esc(f["name"])}</a>'
+            f'<span class="il-pd" role="img" aria-label="{f["days"]} Tage vor Ort">{days}</span>'
+            f'<svg class="il-pb" viewBox="0 0 100 10" preserveAspectRatio="none" role="img" aria-label="Paketpreis {eur(f["price"])}"><rect class="tr" width="100" height="10"/><rect class="fg" width="{w}" height="10"/></svg>'
+            f'<strong class="il-pv">{eur(f["price"])}</strong></li>')
+    return ('<figure class="il-pchart"><figcaption><strong>Dauer und Paketpreis im Vergleich</strong>'
+            '<span>Jedes Quadrat steht für einen Tag vor Ort. Die Balken beginnen bei 0 € und zeigen den Festpreis netto.</span></figcaption>'
+            f'<ul>{"".join(rows)}</ul></figure>')
+
+
 def bundles():
     cards = []
     for name, text, price, was in BUNDLES:
@@ -397,7 +413,7 @@ def build_body():
         + f'<div class="il-calc" role="group" aria-label="So entsteht der Preis"><div><span class="il-lab">Tage vor Ort, je Tag</span><strong>{eur(DAY)}</strong></div><span class="il-op" aria-hidden="true">+</span>'
           f'<div><span class="il-lab">Pauschale je Modul</span><strong>{eur(FLAT)}</strong><small>Konzeption, Organisation, Reisezeit</small></div><span class="il-op" aria-hidden="true">=</span>'
           f'<div class="il-calc-res"><span class="il-lab">Paketpreis</span><strong>ab {eur(5800)}</strong><small>zzgl. Fahrtkosten 0,40 € je km und Hotel nach Aufwand</small></div></div>'
-        + price_table()
+        + price_chart() + price_table()
         + '<h3 class="il-h3">Bündel</h3>' + bundles()
         + '<div class="grid grid-3 il-extras">'
           '<div class="card"><h3>Einstieg</h3><ul class="il-list"><li>Challenge-Klärung, 60 Min. (Sprint): <strong>kostenfrei</strong></li><li>Format-Check (Learning Design 4.0): <strong>kostenfrei</strong></li><li>Vorgespräch (Change Leadership): <strong>kostenfrei</strong></li><li>Erfolgsfaktoren-Check, 90 Min. (Scorecard): <strong>kostenfrei</strong></li><li>Raumbegehung, ½ Tag (Design), bei Beauftragung angerechnet: <strong>1.250 €</strong></li></ul></div>'

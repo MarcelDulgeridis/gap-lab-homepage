@@ -1,5 +1,6 @@
 """Die drei Fokusfeld-Seiten. Inhalte: allgemeines Fachwissen, belegte Personenangaben, keine erfundenen Kennzahlen."""
 from siteinfo import SITE, PARTNERS
+import visuals as V
 from helpers import (esc, url_of, ARROW, faq_block, cta_band, page_hero, section, head, answer_box, partner_wide)
 
 SD = SITE["parent_url"]
@@ -31,7 +32,7 @@ def fokus_page(cfg):
     page = {
         "path": cfg["path"], "short": cfg["short"], "title": cfg["title"], "description": cfg["description"],
         "crumbs": [("Fokusfelder", "/fokusfelder")], "priority": "0.8", "llms_group": "Fokusfelder",
-        "faqs": cfg["faqs"],
+        "faqs": cfg["faqs"], "styles": ["/assets/visual.css"],
         "schema_nodes": [{
             "@type": "Service", "@id": url_of(cfg["path"]) + "#service",
             "name": cfg["service_name"], "serviceType": "Personalentwicklung",
@@ -49,14 +50,14 @@ def fokus_page(cfg):
         + section(
             answer_box(cfg["answer_label"], cfg["answer"])
             + '<div class="prose">' + cfg["why"] + "</div>", "", "")
-        + section(head("Zentrale Begriffe", "Die wichtigsten Begriffe im Überblick", "") + defs(cfg["begriffe"]), "section-white", "")
-        + section(head("Typische Ausgangslagen", "Wann dieses Fokusfeld relevant wird", "") + feature(cfg["ausgangslagen"]), "", "")
+        + section(head("Zentrale Begriffe", cfg["model_title"], "") + cfg["model"] + defs(cfg["begriffe"]), "section-white", "")
+        + section(head("Typische Ausgangslagen", "Wann dieses Fokusfeld relevant wird", "") + V.situations(cfg["ausgangslagen"], cfg["color"]), "", "")
         + section(
-            '<div class="split"><div>'
-            + head("Mögliche Bausteine", "Was eine Maßnahme enthalten kann", "")
-            + '</div><div class="prose"><ul>' + "".join(f"<li>{b}</li>" for b in cfg["bausteine"]) + "</ul>"
-            f'<p class="muted">Welche Bausteine sinnvoll sind, hängt von Ziel und Zielgruppe ab. Das Konzept entsteht nach dem Erstgespräch in der <a href="/leistungen#konzeption">Konzeption</a>.</p>'
-            f'<p><strong>Für wen:</strong> {cfg["zielgruppe"]}</p></div></div>', "section-white", "")
+            head("Mögliche Bausteine", "Was eine Maßnahme enthalten kann",
+                 "Die Bausteine lassen sich in drei Phasen ordnen. Welche sinnvoll sind, hängt von Ziel und Zielgruppe ab.")
+            + V.phases(cfg["color"], cfg["phases"])
+            + f'<p class="muted">Das Konzept entsteht nach dem Erstgespräch in der <a href="/leistungen#konzeption">Konzeption</a>.</p>'
+            f'<p><strong>Für wen:</strong> {cfg["zielgruppe"]}</p>', "section-white", "")
         + section(head("Ansprechpartner", f"Ihr Ansprechpartner: {esc(p['name'])}", "") + partner_wide(cfg["partner"]), "section-cream", "")
         + section(head("Häufige Fragen", "Fragen zu diesem Fokusfeld") + faqs_html, "", "")
         + section(
@@ -73,7 +74,12 @@ VERHANDLUNG = {
     "description": "Verhandlungsführung und Rhetorik: Begriffe, typische Ausgangslagen und mögliche Bausteine einer Maßnahme — mit Dr. Oliver Meschkat als Ansprechpartner.",
     "h1": "Verhandlungsführung und Rhetorik: souverän verhandeln, überzeugend argumentieren",
     "lead": "Verhandlungen entscheiden über Preise, Konditionen, Budgets und Zusammenarbeit. Dieses Fokusfeld macht sie planbar.",
-    "partner": "oliver-meschkat",
+    "partner": "oliver-meschkat", "color": "f1",
+    "model_title": "Das Verhandlungsmodell in einem Bild",
+    "model": V.zopa(),
+    "phases": [("Vorbereiten", ["Vorbereitungsstruktur für Verhandlungen", "Analyse von Interessen und Alternativen"]),
+               ("Anwenden", ["Gesprächsführung und Fragetechnik", "Argumentationsaufbau und rhetorische Mittel", "Umgang mit Einwänden und Druck", "Übung an eigenen Verhandlungsfällen"]),
+               ("Verankern", ["Auswertung und Transfer in den Alltag"])],
     "answer_label": "Kurzantwort: Was ist Verhandlungsführung?",
     "answer": "Verhandlungsführung ist die zielgerichtete Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und für die Gegenseite tragfähig genug sind, dass sie auch umgesetzt werden.",
     "why": (
@@ -131,7 +137,12 @@ LEADERSHIP = {
     "description": "Leadership & Organisation: Begriffe, typische Ausgangslagen und mögliche Bausteine für Führungsklarheit — mit Prof. Dr. Constantin Schubart als Ansprechpartner.",
     "h1": "Leadership und Organisation: Führung im Zusammenspiel von Strategie, Kultur und Rollen",
     "lead": "Führung funktioniert selten durch einzelne Personen allein. Entscheidend ist, wie Strategie, Kultur, Rollen und Entscheidungswege zusammenpassen.",
-    "partner": "constantin-schubart",
+    "partner": "constantin-schubart", "color": "f2",
+    "model_title": "Von der Strategie in den Alltag",
+    "model": V.impl_stack(),
+    "phases": [("Klären", ["Klärung von Rollen und Erwartungen", "Entscheidungswege und Verantwortlichkeiten"]),
+               ("Anwenden", ["Führungsgespräche", "Umgang mit Veränderung", "Zusammenarbeit im Team"]),
+               ("Verankern", ["Reflexion an eigenen Führungssituationen"])],
     "answer_label": "Kurzantwort: Was bedeutet Leadership & Organisation?",
     "answer": "Der Ansatz betrachtet Führung nicht als Eigenschaft einzelner Personen, sondern als Zusammenspiel aus Strategie, Kultur, Rollen und Entscheidungswegen. Ziel ist, dass Erwartungen klar sind und Entscheidungen im Alltag ankommen.",
     "why": (
@@ -186,7 +197,12 @@ FINANCE = {
     "description": "Finance & Transformation: Finanzverständnis für Führungskräfte, Kennzahlen und wirtschaftliche Bewertung von Veränderung — mit Prof. Dr. Marcel Dulgeridis.",
     "h1": "Finance und Transformation: Veränderung wirtschaftlich fundiert umsetzen",
     "lead": "Veränderung kostet Geld und soll Wirkung erzielen. Dieses Fokusfeld verbindet finanzielles Verständnis mit der Umsetzung von Vorhaben.",
-    "partner": "marcel-dulgeridis",
+    "partner": "marcel-dulgeridis", "color": "f3",
+    "model_title": "Drei Blickwinkel auf die Zahlen eines Unternehmens",
+    "model": V.finance_lenses(),
+    "phases": [("Verstehen", ["Jahresabschluss und Berichte lesen", "Kennzahlen deuten"]),
+               ("Bewerten", ["Wirtschaftlichkeit von Vorhaben bewerten", "Business Case aufbauen", "Finanzielle Wirkung von Veränderungen abschätzen"]),
+               ("Anwenden", ["Übung an Fallbeispielen"])],
     "answer_label": "Kurzantwort: Was bedeutet Finance & Transformation?",
     "answer": "Das Fokusfeld verbindet Finanzverständnis (Rechnungswesen, Kennzahlen, Wirtschaftlichkeit) mit der Umsetzung von Veränderung. So werden Entscheidungen nicht nur strategisch plausibel, sondern auch wirtschaftlich belastbar.",
     "why": (
