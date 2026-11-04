@@ -5,10 +5,8 @@
   var tabs = Array.prototype.slice.call(root.querySelectorAll(".il-tabs a"));
   var panels = Array.prototype.slice.call(root.querySelectorAll(".il-format"));
   var prev = root.querySelector("[data-prev]"), next = root.querySelector("[data-next]"), count = root.querySelector("[data-count]");
-  var tablist = root.querySelector(".il-tabs ol");
   if (!tabs.length || tabs.length !== panels.length) return;
   root.classList.add("is-js");
-  tablist.setAttribute("role", "tablist");
   var cur = -1;
 
   function idxOf(id) { for (var i = 0; i < panels.length; i++) if (panels[i].id === id) return i; return -1; }
@@ -18,16 +16,13 @@
     if (i < 0) i = panels.length - 1;
     if (i >= panels.length) i = 0;
     cur = i;
-    panels.forEach(function (p, k) { p.hidden = k !== i; p.setAttribute("role", "tabpanel"); p.setAttribute("aria-labelledby", "tab-" + p.id); });
+    panels.forEach(function (p, k) { p.hidden = k !== i; });
     tabs.forEach(function (t, k) {
-      t.id = "tab-" + panels[k].id;
-      t.setAttribute("role", "tab");
-      t.setAttribute("aria-selected", k === i ? "true" : "false");
       t.setAttribute("aria-controls", panels[k].id);
-      t.tabIndex = k === i ? 0 : -1;
+      if (k === i) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current");
       t.classList.toggle("on", k === i);
     });
-    if (count) count.textContent = "Format " + (i + 1) + " von " + panels.length;
+    if (count) { count.setAttribute("aria-live", "polite"); count.textContent = "Format " + (i + 1) + " von " + panels.length; }
     if (opts.focus) tabs[i].focus();
     if (opts.hash !== false && history.replaceState) history.replaceState(null, "", "#" + panels[i].id);
     if (opts.scroll) {

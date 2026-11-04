@@ -93,7 +93,7 @@ for u, p in info.items():
 
 # Sitemap vs Seiten
 sm = open(ROOT + "/sitemap.xml").read()
-smu = set(re.findall(r"https://gap-lab\.de(/[^<]*)</loc>", sm))
+smu = set(re.findall(r"https://www.gap-lab\.de(/[^<]*)</loc>", sm))
 for u in pages:
     if u == "/404": continue
     if u not in smu: E(u, "fehlt in sitemap.xml")
@@ -102,7 +102,7 @@ for u in smu:
 ll = open(ROOT + "/llms.txt").read()
 for u in pages:
     if u in ("/404", "/impressum", "/datenschutz"): continue
-    if ("https://gap-lab.de" + (u if u != "/" else "/")) not in ll: W(u, "fehlt in llms.txt")
+    if ("https://www.gap-lab.de" + (u if u != "/" else "/")) not in ll: W(u, "fehlt in llms.txt")
 
 print("\n".join(["FEHLER:"] + errs) if errs else "keine Fehler")
 print("\n".join(["WARNUNGEN:"] + warns) if warns else "keine Warnungen")

@@ -4,7 +4,7 @@ Nichts hier ist erfunden; fehlende Registerangaben (Stammkapital, vollständiger
 USt-IdNr.) stehen bewusst NICHT in den öffentlichen Texten."""
 
 SITE = {
-    "domain": "https://gap-lab.de",
+    "domain": "https://www.gap-lab.de",
     "brand": "THE GAP Lab",
     "legal_name": "The Gap Lab GmbH",
     "street": "Hessenstraße 28",

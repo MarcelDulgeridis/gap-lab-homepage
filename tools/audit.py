@@ -4,7 +4,7 @@ import glob, html, json, os, re, sys
 from html.parser import HTMLParser
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-DOMAIN = "https://gap-lab.de"
+DOMAIN = "https://www.gap-lab.de"
 files = [f for f in glob.glob(os.path.join(ROOT, "**/*.html"), recursive=True) if "/tools/" not in f and "/node_modules/" not in f]
 
 
