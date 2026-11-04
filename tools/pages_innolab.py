@@ -272,10 +272,10 @@ def format_block(f):
 <div class="il-ask"><span class="il-lab">Das Problem dahinter</span><p>{esc(f['problem'])}</p></div>
 <h4>{esc(f['ablauf_head'])}</h4>
 <ol class="il-steps">{steps}</ol>
+<dl class="defs il-defs il-defs-main">{facts}</dl>
 </div>
 <aside class="il-fside">
 <div class="il-box"><h4>Was Sie davon haben</h4><ul class="il-benefits">{nutzen}</ul></div>
-<dl class="defs il-defs">{facts}</dl>
 <div class="il-box il-research"><span class="il-lab">Aus der Forschung in die Praxis</span><p>{esc(f['forschung'])}</p></div>
 <div class="il-box il-price"><span class="il-lab">Paketpreis</span><p class="il-big">{eur(f['price'])} <small>netto{pp}</small></p>
 <p class="il-in"><strong>Einstieg: {esc(en)}</strong> <span>({esc(ed)})</span><br>{esc(et)}</p>

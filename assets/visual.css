@@ -13,6 +13,7 @@
 /* ---- Allgemein */
 .section.v-tight{padding-block:clamp(26px,3.6vw,44px)}
 .v-tight .answer{margin-bottom:0}
+.section.v-tight+.section{padding-top:clamp(20px,3vw,36px)}
 .v-h3{font-family:var(--font-display);font-weight:800;font-size:clamp(1.25rem,2vw,1.55rem);letter-spacing:-.015em;margin:clamp(34px,4vw,52px) 0 0}
 /* ---- Gap-Brücke (Ausgangslage) ---- */
 .v-gapline{display:flex;align-items:stretch;gap:0;margin:clamp(24px,3vw,36px) 0 0}
@@ -44,7 +45,7 @@
 .v-chev{padding:18px 34px 18px 22px;color:var(--on-navy);margin-right:-12px;position:relative;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%,22px 50%);padding-left:38px}
 .v-stage.s1 .v-chev{clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);padding-left:22px;background:#101D33}
 .v-stage.s2 .v-chev{background:#1b2f4d}.v-stage.s3 .v-chev{background:#24406a}
-.v-stage.s4 .v-chev{background:#7A5A27;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,22px 50%);margin-right:0}
+.v-stage.s4 .v-chev{background:#6a4e20;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,22px 50%);margin-right:0}
 .v-chev span{display:block;font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-pale)}
 .v-chev strong{display:block;font-family:var(--font-display);font-weight:900;font-size:1.3rem;line-height:1.15}
 .v-chev a{color:inherit;text-decoration:none}
@@ -77,7 +78,7 @@
 .v-statements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px);margin-top:clamp(24px,3vw,40px)}
 .v-st{border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
 .v-bignum{display:block;font-family:var(--font-display);font-weight:900;font-size:clamp(4rem,8vw,6.5rem);line-height:.9;letter-spacing:-.04em;color:var(--gold-mid);margin-bottom:14px}
-.v-st h3{font-size:1.25rem;font-weight:800;margin-bottom:10px}
+.v-st h3{font-size:1.25rem;font-weight:800;line-height:1.25;margin-bottom:10px}
 .v-st p{color:var(--on-navy-muted);margin:0}
 .v-st a{color:var(--gold-pale)}
 
@@ -138,7 +139,7 @@
 .v-cond{font-size:1.02rem;color:var(--navy);font-weight:600}
 .v-then{color:var(--gold-text)}
 .v-decide a{display:block;background:var(--navy);color:var(--on-navy);padding:10px 16px;font-family:var(--font-display);font-weight:800;text-decoration:none}
-.v-decide a .v-lab{color:var(--gold-pale);margin-bottom:0;font-size:.68rem}
+.v-decide a .v-lab{color:var(--gold-pale);margin-bottom:0;font-size:.78rem}
 .v-decide a:hover{background:var(--navy-3)}
 
 /* ---- Fokus-Vergleich ---- */
@@ -163,7 +164,7 @@
 /* ---- Leistungs-Module ---- */
 .v-service{padding:clamp(32px,4vw,52px) 0;border-top:1px solid var(--line);scroll-margin-top:90px}
 .v-service:first-of-type{border-top:0}
-.v-shead{display:flex;align-items:baseline;gap:18px;margin-bottom:22px}
+.v-shead{display:flex;align-items:center;gap:18px;margin-bottom:22px}
 .v-shead .big{font-family:var(--font-display);font-weight:900;font-size:clamp(3rem,6vw,4.6rem);line-height:.8;letter-spacing:-.04em;color:var(--gold)}
 .v-shead h2{font-weight:900;font-size:clamp(1.6rem,2.8vw,2.2rem);letter-spacing:-.025em}
 .v-shead span{display:block;font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text);margin-bottom:4px}
@@ -192,7 +193,7 @@
 .v-zl{font-family:var(--font-display);font-weight:800;font-size:.9rem}
 .v-track{position:relative;height:56px;background:repeating-linear-gradient(90deg,transparent,transparent calc(10% - 1px),var(--line) calc(10% - 1px),var(--line) 10%)}
 .v-track i{position:absolute;top:8px;bottom:8px;display:flex;align-items:center;padding:0 12px;font-style:normal}
-.v-track i b{font-family:var(--font-display);font-weight:700;font-size:.82rem;color:#fff;line-height:1.2}
+.v-track i b{font-family:var(--font-display);font-weight:700;font-size:.84rem;color:#fff;line-height:1.2}
 .v-track .za{left:0;width:64%;background:var(--f2)}
 .v-track .zb{left:36%;width:64%;background:var(--f3);justify-content:flex-end;text-align:right}
 .zm{position:absolute;top:0;bottom:0;width:0;border-left:3px solid var(--navy)}
@@ -230,7 +231,7 @@
 .v-gc .e1,.v-gc .e2{padding:12px 16px;font-size:.92rem;color:#27344a;background:var(--cream);border-left:4px solid var(--f3)}
 .v-gc .e2{border-left-color:var(--gold)}
 .v-gc b{display:block;font-family:var(--font-display);color:var(--navy)}
-.v-gc .gap{text-align:center;border-top:3px dashed var(--gold);font-family:var(--font-display);font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text);padding-top:4px;margin:0 8px}
+.v-gc .gap{text-align:center;border-top:3px dashed var(--gold);font-family:var(--font-display);font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text);padding-top:4px;margin:0 8px}
 .v-gc>p{margin:0;font-size:.92rem;color:var(--muted)}
 
 /* ---- Situationen, Phasen ---- */
@@ -261,9 +262,9 @@
 .v-oline{width:3px;height:30px;background:var(--gold)}
 .v-oline2{height:34px}
 .v-okids{list-style:none;margin:0;padding:34px 0 0;width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,22px);position:relative}
-.v-okids::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:34px;border:3px solid var(--gold);border-bottom:0}
+.v-okids::before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:0;border-top:3px solid var(--gold)}
 .v-okids li{margin:0;background:var(--white);border:1px solid var(--line);border-top:5px solid var(--c);padding:18px 20px;text-align:center;position:relative}
-.v-okids li::before{content:"";position:absolute;left:50%;top:-37px;height:32px;border-left:3px solid var(--gold)}
+.v-okids li::before{content:"";position:absolute;left:50%;top:-34px;height:34px;border-left:3px solid var(--gold);transform:translateX(-1.5px)}
 .v-okids .v-lab{color:var(--c)}
 .v-okids h3{font-size:1.1rem;line-height:1.25;margin-bottom:8px}
 .v-okids a{text-decoration:none}
@@ -365,10 +366,37 @@
   .v-zrow{grid-template-columns:1fr;gap:4px}
   .v-zband{left:calc((100%)*.36);width:calc(100%*.28)}
   .v-zaxis{margin-left:0}
-  .v-track i b{font-size:.74rem}
+  .v-track i b{font-size:.8rem}
   .v-gc>div{grid-template-columns:1fr;gap:8px}
   .v-gc .gap{border-top:0;border-left:3px dashed var(--gold);padding:6px 0 6px 12px;text-align:left;margin:0 0 0 12px}
   .v-gapdemo>div{grid-template-columns:90px minmax(0,1fr) 30px}
   .v-minilist a{grid-template-columns:52px minmax(0,1fr) auto;gap:10px}
 }
 @media print{.v-bridge,.v-timeline::before{display:none}}
+
+/* ---- Chips als Tippflächen (Links füllen die ganze Chip-Fläche) ---- */
+.chips li:has(>a){padding:0}
+.chips li>a{display:block;padding:9px 16px;text-decoration:none;min-height:44px;line-height:1.6}
+.chips li>a:hover{background:var(--navy);color:var(--on-navy)}
+
+.v-mini3{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:8px}
+.v-mini3 li{margin:0;display:flex;align-items:center;gap:12px;color:var(--on-navy);font-size:.98rem}
+.v-mini3 b{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;border-radius:50%;border:2px solid var(--gold-mid);color:var(--gold-pale);font-family:var(--font-display);font-size:.85rem}
+.v-panel-dark .btn{margin-top:auto}
+
+/* ---- Feinschliff: Abstände und Ausrichtung ---- */
+.card .btn{margin-top:auto}
+.card>p:not(.small):has(+ .btn){margin-bottom:20px}
+.grid+p.small{margin-top:24px}
+.sources{margin-bottom:clamp(40px,5vw,64px)}
+.sources h2{font-size:1.35rem;font-weight:800;margin-bottom:12px}
+.sources li{margin-bottom:.5em}
+
+/* Schmale Bildschirme: Klammer "Umsetzungslücke" unter die Ebenen legen statt daneben */
+@media (max-width:620px){
+  .v-stack-in{grid-template-columns:1fr;gap:10px}
+  .v-brace{height:34px;border:3px solid var(--gold);border-top:0}
+  .v-brace span{transform:translate(-50%,-50%) rotate(0deg)}
+}
+
+.v-chain+p.small{margin-top:clamp(20px,2.6vw,30px)}
