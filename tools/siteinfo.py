@@ -3,6 +3,8 @@ vom 23.09.2026 (HRB 46649). Personenangaben: veröffentlichte Profile auf schuba
 Nichts hier ist erfunden; fehlende Registerangaben (Stammkapital, vollständiger Unternehmensgegenstand,
 USt-IdNr.) stehen bewusst NICHT in den öffentlichen Texten."""
 
+import re
+
 SITE = {
     "domain": "https://www.gap-lab.de",
     "brand": "THE GAP Lab",
@@ -138,3 +140,7 @@ FOOTER_LINKS = [
         ("Schubart & Dulgeridis GmbH", "https://www.schubart-dulgeridis.de/"),
     ]),
 ]
+
+
+for _p in PARTNERS.values():
+    _p["img_sm"] = re.sub(r"\.(jpg|webp)$", "-sm.jpg", _p["img"])

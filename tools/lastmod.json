@@ -1,7 +1,7 @@
 {
  "/": {
   "date": "2026-11-05",
-  "hash": "6c022f232593"
+  "hash": "d320857beddc"
  },
  "/404": {
   "date": "2026-11-04",
@@ -13,23 +13,23 @@
  },
  "/faq": {
   "date": "2026-11-05",
-  "hash": "db9ae2f5d658"
+  "hash": "650a3904ecfc"
  },
  "/fokusfelder": {
   "date": "2026-11-05",
-  "hash": "38ff14a01709"
+  "hash": "4b4b234b6caa"
  },
  "/fokusfelder/finance-transformation": {
-  "date": "2026-11-04",
-  "hash": "bf1b69cb49f8"
+  "date": "2026-11-05",
+  "hash": "ee9a1420ed4c"
  },
  "/fokusfelder/leadership-organisation": {
-  "date": "2026-11-04",
-  "hash": "5f0fbb94e951"
+  "date": "2026-11-05",
+  "hash": "cb212e02bc89"
  },
  "/fokusfelder/strategie-vertrieb-innovation": {
   "date": "2026-11-05",
-  "hash": "4f23f36d0e95"
+  "hash": "2d3d8ed70111"
  },
  "/glossar": {
   "date": "2026-11-05",
@@ -57,6 +57,6 @@
  },
  "/ueber-uns": {
   "date": "2026-11-05",
-  "hash": "a5f54940a09c"
+  "hash": "a5e82d49e811"
  }
 }

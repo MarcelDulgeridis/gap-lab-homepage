@@ -68,7 +68,7 @@ def venn(with_links=True):
     rows = []
     for c, path, name, short, key, text in FIELDS:
         p = PARTNERS[key]
-        inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><img class="v-port" src="{esc(p["img"])}" alt="" width="72" height="72" loading="lazy" decoding="async"><span><strong>{name}</strong>'
+        inner = (f'<span class="v-swatch {c}" aria-hidden="true"></span><img class="v-port" src="{esc(p["img_sm"])}" alt="" width="72" height="72" loading="lazy" decoding="async"><span><strong>{name}</strong>'
                  f'<em>{esc(p["name"])}</em></span>')
         rows.append(f'<li><a class="v-frow {c}" href="{path}">{inner}</a></li>' if with_links else f'<li><div class="v-frow {c}">{inner}</div></li>')
     return f'<div class="v-venn-wrap">{svg}<ul class="v-flist">{"".join(rows)}</ul></div>'
@@ -155,7 +155,7 @@ def fokus_compare():
             f'<article class="v-fc {c}"><header><span class="v-fc-n">{short}</span><h3><a href="{path}">{name}</a></h3></header>'
             f'<div><span class="v-lab">Leitfrage</span><p class="v-q">{q}</p></div>'
             f'<div><span class="v-lab">Zentrale Begriffe</span><ul class="v-terms">{"".join(f"<li>{t}</li>" for t in terms)}</ul></div>'
-            f'<footer><img src="{esc(p["img"])}" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>{esc(p["name"])}</strong><small>{esc(p["role"])}</small></span></footer></article>')
+            f'<footer><img src="{esc(p["img_sm"])}" alt="" width="56" height="56" loading="lazy" decoding="async"><span><strong>{esc(p["name"])}</strong><small>{esc(p["role"])}</small></span></footer></article>')
     return '<div class="v-fcmp">' + "".join(cols) + "</div>"
 
 
@@ -271,7 +271,7 @@ def related_formats(items):
 
 def partner_compact(key):
     p = PARTNERS[key]
-    return (f'<div class="v-pc {FIELD_CLS.get(key, "f1")}"><img src="{esc(p["img"])}" alt="{esc(p["name"])}" width="96" height="96" loading="lazy" decoding="async">'
+    return (f'<div class="v-pc {FIELD_CLS.get(key, "f1")}"><img src="{esc(p["img_sm"])}" alt="{esc(p["name"])}" width="96" height="96" loading="lazy" decoding="async">'
             f'<div><strong>{esc(p["name"])}</strong><span>{esc(p["role"])} · {esc(p["focus"])}</span>'
             f'<a class="link-arrow" href="/ueber-uns#{key}">Profil {ARROW}</a></div></div>')
 
@@ -332,7 +332,7 @@ def org_people():
     kids = ""
     for c, path, name, short, key, text in FIELDS:
         p = PARTNERS[key]
-        kids += (f'<li class="{c}" id="{key}"><img class="v-opic" src="{esc(p["img"])}" alt="{esc(p["name"])}" width="112" height="112" loading="lazy" decoding="async">'
+        kids += (f'<li class="{c}" id="{key}"><img class="v-opic" src="{esc(p["img_sm"])}" alt="{esc(p["name"])}" width="112" height="112" loading="lazy" decoding="async">'
                  f'<span class="v-lab">{short} · {esc(p["role"])}</span><h3>{esc(p["name"])}</h3>'
                  f'<p class="v-ofield"><a href="{path}">{name}</a></p><p class="v-obio">{esc(p["short_bio"])}</p>'
                  f'<span class="v-olinks"><a href="{path}">Fokusfeld {ARROW}</a><a href="{esc(p["linkedin"])}" rel="noopener noreferrer">LinkedIn</a></span></li>')

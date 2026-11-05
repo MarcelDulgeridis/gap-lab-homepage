@@ -135,7 +135,7 @@ def home():
         + '<p class="small"><a class="link-arrow" href="/leistungen">Ergebnisse je Stufe ' + ARROW + "</a></p>", "section-white", "leistungen-title")
 
     fokus = section(
-        head("03 · Die Fokusfelder", "Verhandeln, Führen und Wirtschaften treffen bei Entscheidern zusammen", "", "fokus-title")
+        head("03 · Die Fokusfelder", "Gestalten, Führen und Wirtschaften treffen bei Entscheidern zusammen", "", "fokus-title")
         + V.venn(), "", "fokus-title")
 
     angebote = section(
