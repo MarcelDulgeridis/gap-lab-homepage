@@ -15,8 +15,8 @@ TEL = f'<a href="tel:{SITE["phone_e164"]}">{SITE["phone"]}</a>'
 # ------------------------------------------------------------------ FAQ-Daten
 FAQ_COMPANY = [
     ("Was macht THE GAP Lab?",
-     "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung, etwa Verhandlungstraining, Führungskräfteentwicklung und Finanzverständnis. Schwerpunkte: "
-     "<a href=\"/fokusfelder/verhandlungsfuehrung\">Verhandlungsführung &amp; Rhetorik</a>, "
+     "<p>Sie konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung, etwa Vertriebs- und Verhandlungstraining, Führungskräfteentwicklung und Finanzverständnis. Schwerpunkte: "
+     "<a href=\"/fokusfelder/strategie-vertrieb-innovation\">Strategie, Vertrieb &amp; Innovation</a>, "
      "<a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> und "
      "<a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>. Sitz ist Altdorf bei Nürnberg.</p>"),
     ("Wer steht hinter THE GAP Lab?",
@@ -56,16 +56,16 @@ FAQ_HOME = [
     ("Für wen ist THE GAP Lab gedacht?",
      "<p>Für Geschäftsleitungen, Personalverantwortliche und Führungskräfte, die Entwicklung gezielt planen oder einkaufen, sowie für Kammern, Bildungsträger und Akademien.</p>"),
     ("Welches Fokusfeld passt zu welcher Aufgabe?",
-     "<p><a href=\"/fokusfelder/verhandlungsfuehrung\">Verhandlungsführung &amp; Rhetorik</a> bei Preis-, Vertrags- und internen Verhandlungen, <a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> bei unklaren Rollen und Entscheidungswegen, <a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>, wenn Zahlen Entscheidungen tragen sollen.</p>"),
+     "<p><a href=\"/fokusfelder/strategie-vertrieb-innovation\">Strategie, Vertrieb &amp; Innovation</a> wenn Angebot, Vertrieb, Verhandlung oder Wandel Richtung brauchen, <a href=\"/fokusfelder/leadership-organisation\">Leadership &amp; Organisation</a> bei unklaren Rollen und Entscheidungswegen, <a href=\"/fokusfelder/finance-transformation\">Finance &amp; Transformation</a>, wenn Zahlen Entscheidungen tragen sollen.</p>"),
     ("Was passiert im kostenlosen Erstgespräch?",
      "<p>In 20 bis 30 Minuten per Microsoft Teams klären wir Anlass, Ziel und Zielgruppe. Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     FAQ_COOPERATION[1],
 ]
 FAQ_FOKUS = [
     ("Welches Fokusfeld passt zu welcher Aufgabe?",
-     "<p>Verhandlungsführung &amp; Rhetorik bei Preis-, Vertrags- und internen Verhandlungen, Leadership &amp; Organisation bei unklaren Rollen, Entscheidungswegen und stockender Veränderung, Finance &amp; Transformation, wenn Zahlen Entscheidungen tragen sollen. Das Erstgespräch klärt die Zuordnung.</p>"),
+     "<p>Strategie, Vertrieb &amp; Innovation, wenn Angebot, Vertrieb, Verhandlung oder Wandel Richtung brauchen, Leadership &amp; Organisation bei unklaren Rollen, Entscheidungswegen und stockender Veränderung, Finance &amp; Transformation, wenn Zahlen Entscheidungen tragen sollen. Das Erstgespräch klärt die Zuordnung.</p>"),
     ("Wer ist Ansprechpartner je Fokusfeld?",
-     "<p>Dr. Oliver Meschkat für Verhandlungsführung &amp; Rhetorik, Prof. Dr. Constantin Schubart für Leadership &amp; Organisation, Prof. Dr. Marcel Dulgeridis für Finance &amp; Transformation.</p>"),
+     "<p>Dr. Oliver Meschkat für Strategie, Vertrieb &amp; Innovation, Prof. Dr. Constantin Schubart für Leadership &amp; Organisation, Prof. Dr. Marcel Dulgeridis für Finance &amp; Transformation.</p>"),
     ("Lassen sich Fokusfelder kombinieren?",
      "<p>Ja. Maßnahmen lassen sich feldübergreifend konzipieren. Welche Kombination zur Ausgangslage passt, klärt das kostenlose Erstgespräch.</p>"),
 ]
@@ -91,7 +91,7 @@ def home():
     page = {
         "path": "/", "short": "Start",
         "title": "THE GAP Lab — Personalentwicklung | Altdorf bei Nürnberg",
-        "description": "The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Verhandlungsführung, Leadership und Finance.",
+        "description": "The Gap Lab GmbH konzipiert, entwickelt und führt Maßnahmen der Personalentwicklung durch — mit Fokus auf Strategie, Vertrieb, Leadership und Finance.",
         "og_title": "THE GAP Lab — Personalentwicklung, die verbindet.",
         "priority": "1.0", "changefreq": "weekly", "llms_group": "Unternehmen",
         "faqs": FAQ_HOME, "show_stand": False,
@@ -102,7 +102,7 @@ def home():
   <div>
     <p class="eyebrow">Personalentwicklung · Altdorf bei Nürnberg</p>
     <h1>Personal&shy;entwicklung, die <span class="accent">verbindet.</span></h1>
-    <p class="lead">THE GAP Lab verbindet Verhandlungsstärke, Führungsklarheit und Finanzverständnis in Maßnahmen, die im Arbeitsalltag ankommen.</p>
+    <p class="lead">THE GAP Lab verbindet Strategie, Führungsklarheit und Finanzverständnis in Maßnahmen, die im Arbeitsalltag ankommen.</p>
     <div class="hero-actions">
       <a class="btn" href="/kontakt">Erstgespräch vereinbaren {ARROW}</a>
       {link_arrow("/leistungen", "Leistungen ansehen")}
@@ -117,7 +117,7 @@ def home():
     kurz = section(
         answer_box("Kurzantwort: Was ist THE GAP Lab?",
                    "THE GAP Lab konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung in drei Fokusfeldern: "
-                   "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation. "
+                   "Strategie, Vertrieb &amp; Innovation, Leadership &amp; Organisation sowie Finance &amp; Transformation. "
                    "Konkrete Angebote sind fünf InnoLab-Workshops vor Ort und der kostenlose KI-Readiness Check.")
         + V.facts_strip([
             ("Wer", "The Gap Lab GmbH, Tochter der Schubart &amp; Dulgeridis GmbH"),
@@ -189,7 +189,7 @@ def leistungen():
     }
     faqs = [
         ("Was bietet The Gap Lab GmbH an?",
-         "<p>Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung in drei Fokusfeldern: Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation, Finance &amp; Transformation.</p>"),
+         "<p>Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung in drei Fokusfeldern: Strategie, Vertrieb &amp; Innovation, Leadership &amp; Organisation, Finance &amp; Transformation.</p>"),
         ("Muss ich alle vier Stufen beauftragen?",
          "<p>Nein. Einzeln oder als Kette, das klärt das Erstgespräch.</p>"),
         ("Bieten Sie auch Diagnostik an?",
@@ -201,7 +201,7 @@ def leistungen():
         page_hero(page, "Leistungen von der Konzeption bis zur Vermarktung", "Vier Stufen von der Idee zur Maßnahme.")
         + section(
             answer_box("Kurzantwort: Was bietet THE GAP Lab an?",
-                       "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
+                       "Maßnahmen der Personalentwicklung: konzipiert, entwickelt, durchgeführt und vermarktet, in den Fokusfeldern Strategie, Vertrieb &amp; Innovation, Leadership &amp; Organisation sowie Finance &amp; Transformation.")
             + head("Die vier Stufen", "Von der Leitfrage zum Ergebnis", "")
             + V.stage_matrix(), "", "")
         + section(V.innolab_strip() + '<p class="small">Kostenlos dazu: <a href="/ki-readiness">KI-Readiness Check</a> in drei Minuten. Begriffe nachlesen: <a href="/glossar">Glossar</a>.</p>', "section-white v-tight", "")
@@ -223,7 +223,7 @@ def leistungen():
         "name": "Maßnahmen der Personalentwicklung: Konzeption, Entwicklung, Durchführung, Vermarktung",
         "serviceType": "Personalentwicklung",
         "provider": {"@id": f"{SITE['domain']}/#organization"},
-        "description": "Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung in den Fokusfeldern Verhandlungsführung & Rhetorik, Leadership & Organisation sowie Finance & Transformation.",
+        "description": "Konzeption, Entwicklung, Durchführung und Vermarktung von Maßnahmen der Personalentwicklung in den Fokusfeldern Strategie, Vertrieb & Innovation, Leadership & Organisation sowie Finance & Transformation.",
         "audience": {"@type": "Audience", "audienceType": "Geschäftsleitungen, Personalverantwortliche, Führungskräfte"},
         "url": url_of("/leistungen"),
     }]
@@ -233,24 +233,24 @@ def leistungen():
 def fokusfelder_hub():
     page = {
         "path": "/fokusfelder", "short": "Fokusfelder",
-        "title": "Fokusfelder — Verhandlung, Leadership, Finance | THE GAP Lab",
-        "description": "Die drei Fokusfelder von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.",
+        "title": "Fokusfelder — Strategie, Leadership, Finance | THE GAP Lab",
+        "description": "Die drei Fokusfelder von THE GAP Lab: Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation — mit Ansprechpartnern.",
         "priority": "0.8", "llms_group": "Fokusfelder", "schema_type": "CollectionPage", "faqs": FAQ_FOKUS,
         "styles": ["/assets/visual.css"], "journey": "/fokusfelder", "speakable": True,
     }
     page["schema_nodes"] = [{
         "@type": "ItemList", "@id": url_of("/fokusfelder") + "#felder", "name": "Die drei Fokusfelder von THE GAP Lab",
         "itemListElement": [{"@type": "ListItem", "position": i, "name": n, "url": url_of(u)}
-                            for i, (u, n) in enumerate([("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung & Rhetorik"), ("/fokusfelder/leadership-organisation", "Leadership & Organisation"), ("/fokusfelder/finance-transformation", "Finance & Transformation")], 1)],
+                            for i, (u, n) in enumerate([("/fokusfelder/strategie-vertrieb-innovation", "Strategie, Vertrieb & Innovation"), ("/fokusfelder/leadership-organisation", "Leadership & Organisation"), ("/fokusfelder/finance-transformation", "Finance & Transformation")], 1)],
     }]
     page["body"] = (
         page_hero(page, "Drei Fokusfelder der Personalentwicklung", "Je Fokusfeld ein benannter Ansprechpartner.")
         + section(
             answer_box("Kurzantwort: In welchen Feldern arbeitet THE GAP Lab?",
-                       "Verhandlungsführung &amp; Rhetorik, Leadership &amp; Organisation sowie Finance &amp; Transformation, je mit einem benannten Partner.")
+                       "Strategie, Vertrieb &amp; Innovation, Leadership &amp; Organisation sowie Finance &amp; Transformation, je mit einem benannten Partner.")
             + V.venn(with_links=False), "", "")
         + section(head("Orientierung", "Welches Fokusfeld passt zur Aufgabe", "", "wahl-title") + V.choose([
-            ("f1", "Preis-, Vertrags- oder interne Verhandlungen stehen an", "/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik"),
+            ("f1", "Strategie, Vertrieb, Verhandlung oder Innovation brauchen Richtung", "/fokusfelder/strategie-vertrieb-innovation", "Strategie, Vertrieb &amp; Innovation"),
             ("f2", "Rollen, Entscheidungswege oder Führung sind unklar", "/fokusfelder/leadership-organisation", "Leadership &amp; Organisation"),
             ("f3", "Zahlen sollen Entscheidungen und Vorhaben tragen", "/fokusfelder/finance-transformation", "Finance &amp; Transformation"),
         ]), "", "wahl-title")

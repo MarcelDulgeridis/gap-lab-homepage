@@ -27,19 +27,19 @@ SITE = {
     "modified_de": "4. November 2026",
     "org_description": (
         "The Gap Lab GmbH (THE GAP Lab) mit Sitz in Altdorf bei Nürnberg konzipiert, entwickelt, führt durch und "
-        "vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: Verhandlungsführung & Rhetorik, "
+        "vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: Strategie, Vertrieb & Innovation, "
         "Leadership & Organisation sowie Finance & Transformation. Tochtergesellschaft der Schubart & Dulgeridis GmbH."
     ),
     "llms_summary": (
         "THE GAP Lab ist die Marke der The Gap Lab GmbH (Altdorf bei Nürnberg, HRB 46649, Amtsgericht Nürnberg). "
         "Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung "
-        "mit drei Fokusfeldern: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation. "
+        "mit drei Fokusfeldern: Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation. "
         "Tochtergesellschaft der Schubart & Dulgeridis GmbH."
     ),
     "knows_about": [
         "Personalentwicklung",
-        "Verhandlungsführung",
-        "Rhetorik und Argumentation",
+        "Strategie, Vertrieb und Innovation",
+        "Verhandlungsführung und Rhetorik",
         "Leadership und Organisation",
         "Finance und Transformation",
     ],
@@ -67,11 +67,11 @@ PARTNERS = {
     "oliver-meschkat": {
         "name": "Dr. Oliver Meschkat",
         "role": "Partner",
-        "focus": "Verhandlungsführung & Rhetorik",
-        "job_title": "Partner, Verhandlungsführung & Rhetorik",
-        "short_bio": "Experte für Verhandlungsführung, Rhetorik und Argumentation.",
-        "long_bio": "Experte für Verhandlungsführung, Rhetorik und Argumentation. Schärft Verhandlungsstrategien für kritische Gespräche.",
-        "schema_desc": "Experte für Verhandlungsführung, Rhetorik und Argumentation. Partner der The Gap Lab GmbH.",
+        "focus": "Strategie, Vertrieb & Innovation",
+        "job_title": "Partner, Strategie, Vertrieb & Innovation",
+        "short_bio": "Marketing- und Sales-Management, Personalentwicklung, Innovations- und Change Management.",
+        "long_bio": "Marketing- und Sales-Management, Personalentwicklung, Innovations- und Change Management. Trainer und Berater seit 2010 zu Leadership, Teambuilding, Verhandlungsführung, Verkaufstraining, Konfliktmanagement, strategischem Management, Rhetorik, Moderation und Kommunikation.",
+        "schema_desc": "Partner der The Gap Lab GmbH für Marketing- und Sales-Management, Personalentwicklung sowie Innovations- und Change Management. Trainer und Berater seit 2010.",
         "img": "/assets/img/portrait-oliver-meschkat.jpg",
         "sd_url": "https://www.schubart-dulgeridis.de/ueber-uns#oliver-meschkat",
         "linkedin": "https://www.linkedin.com/in/dr-oliver-meschkat-a8a80b58/",
@@ -79,8 +79,8 @@ PARTNERS = {
             "https://www.schubart-dulgeridis.de/ueber-uns#oliver-meschkat",
             "https://www.linkedin.com/in/dr-oliver-meschkat-a8a80b58/",
         ],
-        "fokus_path": "/fokusfelder/verhandlungsfuehrung",
-        "knows_about": ["Verhandlungsführung", "Rhetorik", "Argumentation"],
+        "fokus_path": "/fokusfelder/strategie-vertrieb-innovation",
+        "knows_about": ["Marketing- und Sales-Management", "Personalentwicklung", "Innovationsmanagement", "Change Management", "Strategisches Management", "Verhandlungsführung", "Verkaufstraining", "Rhetorik", "Moderation", "Konfliktmanagement", "Teambuilding"],
     },
     "marcel-dulgeridis": {
         "name": "Prof. Dr. Marcel Dulgeridis",
@@ -123,7 +123,7 @@ FOOTER_LINKS = [
         ("Vermarktung", "/leistungen#vermarktung"),
     ]),
     ("Fokusfelder", [
-        ("Verhandlungsführung & Rhetorik", "/fokusfelder/verhandlungsfuehrung"),
+        ("Strategie, Vertrieb & Innovation", "/fokusfelder/strategie-vertrieb-innovation"),
         ("Leadership & Organisation", "/fokusfelder/leadership-organisation"),
         ("Finance & Transformation", "/fokusfelder/finance-transformation"),
     ]),

@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-04",
-  "hash": "b8dfaed12b8b"
+  "date": "2026-11-05",
+  "hash": "6c022f232593"
  },
  "/404": {
   "date": "2026-11-04",
@@ -12,12 +12,12 @@
   "hash": "4f1a41a224d5"
  },
  "/faq": {
-  "date": "2026-11-04",
-  "hash": "a3f0b702aab4"
+  "date": "2026-11-05",
+  "hash": "db9ae2f5d658"
  },
  "/fokusfelder": {
-  "date": "2026-11-04",
-  "hash": "58411241171a"
+  "date": "2026-11-05",
+  "hash": "38ff14a01709"
  },
  "/fokusfelder/finance-transformation": {
   "date": "2026-11-04",
@@ -27,13 +27,13 @@
   "date": "2026-11-04",
   "hash": "5f0fbb94e951"
  },
- "/fokusfelder/verhandlungsfuehrung": {
-  "date": "2026-11-04",
-  "hash": "4a539d9c45f2"
+ "/fokusfelder/strategie-vertrieb-innovation": {
+  "date": "2026-11-05",
+  "hash": "4f23f36d0e95"
  },
  "/glossar": {
-  "date": "2026-11-04",
-  "hash": "2f5f4a8e5744"
+  "date": "2026-11-05",
+  "hash": "a8cc9bfbb2a5"
  },
  "/impressum": {
   "date": "2026-11-04",
@@ -48,15 +48,15 @@
   "hash": "43d04d019abb"
  },
  "/kontakt": {
-  "date": "2026-11-04",
-  "hash": "de6b30c9a63f"
+  "date": "2026-11-05",
+  "hash": "672ffccb93b7"
  },
  "/leistungen": {
-  "date": "2026-11-04",
-  "hash": "63d01c2ad1e0"
+  "date": "2026-11-05",
+  "hash": "c8d833099d9a"
  },
  "/ueber-uns": {
-  "date": "2026-11-04",
-  "hash": "fa84d059ed89"
+  "date": "2026-11-05",
+  "hash": "a5f54940a09c"
  }
 }

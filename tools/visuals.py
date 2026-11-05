@@ -6,8 +6,8 @@ from helpers import esc, ARROW
 
 SD = SITE["parent_url"]
 FIELDS = [
-    ("f1", "/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik", "Verhandeln", "oliver-meschkat",
-     "Verhandlungen vorbereiten und überzeugend führen."),
+    ("f1", "/fokusfelder/strategie-vertrieb-innovation", "Strategie, Vertrieb &amp; Innovation", "Gestalten", "oliver-meschkat",
+     "Strategie festlegen, Kunden überzeugen, Neues einführen."),
     ("f2", "/fokusfelder/leadership-organisation", "Leadership &amp; Organisation", "Führen", "constantin-schubart",
      "Rollen, Erwartungen und Entscheidungswege klären."),
     ("f3", "/fokusfelder/finance-transformation", "Finance &amp; Transformation", "Wirtschaften", "marcel-dulgeridis",
@@ -29,7 +29,7 @@ def gap_bridge():
     breaks = [
         ("f4", "Konzeption", "Maßnahmen passen nicht zur Zielgruppe", "Standardformate gehen an der Zielgruppe vorbei.", "/leistungen#konzeption"),
         ("f2", "Leadership &amp; Organisation", "Führung bleibt unscharf", "Rollen und Entscheidungsrechte sind unklar.", "/fokusfelder/leadership-organisation"),
-        ("f1", "Verhandlungsführung", "Verhandlungen laufen ohne Strategie", "Ziele, Alternativen und Spielräume bleiben offen.", "/fokusfelder/verhandlungsfuehrung"),
+        ("f1", "Strategie, Vertrieb &amp; Innovation", "Strategie erreicht den Kunden nicht", "Angebot, Vertrieb und Verhandlung folgen keiner gemeinsamen Linie.", "/fokusfelder/strategie-vertrieb-innovation"),
         ("f3", "Finance &amp; Transformation", "Zahlen werden nicht verstanden", "Entscheidungen ohne Bild der Finanzwirkung.", "/fokusfelder/finance-transformation"),
     ]
     cols = "".join(
@@ -58,9 +58,9 @@ def value_chain(with_links=True, results=True):
 def venn(with_links=True):
     svg = """<svg class="v-venn" viewBox="0 0 520 440" role="img" aria-labelledby="venn-t venn-d">
 <title id="venn-t">Drei Disziplinen überschneiden sich in der Entscheidung</title>
-<desc id="venn-d">Venn-Diagramm: Verhandeln, Führen und Wirtschaften überschneiden sich in der Entscheidung im Alltag.</desc>
+<desc id="venn-d">Venn-Diagramm: Gestalten, Führen und Wirtschaften überschneiden sich in der Entscheidung im Alltag.</desc>
 <circle class="vn vn1" cx="190" cy="165" r="140"/><circle class="vn vn2" cx="330" cy="165" r="140"/><circle class="vn vn3" cx="260" cy="285" r="140"/>
-<text class="vt" x="140" y="118" text-anchor="middle">Verhandeln</text>
+<text class="vt" x="140" y="118" text-anchor="middle">Gestalten</text>
 <text class="vt" x="382" y="118" text-anchor="middle">Führen</text>
 <text class="vt" x="260" y="378" text-anchor="middle">Wirtschaften</text>
 <text class="vt vc" x="260" y="205" text-anchor="middle">Entscheidung</text><text class="vt vc" x="260" y="230" text-anchor="middle">im Alltag</text>
@@ -76,8 +76,8 @@ def venn(with_links=True):
 
 def statements():
     items = [
-        ("3", "Disziplinen, eine Gesellschaft", "Verhandlung, Führung und Finanzen greifen ineinander, statt in getrennten Projekten zu laufen."),
-        ("3", "Partner mit Namen", "Zwei Professoren für BWL an der IU, ein promovierter Verhandlungsexperte."),
+        ("3", "Disziplinen, eine Gesellschaft", "Strategie, Führung und Finanzen greifen ineinander, statt in getrennten Projekten zu laufen."),
+        ("3", "Partner mit Namen", "Zwei Professoren für BWL an der IU, ein promovierter Innovationsexperte."),
         ("1", "Verbund mit Beratung", f'Tochter der <a href="{SD}">Schubart &amp; Dulgeridis GmbH</a> mit forschungsbasierter Beratung und Diagnostik (THE GAP).'),
     ]
     return '<div class="v-statements">' + "".join(
@@ -122,7 +122,7 @@ def measure_develop():
         f'<a class="link-arrow" href="{SD}">Zur Muttergesellschaft {ARROW}</a></div>'
         '<div class="v-m2d-arrow" aria-hidden="true">' + ARROW + '</div>'
         '<div class="v-m2d-b"><span class="v-lab">Entwickeln</span><h3>Maßnahmen der Personalentwicklung</h3>'
-        '<p class="v-who">The Gap Lab GmbH</p><ul><li>Konzeption bis Vermarktung</li><li>Verhandlung, Leadership, Finance</li></ul>'
+        '<p class="v-who">The Gap Lab GmbH</p><ul><li>Konzeption bis Vermarktung</li><li>Strategie, Leadership, Finance</li></ul>'
         '<a class="link-arrow" href="/kontakt">Erstgespräch vereinbaren ' + ARROW + '</a></div></div>')
 
 
@@ -140,8 +140,8 @@ def decision_help():
 
 def fokus_compare():
     cfg = {
-        "f1": ("Wie gehe ich vorbereitet und überzeugend in das Gespräch?",
-               ["Preis- und Konditionengespräche", "Vertragsverhandlungen", "Gespräche unter Druck"], ["Interessen", "BATNA", "ZOPA", "Anker"]),
+        "f1": ("Wie bringe ich Strategie, Angebot und Auftritt zum Kunden?",
+               ["Neues Angebot oder Produkt", "Vertrieb unter Druck", "Verhandlungen und Konflikte"], ["Strategie", "Sales", "BATNA", "Change"]),
         "f2": ("Wer entscheidet was, und wie kommt Strategie im Alltag an?",
                ["Neue Führungsrolle", "Strategie wird nicht gelebt", "Unklare Zuständigkeiten"], ["Rollenklarheit", "Entscheidungsrechte", "Führungskultur"]),
         "f3": ("Was bewirkt das Vorhaben finanziell, und trägt der Business Case?",
@@ -354,3 +354,9 @@ def choose(items):
     """Entscheidungshilfe: Ausgangslage -> passendes Fokusfeld."""
     lis = "".join(f'<li class="{c}"><span>{esc(sit)}</span><a href="{h}">{n} {ARROW}</a></li>' for c, sit, h, n in items)
     return f'<ul class="v-choose">{lis}</ul>'
+
+
+def topics(items):
+    """Themenblöcke eines Fokusfelds: je Block eine Überschrift und kurze Stichpunkte."""
+    cols = "".join(f'<div class="v-topic"><h3>{t}</h3><ul>' + "".join(f"<li>{x}</li>" for x in xs) + "</ul></div>" for t, xs in items)
+    return f'<div class="v-topics">{cols}</div>'

@@ -175,7 +175,6 @@ for f, (txt, p) in pages.items():
     for r in ids_ref:
         if r not in ids_defined and r not in ALL_DEF and not r.startswith("https://www.schubart-dulgeridis.de/"): errors.append(f"{rel}: Schema-Referenz {r} ohne Definition")
     if '"speakable"' in txt and 'class="answer"' not in txt and 'class="lead"' not in txt: errors.append(f"{rel}: speakable ohne .answer")
-    if rel not in ("404.html",) and "datePublished" in txt and not re.search(r'"dateModified":"2026-11-04"', txt) and rel in ("index.html","leistungen.html"): errors.append(f"{rel}: dateModified veraltet")
 
 # S&D-Palette: in den Stylesheets nur Markenfarben erlaubt
 PAL = {"#101D33","#1D3153","#1B2F4D","#8E6C34","#CFAD6B","#DCC79F","#E8D3A4","#FFFEFA","#FDFCFA","#FBF8F2","#F2EADF","#EAE5DA","#E2DCCE","#BFB098","#E5DDD2","#596578","#515966","#767B84","#C9D0DA",

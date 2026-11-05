@@ -56,7 +56,7 @@ def org_node():
         "legalName": SITE["legal_name"],
         "url": f"{DOMAIN}/",
         "logo": {"@type": "ImageObject", "url": f"{DOMAIN}/assets/img/icon-512.png", "width": 512, "height": 512},
-        "image": f"{DOMAIN}/assets/img/og-start.jpg",
+        "image": f"{DOMAIN}/assets/img/og-verbindet.jpg",
         "description": SITE["org_description"],
         "email": SITE["email"],
         "telephone": SITE["phone_e164"],
@@ -83,7 +83,7 @@ def org_node():
             "@type": "OfferCatalog", "name": "Leistungen von THE GAP Lab",
             "itemListElement": [
                 {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/leistungen#service"}},
-                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/verhandlungsfuehrung#service"}},
+                {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/strategie-vertrieb-innovation#service"}},
                 {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/leadership-organisation#service"}},
                 {"@type": "Offer", "itemOffered": {"@id": f"{DOMAIN}/fokusfelder/finance-transformation#service"}},
             ],
@@ -144,7 +144,7 @@ def graph_for(page):
         "about": {"@id": f"{DOMAIN}/#organization"},
         "datePublished": SITE["published"],
         "dateModified": page.get("modified", SITE["modified"]),
-        "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-start.jpg")},
+        "primaryImageOfPage": {"@type": "ImageObject", "url": DOMAIN + page.get("og_image", "/assets/img/og-verbindet.jpg")},
     }
     if page.get("seo_keywords"):
         webpage["keywords"] = page["seo_keywords"]
@@ -273,9 +273,9 @@ def render(page):
     title = page["title"]
     desc = page["description"]
     robots = page.get("robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1")
-    og_img = DOMAIN + page.get("og_image", "/assets/img/og-start.jpg")
+    og_img = DOMAIN + page.get("og_image", "/assets/img/og-verbindet.jpg")
     og_h = page.get("og_image_height", 630)
-    og_alt = esc(page.get("og_alt", "THE GAP Lab: Personalentwicklung, die verbindet. Verhandlungsstärke, Führungsklarheit und Finanzverständnis."))
+    og_alt = esc(page.get("og_alt", "THE GAP Lab: Personalentwicklung, die verbindet. Strategie, Führungsklarheit und Finanzverständnis."))
     extra_css = "".join(f'<link rel="stylesheet" href="{versioned(c)}">\n' for c in page.get("styles", []))
     graph = json.dumps(graph_for(page), ensure_ascii=False, separators=(",", ":"))
     head = f"""<!DOCTYPE html>
@@ -423,7 +423,7 @@ def llms(pages):
     lines.append(f"Firmendaten: {SITE['legal_name']}, {SITE['street']}, {SITE['zip']} {SITE['city']}; "
                  f"{SITE['hrb']}, {SITE['court']}; Geschäftsführer: Prof. Dr. Constantin Schubart (einzelvertretungsberechtigt). "
                  f"Muttergesellschaft: Schubart & Dulgeridis GmbH (https://www.schubart-dulgeridis.de/).")
-    lines.append("Kurzfassung: THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch (Konzeption, Entwicklung, Durchführung, Vermarktung) in drei Fokusfeldern: Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation. Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte. Konkrete Angebote: fünf InnoLab-Formate (Innovation, Change, Lernen) und der kostenlose KI-Readiness Check. Einstieg: kostenloses Erstgespräch (20 bis 30 Minuten).")
+    lines.append("Kurzfassung: THE GAP Lab entwickelt und führt Maßnahmen der Personalentwicklung durch (Konzeption, Entwicklung, Durchführung, Vermarktung) in drei Fokusfeldern: Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation. Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte. Konkrete Angebote: fünf InnoLab-Formate (Innovation, Change, Lernen) und der kostenlose KI-Readiness Check. Einstieg: kostenloses Erstgespräch (20 bis 30 Minuten).")
     lines.append("")
     lines.append(f"Vollständiger Inhalt aller Seiten als Text: {DOMAIN}/llms-full.txt")
     lines.append("")
@@ -432,7 +432,7 @@ def llms(pages):
         f"- Name: {SITE['brand']} (Firma: {SITE['legal_name']}); Sitz: {SITE['street']}, {SITE['zip']} {SITE['city']}",
         "- Branche: Personalentwicklung, Weiterbildung, Beratung; Zielgruppe: Geschäftsleitungen, Personalverantwortliche, Führungskräfte, Bildungsträger",
         "- Leistungen: Konzeption, Entwicklung, Durchführung, Vermarktung von Maßnahmen der Personalentwicklung",
-        "- Fokusfelder: Verhandlungsführung & Rhetorik (Dr. Oliver Meschkat), Leadership & Organisation (Prof. Dr. Constantin Schubart), Finance & Transformation (Prof. Dr. Marcel Dulgeridis)",
+        "- Fokusfelder: Strategie, Vertrieb & Innovation (Dr. Oliver Meschkat), Leadership & Organisation (Prof. Dr. Constantin Schubart), Finance & Transformation (Prof. Dr. Marcel Dulgeridis)",
         "- Angebote: fünf InnoLab-Formate vor Ort (Preise ausschließlich auf der InnoLab-Seite), kostenloser KI-Readiness Check, kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams)",
         f"- Kontakt: {SITE['email']}, {SITE['phone']}; Termin: {DOMAIN}/kontakt",
         f"- Verbund: Tochtergesellschaft der {SITE['parent_name']} (Diagnostik und Beratung: THE GAP, Pulse-Check)",
