@@ -111,6 +111,26 @@ for u, h in pages.items():
     m1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S); h1t = html.unescape(re.sub(r"<[^>]+>", "", m1.group(1))).replace("\u00ad", "")
     if u not in ("/impressum", "/datenschutz", "/ki-readiness") and not set(re.findall(r"\w{6,}", t.lower())) & set(re.findall(r"\w{6,}", h1t.lower())): W(u, "Title und H1 teilen kein Schlüsselwort")
 
+# ---- Schema-Tiefenprüfung
+for u, h in pages.items():
+    for b in info[u].ld:
+        j = json.loads(b)
+        g = j.get("@graph", [j])
+        ids = [n["@id"] for n in g if "@id" in n]
+        d = [i for i, c in collections.Counter(ids).items() if c > 1]
+        if d: E(u, f"doppelte @id im Graph: {d}")
+        for url in re.findall(r"https://www\.gap-lab\.de(/assets/[^\"]+)", b):
+            if not os.path.isfile(ROOT + url): E(u, f"Schema verweist auf fehlende Datei {url}")
+        for n in g:
+            t = n.get("@type")
+            if t == "FAQPage":
+                for q in n["mainEntity"]:
+                    if not q.get("name") or not q["acceptedAnswer"].get("text"): E(u, "FAQ-Eintrag ohne Frage/Antwort")
+            if t == "HowTo" and not all(x.get("text") and x.get("name") for x in n["step"]): E(u, "HowTo-Schritt unvollständig")
+            if t == "Person" and not (n.get("name") and n.get("image")): E(u, "Person ohne Name/Bild")
+            if t == "Service" and not (n.get("name") and n.get("provider")): E(u, "Service ohne Name/Anbieter")
+            if t in ("WebPage", "CollectionPage", "AboutPage", "ContactPage") and not re.match(r"\d{4}-\d\d-\d\d$", n.get("dateModified", "")): E(u, "dateModified ungültig")
+
 # Sitemap vs Seiten
 sm = open(ROOT + "/sitemap.xml").read()
 for blk in re.finditer(r"<loc>https://www\.gap-lab\.de(/[^<]*)</loc>\s*<lastmod>([^<]*)</lastmod>", sm):

@@ -83,3 +83,11 @@ Siehe Abschlussbericht: vollständiger Unternehmensgegenstand und Stammkapital (
 - **Archiv vor dem visuellen Relaunch:** Tag `archive/kompakt-v2-2026-11-04` (Branch `archiv-kompakt-v2-2026-11-04`).
 - **Archiv vor Überarbeitung von Leistungen, Über uns, InnoLab:** Tag `archive/relaunch-v1-2026-11-04` (Branch `archiv-relaunch-v1-2026-11-04`).
 - **Archiv vor Abstände/InnoLab-Slider/FAQ-Suche:** Tag `archive/unterseiten-v1-2026-11-04` (Branch `archiv-unterseiten-v1-2026-11-04`).
+
+## Werkzeuge (tools/, nicht im Deployment)
+- `python3 tools/build.py`: erzeugt alle Seiten, Sitemap, robots.txt, llms.txt, llms-full.txt (Änderungsdatum je Seite aus `tools/lastmod.json`).
+- `python3 tools/audit.py` und `python3 tools/check_site.py`: Marken-, Preis-, Schema-, Link-, Titel- und Beschreibungsprüfung.
+- `python3 tools/layout_qa.py --widths 500,820,1280`: Layoutprüfung in Headless-Chrome.
+- `python3 tools/make_og.py`: Social-Bilder aus `tools/seo_meta.py` (nur geänderte Texte werden neu gerendert).
+- `python3 tools/verify_live.py`: Abgleich Live-Seite gegen lokalen Stand nach dem Push.
+- SEO-Titel, Beschreibungen, Themen-Entitäten und Social-Bild-Texte je Seite stehen zentral in `tools/seo_meta.py`.

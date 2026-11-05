@@ -476,7 +476,7 @@ def llms_full(pages):
         body = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", p["body"], flags=re.S)
         body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|span|strong|small|b|em|a)>\s*(?=<(?:p|li|h[1-6]|div|section|dt|dd|tr|article|details|summary|span|strong|small|b|em|a)\b)", " ", body)
         body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|details|ul|ol|dl)>", "¶", body)
-        text = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body)))
+        text = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body))).replace("\u00ad", "").replace("\u00a0", " ")
         out += [t.strip() for t in text.split("¶") if t.strip()]
         out.append("")
     return "\n".join(out).rstrip() + "\n"
