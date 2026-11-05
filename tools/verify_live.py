@@ -2,6 +2,15 @@
 """Prüft nach dem Deployment, ob die Live-Seite dem lokalen Stand entspricht (Weiterleitung, Titel, Bilder, Sitemap)."""
 import re, sys, urllib.request, urllib.error, os
 
+
+class R308(urllib.request.HTTPRedirectHandler):
+    """Python 3.9 folgt 308 nicht von selbst."""
+    def http_error_308(self, req, fp, code, msg, headers):
+        return self.http_error_302(req, fp, 302, msg, headers)
+
+
+urllib.request.install_opener(urllib.request.build_opener(R308))
+
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 BASE = "https://www.gap-lab.de"
 ok = True
