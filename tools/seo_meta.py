@@ -20,8 +20,8 @@ TOPIC = {
 META = {
     "/": {
         "title": "Personalentwicklung Nürnberg für Führungskräfte | THE GAP Lab",
-        "description": "Personalentwicklung für Führungskräfte: Verhandlungsführung, Leadership und Finanzverständnis, von Konzeption bis Durchführung. Kostenloses Erstgespräch.",
-        "keywords": "Personalentwicklung, Führungskräfteentwicklung, Verhandlungstraining, Leadership, Finanzverständnis, Nürnberg",
+        "description": "Personalentwicklung für Führungskräfte: Strategie, Vertrieb, Leadership und Finanzverständnis, von Konzeption bis Durchführung. Kostenloses Erstgespräch.",
+        "keywords": "Personalentwicklung, Führungskräfteentwicklung, Vertriebstraining, Verhandlungstraining, Leadership, Finanzverständnis, Nürnberg",
         "topics": ["Personalentwicklung", "Führung", "Verhandlung"],
     },
     "/leistungen": {
@@ -32,18 +32,18 @@ META = {
         "og_image": "/assets/img/og-leistungen.jpg", "og_kicker": "LEISTUNGEN", "og_line1": "Vier Stufen von der Idee", "og_line2": "zur Maßnahme.",
     },
     "/fokusfelder": {
-        "title": "Fokusfelder: Verhandlung, Führung, Finance | THE GAP Lab",
-        "description": "Verhandlungsführung & Rhetorik, Leadership & Organisation, Finance & Transformation: drei Fokusfelder der Personalentwicklung mit je eigenem Ansprechpartner.",
-        "keywords": "Verhandlungsführung, Leadership, Finance, Fokusfelder, Personalentwicklung",
+        "title": "Fokusfelder: Strategie, Führung, Finance | THE GAP Lab",
+        "description": "Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation: drei Fokusfelder der Personalentwicklung mit je eigenem Ansprechpartner.",
+        "keywords": "Strategie, Vertrieb, Innovation, Leadership, Finance, Fokusfelder, Personalentwicklung",
         "topics": ["Verhandlung", "Führung", "Kennzahl"],
-        "og_image": "/assets/img/og-fokusfelder.jpg", "og_kicker": "FOKUSFELDER", "og_line1": "Verhandeln, Führen,", "og_line2": "Wirtschaften.",
+        "og_image": "/assets/img/og-fokusfelder.jpg", "og_kicker": "FOKUSFELDER", "og_line1": "Gestalten, Führen,", "og_line2": "Wirtschaften.",
     },
-    "/fokusfelder/verhandlungsfuehrung": {
-        "title": "Verhandlungstraining & Rhetorik | THE GAP Lab",
-        "description": "Verhandlungstraining und Rhetorik für Entscheider: BATNA, ZOPA, Anker, Argumentation. Maßnahmen an Ihren eigenen Verhandlungsfällen, mit Dr. Oliver Meschkat.",
-        "keywords": "Verhandlungstraining, Verhandlungsführung, Rhetorik, BATNA, ZOPA, Harvard-Konzept, Preisverhandlungen",
+    "/fokusfelder/strategie-vertrieb-innovation": {
+        "title": "Strategie, Vertrieb & Innovation: Training | THE GAP Lab",
+        "description": "Strategie, Vertriebstraining, Verhandlung und Innovation: Marketing- und Sales-Management, Change Management und Rhetorik mit Dr. Oliver Meschkat.",
+        "keywords": "Strategie, Vertriebstraining, Verkaufstraining, Verhandlungstraining, Innovationsmanagement, Change Management, BATNA, ZOPA",
         "topics": ["Verhandlung", "Rhetorik", "Harvard-Konzept"], "reviewer": "oliver-meschkat",
-        "og_image": "/assets/img/og-verhandlungsfuehrung.jpg", "og_kicker": "FOKUSFELD VERHANDELN", "og_line1": "Vorbereitet verhandeln,", "og_line2": "überzeugend argumentieren.",
+        "og_image": "/assets/img/og-strategie-vertrieb.jpg", "og_kicker": "FOKUSFELD GESTALTEN", "og_line1": "Strategie festlegen,", "og_line2": "Kunden überzeugen.",
     },
     "/fokusfelder/leadership-organisation": {
         "title": "Führungskräfteentwicklung & Leadership | THE GAP Lab",
@@ -87,7 +87,7 @@ META = {
     },
     "/faq": {
         "title": "FAQ: 38 Antworten zu Personalentwicklung | THE GAP Lab",
-        "keywords": "FAQ, Personalentwicklung, Verhandlungsführung, InnoLab, KI-Readiness Check, Zusammenarbeit",
+        "keywords": "FAQ, Personalentwicklung, Strategie, InnoLab, KI-Readiness Check, Zusammenarbeit",
         "topics": ["Personalentwicklung"],
         "og_image": "/assets/img/og-faq.jpg", "og_kicker": "FAQ", "og_line1": "38 Antworten zu", "og_line2": "Personalentwicklung.",
     },

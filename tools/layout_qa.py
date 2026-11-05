@@ -5,7 +5,7 @@ import http.server, json, os, re, socketserver, subprocess, sys, threading, coll
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-PAGES = ["/", "/leistungen", "/fokusfelder", "/fokusfelder/verhandlungsfuehrung", "/fokusfelder/leadership-organisation",
+PAGES = ["/", "/leistungen", "/fokusfelder", "/fokusfelder/strategie-vertrieb-innovation", "/fokusfelder/leadership-organisation",
          "/fokusfelder/finance-transformation", "/innolab", "/ki-readiness", "/ueber-uns", "/kontakt", "/faq", "/glossar", "/impressum", "/datenschutz", "/404"]
 WIDTHS = [int(w) for w in (sys.argv[sys.argv.index("--widths") + 1].split(",") if "--widths" in sys.argv else "360,414,768,1024,1280,1600".split(","))]
 SHOTS = sys.argv[sys.argv.index("--shots") + 1] if "--shots" in sys.argv else None

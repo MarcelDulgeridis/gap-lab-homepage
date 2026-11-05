@@ -105,7 +105,7 @@ for u, h in pages.items():
     if len(d) > 160: W(u, f"Description {len(d)} Zeichen (max. 160)")
     img = re.search(r'og:image" content="https://www\.gap-lab\.de(/[^"]+)"', h)
     if not img or not os.path.isfile(ROOT + img.group(1)): E(u, "og:image-Datei fehlt")
-    if u not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-start" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
+    if u not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-verbindet" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
     if '"dateModified"' not in h: E(u, "dateModified fehlt")
     # Haupt-Suchbegriff in H1 oder Title
     m1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S); h1t = html.unescape(re.sub(r"<[^>]+>", "", m1.group(1))).replace("\u00ad", "")
@@ -113,6 +113,9 @@ for u, h in pages.items():
 
 # Sitemap vs Seiten
 sm = open(ROOT + "/sitemap.xml").read()
+for blk in re.finditer(r"<loc>https://www\.gap-lab\.de(/[^<]*)</loc>\s*<lastmod>([^<]*)</lastmod>", sm):
+    u, d = blk.group(1), blk.group(2)
+    if u in pages and f'"dateModified":"{d}"' not in pages[u]: E(u, f"dateModified weicht von sitemap-lastmod {d} ab")
 smu = set(re.findall(r"https://www.gap-lab\.de(/[^<]*)</loc>", sm))
 for u in pages:
     if u == "/404": continue

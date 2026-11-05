@@ -18,7 +18,7 @@ def _slug(s):
 def terms():
     import pages_fokus as F
     out = []
-    groups = [("f1", "Verhandlungsführung", "/fokusfelder/verhandlungsfuehrung", F.VERHANDLUNG),
+    groups = [("f1", "Strategie, Vertrieb &amp; Innovation", "/fokusfelder/strategie-vertrieb-innovation", F.STRATEGIE),
               ("f2", "Leadership &amp; Organisation", "/fokusfelder/leadership-organisation", F.LEADERSHIP),
               ("f3", "Finance &amp; Transformation", "/fokusfelder/finance-transformation", F.FINANCE)]
     for cls, label, path, cfg in groups:
@@ -26,7 +26,7 @@ def terms():
             out.append((name, text, cls, label, path))
     out += [
         ("THE GAP Lab", "Marke der The Gap Lab GmbH mit Sitz in Altdorf bei Nürnberg. Die Gesellschaft konzipiert, entwickelt, führt durch und vermarktet Maßnahmen der Personalentwicklung und ist eine Tochtergesellschaft der Schubart & Dulgeridis GmbH.", "f4", "THE GAP Lab", "/ueber-uns"),
-        ("Fokusfeld", "Eines der drei inhaltlichen Schwerpunktgebiete von THE GAP Lab: Verhandlungsführung & Rhetorik, Leadership & Organisation sowie Finance & Transformation. Jedes Fokusfeld hat einen benannten Partner als Ansprechpartner.", "f4", "THE GAP Lab", "/fokusfelder"),
+        ("Fokusfeld", "Eines der drei inhaltlichen Schwerpunktgebiete von THE GAP Lab: Strategie, Vertrieb & Innovation, Leadership & Organisation sowie Finance & Transformation. Jedes Fokusfeld hat einen benannten Partner als Ansprechpartner.", "f4", "THE GAP Lab", "/fokusfelder"),
         ("InnoLab", "Portfolio aus fünf Formaten vor Ort für Innovation, Change und Personalentwicklung (InnoLab Sprint, InnoLab Design, Learning Design 4.0, Change Leadership, Innovation Scorecard), jeweils mit eigenem Ergebnis.", "f4", "THE GAP Lab", "/innolab"),
         ("KI-Gap", "Der Abstand zwischen der Einschätzung der Führung und der Einschätzung der Mitarbeitenden zur KI-Reife der eigenen Organisation. Der kostenlose KI-Readiness Check macht ihn in drei Minuten sichtbar.", "f4", "THE GAP Lab", "/ki-readiness"),
     ]
@@ -60,9 +60,9 @@ def glossar():
                              "inLanguage": "de-DE", "hasDefinedTerm": [{"@id": d["@id"]} for d in defined]}] + defined
     page["body"] = (
         page_hero(page, "Glossar: die wichtigsten Begriffe verständlich erklärt",
-                  "Von Verhandlung über Führung bis Finanzen: Diese Begriffe tragen die Fokusfelder von THE GAP Lab.")
+                  "Von Strategie und Verhandlung über Führung bis Finanzen: Diese Begriffe tragen die Fokusfelder von THE GAP Lab.")
         + section(
-            answer_box("Kurz erklärt", f"Das Glossar erklärt {len(ts)} Begriffe aus Verhandlungsführung (zum Beispiel BATNA, ZOPA, Anker), Leadership &amp; Organisation (zum Beispiel Rollenklarheit, Umsetzungslücke) und Finance &amp; Transformation (zum Beispiel Cashflow, Business Case) sowie zentrale Begriffe von THE GAP Lab. Jeder Eintrag verweist auf die Seite, die ihn im Zusammenhang erklärt.")
+            answer_box("Kurz erklärt", f"Das Glossar erklärt {len(ts)} Begriffe aus Strategie, Vertrieb &amp; Innovation (zum Beispiel BATNA, ZOPA, Change Management), Leadership &amp; Organisation (zum Beispiel Rollenklarheit, Umsetzungslücke) und Finance &amp; Transformation (zum Beispiel Cashflow, Business Case) sowie zentrale Begriffe von THE GAP Lab. Jeder Eintrag verweist auf die Seite, die ihn im Zusammenhang erklärt.")
             + az + f'<dl class="v-gloss">{"".join(rows)}</dl>', "", "")
         + cta_band("Begriffe, die in Ihrer Organisation geklärt sind.", "Im Erstgespräch ordnen wir ein, welcher Begriff und welches Fokusfeld für Ihre Ausgangslage zählt.")
     )

@@ -17,7 +17,7 @@ def feature(items):
 def related(current):
     cards = []
     allf = [
-        ("/fokusfelder/verhandlungsfuehrung", "Verhandlungsführung &amp; Rhetorik", "Verhandlungen vorbereiten, führen und überzeugend argumentieren."),
+        ("/fokusfelder/strategie-vertrieb-innovation", "Strategie, Vertrieb &amp; Innovation", "Strategie festlegen, Kunden überzeugen, Neues einführen."),
         ("/fokusfelder/leadership-organisation", "Leadership &amp; Organisation", "Rollen, Entscheidungswege und Erwartungen klären."),
         ("/fokusfelder/finance-transformation", "Finance &amp; Transformation", "Kennzahlen verstehen und Veränderung wirtschaftlich fundiert umsetzen."),
     ]
@@ -53,7 +53,7 @@ def fokus_page(cfg):
             ("Einstieg", "Kostenloses Erstgespräch, 20 bis 30 Minuten"),
         ], cfg["color"]), "v-tight", "")
         + section(answer_box(cfg["answer_label"], cfg["answer"]), "v-tight", "")
-        + section(head("Zentrale Begriffe", cfg["model_title"], "") + cfg["model"] + defs(cfg["begriffe"]), "section-white", "")
+        + section(head(cfg.get("model_eyebrow", "Zentrale Begriffe"), cfg["model_title"], "") + cfg["model"] + defs(cfg["begriffe"]), "section-white", "")
         + section(head("Typische Ausgangslagen", "Wann dieses Fokusfeld relevant wird", "") + V.situations(cfg["ausgangslagen"], cfg["color"]), "", "")
         + section(
             head("Mögliche Bausteine", "Drei Phasen einer Maßnahme", "")
@@ -67,71 +67,69 @@ def fokus_page(cfg):
     return page
 
 
-VERHANDLUNG = {
-    "path": "/fokusfelder/verhandlungsfuehrung", "short": "Verhandlungsführung & Rhetorik",
-    "title": "Verhandlungsführung & Rhetorik — THE GAP Lab",
-    "description": "Verhandlungsführung und Rhetorik: Begriffe, typische Ausgangslagen und mögliche Bausteine einer Maßnahme — mit Dr. Oliver Meschkat als Ansprechpartner.",
-    "h1": "Verhandlungsführung und Rhetorik: souverän verhandeln, überzeugend argumentieren",
-    "lead": "Verhandlungen entscheiden über Preise, Konditionen, Budgets und Zusammenarbeit. Dieses Fokusfeld macht sie planbar.",
+STRATEGIE = {
+    "path": "/fokusfelder/strategie-vertrieb-innovation", "short": "Strategie, Vertrieb & Innovation",
+    "title": "Strategie, Vertrieb & Innovation: Training | THE GAP Lab",
+    "description": "Marketing- und Sales-Management, strategisches Management, Verhandlungsführung sowie Innovations- und Change Management, mit Dr. Oliver Meschkat.",
+    "h1": "Strategie, Vertrieb und Innovation: Richtung festlegen, Kunden überzeugen, Neues einführen",
+    "lead": "Strategie, Vertrieb und Innovation entscheiden, ob ein Angebot den Markt erreicht. Verhandlung und Kommunikation tragen es.",
     "partner": "oliver-meschkat", "color": "f1",
-    "model_title": "Das Verhandlungsmodell in einem Bild",
-    "model": V.zopa(),
-    "phases": [("Vorbereiten", ["Vorbereitungsstruktur für Verhandlungen", "Analyse von Interessen und Alternativen"]),
-               ("Anwenden", ["Gesprächsführung und Fragetechnik", "Argumentationsaufbau und rhetorische Mittel", "Umgang mit Einwänden und Druck", "Übung an eigenen Verhandlungsfällen"]),
+    "model_eyebrow": "Themen und Begriffe",
+    "model_title": "Vier Themenblöcke, ein Fokusfeld",
+    "model": V.topics([
+        ("Strategie &amp; Management", ["Strategisches Management", "Zielbild, Prioritäten, Ressourcen", "Entscheidungsvorlagen"]),
+        ("Marketing &amp; Vertrieb", ["Marketing- und Sales-Management", "Verkaufstraining", "Kundengespräche und Angebote"]),
+        ("Verhandlung &amp; Kommunikation", ["Verhandlungsführung", "Rhetorik und Moderation", "Konfliktmanagement"]),
+        ("Innovation &amp; Change", ["Innovationsmanagement, Produktneu- und -weiterentwicklung", "Change Management", "Teambuilding im Wandel"]),
+    ]) + V.zopa(),
+    "phases": [("Ausrichten", ["Ausgangslage und Zielbild klären", "Strategie, Zielkunden und Prioritäten festlegen"]),
+               ("Anwenden", ["Verkaufs- und Verhandlungsgespräche trainieren", "Rhetorik, Moderation und Konfliktmanagement üben", "Innovation und Change am eigenen Vorhaben entwickeln"]),
                ("Verankern", ["Auswertung und Transfer in den Alltag"])],
-    "answer_label": "Kurzantwort: Was ist Verhandlungsführung?",
-    "answer": "Verhandlungsführung ist die zielgerichtete Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und für die Gegenseite tragfähig genug sind, dass sie auch umgesetzt werden.",
-    "why": (
-        "<h2>Warum Verhandlungsführung lernbar ist</h2>"
-        "<p>Verhandeln wirkt oft wie Talent. In der Praxis ist es überwiegend Vorbereitung: Wer seine Interessen kennt, Alternativen in der Hand hat und die Gegenseite einschätzen kann, verhandelt anders als jemand, der spontan reagiert.</p>"
-        "<p>Rhetorik ergänzt das. Sie sorgt dafür, dass Argumente verständlich aufgebaut sind und auch unter Druck ankommen. Verhandlungsführung entscheidet, was gesagt wird; Rhetorik, wie es wirkt.</p>"
-    ),
+    "answer_label": "Kurzantwort: Was umfasst Strategie, Vertrieb & Innovation?",
+    "answer": "Marketing- und Sales-Management, strategisches Management sowie Innovations- und Change Management, ergänzt um Verhandlungsführung, Rhetorik, Moderation und Konfliktmanagement. Ziel: Strategie, Angebot und Auftritt greifen so ineinander, dass sie beim Kunden und im Team ankommen.",
     "begriffe": [
-        ("Interessen und Positionen", "Eine Position ist die Forderung („Wir wollen zehn Prozent Rabatt“). Das Interesse ist der Grund dahinter („Wir müssen das Budget einhalten“). Wer Interessen kennt, findet mehr Lösungen als nur die ursprüngliche Forderung."),
-        ("Alternative zum Verhandlungsergebnis (BATNA)", "Die beste Alternative, die Sie haben, wenn keine Einigung zustande kommt (englisch: Best Alternative to a Negotiated Agreement). Sie bestimmt, bis wann ein Angebot noch akzeptabel ist."),
-        ("Verhandlungsspielraum (ZOPA)", "Der Bereich, in dem beide Seiten einer Einigung zustimmen könnten (englisch: Zone of Possible Agreement). Überschneiden sich die Spielräume nicht, ist eine Einigung unwahrscheinlich."),
-        ("Anker", "Die erste konkrete Zahl oder Forderung im Gespräch. Sie prägt häufig den weiteren Verlauf, weil sich beide Seiten daran orientieren."),
-        ("Argumentationsaufbau", "Eine Behauptung wird durch Begründung und Beleg gestützt, sodass Zuhörende sie nachvollziehen können."),
+        ("Strategisches Management", "Ziele, Prioritäten und Ressourcen festlegen und die Ausrichtung eines Unternehmens oder Bereichs steuern."),
+        ("Sales-Management", "Planung und Steuerung des Vertriebs: Ziele, Zielkunden, Prozesse und Verkaufsgespräche."),
+        ("Interessen und Positionen", "Die Position ist die Forderung, das Interesse der Grund dahinter. Wer Interessen kennt, findet mehr Lösungen."),
+        ("Alternative zum Verhandlungsergebnis (BATNA)", "Die beste Alternative ohne Einigung (Best Alternative to a Negotiated Agreement). Sie bestimmt, bis wann ein Angebot akzeptabel ist."),
+        ("Verhandlungsspielraum (ZOPA)", "Der Bereich, in dem beide Seiten zustimmen könnten (Zone of Possible Agreement). Ohne Überschneidung ist eine Einigung unwahrscheinlich."),
+        ("Anker", "Die erste konkrete Zahl im Gespräch. Sie prägt häufig den weiteren Verlauf."),
+        ("Argumentationsaufbau", "Behauptung, Begründung und Beleg, sodass Zuhörende sie nachvollziehen können."),
+        ("Change Management", "Planung und Begleitung von Veränderung: Haltung, Kommunikation und Umgang mit Widerständen."),
     ],
     "ausgangslagen": [
-        ("Preisverhandlungen und Konditionen", "Verhandlungen mit Kunden oder Lieferanten, bei denen Spielräume vorab nicht abgesteckt sind."),
-        ("Vertragsverhandlungen", "Mehrere Beteiligte, viele Details und der Druck, zeitnah abzuschließen."),
-        ("Interne Verhandlungen", "Budgets, Ressourcen und Prioritäten zwischen Bereichen: Hier verhandeln Menschen, die danach weiter zusammenarbeiten."),
-        ("Gespräche unter Druck", "Kritische Situationen mit Einwänden, Eskalation oder ungleicher Machtverteilung."),
+        ("Neues Angebot oder Produkt", "Produktneu- oder -weiterentwicklung braucht Prototypen, Tests und Entscheidungen."),
+        ("Vertrieb unter Druck", "Ziele, Zielkunden und Gespräche sind nicht aufeinander abgestimmt."),
+        ("Verhandlungen und Konflikte", "Preise, Verträge und Budgets, dazu Einwände, Eskalation und ungleiche Machtverteilung."),
+        ("Veränderung im Team", "Wandel stockt, die Strategie kommt im Alltag nicht an."),
     ],
-    "bausteine": [
-        "Vorbereitungsstruktur für Verhandlungen",
-        "Analyse von Interessen und Alternativen",
-        "Gesprächsführung und Fragetechnik",
-        "Argumentationsaufbau und rhetorische Mittel",
-        "Umgang mit Einwänden und Druck",
-        "Übung an eigenen Verhandlungsfällen",
-        "Auswertung und Transfer in den Alltag",
-    ],
-    "zielgruppe": "Geschäftsleitungen, Führungskräfte und Fachverantwortliche, die regelmäßig verhandeln oder überzeugen müssen.",
-    "related": [("/glossar#alternative-zum-verhandlungsergebnis-batna", "Glossar", "BATNA und ZOPA", "Die Begriffe hinter Verhandlungsspielraum und Alternative nachlesen."),
-                ("/glossar#anker", "Glossar", "Anker", "Warum die erste Zahl im Gespräch den Verlauf prägt."),
-                ("/innolab#sprint", "InnoLab", "InnoLab Sprint", "Teams pitchen am fünften Tag vor Entscheidern: Argumentieren am eigenen Prototyp.")],
+    "zielgruppe": "Geschäftsleitungen, Vertriebs- und Marketingverantwortliche, Führungskräfte und Projektteams, die Strategie, Kundenauftritt oder Innovation voranbringen.",
+    "related": [("/innolab#sprint", "InnoLab", "InnoLab Sprint", "Produktneu- und -weiterentwicklung: Prototyp und Pitch in fünf Tagen."),
+                ("/innolab#change-leadership", "InnoLab", "Change Leadership", "Führungskräftetraining: Wandel kommunizieren und umsetzen."),
+                ("/glossar#alternative-zum-verhandlungsergebnis-batna", "Glossar", "BATNA und ZOPA", "Die Begriffe hinter Verhandlungsspielraum und Alternative nachlesen.")],
     "faqs": [
+        ("Was umfasst das Fokusfeld Strategie, Vertrieb & Innovation?",
+         "<p>Marketing- und Sales-Management, strategisches Management, Verhandlungsführung, Rhetorik, Moderation, Konfliktmanagement, Teambuilding sowie Innovations- und Change Management, etwa als <a href=\"/innolab\">InnoLab</a> für Produktneu- oder -weiterentwicklung.</p>"),
+        ("Gibt es Verkaufstraining?",
+         "<p>Ja. Verkaufstraining und Sales-Management gehören zum Fokusfeld: Gesprächsführung, Verhandlung, Angebot und Steuerung. Den Umfang legen wir nach dem Erstgespräch im Angebot fest.</p>"),
         ("Worin unterscheiden sich Verhandlungsführung und Rhetorik?",
          "<p>Verhandlungsführung betrifft Strategie und Vorbereitung: Ziele, Alternativen, Spielräume und Gesprächsverlauf. Rhetorik betrifft die Wirkung: Aufbau von Argumenten, Wortwahl und Auftreten. Beides ergänzt sich.</p>"),
-        ("Kann eine Maßnahme an eigenen Verhandlungsfällen ansetzen?",
-         "<p>Ja, das ist sinnvoll. Wenn Sie konkrete Fälle bereitstellen, können wir sie in Übungen aufgreifen. Vertrauliche Details bleiben bei Ihnen; Fälle lassen sich auch anonymisieren.</p>"),
-        ("Wie lange dauert eine Maßnahme?",
-         "<p>Das hängt von Ziel, Zielgruppe und Format ab. Wir legen den Umfang nach dem Erstgespräch im Angebot fest.</p>"),
-        ("Wer ist Ansprechpartner für Verhandlungsführung?",
-         "<p>Dr. Oliver Meschkat, Partner der The Gap Lab GmbH und Experte für Verhandlungsführung, Rhetorik und Argumentation. Einen Termin buchen Sie auf der Seite <a href=\"/kontakt\">Kontakt</a>.</p>"),
+        ("Kann eine Maßnahme an eigenen Fällen ansetzen?",
+         "<p>Ja. Eigene Verhandlungs-, Vertriebs- oder Innovationsfälle lassen sich in Übungen aufgreifen, auch anonymisiert.</p>"),
+        ("Wer ist Ansprechpartner?",
+         "<p>Dr. Oliver Meschkat, Partner der The Gap Lab GmbH, mit Schwerpunkt Marketing- und Sales-Management, Personalentwicklung sowie Innovations- und Change Management. Termin: <a href=\"/kontakt\">Kontakt</a>.</p>"),
     ],
     "sources": [
         "Fisher, R., Ury, W.: <em>Getting to Yes</em> (1981); deutsch: <em>Das Harvard-Konzept</em>. Grundlage der Unterscheidung von Positionen und Interessen sowie des Begriffs BATNA. Überblick: <a href=\"https://de.wikipedia.org/wiki/Harvard-Konzept\" rel=\"noopener\">Harvard-Konzept (Wikipedia)</a>.",
         "Raiffa, H.: <em>The Art and Science of Negotiation</em> (1982). Grundlage des Begriffs der Zone of Possible Agreement.",
         "Tversky, A., Kahneman, D.: Judgment under Uncertainty: Heuristics and Biases. <em>Science</em> 185 (1974). Beschreibt den Ankereffekt. <a href=\"https://doi.org/10.1126/science.185.4157.1124\" rel=\"noopener\">DOI 10.1126/science.185.4157.1124</a>.",
     ],
-    "cta_title": "Verhandlungen, die vorbereitet beginnen.",
-    "service_name": "Verhandlungsführung & Rhetorik: Maßnahmen der Personalentwicklung",
-    "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Verhandlungsführung, Rhetorik und Argumentation für Entscheider und Führungskräfte.",
-    "audience_type": "Geschäftsleitungen, Führungskräfte, Fachverantwortliche",
+    "cta_title": "Strategie, die beim Kunden ankommt.",
+    "service_name": "Strategie, Vertrieb & Innovation: Maßnahmen der Personalentwicklung",
+    "service_desc": "Konzeption, Entwicklung und Durchführung von Maßnahmen zu Marketing- und Sales-Management, strategischem Management, Verhandlungsführung, Rhetorik sowie Innovations- und Change Management.",
+    "audience_type": "Geschäftsleitungen, Vertriebs- und Marketingverantwortliche, Führungskräfte, Projektteams",
 }
+
 
 LEADERSHIP = {
     "path": "/fokusfelder/leadership-organisation", "short": "Leadership & Organisation",
@@ -263,30 +261,6 @@ FINANCE = {
 
 
 # ------------------------------------------------------------------ Kurzfassungen (Volltext: Git-Tag archive/volltext-2026-11-04)
-VERHANDLUNG.update({
-    "h1": "Verhandlungsführung und Rhetorik: vorbereitet verhandeln, überzeugend argumentieren",
-    "lead": "Verhandlungen entscheiden über Preise, Budgets und Zusammenarbeit. Verhandlungstraining bereitet darauf vor.",
-    "answer": "Vorbereitung, Steuerung und Auswertung von Verhandlungen. Ziel sind Ergebnisse, die die eigenen Interessen wahren und tragfähig genug sind, um umgesetzt zu werden.",
-    "begriffe": [
-        ("Interessen und Positionen", "Die Position ist die Forderung, das Interesse der Grund dahinter. Wer Interessen kennt, findet mehr Lösungen."),
-        ("Alternative zum Verhandlungsergebnis (BATNA)", "Die beste Alternative ohne Einigung (Best Alternative to a Negotiated Agreement). Sie bestimmt, bis wann ein Angebot akzeptabel ist."),
-        ("Verhandlungsspielraum (ZOPA)", "Der Bereich, in dem beide Seiten zustimmen könnten (Zone of Possible Agreement). Ohne Überschneidung ist eine Einigung unwahrscheinlich."),
-        ("Anker", "Die erste konkrete Zahl im Gespräch. Sie prägt häufig den weiteren Verlauf."),
-        ("Argumentationsaufbau", "Behauptung, Begründung und Beleg, sodass Zuhörende sie nachvollziehen können."),
-    ],
-    "ausgangslagen": [
-        ("Preisverhandlungen und Konditionen", "Spielräume sind vorab nicht abgesteckt."),
-        ("Vertragsverhandlungen", "Viele Beteiligte, viele Details, Zeitdruck."),
-        ("Interne Verhandlungen", "Budgets und Prioritäten zwischen Bereichen."),
-        ("Gespräche unter Druck", "Einwände, Eskalation, ungleiche Machtverteilung."),
-    ],
-    "faqs": [
-        ("Worin unterscheiden sich Verhandlungsführung und Rhetorik?",
-         "<p>Verhandlungsführung betrifft Strategie und Vorbereitung, Rhetorik die Wirkung von Argumenten und Auftreten. Beides ergänzt sich.</p>"),
-        ("Kann eine Maßnahme an eigenen Verhandlungsfällen ansetzen?",
-         "<p>Ja. Fälle lassen sich in Übungen aufgreifen, auch anonymisiert.</p>"),
-    ],
-})
 LEADERSHIP.update({
     "h1": "Leadership und Organisation: Führung im Zusammenspiel von Strategie, Kultur und Rollen",
     "lead": "Führung wirkt dort, wo Strategie, Kultur, Rollen und Entscheidungswege zusammenpassen. Führungskräfteentwicklung setzt dort an.",
@@ -338,4 +312,4 @@ FINANCE.update({
 
 
 def build():
-    return [fokus_page(VERHANDLUNG), fokus_page(LEADERSHIP), fokus_page(FINANCE)]
+    return [fokus_page(STRATEGIE), fokus_page(LEADERSHIP), fokus_page(FINANCE)]
