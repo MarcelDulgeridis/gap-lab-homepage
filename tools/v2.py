@@ -99,14 +99,6 @@ def enhance(html, page, preview_prefix=None):
         return block.replace('<span class="v-bigno"', f'<span class="v-ic">{ic(icon)}</span><span class="v-bigno"', 1) if icon else block
     html = re.sub(r'<li class="v-break[^>]*>.*?</li>', brk, html, flags=re.S)
 
-    # Icons in die Stufen
-    def stg(m):
-        block = m.group(0)
-        a = re.search(r'href="/leistungen#([a-z]+)"', block)
-        icon = STAGE_ICON.get(a.group(1)) if a else None
-        return block.replace('<div class="v-chev">', f'<div class="v-chev">{ic(icon, "v-chev-ic")}', 1) if icon else block
-    html = re.sub(r'<li class="v-stage[^>]*>.*?</li>', stg, html, flags=re.S)
-
     if page["path"] == "/":
         html = re.sub(r'<section class="hero hero-home">.*?</section>\n?', lambda m: hero_home(
             '<svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'), html, count=1, flags=re.S)

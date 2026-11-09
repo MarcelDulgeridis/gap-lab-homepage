@@ -340,7 +340,7 @@ def render(page):
         + '<a class="skip-link" href="#main">Zum Inhalt springen</a>'
         + (v2.sprite() if V2 else "")
         + '<div class="rule-top" aria-hidden="true"></div>'
-        + (v2.header(page, NAV, main_html, esc) if V2 else header_html(page))
+        + header_html(page)
         + '<main id="main">'
         + main_html
         + "</main>"

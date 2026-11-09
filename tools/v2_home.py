@@ -27,37 +27,31 @@ def _tile(cls, tid, inner, sid=""):
 def hero():
     import visuals as V
     stages = [(n, i) for (_a, n, _q, _r), i in zip(V.STAGES, ["pencil", "layers", "users", "megaphone"])]
-    planks = "".join(f'<li class="x-plank" data-i="{k}">{ic(i)}<span>{n}</span></li>' for k, (n, i) in enumerate(stages))
-    lines = ["Beschlossenes kommt im Alltag an.", "Einzeln buchbar oder als Kette.",
-             "Erstgespräch kostenlos, 20 bis 30 Minuten.", "Strategie, Führungsklarheit, Finanzverständnis."]
+    planks = "".join(f'<li class="x-plank" data-i="{k}" title="{n}">{ic(i)}<span class="sr-only">{n}</span></li>' for k, (n, i) in enumerate(stages))
+    names = "|".join(n for n, _ in stages)
     return f"""
-<section class="x-hero" aria-labelledby="x-h1"><div class="x-grid-bg" aria-hidden="true"></div><div class="x-ring" aria-hidden="true"></div>
-<div class="container x-hero-in">
-  <p class="x-eyebrow x-reveal">Personalentwicklung · Altdorf bei Nürnberg</p>
-  <h1 id="x-h1" class="x-reveal">Personal&shy;entwicklung, die <span class="accent">verbindet.</span></h1>
-  <p class="x-hero-lead x-reveal">THE GAP Lab verbindet Strategie, Führungsklarheit und Finanzverständnis in Maßnahmen, die im Arbeitsalltag ankommen.</p>
-  <div class="x-ctas x-reveal">
-    <a class="btn" href="/kontakt">Erstgespräch vereinbaren {ARROW}</a>
-    <a class="btn btn-ghost" href="/leistungen">Leistungen ansehen</a>
+<section class="hero hero-home x-hero2"><div class="container"><div class="hero-grid">
+  <div>
+    <p class="eyebrow">Personalentwicklung · Altdorf bei Nürnberg</p>
+    <h1>Personal&shy;entwicklung, die <span class="accent">verbindet.</span></h1>
+    <p class="lead">THE GAP Lab verbindet Strategie, Führungsklarheit und Finanzverständnis in Maßnahmen, die im Arbeitsalltag ankommen.</p>
+    <div class="hero-actions">
+      <a class="btn" href="/kontakt">Erstgespräch vereinbaren {ARROW}</a>
+      <a class="link-arrow" href="/leistungen">Leistungen ansehen {ARROW}</a>
+    </div>
   </div>
-  <p class="x-ticker x-reveal"><span class="x-tk-dot">{ic('spark')}</span><span class="x-tk" data-lines="{'|'.join(lines)}">{lines[0]}</span></p>
-</div>
-<div class="container"><div class="x-stage x-reveal">
-  <a class="x-chip x-c1" href="/ki-readiness">{ic('cpu')}<span>KI-Readiness Check<small>kostenlos</small></span></a>
-  <a class="x-chip x-c2" href="/innolab">{ic('bulb')}<span>InnoLab<small>fünf Formate vor Ort</small></span></a>
-  <a class="x-chip x-c3" href="/kontakt">{ic('clock')}<span>Erstgespräch<small>20 bis 30 Minuten</small></span></a>
   <figure class="x-render" aria-labelledby="x-render-cap">
-    <div class="x-render-top"><span class="x-brand">{ic('gap')}THE GAP</span><span class="x-badge">Schema</span></div>
+    <div class="x-gapmark" aria-hidden="true"><b>THE GAP</b><i></i></div>
     <div class="x-bridge-scene">
       <div class="x-pier x-pier-l"><b>Beschlossen</b><span>Strategie · Konzept</span></div>
-      <ol class="x-planks" aria-label="Die vier Stufen als Brücke">{planks}</ol>
+      <ol class="x-planks" aria-label="Die vier Stufen als Brücke" data-names="{names}">{planks}</ol>
       <div class="x-pier x-pier-r"><b>Im Alltag</b><span>Verhalten · Ergebnis</span></div>
     </div>
-    <div class="x-ctl"><label for="x-range">{ic('layers')}Stufen</label><input id="x-range" type="range" min="0" max="4" step="1" value="1" aria-describedby="x-render-cap"><output class="x-outv" for="x-range">1 / 4</output></div>
-    <figcaption id="x-render-cap" class="x-state" data-s0="Die Lücke ist offen." data-s1="Die Brücke entsteht." data-s2="Beschlossenes kommt im Alltag an.">Die Brücke entsteht.</figcaption>
+    <div class="x-ctl"><label for="x-range">Stufen</label><input id="x-range" type="range" min="0" max="4" step="1" value="1" aria-describedby="x-render-cap"><output class="x-outv" for="x-range">1 / 4</output></div>
+    <p class="x-state" data-s0="Die Lücke ist offen." data-s2="Beschlossenes kommt im Alltag an.">Stufe 1 · Konzeption</p>
+    <figcaption id="x-render-cap">Hier setzt THE GAP Lab an: Beschlossenes kommt im Alltag an.</figcaption>
   </figure>
-</div></div>
-</section>"""
+</div></div></section>"""
 
 
 # ---------------------------------------------------------------- 2 · Zahlen
@@ -91,8 +85,8 @@ def problem():
     leaks = "".join(f'<g class="x-leak" data-i="{k}"><circle class="x-leak-ring" cx="{x}" cy="70" r="15"/><circle class="x-leak-dot" cx="{x}" cy="70" r="6"/>'
                     f'<path class="x-drip" d="M{x} 88v26"/><text x="{x}" y="140" text-anchor="middle">{k+1:02d}</text></g>' for k, x in enumerate(xs))
     svg = f"""<svg class="x-pipe" viewBox="0 0 920 160" role="img" aria-labelledby="x-pipe-t"><title id="x-pipe-t">Schema: Auf dem Weg vom Beschluss in den Alltag geht an vier Stellen Wirkung verloren.</title>
-<rect class="x-pipe-end" x="0" y="44" width="96" height="52" rx="12"/><text class="x-pipe-lab" x="48" y="75" text-anchor="middle">Beschluss</text>
-<rect class="x-pipe-end x-pipe-end-r" x="824" y="44" width="96" height="52" rx="12"/><text class="x-pipe-lab x-pipe-lab-r" x="872" y="75" text-anchor="middle">Alltag</text>
+<rect class="x-pipe-end" x="0" y="44" width="96" height="52"/><text class="x-pipe-lab" x="48" y="75" text-anchor="middle">Beschluss</text>
+<rect class="x-pipe-end x-pipe-end-r" x="824" y="44" width="96" height="52"/><text class="x-pipe-lab x-pipe-lab-r" x="872" y="75" text-anchor="middle">Alltag</text>
 <path class="x-pipe-track" d="M96 70H824"/><path class="x-pipe-flow" d="M96 70H824"/>{leaks}</svg>"""
     cards = "".join(
         f'<li class="x-break {c} x-rv" data-i="{k}"><span class="x-break-ic">{ic(i)}</span><span class="x-break-no">{k+1:02d}</span>'
@@ -181,7 +175,7 @@ def innolab():
 <div class="x-cmp-ctl x-rv"><button type="button" data-to="0">Ausgangslage</button><input id="x-cmp" type="range" min="0" max="100" value="0" aria-label="Ausgangslage oder Ergebnis anzeigen"><button type="button" data-to="100">Ergebnis</button></div>
 <div class="x-fmts">{days}</div>
 <p class="x-more"><a class="btn" href="/innolab">InnoLab ansehen {ARROW}</a></p>''')
-    return _tile("x-parch", "angebote-title", inner, "innolab")
+    return _tile("x-cream", "angebote-title", inner, "innolab")
 
 
 # ---------------------------------------------------------------- 8 · KI-Readiness (Cockpit)
@@ -210,7 +204,7 @@ def vorgehen():
              ("pencil", "Schritt 2", "Konzept", "Ziele, Inhalte, Format, Erfolgskriterien.", "Abgestimmtes Konzept"),
              ("users", "Schritt 3", "Umsetzung", "Entwicklung und Durchführung entlang der Fokusfelder.", "Durchgeführte Maßnahme"),
              ("trend", "Schritt 4", "Auswertung", "Wirkung prüfen, nächste Schritte klären.", "Wirkung und nächste Schritte")]
-    lis = "".join(f'<li class="x-rv"><span class="x-node">{ic(i)}</span><span class="x-when">{w}</span><h3>{t}</h3><p>{d}</p>'
+    lis = "".join(f'<li class="x-rv"><span class="x-node"><span>{ic(i)}</span></span><span class="x-when">{w}</span><h3>{t}</h3><p>{d}</p>'
                   f'<span class="x-out"><b>Ergebnis</b>{o}</span></li>' for i, w, t, d, o in steps)
     inner = _head("05 · Das Vorgehen", "Vier Schritte vom Gespräch zur Auswertung.", "", "vorgehen-title") + f'<ol class="x-time">{lis}</ol>'
     return _tile("x-light", "vorgehen-title", inner, "vorgehen")
@@ -235,7 +229,7 @@ def begriffe():
                      f'<p>{esc(t[1])}</p><a class="link-arrow" href="/glossar#{slug}">Im Glossar {ARROW}</a></div>')
     inner = (_head("Fachbegriffe", "Neun Begriffe, die Entscheidungen tragen.", "Kurz erklärt, mit Link ins Glossar.", "begriffe-title")
              + f'<div class="x-gloss"><div class="x-terms-row x-rv">{"".join(chips)}</div><div class="x-defs x-rv" aria-live="polite">{"".join(cards)}</div></div>')
-    return _tile("x-parch", "begriffe-title", inner, "begriffe")
+    return _tile("x-cream", "begriffe-title", inner, "begriffe")
 
 
 # ---------------------------------------------------------------- 11 · FAQ

@@ -99,7 +99,8 @@
       var setB = function (v) {
         planks.forEach(function (p, k) { p.classList.toggle("on", k < v); });
         out.textContent = v + " / 4";
-        st.textContent = st.getAttribute("data-s" + (v >= 4 ? 2 : v >= 1 ? 1 : 0));
+        var names = $(".x-planks").getAttribute("data-names").split("|");
+        st.textContent = v >= 4 ? st.getAttribute("data-s2") : v === 0 ? st.getAttribute("data-s0") : "Stufe " + v + " · " + names[v - 1];
         render.classList.toggle("is-done", v >= 4);
       };
       rg.addEventListener("input", function () { setB(+rg.value); });
@@ -109,7 +110,7 @@
         ["pointerdown", "keydown"].forEach(function (ev) { rg.addEventListener(ev, function () { clearInterval(auto); }); });
       }
       var stage = $(".x-stage");
-      if (!reduce && hover) {
+      if (stage && !reduce && hover) {
         stage.addEventListener("pointermove", function (e) {
           var b = stage.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5;
           render.style.transform = "rotateY(" + (x * 5) + "deg) rotateX(" + (-y * 4) + "deg)";
