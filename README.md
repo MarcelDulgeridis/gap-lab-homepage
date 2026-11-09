@@ -20,6 +20,12 @@ assets/                site.css, site.js, Schriften (lokal, kein Google-Fonts-Ab
 vercel.json            Clean URLs, Security-Header (CSP, HSTS …), Caching
 ```
 
+## Redesign v2 (Vorschau)
+
+`python3 tools/build.py --preview` erzeugt alle Seiten unter `preview/` (erreichbar als `/preview/...`, `noindex`, interne Links zeigen auf die Vorschau).
+Die Live-Seiten bleiben unverändert. Die Gestaltung liegt in `assets/v2.css`, `assets/v2.js` und `tools/v2.py` (Icons, Start-Hero, Anreicherung).
+Übertragen auf die Live-Seite: `python3 tools/build.py --live-v2` (lädt v2 in alle Live-Seiten), danach `python3 tools/audit.py`.
+
 ## Arbeiten
 
 ```bash
