@@ -25,6 +25,14 @@ ICONS = {
  'phone': '<path class="a" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
  'book': '<path class="a" d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5A1.5 1.5 0 0 1 4 18.5z"/><path d="M12 4H18.5c.8 0 1.5.7 1.5 1.5v13c0 .8-.7 1.5-1.5 1.5H12M12 4v16M4 18.5V5.5C4 4.7 4.7 4 5.5 4H12"/>',
  'scale': '<path d="M12 4v16M7.5 20h9M5 8h14"/><path class="a" d="M5 8l-3 6.5h6z"/><path d="M5 8l-3 6.5h6zM19 8l-3 6.5h6z"/><path class="a" d="M19 8l-3 6.5h6z"/>',
+ 'building': '<path class="a" d="M5 21V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5V21z"/><path d="M5 21V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5V21M15 10h3.5a1.5 1.5 0 0 1 1.5 1.5V21M3 21h18M8.5 8h3M8.5 12h3M8.5 16h3"/>',
+ 'pin': '<path class="a" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+ 'calendar': '<rect class="a" x="3.5" y="5" width="17" height="15.5" rx="3"/><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M14 14h2"/>',
+ 'link': '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+ 'chat': '<path class="a" d="M4 5.5h16v11H9.5L5 20.5v-4H4z"/><path d="M4 5.5h16v11H9.5L5 20.5v-4H4z"/><path d="M8 10h8M8 13h5"/>',
+ 'trend': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+ 'up': '<path d="M12 19.5v-15M6 10.5l6-6 6 6"/>',
+ 'menu': '<path d="M4 7h16M4 12h16M4 17h16"/>',
 }
 
 
@@ -121,3 +129,43 @@ def rewrite_links(html, prefix):
             return f'{m.group(1)}{prefix}/"'
         return f'{m.group(1)}{prefix}{url}"'
     return re.sub(r'(\shref=")(/[^"]*)"', fix, html)
+
+
+# ----------------------------------------------------------- Kopf und Leisten
+def _anchors(body):
+    out = []
+    for m in re.finditer(r'<p class="x?-?eyebrow">([^<]*)</p>\s*<h2 id="([^"]+)"', body):
+        lab = re.sub(r"<[^>]+>", "", m.group(1))
+        lab = re.sub(r"^\s*\d+\s*·\s*", "", lab).split("·")[0].strip()
+        if lab and m.group(2) and all(lab != a for a, _ in out):
+            out.append((lab, m.group(2)))
+    return out[:6]
+
+
+def header(page, nav, body, esc):
+    items = []
+    for label, path, is_cta in nav:
+        cur = ' aria-current="page"' if (path == page["path"] or (path != "/" and page["path"].startswith(path + "/"))) else ""
+        cls = ' class="btn"' if is_cta else ""
+        items.append(f'<li><a{cls} href="{esc(path)}"{cur}>{esc(label)}</a></li>')
+    anchors = _anchors(body)
+    sub = ""
+    if len(anchors) >= 2:
+        title = "THE GAP Lab" if page["path"] == "/" else esc(page["short"])
+        links = "".join(f'<a href="#{a}">{lab}</a>' for lab, a in anchors)
+        sub = (f'<div class="snav"><div class="container snav-in"><span class="snav-t">{ic("gap")}{title}</span>'
+               f'<nav class="snav-links" aria-label="Auf dieser Seite">{links}</nav>'
+               f'<a class="btn snav-cta" href="/kontakt">Erstgespräch</a></div></div>')
+    return (
+        '<header class="site-header v2-header" data-open="false"><div class="gnav"><div class="container header-inner">'
+        '<a class="brand" href="/" aria-label="THE GAP Lab — Startseite">THE GAP <span>Lab</span></a>'
+        '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>'
+        f'<nav class="site-nav" id="site-nav" aria-label="Hauptnavigation"><ul>{"".join(items)}</ul></nav>'
+        f'</div></div>{sub}</header>'
+    )
+
+
+def sticky_bar():
+    return (f'<div class="x-fbar" aria-hidden="true"><span class="x-fbar-t">{ic("calendar")}<b>Erstgespräch</b><span>kostenlos, 20 bis 30 Minuten</span></span>'
+            '<a class="btn" href="/kontakt" tabindex="-1">Termin wählen</a>'
+            f'<button class="x-top" type="button" tabindex="-1" aria-label="Zum Seitenanfang">{ic("up")}</button></div>')

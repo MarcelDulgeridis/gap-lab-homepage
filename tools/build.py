@@ -26,6 +26,7 @@ import pages_legal  # noqa: E402
 import seo_meta  # noqa: E402
 import datetime  # noqa: E402
 import v2  # noqa: E402
+import v2_home  # noqa: E402
 
 PREVIEW = "--preview" in sys.argv
 V2 = PREVIEW or "--live-v2" in sys.argv
@@ -328,6 +329,9 @@ def render(page):
 </head>
 """
     body_open = '<body class="home">' if (V2 and page["path"] == "/") else "<body>"
+    if V2 and page["path"] == "/":
+        page = dict(page, body=v2_home.home_body(page), journey=None)
+    main_html = nbsp_brand(stopify(page, with_journey(page)))
     stand = ""
     if page.get("show_stand", True) and page["path"] not in ("/",):
         stand = f'<p class="stand container">Stand: {SITE["modified_de"]}</p>'
@@ -336,11 +340,12 @@ def render(page):
         + '<a class="skip-link" href="#main">Zum Inhalt springen</a>'
         + (v2.sprite() if V2 else "")
         + '<div class="rule-top" aria-hidden="true"></div>'
-        + header_html(page)
+        + (v2.header(page, NAV, main_html, esc) if V2 else header_html(page))
         + '<main id="main">'
-        + nbsp_brand(stopify(page, with_journey(page)))
+        + main_html
         + "</main>"
         + footer_html(page)
+        + (v2.sticky_bar() if V2 else "")
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))
         + "</body></html>\n"
     )
