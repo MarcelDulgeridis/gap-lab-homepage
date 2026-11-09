@@ -63,7 +63,7 @@
     if (top) top.addEventListener("click", function () { scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
 
     /* ---------- Einblendung ---------- */
-    $$(".section-head,.v-break,.v-stage,.v-frow,.v-panel,.card,.partner,.partner-wide,.v-timeline li,.answer,.v-facts>div,.faq details,.v-term,.v-ofield,.il-format,.contact-list")
+    $$(".section-head,.v-break,.v-stage,.v-frow,.v-panel,.card,.partner,.partner-wide,.v-timeline li,.answer,.v-facts>div,.faq details,.v-term,.v-ofield,.il-format,.contact-list,.v-stack-in>*,.v-phases>*,.v-situ>*,.v-cflow>*,.v-fc,.v-decide li,.v-matrix>*,.defs>div,.v-related>*")
       .forEach(function (el) { if (!el.closest(".x-tile")) el.classList.add("rv"); });
     var rv = $$(".x-rv,.x-reveal,.rv");
     rv.forEach(function (el, i) { el.style.setProperty("--d", ((i % 4) * 0.07).toFixed(2) + "s"); });
@@ -178,7 +178,7 @@
     /* ---------- Vorher / Nachher ---------- */
     var cmp = $(".x-cmp"), cr = $("#x-cmp");
     if (cmp && cr) {
-      var setC = function (v) { cmp.style.setProperty("--p", v / 100); };
+      var setC = function (v) { cmp.style.setProperty("--p", v / 100); cmp.classList.toggle("show-a", v < 60); cmp.classList.toggle("show-b", v > 40); };
       cr.addEventListener("input", function () { setC(+cr.value); });
       $$(".x-cmp-ctl button").forEach(function (b) { b.addEventListener("click", function () { cr.value = b.dataset.to; setC(+cr.value); }); });
       setC(0);
@@ -201,7 +201,7 @@
     }, { threshold: 0.4 });
 
     /* ---------- Zeitleisten, Balken ---------- */
-    seen($$(".x-time,.v-gapdemo,.v-timeline"), function (el) { el.classList.add("is-in"); }, { threshold: 0.35 });
+    seen($$(".x-time,.v-gapdemo,.v-timeline,.x-gantt,.x-scale"), function (el) { el.classList.add("is-in"); }, { threshold: 0.35 });
 
     /* ---------- Fachbegriffe ---------- */
     var terms = $$(".x-term"), defs = $$(".x-def");

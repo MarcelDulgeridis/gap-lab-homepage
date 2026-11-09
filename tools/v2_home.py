@@ -56,9 +56,23 @@ def hero():
 
 # ---------------------------------------------------------------- 2 · Zahlen
 def numbers():
-    items = [("layers", "3", "Disziplinen", "in einer Gesellschaft"), ("users", "3", "Partner", "mit Namen"),
-             ("bulb", "5", "InnoLab-Formate", "vor Ort"), ("clock", "20–30", "Minuten Erstgespräch", "kostenlos")]
-    lis = "".join(f'<li class="x-rv">{ic(i)}<b class="x-count">{n}</b><span>{a}<small>{b}</small></span></li>' for i, n, a, b in items)
+    venn = ('<svg class="x-mini" viewBox="0 0 64 56" aria-hidden="true"><circle class="m1" cx="22" cy="20" r="15"/><circle class="m2" cx="42" cy="20" r="15"/>'
+            '<circle class="m3" cx="32" cy="36" r="15"/></svg>')
+    av = "".join(f'<img src="{esc(PARTNERS[k]["img_sm"])}" alt="" width="40" height="40" loading="lazy" decoding="async">'
+                 for k in ("oliver-meschkat", "constantin-schubart", "marcel-dulgeridis"))
+    bars = '<span class="x-mini-bars" aria-hidden="true">' + "".join(f'<i class="d{d}"></i>' for d in (5, 3, 3, 3, 2)) + '</span>'
+    # Uhr: Segment von Minute 20 bis 30
+    import math
+    def pt(m, r=22):
+        a = math.radians(m * 6 - 90)
+        return 28 + r * math.cos(a), 28 + r * math.sin(a)
+    x1, y1 = pt(20); x2, y2 = pt(30)
+    ticks = "".join(f'<path d="M{pt(m,24)[0]:.1f} {pt(m,24)[1]:.1f}L{pt(m,21)[0]:.1f} {pt(m,21)[1]:.1f}"/>' for m in range(0, 60, 5))
+    clock = (f'<svg class="x-mini x-clock" viewBox="0 0 56 56" aria-hidden="true"><circle class="c0" cx="28" cy="28" r="26"/><g class="tk">{ticks}</g>'
+             f'<path class="seg" d="M28 28L{x1:.1f} {y1:.1f}A22 22 0 0 1 {x2:.1f} {y2:.1f}Z"/><circle class="hub" cx="28" cy="28" r="2.5"/></svg>')
+    items = [(venn, "3", "Disziplinen", "in einer Gesellschaft"), (f'<span class="x-mini-av" aria-hidden="true">{av}</span>', "3", "Partner", "mit Namen"),
+             (bars, "5", "InnoLab-Formate", "vor Ort"), (clock, "20–30", "Minuten Erstgespräch", "kostenlos")]
+    lis = "".join(f'<li class="x-rv"><span class="x-mini-wrap">{v}</span><b class="x-count">{n}</b><span>{a}<small>{b}</small></span></li>' for v, n, a, b in items)
     return f'<section class="x-nums" aria-label="Das Wichtigste auf einen Blick"><div class="container"><ul>{lis}</ul></div></section>'
 
 
@@ -109,7 +123,7 @@ def stages():
                       f'<span class="x-floor-no">{k+1:02d}</span>{ic(i)}<span class="x-floor-n">{name}</span></button>')
         items = "".join(f"<li>{ic('check')}{r.strip()}</li>" for r in res.split(","))
         panels.append(f'<div class="x-panel{" on" if k == 0 else ""}" role="tabpanel" id="fp-{aid}" aria-labelledby="fl-{aid}"{"" if k == 0 else " hidden"}>'
-                      f'<span class="x-panel-ic">{ic(i)}</span><p class="x-eyebrow">Stufe {k+1} · Leitfrage</p><h3>{q}</h3>'
+                      f'<span class="x-panel-ic">{ic(i)}</span><span class="x-seg" aria-hidden="true">{"".join(f'<i class="{"on" if n <= k else ""}"></i>' for n in range(4))}</span><p class="x-eyebrow">Stufe {k+1} von 4 · Leitfrage</p><h3>{q}</h3>'
                       f'<p class="x-k">Ergebnisse</p><ul class="x-checks">{items}</ul>'
                       f'<a class="link-arrow" href="/leistungen#{aid}">{name} im Detail {ARROW}</a></div>')
     # Etagen von unten nach oben: Konzeption ist das Fundament
@@ -164,16 +178,22 @@ def innolab():
     fmt = {f["id"]: f for f in P.FORMATS}
     rows_a = "".join(f'<li>{ic("spark")}<span>{esc(v)}</span></li>' for v, _i, _z in P.PICK)
     rows_b = "".join(f'<li>{ic("check")}<span>{esc(z)}<small>{esc(fmt[i]["name"])} · {esc(fmt[i]["dur"])}</small></span></li>' for _v, i, z in P.PICK)
-    days = "".join(f'<a class="x-fmt x-rv" href="/innolab#{f["id"]}"><span class="x-days" aria-label="{f["days"]} Tage">{"<i></i>" * f["days"]}</span>'
-                   f'<b>{esc(f["name"])}</b><small>{esc(f["kind"])} · {esc(f["dur"])}</small></a>' for f in P.FORMATS)
+    zu = {i: z for _v, i, z in P.PICK}
+    def cells(f):
+        on = [1, 1, 0, 1, 0] if f["id"] == "change-leadership" else [1 if d < f["days"] else 0 for d in range(5)]
+        return "".join(f'<i class="{"on" if o else ""}"></i>' for k, o in enumerate(on))
+    head = '<div class="x-g-head" aria-hidden="true"><span></span>' + "".join(f"<span>Tag {d}</span>" for d in range(1, 6)) + '</div>'
+    rows = "".join(f'<a class="x-g-row" href="/innolab#{f["id"]}"><span class="x-g-name"><b>{esc(f["name"])}</b><small>{esc(f["kind"])} · {esc(f["dur"])}</small></span>'
+                   f'<span class="x-g-cells" aria-label="{esc(f["dur"])}">{cells(f)}</span><span class="x-g-out">{ic("check")}{esc(zu.get(f["id"], ""))}</span></a>' for f in P.FORMATS)
+    days = f'<div class="x-gantt x-rv"><p class="x-g-cap">{ic("calendar")}Fünf Formate im Zeitraster</p>{head}{rows}</div>'
     inner = (_head("04 · Das Angebot", "Von der Absicht zum Ergebnis.",
                    "Fünf InnoLab-Formate vor Ort. Jedes endet mit einem Ergebnis, das Sie weiterverwenden.", "angebote-title")
-             + f'''<div class="x-cmp x-rv" data-p="0">
+             + f'''<div class="x-cmp x-rv show-a" data-p="0">
   <div class="x-cmp-pane x-cmp-a"><h3>{ic("spark")}Ausgangslage</h3><ul>{rows_a}</ul></div>
   <div class="x-cmp-pane x-cmp-b"><h3>{ic("check")}Nach dem InnoLab</h3><ul>{rows_b}</ul></div>
 </div>
 <div class="x-cmp-ctl x-rv"><button type="button" data-to="0">Ausgangslage</button><input id="x-cmp" type="range" min="0" max="100" value="0" aria-label="Ausgangslage oder Ergebnis anzeigen"><button type="button" data-to="100">Ergebnis</button></div>
-<div class="x-fmts">{days}</div>
+{days}
 <p class="x-more"><a class="btn" href="/innolab">InnoLab ansehen {ARROW}</a></p>''')
     return _tile("x-cream", "angebote-title", inner, "innolab")
 
@@ -190,6 +210,8 @@ def ki():
              + f'''<div class="x-cockpit">
   <div class="x-viz x-rv"><p class="x-viz-h">{ic("gap")}KI-Gap<span class="x-badge x-badge-d">Illustratives Beispiel</span></p>
     <div class="x-rings">{ring("m", 82, "Management")}{ring("t", 41, "Mitarbeitende")}</div>
+    <div class="x-scale" aria-hidden="true"><div class="x-sc-track"><span class="x-sc-gap"></span><span class="x-sc-m t"><i></i><b>41</b></span><span class="x-sc-m m"><i></i><b>82</b></span></div>
+      <div class="x-sc-ax"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div></div>
     <p class="x-gapline"><b>41 Punkte KI-Gap</b> zwischen Führungs- und Teamsicht. Illustratives Beispiel, keine Kundendaten.</p></div>
   <div class="x-viz x-rv"><p class="x-viz-h">{ic("layers")}Acht Signale</p><ul class="x-dims">{tiles}</ul>
     <ol class="x-steps3"><li><b>1</b>Acht Aussagen bewerten</li><li><b>2</b>Zwei Sichten angeben</li><li><b>3</b>KI-Gap erhalten</li></ol>

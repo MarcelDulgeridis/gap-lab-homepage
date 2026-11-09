@@ -103,6 +103,7 @@ def enhance(html, page, preview_prefix=None):
         html = re.sub(r'<section class="hero hero-home">.*?</section>\n?', lambda m: hero_home(
             '<svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'), html, count=1, flags=re.S)
 
+    html = add_hero_visual(html, page["path"])
     if preview_prefix:
         html = rewrite_links(html, preview_prefix)
     return html
@@ -161,3 +162,60 @@ def sticky_bar():
     return (f'<div class="x-fbar" aria-hidden="true"><span class="x-fbar-t">{ic("calendar")}<b>Erstgespräch</b><span>kostenlos, 20 bis 30 Minuten</span></span>'
             '<a class="btn" href="/kontakt" tabindex="-1">Termin wählen</a>'
             f'<button class="x-top" type="button" tabindex="-1" aria-label="Zum Seitenanfang">{ic("up")}</button></div>')
+
+
+# ----------------------------------------------------------- Seiten-Hero-Visuals
+def _portrait(key, cls=""):
+    from siteinfo import PARTNERS
+    p = PARTNERS[key]
+    return f'<img class="{cls}" src="{p["img_sm"]}" alt="" width="72" height="72" loading="eager" decoding="async">'
+
+
+def hero_visual(path):
+    from siteinfo import PARTNERS
+    if path == "/leistungen":
+        st = [("pencil", "Konzeption"), ("layers", "Entwicklung"), ("users", "Durchführung"), ("megaphone", "Vermarktung")]
+        lis = "".join(f'<li><span class="x-v-no">0{k+1}</span>{ic(i)}<b>{n}</b></li>' for k, (i, n) in enumerate(st))
+        return f'<div class="x-phv x-phv-chain" aria-hidden="true"><ol>{lis}</ol><p>Einzeln buchbar oder als Kette.</p></div>'
+    if path == "/fokusfelder":
+        return ('<div class="x-phv x-phv-venn" aria-hidden="true"><svg viewBox="0 0 300 280"><circle class="f1" cx="105" cy="105" r="82"/><circle class="f2" cx="195" cy="105" r="82"/>'
+                '<circle class="f3" cx="150" cy="182" r="82"/><text x="80" y="92">Gestalten</text><text x="222" y="92">Führen</text><text x="150" y="232">Wirtschaften</text>'
+                '<text class="c" x="150" y="138">Entscheidung</text><text class="c" x="150" y="154">im Alltag</text></svg></div>')
+    fok = {"/fokusfelder/strategie-vertrieb-innovation": ("oliver-meschkat", "f1", "target", "Gestalten"),
+           "/fokusfelder/leadership-organisation": ("constantin-schubart", "f2", "nav", "Führen"),
+           "/fokusfelder/finance-transformation": ("marcel-dulgeridis", "f3", "coins", "Wirtschaften")}
+    if path in fok:
+        k, c, i, verb = fok[path]
+        p = PARTNERS[k]
+        return (f'<div class="x-phv x-phv-fokus {c}" aria-hidden="true"><div class="x-pf-ring"><img src="{p["img"]}" alt="" width="220" height="220" decoding="async"></div>'
+                f'<span class="x-pf-verb">{ic(i)}{verb}</span><span class="x-pf-name"><b>{p["name"]}</b>{p["role"]} · {p["focus"].replace("&", "&amp;")}</span></div>')
+    if path == "/ueber-uns":
+        av = "".join(_portrait(k) for k in ("oliver-meschkat", "constantin-schubart", "marcel-dulgeridis"))
+        return (f'<div class="x-phv x-phv-org" aria-hidden="true"><span class="x-o x-o1">Schubart &amp; Dulgeridis GmbH<small>Muttergesellschaft</small></span>'
+                f'<i class="x-o-line"></i><span class="x-o x-o2">The Gap Lab GmbH<small>Altdorf bei Nürnberg</small></span><i class="x-o-line"></i><span class="x-o-av">{av}</span></div>')
+    if path == "/kontakt":
+        av = "".join(_portrait(k) for k in ("constantin-schubart", "oliver-meschkat", "marcel-dulgeridis"))
+        return (f'<div class="x-phv x-phv-contact" aria-hidden="true"><span class="x-o-av">{av}</span>'
+                f'<ul><li>{ic("clock")}20 bis 30 Minuten</li><li>{ic("chat")}Microsoft Teams</li><li>{ic("check")}Kostenlos und unverbindlich</li></ul></div>')
+    if path == "/faq":
+        import pages_faq
+        n = len(pages_faq.ALL)
+        qs = [q for _c, q, _a in pages_faq.ALL][:3]
+        cards = "".join(f'<span class="x-qc x-qc{k}"><i>?</i>{q}</span>' for k, q in enumerate(qs))
+        return f'<div class="x-phv x-phv-faq" aria-hidden="true">{cards}<span class="x-big">{n}<small>Antworten</small></span></div>'
+    if path == "/glossar":
+        import pages_glossar
+        t = pages_glossar.terms()
+        letters = sorted({x[0][0].upper() for x in t})
+        tiles = "".join(f"<i>{l}</i>" for l in letters)
+        return f'<div class="x-phv x-phv-gloss" aria-hidden="true"><span class="x-az">{tiles}</span><span class="x-big">{len(t)}<small>Begriffe</small></span></div>'
+    return ""
+
+
+def add_hero_visual(html, path):
+    vis = hero_visual(path)
+    if not vis:
+        return html
+    return re.sub(r'<section class="page-hero"><div class="container">(.*?)</div></section>',
+                  lambda m: f'<section class="page-hero x-ph"><div class="container x-ph-grid"><div class="x-ph-copy">{m.group(1)}</div>{vis}</div></section>',
+                  html, count=1, flags=re.S)
