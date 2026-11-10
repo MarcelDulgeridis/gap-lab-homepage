@@ -184,6 +184,11 @@ def svgs_in(n):
                 yield from svgs_in(c)
 
 
+def has_keep(n):
+    """Enthält der Knoten einen Sprachumschalter (data-keep)? Dann nicht als Segment übersetzen."""
+    return any(isinstance(c, Node) and (any(k == "data-keep" for k, _ in c.attrs) or has_keep(c)) for c in n.children)
+
+
 def text_of(n):
     if isinstance(n, Text):
         return html.unescape(n.raw)
@@ -312,7 +317,7 @@ class Translator:
             for s in svgs_in(n):
                 self.node(s, where)
                 s.raw = DONE
-        if n.tag != "svg" and n.children and inline_only(n) and has_words(text_of(n)):
+        if n.tag != "svg" and n.children and inline_only(n) and has_words(text_of(n)) and not has_keep(n):
             key, tags, xs, dates = skeleton(n)
             # Attribute (aria-label, alt, title) aller Knoten im Segment vor dem Neuaufbau übersetzen
             for tg in tags + xs:
@@ -480,27 +485,29 @@ def _en_target(de_path):
     return SLUGS.get(de_path) or (SLUGS["/"] if de_path == "/404" else None)
 
 
-def lang_mobile(de_path, current):
-    """Handy/Tablet: immer sichtbarer Sprachknopf neben „Menü“, zeigt die jeweils andere Sprache."""
+GLOBE = '<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg>'
+
+
+def _lang_link(cls, de_path, current):
+    """Link zur jeweils anderen Sprache: Globus + Sprachkürzel."""
     e = _en_target(de_path)
     if not e:
         return ""
     if current == "de":
-        return f'<a class="lang-m" href="{e}" hreflang="en" lang="en" data-keep aria-label="English version" title="English version">EN</a>'
+        return f'<a class="{cls}" href="{e}" hreflang="en" lang="en" data-keep aria-label="English version" title="English version">{GLOBE}EN</a>'
     de_href = "/" if de_path == "/404" else de_path
-    return f'<a class="lang-m" href="{de_href}" hreflang="de" lang="de" data-keep aria-label="Deutsche Fassung" title="Deutsche Fassung">DE</a>'
+    return f'<a class="{cls}" href="{de_href}" hreflang="de" lang="de" data-keep aria-label="Deutsche Fassung" title="Deutsche Fassung">{GLOBE}DE</a>'
+
+
+def lang_mobile(de_path, current):
+    """Handy/Tablet: immer sichtbarer Sprachknopf neben „Menü“."""
+    return _lang_link("lang-m", de_path, current)
 
 
 def lang_switch(de_path, current):
-    e = _en_target(de_path)
-    if not e:
-        return ""
-    de_href = de_path
-    if current == "de":
-        return (f'<li class="lang"><span class="lang-cur" aria-current="true">DE</span>'
-                f'<a class="lang-alt" href="{e}" hreflang="en" lang="en" data-keep aria-label="English version">EN</a></li>')
-    return (f'<li class="lang"><a class="lang-alt" href="{de_href}" hreflang="de" lang="de" data-keep aria-label="Deutsche Fassung">DE</a>'
-            f'<span class="lang-cur" aria-current="true">EN</span></li>')
+    """Desktop: Sprachknopf in der Navigation zwischen FAQ und Erstgespräch."""
+    a = _lang_link("lang-alt", de_path, current)
+    return f'<li class="lang">{a}</li>' if a else ""
 
 
 def add_de_alternates(doc, de_path):

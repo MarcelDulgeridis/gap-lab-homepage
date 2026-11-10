@@ -33,6 +33,7 @@ ICONS = {
  'trend': '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
  'up': '<path d="M12 19.5v-15M6 10.5l6-6 6 6"/>',
  'menu': '<path d="M4 7h16M4 12h16M4 17h16"/>',
+ 'globe': '<circle class="a" cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9s-1.2 6.5-3.6 9c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3z"/>',
 }
 
 
