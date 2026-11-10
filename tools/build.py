@@ -29,7 +29,7 @@ import v2  # noqa: E402
 import v2_home  # noqa: E402
 
 PREVIEW = "--preview" in sys.argv
-V2 = PREVIEW or "--live-v2" in sys.argv
+V2 = "--legacy" not in sys.argv  # Redesign v2 ist Standard; --legacy erzeugt das alte Design
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = SITE["domain"]

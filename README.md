@@ -20,11 +20,15 @@ assets/                site.css, site.js, Schriften (lokal, kein Google-Fonts-Ab
 vercel.json            Clean URLs, Security-Header (CSP, HSTS …), Caching
 ```
 
-## Redesign v2 (Vorschau)
+## Redesign v2 (live seit 10. November 2026)
 
-`python3 tools/build.py --preview` erzeugt alle Seiten unter `preview/` (erreichbar als `/preview/...`, `noindex`, interne Links zeigen auf die Vorschau).
-Die Live-Seiten bleiben unverändert. Die Gestaltung liegt in `assets/v2.css`, `assets/v2.js`, `tools/v2.py` (Icons, zweizeilige Navigation mit Sprungmarken, schwebende Leiste) und `tools/v2_home.py` (komplett neu aufgebaute Startseite: Brücken-Hero, Leitung mit Lecks, Stufen-Etagen, Fokus-Perspektiven mit Wegweiser, InnoLab vorher/nachher, KI-Cockpit, Zeitleiste, Begriffs-Explorer). Alle Inhalte stammen aus den bestehenden Modulen, Preise bleiben auf /innolab.
-Übertragen auf die Live-Seite: `python3 tools/build.py --live-v2` (lädt v2 in alle Live-Seiten), danach `python3 tools/audit.py`.
+Das Redesign ist Standard: `python3 tools/build.py` erzeugt alle Seiten im neuen Design.
+Gestaltung: `assets/v2.css`, `assets/v2.js`, `tools/v2.py` (Icons, Seitenkopf-Visuals, schwebende Leiste) und
+`tools/v2_home.py` (Startseite: Brücken-Hero, Leitung mit Lecks, Stufen-Etagen, Fokus-Perspektiven, InnoLab vorher/nachher
+und Zeitraster, KI-Cockpit, Zeitleiste, Begriffs-Explorer). Alle Inhalte stammen aus den bestehenden Modulen, Preise nur auf /innolab.
+
+* `python3 tools/build.py --preview` erzeugt zusätzlich eine Vorschau unter `preview/` (`noindex`), z. B. für neue Entwürfe.
+* `python3 tools/build.py --legacy` erzeugt das alte Design (nur zum Vergleich, nicht deployen).
 
 ## Arbeiten
 
