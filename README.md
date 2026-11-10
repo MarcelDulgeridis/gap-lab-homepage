@@ -20,6 +20,16 @@ assets/                site.css, site.js, Schriften (lokal, kein Google-Fonts-Ab
 vercel.json            Clean URLs, Security-Header (CSP, HSTS …), Caching
 ```
 
+## Redesign v2 (live seit 10. November 2026)
+
+Das Redesign ist Standard: `python3 tools/build.py` erzeugt alle Seiten im neuen Design.
+Gestaltung: `assets/v2.css`, `assets/v2.js`, `tools/v2.py` (Icons, Seitenkopf-Visuals, schwebende Leiste) und
+`tools/v2_home.py` (Startseite: Brücken-Hero, Leitung mit Lecks, Stufen-Etagen, Fokus-Perspektiven, InnoLab vorher/nachher
+und Zeitraster, KI-Cockpit, Zeitleiste, Begriffs-Explorer). Alle Inhalte stammen aus den bestehenden Modulen, Preise nur auf /innolab.
+
+* `python3 tools/build.py --preview` erzeugt zusätzlich eine Vorschau unter `preview/` (`noindex`), z. B. für neue Entwürfe.
+* `python3 tools/build.py --legacy` erzeugt das alte Design (nur zum Vergleich, nicht deployen).
+
 ## Arbeiten
 
 ```bash

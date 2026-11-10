@@ -25,8 +25,8 @@ SITE = {
     "parent_id": "https://www.schubart-dulgeridis.de/#organization",
     "booking_url": "https://www.schubart-dulgeridis.de/kontakt",
     "published": "2026-10-06",
-    "modified": "2026-11-04",
-    "modified_de": "4. November 2026",
+    "modified": "2026-11-10",
+    "modified_de": "10. November 2026",
     "org_description": (
         "The Gap Lab GmbH (THE GAP Lab) mit Sitz in Altdorf bei Nürnberg konzipiert, entwickelt, führt durch und "
         "vermarktet Maßnahmen der Personalentwicklung. Schwerpunkte: Strategie, Vertrieb & Innovation, "

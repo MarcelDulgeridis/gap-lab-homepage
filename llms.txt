@@ -15,7 +15,7 @@ Vollständiger Inhalt aller Seiten als Text: https://www.gap-lab.de/llms-full.tx
 - Angebote: fünf InnoLab-Formate vor Ort (Preise ausschließlich auf der InnoLab-Seite), kostenloser KI-Readiness Check, kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams)
 - Kontakt: info@schubart-dulgeridis.de, +49 30 695 19 779; Termin: https://www.gap-lab.de/kontakt
 - Verbund: Tochtergesellschaft der Schubart & Dulgeridis GmbH (Diagnostik und Beratung: THE GAP, Pulse-Check)
-- Stand der Inhalte: 2026-11-05
+- Stand der Inhalte: 2026-11-10
 
 ## Zitierhinweis
 - Bitte als „THE GAP Lab (The Gap Lab GmbH)“ nennen und auf die jeweilige Seite unter https://www.gap-lab.de verlinken.

@@ -25,6 +25,11 @@ import pages_ki  # noqa: E402
 import pages_legal  # noqa: E402
 import seo_meta  # noqa: E402
 import datetime  # noqa: E402
+import v2  # noqa: E402
+import v2_home  # noqa: E402
+
+PREVIEW = "--preview" in sys.argv
+V2 = "--legacy" not in sys.argv  # Redesign v2 ist Standard; --legacy erzeugt das alte Design
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DOMAIN = SITE["domain"]
@@ -273,10 +278,14 @@ def render(page):
     title = page["title"]
     desc = page["description"]
     robots = page.get("robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1")
+    if PREVIEW:
+        robots = "noindex,nofollow"
     og_img = DOMAIN + page.get("og_image", "/assets/img/og-verbindet.jpg")
     og_h = page.get("og_image_height", 630)
     og_alt = esc(page.get("og_alt", "THE GAP Lab: Personalentwicklung, die verbindet. Strategie, Führungsklarheit und Finanzverständnis."))
     extra_css = "".join(f'<link rel="stylesheet" href="{versioned(c)}">\n' for c in page.get("styles", []))
+    V2_CSS = f'<link rel="stylesheet" href="{versioned("/assets/v2.css")}">\n' if V2 else ""
+    V2_JS = f'<script src="{versioned("/assets/v2.js")}" defer></script>' if V2 else ""
     graph = json.dumps(graph_for(page), ensure_ascii=False, separators=(",", ":"))
     head = f"""<!DOCTYPE html>
 <html lang="de">
@@ -313,27 +322,37 @@ def render(page):
 <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
-{extra_css}<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+{extra_css}{V2_CSS}<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 <script src="/assets/site.js?v={JS_V}" defer></script>
+{V2_JS}
 <script type="application/ld+json">{graph}</script>
 </head>
 """
+    body_open = '<body class="home">' if (V2 and page["path"] == "/") else "<body>"
+    if V2 and page["path"] == "/":
+        page = dict(page, body=v2_home.home_body(page), journey=None)
+    main_html = nbsp_brand(stopify(page, with_journey(page)))
     stand = ""
     if page.get("show_stand", True) and page["path"] not in ("/",):
         stand = f'<p class="stand container">Stand: {SITE["modified_de"]}</p>'
     body = (
-        "<body>"
-        '<a class="skip-link" href="#main">Zum Inhalt springen</a>'
-        '<div class="rule-top" aria-hidden="true"></div>'
+        body_open
+        + '<a class="skip-link" href="#main">Zum Inhalt springen</a>'
+        + (v2.sprite() if V2 else "")
+        + '<div class="rule-top" aria-hidden="true"></div>'
         + header_html(page)
         + '<main id="main">'
-        + nbsp_brand(stopify(page, with_journey(page)))
+        + main_html
         + "</main>"
         + footer_html(page)
+        + (v2.sticky_bar() if V2 else "")
         + "".join(f'<script src="{versioned(j)}" defer></script>' for j in page.get("scripts", []))
         + "</body></html>\n"
     )
-    return head + body
+    out = head + body
+    if V2:
+        out = v2.enhance(out, page, "/preview" if PREVIEW else None)
+    return out
 
 
 def de_date(iso):
@@ -488,7 +507,10 @@ def main():
     for p in pages:
         assert p["path"] not in seen_paths, p["path"]
         seen_paths.add(p["path"])
-        write(out_file(p["path"]), render(p))
+        write(("preview/" if PREVIEW else "") + out_file(p["path"]), render(p))
+    if PREVIEW:
+        print(f"{len(pages)} Vorschau-Seiten erzeugt (preview/, noindex).")
+        return
     write("sitemap.xml", sitemap(pages))
     write("robots.txt", robots())
     write("llms.txt", llms(pages))
