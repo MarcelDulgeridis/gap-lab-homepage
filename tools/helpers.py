@@ -50,7 +50,7 @@ def faq_block(items):
 def breadcrumb_html(page):
     if page["path"] == "/":
         return ""
-    items = [("Start", "/")] + list(page.get("crumbs", []))
+    items = [("Startseite", "/")] + list(page.get("crumbs", []))
     lis = "".join(f'<li><a href="{esc(p)}">{esc(n)}</a></li>' for n, p in items)
     lis += f'<li aria-current="page">{esc(page["short"])}</li>'
     return f'<nav class="breadcrumb" aria-label="Brotkrumen"><ol>{lis}</ol></nav>'

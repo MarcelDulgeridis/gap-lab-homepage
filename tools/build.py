@@ -104,7 +104,7 @@ def org_node():
 
 
 def breadcrumb_node(page):
-    items = [("Start", "/")] + list(page.get("crumbs", []))
+    items = [("Startseite", "/")] + list(page.get("crumbs", []))
     if page["path"] != "/" and not page.get("crumbs"):
         items.append((page["short"], page["path"]))
     elif page["path"] != "/":
@@ -210,7 +210,7 @@ def header_html(page):
         items.append(f'<li><a{cls} href="{esc(path)}"{cur}>{esc(label)}</a></li>')
     return (
         '<header class="site-header" data-open="false"><div class="container header-inner">'
-        f'<a class="brand" href="/" aria-label="THE GAP Lab — Startseite">THE GAP <span>Lab</span><em class="brand-tagline">Personalentwicklung</em></a>'
+        f'<a class="brand" href="/" aria-label="THE GAP Lab Personalentwicklung, zur Startseite">THE GAP <span>Lab</span><em class="brand-tagline">Personalentwicklung</em></a>'
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>'
         f'<nav class="site-nav" id="site-nav" aria-label="Hauptnavigation"><ul>{"".join(items)}</ul></nav>'
         "</div></header>"
@@ -323,14 +323,12 @@ def render(page):
 <link rel="preload" href="/assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v={CSS_V}">
 {extra_css}{V2_CSS}<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
-<script src="/assets/site.js?v={JS_V}" defer></script>
+<script src="/assets/site.js?v={JS_V}"></script>
 {V2_JS}
 <script type="application/ld+json">{graph}</script>
 </head>
 """
     body_open = '<body class="home">' if (V2 and page["path"] == "/") else "<body>"
-    if V2 and page["path"] == "/":
-        page = dict(page, body=v2_home.home_body(page), journey=None)
     main_html = nbsp_brand(stopify(page, with_journey(page)))
     stand = ""
     if page.get("show_stand", True) and page["path"] not in ("/",):
@@ -396,6 +394,12 @@ def all_pages():
     pages += pages_glossar.build()
     pages += pages_legal.build()
     seo_meta.apply(pages)
+    if V2:
+        # Startseite im Redesign: Inhalt vor lastmod/llms-full einsetzen, damit Sitemap, dateModified und llms-full.txt den Live-Stand zeigen
+        for p in pages:
+            if p["path"] == "/":
+                p["body"] = v2_home.home_body(p)
+                p["journey"] = None
     return assign_lastmod(pages)
 
 
@@ -493,6 +497,9 @@ def llms_full(pages):
             continue
         out += [f"## {p['title']}", f"URL: {url_of(p['path'])}", ""]
         body = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", p["body"], flags=re.S)
+        # Bedienelemente (Schalter, Regler, Reiter) sind kein Inhalt: für KI-Textfassung entfernen
+        body = re.sub(r"<(button|output|label)\b[^>]*>.*?</\1>", "", body, flags=re.S)
+        body = re.sub(r"<input\b[^>]*>", "", body)
         body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|span|strong|small|b|em|a)>\s*(?=<(?:p|li|h[1-6]|div|section|dt|dd|tr|article|details|summary|span|strong|small|b|em|a)\b)", " ", body)
         body = re.sub(r"</(p|li|h[1-6]|div|section|dt|dd|tr|article|summary|details|ul|ol|dl)>", "¶", body)
         text = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body))).replace("\u00ad", "").replace("\u00a0", " ")

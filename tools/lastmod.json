@@ -1,7 +1,7 @@
 {
  "/": {
-  "date": "2026-11-05",
-  "hash": "d320857beddc"
+  "date": "2026-11-10",
+  "hash": "c6ed7604ca8e"
  },
  "/404": {
   "date": "2026-11-04",
@@ -9,35 +9,35 @@
  },
  "/datenschutz": {
   "date": "2026-11-10",
-  "hash": "eec3e38f8a14"
+  "hash": "572a91906b3b"
  },
  "/faq": {
-  "date": "2026-11-05",
-  "hash": "650a3904ecfc"
+  "date": "2026-11-10",
+  "hash": "995e16652dda"
  },
  "/fokusfelder": {
-  "date": "2026-11-05",
-  "hash": "4b4b234b6caa"
+  "date": "2026-11-10",
+  "hash": "6952dfdb2e75"
  },
  "/fokusfelder/finance-transformation": {
-  "date": "2026-11-05",
-  "hash": "ee9a1420ed4c"
+  "date": "2026-11-10",
+  "hash": "574b3c1b5bd8"
  },
  "/fokusfelder/leadership-organisation": {
-  "date": "2026-11-05",
-  "hash": "cb212e02bc89"
+  "date": "2026-11-10",
+  "hash": "a3225c8685d3"
  },
  "/fokusfelder/strategie-vertrieb-innovation": {
-  "date": "2026-11-05",
-  "hash": "2d3d8ed70111"
+  "date": "2026-11-10",
+  "hash": "8cb93d59c10b"
  },
  "/glossar": {
-  "date": "2026-11-05",
-  "hash": "a8cc9bfbb2a5"
+  "date": "2026-11-10",
+  "hash": "4921f1eb6c76"
  },
  "/impressum": {
-  "date": "2026-11-04",
-  "hash": "26ebe0d5e8a2"
+  "date": "2026-11-10",
+  "hash": "7b2bb7c3143c"
  },
  "/innolab": {
   "date": "2026-11-04",
@@ -48,15 +48,15 @@
   "hash": "43d04d019abb"
  },
  "/kontakt": {
-  "date": "2026-11-05",
-  "hash": "672ffccb93b7"
+  "date": "2026-11-10",
+  "hash": "cf41aa6f81da"
  },
  "/leistungen": {
-  "date": "2026-11-05",
-  "hash": "c8d833099d9a"
+  "date": "2026-11-10",
+  "hash": "1f83254b883f"
  },
  "/ueber-uns": {
-  "date": "2026-11-05",
-  "hash": "a5e82d49e811"
+  "date": "2026-11-10",
+  "hash": "c731debe2406"
  }
 }
