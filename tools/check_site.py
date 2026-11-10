@@ -104,7 +104,7 @@ for u, h in pages.items():
     if len(t) > 62: W(u, f"Title {len(t)} Zeichen (max. 62)")
     if len(d) > 160: W(u, f"Description {len(d)} Zeichen (max. 160)")
     img = re.search(r'og:image" content="https://www\.gap-lab\.de(/[^"]+)"', h)
-    if not img or not os.path.isfile(ROOT + img.group(1)): E(u, "og:image-Datei fehlt")
+    if not img or not os.path.isfile(ROOT + img.group(1).split("?")[0]): E(u, "og:image-Datei fehlt")
     if u not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-verbindet" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
     if '"dateModified"' not in h: E(u, "dateModified fehlt")
     # Haupt-Suchbegriff in H1 oder Title

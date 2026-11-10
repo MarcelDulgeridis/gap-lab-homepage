@@ -29,6 +29,7 @@ und Zeitraster, KI-Cockpit, Zeitleiste, Begriffs-Explorer). Alle Inhalte stammen
 
 * `python3 tools/build.py --preview` erzeugt zusätzlich eine Vorschau unter `preview/` (`noindex`), z. B. für neue Entwürfe.
 * `python3 tools/build.py --legacy` erzeugt das alte Design (nur zum Vergleich, nicht deployen).
+* `python3 tools/make_og_v2.py` erzeugt die Social-Bilder (1200x630) im neuen Design, plattformunabhängig (Node + Playwright). Texte aus `tools/seo_meta.py`; die og:image-URLs tragen einen Versionsparameter, damit LinkedIn & Co. neue Bilder laden.
 
 ## Arbeiten
 

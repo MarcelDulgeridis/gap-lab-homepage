@@ -30,7 +30,7 @@ def ki_readiness():
         "description": DESC,
         "priority": "0.8", "llms_group": "Werkzeuge", "faqs": faqs,
         "show_stand": False, "modified": "2026-11-04",
-        "og_image": "/assets/img/og-ki-readiness.jpg", "og_image_height": 627,
+        "og_image": "/assets/img/og-ki-readiness.jpg", "og_image_height": 630,
         "og_alt": "KI-Readiness Check von THE GAP Lab: Management- und Mitarbeitendensicht im Vergleich",
         "styles": ["/assets/ki-readiness.css"], "scripts": ["/assets/ki-readiness.js"], "speakable": False,
         "schema_nodes": [{

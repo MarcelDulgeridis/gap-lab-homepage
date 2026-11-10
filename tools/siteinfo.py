@@ -22,6 +22,7 @@ SITE = {
     "phone_e164": "+493069519779",
     "parent_name": "Schubart & Dulgeridis GmbH",
     "parent_url": "https://www.schubart-dulgeridis.de/",
+    "linkedin": "https://www.linkedin.com/company/the-gap-lab-gmbh/",
     "parent_id": "https://www.schubart-dulgeridis.de/#organization",
     "booking_url": "https://www.schubart-dulgeridis.de/kontakt",
     "published": "2026-10-06",
@@ -137,6 +138,7 @@ FOOTER_LINKS = [
         ("Kontakt", "/kontakt"),
         ("Impressum", "/impressum"),
         ("Datenschutz", "/datenschutz"),
+        ("LinkedIn", "https://www.linkedin.com/company/the-gap-lab-gmbh/"),
         ("Schubart & Dulgeridis GmbH", "https://www.schubart-dulgeridis.de/"),
     ]),
 ]

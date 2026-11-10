@@ -82,7 +82,7 @@ def org_node():
         "knowsAbout": SITE["knows_about"],
         "slogan": "Personalentwicklung, die im Arbeitsalltag ankommt.",
         "areaServed": {"@type": "Country", "name": "Deutschland"},
-        "sameAs": [SITE["parent_url"]],
+        "sameAs": [SITE["parent_url"], SITE["linkedin"]],
         "alternateName": ["The Gap Lab", "The Gap Lab GmbH"],
         "hasOfferCatalog": {
             "@type": "OfferCatalog", "name": "Leistungen von THE GAP Lab",
@@ -280,7 +280,8 @@ def render(page):
     robots = page.get("robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1")
     if PREVIEW:
         robots = "noindex,nofollow"
-    og_img = DOMAIN + page.get("og_image", "/assets/img/og-verbindet.jpg")
+    og_path = page.get("og_image", "/assets/img/og-verbindet.jpg")
+    og_img = DOMAIN + og_path + "?v=" + asset_hash(og_path.lstrip("/"))  # Versionsparameter: Social-Netzwerke laden neue Bilder statt Cache
     og_h = page.get("og_image_height", 630)
     og_alt = esc(page.get("og_alt", "THE GAP Lab: Personalentwicklung, die verbindet. Strategie, Führungsklarheit und Finanzverständnis."))
     extra_css = "".join(f'<link rel="stylesheet" href="{versioned(c)}">\n' for c in page.get("styles", []))
@@ -458,6 +459,7 @@ def llms(pages):
         "- Fokusfelder: Strategie, Vertrieb & Innovation (Dr. Oliver Meschkat), Leadership & Organisation (Prof. Dr. Constantin Schubart), Finance & Transformation (Prof. Dr. Marcel Dulgeridis)",
         "- Angebote: fünf InnoLab-Formate vor Ort (Preise ausschließlich auf der InnoLab-Seite), kostenloser KI-Readiness Check, kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams)",
         f"- Kontakt: {SITE['email']}, {SITE['phone']}; Termin: {DOMAIN}/kontakt",
+        f"- LinkedIn: {SITE['linkedin']}",
         f"- Verbund: Tochtergesellschaft der {SITE['parent_name']} (Diagnostik und Beratung: THE GAP, Pulse-Check)",
         f"- Stand der Inhalte: {max(p.get('modified', SITE['modified']) for p in pages)}",
         "",
