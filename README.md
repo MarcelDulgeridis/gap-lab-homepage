@@ -31,6 +31,22 @@ und Zeitraster, KI-Cockpit, Zeitleiste, Begriffs-Explorer). Alle Inhalte stammen
 * `python3 tools/build.py --legacy` erzeugt das alte Design (nur zum Vergleich, nicht deployen).
 * `python3 tools/make_og_v2.py` erzeugt die Social-Bilder (1200x630) im neuen Design, plattformunabhängig (Node + Playwright). Texte aus `tools/seo_meta.py`; die og:image-URLs tragen einen Versionsparameter, damit LinkedIn & Co. neue Bilder laden.
 
+## Englische Fassung (/en)
+
+Jede deutsche Seite hat eine englische Entsprechung unter `/en/…` (z. B. `/leistungen` → `/en/services`). Umschalter DE | EN
+in der Kopfzeile, auf dem Handy im Menü. Die englischen Seiten entstehen beim Build automatisch aus den fertigen deutschen Seiten:
+
+* `tools/i18n.py`: Übersetzung der erzeugten HTML-Seiten über einen Katalog, Adresszuordnung (`SLUGS`), hreflang de/en/x-default,
+  `og:locale` en_GB, JSON-LD auf Englisch, eigene Skriptfassungen `assets/*.en.js`, Hinweis „nur die deutsche Fassung ist verbindlich“
+  auf Impressum und Datenschutz.
+* `tools/i18n/en.json`: Katalog (Schlüssel = deutscher Text, Wert = englischer Text). Platzhalter `<g0>…</g0>` und `<x0/>` exakt übernehmen,
+  Skripttexte mit Präfix `js:`.
+* `tools/i18n/STYLE.md`: Styleguide und Glossar (britisches Englisch, feste Begriffe, Preisformat `€13,300`).
+* Neue oder geänderte deutsche Texte: `python3 tools/build.py --i18n-todo` schreibt die fehlenden Einträge nach `tools/i18n/todo_en.json`
+  (wird nicht eingecheckt). Übersetzen, in `en.json` eintragen, neu bauen. Der Build meldet die Zahl fehlender Übersetzungen;
+  fehlende Texte bleiben bis dahin deutsch.
+* Social-Bilder: `python3 tools/make_og_v2.py` erzeugt zu jedem Motiv auch die englische Fassung `og-*.en.jpg`.
+
 ## Arbeiten
 
 ```bash
@@ -52,7 +68,7 @@ CSS/JS erhalten automatisch einen Hash als `?v=`-Parameter (immutable Caching, k
 
 ## SEO / GEO
 
-* Pro Seite: eigener Title, Description, Canonical, hreflang (de, x-default), Open Graph, Twitter Card, Breadcrumbs.
+* Pro Seite: eigener Title, Description, Canonical, hreflang (de, en, x-default), Open Graph, Twitter Card, Breadcrumbs.
 * JSON-LD: `Organization` (mit Handelsregister-Kennung, Mutter-/Tochter-Beziehung zu schubart-dulgeridis.de), `WebSite`, `WebPage`/`AboutPage`/`ContactPage`/`CollectionPage`, `BreadcrumbList`, `Service`, `FAQPage`, `Person`.
 * Answer-First-Boxen („Kurzantwort“) auf Leistungs- und Fokusfeldseiten, FAQ mit Seiten-Schema, `llms.txt`, KI-Crawler in `robots.txt` ausdrücklich erlaubt.
 * Nach dem Livegang: Sitemap in Google Search Console und Bing Webmaster Tools einreichen.

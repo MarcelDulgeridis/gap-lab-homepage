@@ -2,10 +2,15 @@
 """Inhaltliche Vollprüfung der gebauten Seiten: Links/Anker, IDs, Überschriften, Bilder, JSON-LD, Preisregel, Wortwiederholungen."""
 import glob, json, os, re, sys, collections, html
 from html.parser import HTMLParser
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from i18n import SLUGS
+
+DE = {en: de for de, en in SLUGS.items()}  # englische Seite -> deutsche Entsprechung für die Ausnahmeregeln
+def base(u): return DE.get(u, u)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 pages = {}
-for f in glob.glob(ROOT + "/*.html") + glob.glob(ROOT + "/fokusfelder/*.html"):
+for f in glob.glob(ROOT + "/*.html") + glob.glob(ROOT + "/fokusfelder/*.html") + glob.glob(ROOT + "/en/**/*.html", recursive=True):
     rel = os.path.relpath(f, ROOT)[:-5]
     url = "/" if rel == "index" else "/" + rel
     pages[url] = open(f, encoding="utf-8").read()
@@ -70,7 +75,7 @@ for u, p in info.items():
         if frag and tgt in info and frag not in info[tgt].ids: E(u, f"Anker fehlt {href}")
     # Preisregel
     txt = " ".join(p.text)
-    if u != "/innolab" and re.search(r"€|\bEUR\b|Festpreis|netto|zzgl\. ?USt", txt) and u not in ("/impressum", "/datenschutz"):
+    if base(u) != "/innolab" and re.search(r"€|\bEUR\b|Festpreis|netto|zzgl\. ?USt", txt) and base(u) not in ("/impressum", "/datenschutz"):
         W(u, "Preisbegriff außerhalb InnoLab: " + ", ".join(sorted(set(re.findall(r"€|EUR|Festpreis|netto|zzgl\. ?USt", txt)))))
     # Überschriften-Regeln: Frage/Imperativ
     for t, txt in p.heads:
@@ -105,11 +110,12 @@ for u, h in pages.items():
     if len(d) > 160: W(u, f"Description {len(d)} Zeichen (max. 160)")
     img = re.search(r'og:image" content="https://www\.gap-lab\.de(/[^"]+)"', h)
     if not img or not os.path.isfile(ROOT + img.group(1).split("?")[0]): E(u, "og:image-Datei fehlt")
-    if u not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-verbindet" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
+    if base(u) not in ("/", "/impressum", "/datenschutz", "/ki-readiness", "/innolab", "/404") and img and "og-verbindet" in img.group(1): W(u, "nutzt das Standard-Social-Bild")
     if '"dateModified"' not in h: E(u, "dateModified fehlt")
     # Haupt-Suchbegriff in H1 oder Title
     m1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S); h1t = html.unescape(re.sub(r"<[^>]+>", "", m1.group(1))).replace("\u00ad", "")
-    if u not in ("/impressum", "/datenschutz", "/ki-readiness") and not set(re.findall(r"\w{6,}", t.lower())) & set(re.findall(r"\w{6,}", h1t.lower())): W(u, "Title und H1 teilen kein Schlüsselwort")
+    kw = r"\w{5,}" if u.startswith("/en") else r"\w{6,}"  # englische Kernbegriffe sind kürzer (focus, areas)
+    if base(u) not in ("/impressum", "/datenschutz", "/ki-readiness") and not set(re.findall(kw, t.lower())) & set(re.findall(kw, h1t.lower())): W(u, "Title und H1 teilen kein Schlüsselwort")
 
 # ---- Schema-Tiefenprüfung
 for u, h in pages.items():

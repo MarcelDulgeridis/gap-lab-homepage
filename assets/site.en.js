@@ -7,7 +7,7 @@
     function setOpen(open) {
       header.setAttribute("data-open", open ? "true" : "false");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.textContent = open ? "Schließen" : "Menü";
+      toggle.textContent = open ? "Close" : "Menu";
     }
     toggle.addEventListener("click", function () {
       setOpen(header.getAttribute("data-open") !== "true");

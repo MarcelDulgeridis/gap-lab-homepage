@@ -100,7 +100,7 @@
         planks.forEach(function (p, k) { p.classList.toggle("on", k < v); });
         out.textContent = v + " / 4";
         var names = $(".x-planks").getAttribute("data-names").split("|");
-        st.textContent = v >= 4 ? st.getAttribute("data-s2") : v === 0 ? st.getAttribute("data-s0") : "Stufe " + v + " · " + names[v - 1];
+        st.textContent = v >= 4 ? st.getAttribute("data-s2") : v === 0 ? st.getAttribute("data-s0") : "Stage " + v + " · " + names[v - 1];
         render.classList.toggle("is-done", v >= 4);
       };
       rg.addEventListener("input", function () { setB(+rg.value); });

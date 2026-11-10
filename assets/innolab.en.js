@@ -22,7 +22,7 @@
       if (k === i) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current");
       t.classList.toggle("on", k === i);
     });
-    if (count) { count.setAttribute("aria-live", "polite"); count.textContent = "Format " + (i + 1) + " von " + panels.length; }
+    if (count) { count.setAttribute("aria-live", "polite"); count.textContent = "Format " + (i + 1) + " of " + panels.length; }
     if (opts.focus) tabs[i].focus();
     if (opts.hash !== false && history.replaceState) history.replaceState(null, "", "#" + panels[i].id);
     if (opts.scroll) {

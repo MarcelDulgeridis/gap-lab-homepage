@@ -101,6 +101,9 @@ class Raw:
         self.raw = raw
 
 
+ATTR_NAME = re.compile(r"""\s([^\s=/>"']+)(?=\s*=|\s|/?>)""")
+
+
 class Builder(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=False)
@@ -116,13 +119,21 @@ class Builder(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         tag = self._case(tag)
-        n = Node(tag, attrs)
+        n = Node(tag, self._attr_case(attrs))
         self.stack[-1].children.append(n)
         if tag not in VOID:
             self.stack.append(n)
 
     def handle_startendtag(self, tag, attrs):
-        self.stack[-1].children.append(Node(self._case(tag), attrs, selfclose=True))
+        self.stack[-1].children.append(Node(self._case(tag), self._attr_case(attrs), selfclose=True))
+
+    def _attr_case(self, attrs):
+        """HTMLParser schreibt Attributnamen klein; SVG-Attribute (viewBox) behalten ihre Schreibweise aus dem Original."""
+        raw = self.get_starttag_text() or ""
+        if not any(ch.isupper() for ch in raw):
+            return attrs
+        names = {m.lower(): m for m in ATTR_NAME.findall(re.sub(r"\"[^\"]*\"|'[^']*'", '""', raw))}
+        return [(names.get(k, k), v) for k, v in attrs]
 
     def handle_endtag(self, tag):
         tag = self._case(tag)
@@ -159,6 +170,18 @@ def serialize(n):
     if n.selfclose or n.tag in VOID:
         return start_tag(n)
     return start_tag(n) + inner + f"</{n.tag}>"
+
+
+DONE = object()  # Markierung in Node.raw: Knoten ist bereits übersetzt
+
+
+def svgs_in(n):
+    for c in n.children:
+        if isinstance(c, Node):
+            if c.tag == "svg":
+                yield c
+            else:
+                yield from svgs_in(c)
 
 
 def text_of(n):
@@ -277,11 +300,16 @@ class Translator:
 
     # ---------- Baum übersetzen
     def node(self, n, where):
-        if isinstance(n, (Text, Raw)):
+        if isinstance(n, (Text, Raw)) or n.raw is DONE:
             return
         if n.tag in RAW:
             return
         self.attrs(n, where)
+        if n.tag != "svg" and n.children and inline_only(n):
+            # Grafiken im Segment werden zum Platzhalter; ihre Texte (title, text) vorher übersetzen
+            for s in svgs_in(n):
+                self.node(s, where)
+                s.raw = DONE
         if n.tag != "svg" and n.children and inline_only(n) and has_words(text_of(n)):
             key, tags, xs, dates = skeleton(n)
             if key:
@@ -292,7 +320,7 @@ class Translator:
                         self.attrs(tg, where)
                     return
             for c in n.children:
-                if isinstance(c, Node):
+                if isinstance(c, Node) and c.raw is not DONE:
                     self.attrs(c, where)
             return
         for i, c in enumerate(n.children):
@@ -413,12 +441,6 @@ def to_en(doc, de_path, tr, js_versions):
     # Sprachumschalter: auf der englischen Seite zur deutschen Seite
     doc = re.sub(r'<li class="lang">.*?</li>', lang_switch(de_path, "en"), doc, count=1, flags=re.S)
     root = parse(doc)
-    tr.node(root, where)
-    if de_path in ("/impressum", "/datenschutz"):
-        doc_tmp = serialize(root)
-        doc_tmp = re.sub(r"(</h1>)", lambda m: m.group(1) + LEGAL_NOTE.format(de=de_path), doc_tmp, count=1)
-        root = parse(doc_tmp)
-
     # Links umschreiben (außer Sprachumschalter)
     def fix(n):
         if isinstance(n, Node):
@@ -427,6 +449,12 @@ def to_en(doc, de_path, tr, js_versions):
             for c in n.children:
                 fix(c)
     fix(root)
+    tr.node(root, where)
+    if de_path in ("/impressum", "/datenschutz"):
+        doc_tmp = serialize(root)
+        doc_tmp = re.sub(r"(</h1>)", lambda m: m.group(1) + LEGAL_NOTE.format(de=de_path), doc_tmp, count=1)
+        root = parse(doc_tmp)
+
     return serialize(root)
 
 
@@ -464,21 +492,22 @@ def add_de_alternates(doc, de_path):
 
 
 # ------------------------------------------------------------------ Skripte
-STR_RX = re.compile(r'"((?:[^"\\\n]|\\.)*)"')
+STR_RX = re.compile(r'"((?:[^"\\\n]|\\.)*)"|\'((?:[^\'\\\n]|\\.)*)\'')  # "…" oder '…', zeilenweise
 
 
 def js_en(src, tr, name):
     """Deutsche String-Literale in einem Skript durch Übersetzungen ersetzen (Schlüssel: Literal-Inhalt)."""
     def rep(m):
-        s = m.group(1)
-        if not re.search(r"[A-Za-zÄÖÜäöüß]{3,}", s) or re.fullmatch(r"[\w\-.#\[\]=:,> ]+", s) and not re.search(r"[äöüÄÖÜß ]", s):
+        q = '"' if m.group(1) is not None else "'"
+        s = m.group(1) if q == '"' else m.group(2)
+        v = tr.cat.get("js:" + s)  # Katalogeintrag zuerst: auch Einzelwörter wie "Kompetenzen", die wie Bezeichner aussehen
+        if v is None and (not re.search(r"[A-Za-zÄÖÜäöüß]{3,}", s) or re.fullmatch(r"[\w\-.#\[\]=:,> ]+", s) and not re.search(r"[äöüÄÖÜß ]", s)):
             return m.group(0)
-        v = tr.cat.get("js:" + s)
         if v is None:
             if re.search(r"[äöüÄÖÜß]|\b(und|der|die|das|mit|von|für|nicht|Ihr|Sie|wir|ist|eine?)\b", s):
                 tr.missing.setdefault("js:" + s, "assets/" + name)
             return m.group(0)
-        return '"' + v.replace('"', '\\"') + '"'
+        return q + v.replace(q, "\\" + q) + q
     out = STR_RX.sub(rep, src)
     return out.replace('"de-DE"', '"en-GB"')
 

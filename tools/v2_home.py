@@ -99,9 +99,9 @@ def problem():
     leaks = "".join(f'<g class="x-leak" data-i="{k}"><circle class="x-leak-ring" cx="{x}" cy="70" r="15"/><circle class="x-leak-dot" cx="{x}" cy="70" r="6"/>'
                     f'<path class="x-drip" d="M{x} 88v26"/><text x="{x}" y="140" text-anchor="middle">{k+1:02d}</text></g>' for k, x in enumerate(xs))
     svg = f"""<svg class="x-pipe" viewBox="0 0 920 160" role="img" aria-labelledby="x-pipe-t"><title id="x-pipe-t">Schema: Auf dem Weg vom Beschluss in den Alltag geht an vier Stellen Wirkung verloren.</title>
-<rect class="x-pipe-end" x="0" y="44" width="96" height="52"/><text class="x-pipe-lab" x="48" y="75" text-anchor="middle">Beschluss</text>
-<rect class="x-pipe-end x-pipe-end-r" x="824" y="44" width="96" height="52"/><text class="x-pipe-lab x-pipe-lab-r" x="872" y="75" text-anchor="middle">Alltag</text>
-<path class="x-pipe-track" d="M96 70H824"/><path class="x-pipe-flow" d="M96 70H824"/>{leaks}</svg>"""
+<rect class="x-pipe-end" x="0" y="44" width="128" height="52"/><text class="x-pipe-lab" x="64" y="75" text-anchor="middle">Beschluss</text>
+<rect class="x-pipe-end x-pipe-end-r" x="792" y="44" width="128" height="52"/><text class="x-pipe-lab x-pipe-lab-r" x="856" y="75" text-anchor="middle">Alltag</text>
+<path class="x-pipe-track" d="M128 70H792"/><path class="x-pipe-flow" d="M128 70H792"/>{leaks}</svg>"""
     cards = "".join(
         f'<li class="x-break {c} x-rv" data-i="{k}"><span class="x-break-ic">{ic(i)}</span><span class="x-break-no">{k+1:02d}</span>'
         f'<span class="x-tag">{t}</span><h3><a href="{href}">{h}</a></h3><p>{p}</p></li>'

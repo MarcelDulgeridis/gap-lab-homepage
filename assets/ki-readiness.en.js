@@ -14,59 +14,59 @@
     };
 
     var SIGNALS = [
-      { id: "strategy", no: "01", label: "Strategie & Zielbild",
-        prompt: "KI ist Teil unserer Strategie, mit klaren Zielen für Effizienz, Qualität oder Kundenmehrwert, nicht nur ein Tooltest.",
-        why: "Ohne Zielbild bleiben KI-Initiativen Stückwerk und konkurrieren um dieselben Ressourcen.",
-        action: "KI-Zielbild für die nächsten 12 Monate in drei messbare Outcomes und zwei bewusste Nicht-Ziele übersetzen." },
-      { id: "usecases", no: "02", label: "Anwendungsfälle",
-        prompt: "Wir haben konkrete KI-Anwendungsfälle, priorisiert nach Nutzen, Aufwand und Risiko.",
-        why: "Wer alles gleichzeitig pilotiert, kann am Ende nichts belegen.",
-        action: "Fünf Kandidaten auf einer Nutzen-Umsetzbarkeits-Matrix bewerten und genau einen Piloten mit Erfolgskriterium starten." },
-      { id: "data", no: "03", label: "Daten & Systeme",
-        prompt: "Dokumente und Daten liegen strukturiert vor, unsere Systeme sind integriert und Zugriffsrechte geklärt.",
-        why: "KI ist nur so gut wie die Daten, auf die sie zugreifen darf.",
-        action: "Für den priorisierten Anwendungsfall Datenquellen, Qualität und Zugriffsrechte prüfen und die größte Lücke schließen." },
-      { id: "governance", no: "04", label: "Governance & Recht",
-        prompt: "Es gibt verbindliche Regeln zur KI-Nutzung: freigegebene Tools, Datenschutz, Vertraulichkeit und Prüfpflichten.",
-        why: "Fehlen klare Regeln, entsteht Schatten-KI mit Haftungs- und Reputationsrisiko.",
-        action: "Eine einseitige KI-Nutzungsrichtlinie mit Tool-Freigabeliste, Datenklassen und Vier-Augen-Regel verabschieden." },
-      { id: "skills", no: "05", label: "Kompetenzen",
-        prompt: "Mitarbeitende können KI sicher anwenden und Ergebnisse fachlich prüfen. Es gibt Schulungen und Ansprechpersonen.",
-        why: "Die EU-KI-Verordnung verlangt KI-Kompetenz. Ohne sie steigt das Risiko von Fehlanwendung.",
-        action: "Rollenbasierte Kurzschulung an echten Arbeitssituationen aufsetzen und je Team eine:n KI-Multiplikator:in benennen." },
-      { id: "leadership", no: "06", label: "Führung & Change",
-        prompt: "Die Führung unterstützt KI sichtbar, bindet Mitarbeitende ein und adressiert Sorgen offen.",
-        why: "Ohne sichtbare Führung verliert jede KI-Initiative nach dem Kick-off an Dynamik.",
-        action: "Ein gemeinsames Führungsnarrativ formulieren: Warum KI, was ändert sich, was bleibt. Dazu ein offenes Q&A-Format." },
-      { id: "adoption", no: "07", label: "Nutzung im Alltag",
-        prompt: "KI wird im Arbeitsalltag tatsächlich genutzt. Nutzung und Abbruchgründe sind sichtbar.",
-        why: "Bereitgestellt ist nicht genutzt. Ohne Nutzungsdaten bleibt Wirkung eine Annahme.",
-        action: "Vier Wochen lang Nutzung und Abbruchgründe getrennt erfassen und in einem festen Review besprechen." },
-      { id: "impact", no: "08", label: "Wirkung & Business Case",
-        prompt: "Für KI-Vorhaben gibt es Baseline, Zielwert und KPIs zu Zeit, Qualität, Kosten oder Risiko.",
-        why: "Ohne Baseline lässt sich weder Wirkung belegen noch die nächste Investition begründen.",
-        action: "Für den Piloten Baseline, Zielwert, Datenquelle und Review-Termin festlegen, bevor er startet." }
+      { id: "strategy", no: "01", label: "Strategy & Vision",
+        prompt: "AI is part of our strategy, with clear goals for efficiency, quality or customer value, not just a tool trial.",
+        why: "Without a clear vision, AI initiatives remain piecemeal and compete for the same resources.",
+        action: "Translate the AI vision for the next 12 months into three measurable outcomes and two deliberate non-goals." },
+      { id: "usecases", no: "02", label: "Use Cases",
+        prompt: "We have concrete AI use cases, prioritised by benefit, effort and risk.",
+        why: "If you pilot everything at once, you cannot prove anything in the end.",
+        action: "Assess five candidates on a benefit–feasibility matrix and launch exactly one pilot with a success criterion." },
+      { id: "data", no: "03", label: "Data & Systems",
+        prompt: "Documents and data are structured, our systems are integrated and access rights are clearly defined.",
+        why: "AI is only as good as the data it is allowed to access.",
+        action: "For the prioritised use case, review data sources, quality and access rights and close the biggest gap." },
+      { id: "governance", no: "04", label: "Governance & Legal",
+        prompt: "There are binding rules for AI use: approved tools, data protection, confidentiality and review obligations.",
+        why: "Without clear rules, shadow AI emerges, with liability and reputational risk.",
+        action: "Adopt a one-page AI usage policy with an approved tools list, data classes and a four-eyes rule." },
+      { id: "skills", no: "05", label: "Skills",
+        prompt: "Employees can use AI safely and check results for accuracy. Training and points of contact are in place.",
+        why: "The EU AI Act requires AI literacy. Without it, the risk of misuse increases.",
+        action: "Set up short role-based training using real work situations and appoint an AI champion in each team." },
+      { id: "leadership", no: "06", label: "Leadership & Change",
+        prompt: "Leadership visibly supports AI, involves employees and addresses concerns openly.",
+        why: "Without visible leadership, every AI initiative loses momentum after the kick-off.",
+        action: "Formulate a shared leadership narrative: why AI, what changes, what stays the same. Add an open Q&A format." },
+      { id: "adoption", no: "07", label: "Everyday Use",
+        prompt: "AI is actually used in everyday work. Usage and reasons for abandoning it are visible.",
+        why: "Available is not the same as used. Without usage data, impact remains an assumption.",
+        action: "Track usage and reasons for abandonment separately for four weeks and discuss them in a regular review." },
+      { id: "impact", no: "08", label: "Impact & Business Case",
+        prompt: "AI initiatives have a baseline, target value and KPIs for time, quality, cost or risk.",
+        why: "Without a baseline, you can neither prove impact nor justify the next investment.",
+        action: "Set the baseline, target value, data source and review date for the pilot before it starts." }
     ];
 
-    var SCALE = ["Gar nicht", "Ansatzweise", "Teilweise", "Weitgehend", "Voll"];
+    var SCALE = ["Not at all", "Slightly", "Partly", "Largely", "Fully"];
     var PEOPLE = ["skills", "leadership", "adoption"];
 
     var OFFERS = {
-      essential: { eyebrow: "Nächster sinnvoller Schritt", name: "Essential Management-Baseline",
-        reason: "Ihre Basis ist tragfähig. Eine strukturierte Management-Baseline mit 90-Tage-Pfad macht Fortschritt messbar, bevor Sie skalieren." },
-      professional: { eyebrow: "Mehrperspektive empfohlen", name: "THE GAP Professional",
-        reason: "Ihr Ergebnis hängt an der Frage, wie Ihr Team wirklich denkt. Professional misst Management- und Mitarbeitendensicht getrennt und anonym und macht den echten Gap sichtbar." },
-      executive: { eyebrow: "Expert Validation empfohlen", name: "Executive Review",
-        reason: "Das Signal ist deutlich. Bevor weiter in KI investiert wird, sollten Ausgangsbild, Prioritäten und Risiken gemeinsam validiert werden." },
-      diagnostic: { eyebrow: "Ursachenklärung empfohlen", name: "Dual Perspective Diagnostic",
-        reason: "Das Signal ist kritisch. Ursachen, Perspektivdifferenzen, Risiken und wirtschaftliches Exposure sollten belastbar geprüft werden, nicht geschätzt." }
+      essential: { eyebrow: "Next sensible step", name: "Essential management baseline",
+        reason: "Your foundation is solid. A structured management baseline with a 90-day path makes progress measurable before you scale." },
+      professional: { eyebrow: "Multi-perspective view recommended", name: "THE GAP Professional",
+        reason: "Your result hinges on how your team really thinks. Professional measures management and employee perspectives separately and anonymously, and reveals the real gap." },
+      executive: { eyebrow: "Expert validation recommended", name: "Executive Review",
+        reason: "The signal is clear. Before investing further in AI, the starting position, priorities and risks should be validated together." },
+      diagnostic: { eyebrow: "Root-cause analysis recommended", name: "Dual Perspective Diagnostic",
+        reason: "The signal is critical. Causes, differences in perspective, risks and economic exposure should be examined rigorously, not estimated." }
     };
 
     var LEVELS = {
-      Focused: { title: "KI-ready mit klaren Hebeln", copy: "Ihre Organisation hat eine starke Basis. Jetzt geht es darum, Wirkung zu belegen und zu skalieren." },
-      Material: { title: "Auf dem Weg, mit Bremsen", copy: "Die Richtung stimmt, aber einzelne Felder bremsen spürbar, bevor KI im Alltag Wirkung entfaltet." },
-      High: { title: "Das Fundament fehlt noch", copy: "KI-Ambition und organisatorische Realität liegen deutlich auseinander. Investitionen laufen Gefahr, zu verpuffen." },
-      Critical: { title: "Frühe Phase mit Risiko", copy: "Bevor weitere KI-Tools ausgerollt werden, braucht es Zielbild, Regeln und Befähigung." }
+      Focused: { title: "AI-ready with clear levers", copy: "Your organisation has a strong foundation. The next step is to prove impact and scale." },
+      Material: { title: "On track, but held back", copy: "The direction is right, but some areas are noticeably holding things back before AI can make an impact in everyday work." },
+      High: { title: "The foundation is still missing", copy: "AI ambition and organisational reality are far apart. Investments risk fizzling out." },
+      Critical: { title: "Early stage with risk", copy: "Before rolling out further AI tools, you need a vision, rules and enablement." }
     };
 
     var STORE_KEY = "the-gap-ki-check-v1";
@@ -141,7 +141,7 @@
       return base + "?team=" + code + "&utm_source=team&utm_medium=referral&utm_campaign=ki-readiness-check";
     }
     function teamError(msg) { $("teamError").textContent = msg; $("teamError").hidden = !msg; }
-    function teamFail(err) { console.warn("[THE GAP] Team-Modus:", err); teamError("Das Teambild ist gerade nicht erreichbar. Bitte versuchen Sie es später erneut."); }
+    function teamFail(err) { console.warn("[THE GAP] Team mode:", err); teamError("The team snapshot is currently unavailable. Please try again later."); }
 
     function createTeam() {
       var btn = $("teamCreateBtn");
@@ -154,8 +154,8 @@
     }
     function submitTeam(code) {
       return rpc("submit_check_team_response", { p_code: code, p_answers: selfCode() }).then(function (r) {
-        if (!r.ok && r.reason === "full") { teamError("Dieses Team ist bereits voll (10 von 10). Für größere Gruppen gibt es THE GAP Professional."); }
-        else if (!r.ok) { teamError("Dieser Team-Link ist ungültig oder abgelaufen."); return; }
+        if (!r.ok && r.reason === "full") { teamError("This team is already full (10 of 10). For larger groups, there is THE GAP Professional."); }
+        else if (!r.ok) { teamError("This team link is invalid or has expired."); return; }
         state.teamJoined = state.teamJoined || {};
         state.teamJoined[code] = true;
         save();
@@ -166,7 +166,7 @@
       var code = teamCode();
       if (!code) return Promise.resolve();
       return rpc("get_check_team_result", { p_code: code }).then(function (r) {
-        if (!r.ok) { teamError("Dieser Team-Link ist ungültig oder abgelaufen."); teamData = null; }
+        if (!r.ok) { teamError("This team link is invalid or has expired."); teamData = null; }
         else { teamData = r; teamError(""); }
         renderTeam();
       }).catch(teamFail);
@@ -179,18 +179,18 @@
       $("teamLive").hidden = !(code && joined);
       if (!(code && joined)) return;
       $("teamLink").value = teamUrl(code);
-      $("teamMailBtn").href = "mailto:?subject=" + encodeURIComponent("Unser KI-Teambild: 3 Minuten, anonym") +
-        "&body=" + encodeURIComponent(teamInviteText() + "\n\n" + teamUrl(code) + "\n\nEs werden keine Namen oder E-Mail-Adressen gespeichert. Das Teambild zeigt nur Durchschnittswerte, erst ab 5 Antworten.");
+      $("teamMailBtn").href = "mailto:?subject=" + encodeURIComponent("Our AI team picture: 3 minutes, anonymous") +
+        "&body=" + encodeURIComponent(teamInviteText() + "\n\n" + teamUrl(code) + "\n\nNo names or email addresses are stored. The team picture only shows averages, and only once there are 5 responses.");
       var d = teamData || { count: 1, max: CONFIG.teamMax, ready: false };
       var left = Math.max(0, CONFIG.teamMinGroup - d.count);
-      $("teamTitle").textContent = d.ready ? "Ihr Teambild" : "Noch " + left + (left === 1 ? " Antwort" : " Antworten") + " bis zum Teambild";
+      $("teamTitle").textContent = d.ready ? "Your team snapshot" : "" + left + (left === 1 ? " response" : " responses") + " to go until the team picture";
       $("teamCopy").textContent = d.ready
-        ? "Anonymer Durchschnitt aus " + d.published_n + " Antworten. Das Bild wird bei 5, 8 und 10 Antworten aktualisiert, damit sich keine einzelne Antwort zurückrechnen lässt."
-        : "Teilen Sie den Link mit Ihrem Team, in Teams, Slack oder per E-Mail. Sobald 5 Personen geantwortet haben, sehen alle das anonyme Teambild.";
+        ? "Anonymous average of " + d.published_n + " responses. The snapshot is updated at 5, 8 and 10 responses so that no individual response can be traced back."
+        : "Share the link with your team, in Teams, Slack or by email. As soon as 5 people have responded, everyone sees the anonymous team snapshot.";
       var bars = "";
       for (var i = 0; i < CONFIG.teamMax; i++) bars += '<i class="' + (i < d.count ? "on" : "") + (i === CONFIG.teamMinGroup - 1 ? " min" : "") + '"></i>';
       $("teamProgress").innerHTML = bars;
-      $("teamCount").textContent = d.count + " von " + d.max + " Antworten";
+      $("teamCount").textContent = d.count + " of " + d.max + " responses";
       $("teamLinkWrap").hidden = d.count >= d.max;
       $("teamResult").hidden = !d.ready;
       if (!d.ready) return;
@@ -202,7 +202,7 @@
       $("teamSplit").textContent = top.label;
       $("teamRows").innerHTML = sig.map(function (x) {
         var lo = Math.max(0, x.mean - x.spread), hi = Math.min(100, x.mean + x.spread);
-        return '<div class="t-row' + (x === top && x.spread > 0 ? " hot" : "") + '"><span class="lbl">' + x.label + '<small>Streuung ±' + x.spread + '</small></span>' +
+        return '<div class="t-row' + (x === top && x.spread > 0 ? " hot" : "") + '"><span class="lbl">' + x.label + '<small>Spread ±' + x.spread + '</small></span>' +
           '<span class="t-bar"><u data-l="' + lo + '" data-w="' + (hi - lo) + '"></u><i data-w="' + x.mean + '"></i><em data-l="' + x.me + '"></em></span>' +
           '<span class="val">Team ' + x.mean + '</span></div>';
       }).join("");
@@ -212,18 +212,18 @@
       });
     }
     function teamInviteText() {
-      return "Ich habe für unser Team einen anonymen KI-Readiness Check angelegt (3 Minuten, ohne Login). Ab 5 Antworten sehen wir gemeinsam, wo wir stehen:";
+      return "I have set up an anonymous AI Readiness Check for our team (3 minutes, no login). Once there are 5 responses, we can see together where we stand:";
     }
     function shareTeam() {
       var url = teamUrl(teamCode());
       var text = teamInviteText();
-      if (navigator.share) { navigator.share({ title: "KI-Teambild · THE GAP", text: text, url: url }).catch(function () {}); return; }
+      if (navigator.share) { navigator.share({ title: "AI team picture · THE GAP", text: text, url: url }).catch(function () {}); return; }
       copyTeam();
     }
     function copyTeam() {
       var url = teamUrl(teamCode());
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () { toast("Team-Link kopiert."); }, function () { $("teamLink").select(); });
+        navigator.clipboard.writeText(url).then(function () { toast("Team link copied."); }, function () { $("teamLink").select(); });
       } else $("teamLink").select();
     }
 
@@ -234,8 +234,8 @@
     }
     function inviteText() {
       return VS
-        ? "Ich habe den KI-Readiness Check auch gemacht. Über diesen Link siehst du unseren Vergleich:"
-        : "Ich habe gerade den KI-Readiness Check von THE GAP gemacht (3 Minuten). Machst du ihn auch? Danach sehen wir, wo wir unsere Organisation unterschiedlich einschätzen:";
+        ? "I have taken the AI Readiness Check too. Use this link to see our comparison:"
+        : "I have just taken the AI Readiness Check by THE GAP (3 minutes). Will you take it too? Afterwards we can see where we assess our organisation differently:";
     }
 
     function result() {
@@ -257,10 +257,10 @@
 
     function gapInsight(r) {
       var dir = r.score - r.teamScore;
-      if (r.gap < 10) return "<b>Sie erwarten kaum Unterschiede zwischen Ihrer Sicht und der Ihres Teams.</b> Das ist möglich, aber selten. In echten Messungen liegen Management und Mitarbeitende häufig deutlich auseinander. Ob das bei Ihnen auch so ist, zeigt nur eine echte Befragung.";
-      if (dir > 0) return "<b>Sie vermuten, dass Ihr Team die Lage im Schnitt " + dir + " Punkte schlechter bewertet als Sie.</b> Genau diese Lücke ist ein starker Frühindikator für Widerstände und ungenutzte Tools. Die eigentliche Frage ist, ob sie in Wirklichkeit größer ist.";
-      if (dir < 0) return "<b>Sie vermuten, dass Ihr Team weiter ist als Sie selbst.</b> Das kann auf Schatten-KI hindeuten: Mitarbeitende nutzen KI, bevor Regeln und Ziele stehen.";
-      return "<b>Ihr Gap liegt in einzelnen Feldern, nicht im Durchschnitt.</b> Dort, wo Sichten auseinanderlaufen, entstehen typischerweise Reibung und Verzögerung.";
+      if (r.gap < 10) return "<b>You expect hardly any difference between your view and your team’s.</b> That is possible, but rare. In real measurements, management and employees often diverge significantly. Only a real survey can show whether that is the case for you.";
+      if (dir > 0) return "<b>You assume that, on average, your team rates the situation " + dir + " points lower than you do.</b> This very gap is a strong early indicator of resistance and unused tools. The real question is whether it is actually larger.";
+      if (dir < 0) return "<b>You assume your team is further ahead than you are.</b> This may point to shadow AI: employees using AI before rules and goals are in place.";
+      return "<b>Your gap lies in individual areas, not in the average.</b> Where perspectives diverge, friction and delays typically arise.";
     }
 
     function scaleHtml(name, value) {
@@ -275,7 +275,7 @@
       var q = SIGNALS[state.step];
       var s = state.self[q.id], t = state.team[q.id];
       $("qCounter").textContent = "Signal " + q.no + " / 08";
-      $("qAnswered").textContent = doneCount() + " von 8 beantwortet";
+      $("qAnswered").textContent = doneCount() + " of 8 answered";
       $("progress").setAttribute("aria-valuenow", String(doneCount()));
       $("progress").innerHTML = SIGNALS.map(function (x, i) {
         return '<i class="' + (complete(x) ? "on" : i === state.step ? "cur" : "") + '"></i>';
@@ -286,11 +286,11 @@
       $("scaleSelf").querySelector(".scale").innerHTML = scaleHtml("self", s);
       $("scaleTeam").querySelector(".scale").innerHTML = scaleHtml("team", t);
       $("qGap").innerHTML = s !== undefined && t !== undefined
-        ? (s === t ? "Kein Unterschied in diesem Signal." : 'Gap in diesem Signal: <b>' + Math.abs(s - t) * 25 + ' Punkte</b>')
+        ? (s === t ? "No difference in this signal." : 'Gap in this signal: <b>' + Math.abs(s - t) * 25 + ' points</b>')
         : "";
       $("backBtn").disabled = state.step === 0;
       $("nextBtn").disabled = !complete(q);
-      $("nextBtn").innerHTML = (state.step === SIGNALS.length - 1 ? "Ergebnis anzeigen" : "Weiter") + ' <span aria-hidden="true">→</span>';
+      $("nextBtn").innerHTML = (state.step === SIGNALS.length - 1 ? "Show result" : "Next") + ' <span aria-hidden="true">→</span>';
       if (focus) $("qTitle").focus({ preventScroll: true });
     }
 
@@ -303,15 +303,15 @@
       $("gapInsight").innerHTML = gapInsight(r);
       $("prioLabel").textContent = r.prio.label + " · " + r.prio.self;
       $("prioAction").textContent = r.prio.action;
-      $("hotLabel").textContent = r.hot.label + " · " + Math.abs(r.hot.diff) + " Punkte";
-      $("hotText").textContent = r.hot.diff === 0 ? "In keinem Signal erwarten Sie einen Unterschied."
-        : r.hot.diff > 0 ? "Hier vermuten Sie die größte Distanz zwischen Ihrer Sicht und dem Erleben Ihres Teams."
-        : "Hier schätzen Sie Ihr Team deutlich weiter ein als sich selbst.";
+      $("hotLabel").textContent = r.hot.label + " · " + Math.abs(r.hot.diff) + " points";
+      $("hotText").textContent = r.hot.diff === 0 ? "You do not expect a difference in any signal."
+        : r.hot.diff > 0 ? "This is where you suspect the greatest distance between your view and your team’s experience."
+        : "Here you rate your team as considerably further ahead than yourself.";
       $("printDate").textContent = new Date().toLocaleDateString("en-GB", { day: "2-digit", month: "long", year: "numeric" });
       renderCompare(r);
       renderTeam();
       if (teamCode() && state.teamJoined && state.teamJoined[teamCode()] && !teamData) loadTeam();
-      $("mailBtn").href = "mailto:?subject=" + encodeURIComponent("KI-Readiness Check: wollen wir uns vergleichen?") +
+      $("mailBtn").href = "mailto:?subject=" + encodeURIComponent("AI Readiness Check: shall we compare?") +
         "&body=" + encodeURIComponent(inviteText() + "\n\n" + inviteUrl());
 
       $("gateWrap").hidden = state.unlocked;
@@ -321,18 +321,18 @@
 
       $("rows").innerHTML = r.rows.map(function (x) {
         var hot = x.id === r.hot.id && x.diff !== 0;
-        return '<div class="row' + (hot ? " hot" : "") + '"><span class="row-label">' + x.label + '<small>Sie ' + x.self + ' · Team ' + x.team + '</small></span>' +
+        return '<div class="row' + (hot ? " hot" : "") + '"><span class="row-label">' + x.label + '<small>You ' + x.self + ' · Team ' + x.team + '</small></span>' +
           '<span class="bars"><span class="bar self"><i data-w="' + x.self + '"></i></span><span class="bar team"><i data-w="' + x.team + '"></i></span></span>' +
           '<span class="row-gap">' + Math.abs(x.diff) + '<small>Gap</small></span></div>';
       }).join("");
-      var phases = ["Tag 0–30", "Tag 31–60", "Tag 61–90"];
+      var phases = ["Days 0–30", "Days 31–60", "Days 61–90"];
       $("plan").innerHTML = r.low3.map(function (x, i) {
         return '<li><b>' + phases[i] + '</b><h4>' + x.label + '</h4><p>' + x.action + '</p></li>';
       }).join("");
       $("offerEyebrow").textContent = r.offer.eyebrow;
       $("offerName").textContent = r.offer.name;
       $("offerReason").textContent = r.offer.reason;
-      $("offerBtn").innerHTML = "Ergebnis besprechen " + '<span aria-hidden="true">↗</span>';
+      $("offerBtn").innerHTML = "Discuss the result " + '<span aria-hidden="true">↗</span>';
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
           Array.prototype.forEach.call(document.querySelectorAll(".bar i"), function (el) { el.style.width = el.getAttribute("data-w") + "%"; });
@@ -342,25 +342,25 @@
 
     function renderCompare(r) {
       $("compare").hidden = !VS;
-      $("shareTitle").firstChild.nodeValue = VS ? "Vergleich zurückschicken" : "Liegen Sie richtig mit Ihrem Team?";
+      $("shareTitle").firstChild.nodeValue = VS ? "Send comparison back" : "Are you right about your team?";
       $("shareText").textContent = VS
-        ? "Schicken Sie den Link an die Person zurück, die Sie eingeladen hat. Dann sieht sie denselben Vergleich."
-        : "Schicken Sie den Check an eine Kollegin oder einen Kollegen. Nach drei Minuten sehen beide, wo Ihre Einschätzungen auseinanderliegen. Ihr Ergebnis reist im Link mit, sonst nichts.";
-      $("shareBtn").innerHTML = (VS ? "Vergleich zurückschicken" : "Kolleg:in einladen") + ' <span aria-hidden="true">→</span>';
+        ? "Send the link back to the person who invited you. They will then see the same comparison."
+        : "Send the check to a colleague. After three minutes, you will both see where your assessments differ. Only your result travels with the link, nothing else.";
+      $("shareBtn").innerHTML = (VS ? "Send comparison back" : "Invite a colleague") + ' <span aria-hidden="true">→</span>';
       if (!VS) return;
       var rows = r.rows.map(function (x) { var t = VS.answers[x.id] * 25; return { label: x.label, me: x.self, them: t, d: Math.abs(x.self - t) }; });
       var them = Math.round(rows.reduce(function (a, x) { return a + x.them; }, 0) / rows.length);
       var diff = Math.round(rows.reduce(function (a, x) { return a + x.d; }, 0) / rows.length);
       var top = rows.slice().sort(function (a, b) { return b.d - a.d; })[0];
-      $("compareTitle").textContent = diff < 10 ? "Sie sehen Ihre Organisation sehr ähnlich" : diff < 25 ? "Sie sehen Ihre Organisation unterschiedlich" : "Sie sehen zwei verschiedene Organisationen";
+      $("compareTitle").textContent = diff < 10 ? "You see your organisation very similarly" : diff < 25 ? "You see your organisation differently" : "You see two different organisations";
       $("cmpMe").textContent = r.score;
       $("cmpThem").textContent = them;
       $("cmpDiff").textContent = diff;
       $("compareText").textContent = top.d === 0
-        ? "In keinem Signal liegen Sie auseinander. Spannend wird es, wenn Sie Mitarbeitende ohne Führungsrolle dazunehmen."
-        : "Am weitesten auseinander liegen Sie bei „" + top.label + "“ (" + top.d + " Punkte). Schon zwei Personen sehen dieselbe Organisation unterschiedlich. Bei 50 oder 500 Mitarbeitenden wird dieser Unterschied zur Steuerungsfrage.";
+        ? "You do not differ on any signal. It gets interesting when you include employees without a leadership role."
+        : "You are furthest apart on “" + top.label + "“ (" + top.d + " points). Even two people see the same organisation differently. With 50 or 500 employees, this difference becomes a management issue.";
       $("compareRows").innerHTML = rows.map(function (x) {
-        return '<div class="row' + (x === top && x.d ? " hot" : "") + '"><span class="row-label">' + x.label + '<small>Sie ' + x.me + ' · Kolleg:in ' + x.them + '</small></span>' +
+        return '<div class="row' + (x === top && x.d ? " hot" : "") + '"><span class="row-label">' + x.label + '<small>You ' + x.me + ' · Colleague ' + x.them + '</small></span>' +
           '<span class="bars"><span class="bar self"><i data-w="' + x.me + '"></i></span><span class="bar them"><i data-w="' + x.them + '"></i></span></span>' +
           '<span class="row-gap">' + x.d + '<small>Δ</small></span></div>';
       }).join("");
@@ -431,14 +431,14 @@
     function share() {
       var url = inviteUrl(), text = inviteText();
       if (navigator.share) {
-        navigator.share({ title: "KI-Readiness Check · THE GAP", text: text, url: url }).catch(function () {});
+        navigator.share({ title: "AI Readiness Check · THE GAP", text: text, url: url }).catch(function () {});
         return;
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text + " " + url).then(
-          function () { toast("Einladung kopiert. Einfach in Teams, Slack oder eine Nachricht einfügen."); },
-          function () { window.prompt("Link kopieren:", url); });
-      } else window.prompt("Link kopieren:", url);
+          function () { toast("Invitation copied. Simply paste it into Teams, Slack or a message."); },
+          function () { window.prompt("Copy link:", url); });
+      } else window.prompt("Copy link:", url);
     }
 
     function queueLocally(payload, reason) {
@@ -453,8 +453,8 @@
     function saveLead(e) {
       e.preventDefault();
       var email = $("email").value.trim().toLowerCase();
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { leadError("Bitte eine gültige E-Mail-Adresse angeben."); $("email").focus(); return; }
-      if (!$("consent").checked) { leadError("Bitte bestätigen Sie Ihr Einverständnis, damit wir die Auswertung speichern dürfen."); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { leadError("Please enter a valid email address."); $("email").focus(); return; }
+      if (!$("consent").checked) { leadError("Please confirm your consent so that we may store your report."); return; }
       leadError("");
 
       var r = result();
@@ -476,20 +476,20 @@
 
       var btn = $("leadBtn");
       btn.disabled = true;
-      btn.textContent = "Wird freigeschaltet …";
+      btn.textContent = "Unlocking …";
       function done() {
         state.unlocked = true;
         state.email = email;
         render(false);
-        toast("Freigeschaltet. Ihre vollständige Auswertung steht unten.");
+        toast("Unlocked. Your full report is below.");
         $("report").scrollIntoView({ behavior: "smooth", block: "start" });
       }
       function fail(err) {
         queueLocally(payload, String(err && err.message || err));
-        console.warn("[THE GAP] Lead-Insert fehlgeschlagen:", err);
+        console.warn("[THE GAP] Lead insert failed:", err);
         btn.disabled = false;
-        btn.innerHTML = 'Erneut versuchen <span aria-hidden="true">→</span>';
-        leadError("Das Speichern hat nicht funktioniert. Bitte erneut versuchen oder schreiben Sie uns direkt.");
+        btn.innerHTML = 'Try again <span aria-hidden="true">→</span>';
+        leadError("Saving did not work. Please try again or contact us directly.");
       }
       if (!CONFIG.supabaseUrl || !CONFIG.supabaseKey) { queueLocally(payload, "supabase-not-configured"); done(); return; }
       fetch(CONFIG.supabaseUrl.replace(/\/+$/, "") + "/rest/v1/" + CONFIG.table, {

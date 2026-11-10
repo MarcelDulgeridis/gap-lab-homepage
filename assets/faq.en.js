@@ -44,8 +44,8 @@
       g.hidden = !any;
     });
     count.textContent = (t.length || cat !== "all")
-      ? shown + " von " + total + " Fragen"
-      : total + " Fragen";
+      ? shown + " of " + total + " questions"
+      : total + " questions";
     empty.hidden = shown !== 0;
     var active = t.length > 0 || cat !== "all";
     reset.hidden = !active;
@@ -60,7 +60,7 @@
   function syncToggle() {
     var vis = visibleItems();
     var allOpen = vis.length > 0 && vis.every(function (d) { return d.open; });
-    toggle.textContent = allOpen ? "Alle schließen" : "Alle öffnen";
+    toggle.textContent = allOpen ? "Close all" : "Open all";
     toggle.setAttribute("data-state", allOpen ? "open" : "closed");
   }
 

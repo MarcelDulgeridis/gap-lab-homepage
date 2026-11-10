@@ -59,17 +59,17 @@ Vollständiger Inhalt aller Seiten als Text: https://www.gap-lab.de/llms-full.tx
 - Weitere Antworten: https://www.gap-lab.de/faq
 
 ## English version
-- [Start](https://www.gap-lab.de/en): Personalentwicklung für Führungskräfte: Strategie, Vertrieb, Leadership und Finanzverständnis, von Konzeption bis Durchführung. Kostenloses Erstgespräch.
-- [Leistungen](https://www.gap-lab.de/en/services): Vier Stufen für Ihre Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Einzeln oder als Kette buchbar, mit Ergebnissen je Stufe.
-- [Fokusfelder](https://www.gap-lab.de/en/focus-areas): Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation: drei Fokusfelder der Personalentwicklung mit je eigenem Ansprechpartner.
-- [Über uns](https://www.gap-lab.de/en/about-us): Das Team hinter THE GAP Lab: Prof. Dr. Constantin Schubart, Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis, im Verbund mit Schubart & Dulgeridis.
-- [Kontakt](https://www.gap-lab.de/en/contact): Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen oder per E-Mail anfragen. Altdorf bei Nürnberg.
-- [Strategie, Vertrieb & Innovation](https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation): Strategie, Vertriebstraining, Verhandlung und Innovation: Marketing- und Sales-Management, Change Management und Rhetorik mit Dr. Oliver Meschkat.
-- [Leadership & Organisation](https://www.gap-lab.de/en/focus-areas/leadership-organisation): Führungskräfteentwicklung für klare Rollen, Entscheidungsrechte und Führungskultur: damit Strategie im Arbeitsalltag ankommt. Mit Prof. Dr. Constantin Schubart.
-- [Finance & Transformation](https://www.gap-lab.de/en/focus-areas/finance-transformation): Finance für Nicht-Finanzer: GuV, Bilanz, Cashflow, Kennzahlen und Business Case verständlich vermittelt. Maßnahmen mit Prof. Dr. Marcel Dulgeridis.
-- [KI-Readiness](https://www.gap-lab.de/en/ai-readiness): Kostenloser KI-Readiness Check als Selbsttest: in 3 Minuten acht Signale, Management- und Mitarbeitendensicht und Ihr KI-Gap, ohne Login, mit Sofortergebnis.
-- [InnoLab](https://www.gap-lab.de/en/innolab): Fünf Innovationsworkshops vor Ort: Sprint, Lernraumberatung, Train the Trainer, Change Leadership und Innovation Scorecard. Festpreis ab 5.800 € netto.
-- [Glossar](https://www.gap-lab.de/en/glossary): 22 Begriffe kurz erklärt: BATNA, ZOPA, Cashflow, Business Case, Rollenklarheit, KI-Gap und mehr, mit Link zum passenden Fokusfeld.
-- [FAQ](https://www.gap-lab.de/en/faq): 39 Antworten zu THE GAP Lab: Angebot, Fokusfelder, InnoLab, KI-Readiness Check, Zusammenarbeit und Datenschutz. Mit Suche und Themenfilter.
-- [Impressum](https://www.gap-lab.de/en/legal-notice): Impressum der The Gap Lab GmbH, Altdorf bei Nürnberg: Anschrift, Geschäftsführer, Handelsregister HRB 46649 (Amtsgericht Nürnberg) und Kontakt.
-- [Datenschutz](https://www.gap-lab.de/en/privacy): Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.
+- [Start](https://www.gap-lab.de/en): People development for leaders: strategy, sales, leadership and financial literacy, from concept to delivery. Free initial consultation.
+- [Leistungen](https://www.gap-lab.de/en/services): Four stages for your people development: concept, development, delivery and marketing. Bookable individually or as a sequence, with outcomes at each stage.
+- [Fokusfelder](https://www.gap-lab.de/en/focus-areas): Strategy, Sales & Innovation, Leadership & Organisation, Finance & Transformation: three focus areas of people development, each with its own contact person.
+- [Über uns](https://www.gap-lab.de/en/about-us): The team behind THE GAP Lab: Prof. Dr. Constantin Schubart, Dr. Oliver Meschkat and Prof. Dr. Marcel Dulgeridis, in alliance with Schubart & Dulgeridis.
+- [Kontakt](https://www.gap-lab.de/en/contact): Book a free initial consultation (20–30 min) with Constantin Schubart, Oliver Meschkat or Marcel Dulgeridis, or enquire by email. Altdorf bei Nürnberg.
+- [Strategie, Vertrieb & Innovation](https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation): Strategy, sales training, negotiation and innovation: marketing and sales management, change management and rhetoric with Dr. Oliver Meschkat.
+- [Leadership & Organisation](https://www.gap-lab.de/en/focus-areas/leadership-organisation): Leadership development for clear roles, decision rights and leadership culture, so that strategy reaches everyday work. With Prof. Dr. Constantin Schubart.
+- [Finance & Transformation](https://www.gap-lab.de/en/focus-areas/finance-transformation): Finance for non-finance managers: P&L, balance sheet, cash flow, key figures and business case, clearly explained. Programmes with Prof. Dr. Marcel Dulgeridis.
+- [KI-Readiness](https://www.gap-lab.de/en/ai-readiness): Free AI Readiness Check self-assessment: eight signals in 3 minutes, management and employee perspectives and your AI gap, no login, instant result.
+- [InnoLab](https://www.gap-lab.de/en/innolab): Five on-site innovation workshops: Sprint, learning space consulting, Train the Trainer, Change Leadership, Innovation Scorecard. Fixed price from €5,800 net.
+- [Glossar](https://www.gap-lab.de/en/glossary): 22 terms explained briefly: BATNA, ZOPA, cash flow, business case, role clarity, AI gap and more, each with a link to the relevant focus area.
+- [FAQ](https://www.gap-lab.de/en/faq): 39 answers about THE GAP Lab: services, focus areas, InnoLab, AI Readiness Check, working together and data protection. With search and topic filter.
+- [Impressum](https://www.gap-lab.de/en/legal-notice): Legal notice of The Gap Lab GmbH, Altdorf bei Nürnberg: address, Managing Director, Commercial Register HRB 46649 (Amtsgericht Nürnberg), contact details.
+- [Datenschutz](https://www.gap-lab.de/en/privacy): Privacy policy of The Gap Lab GmbH: no cookies, no tracking services, hosting log files, contacting us, AI Readiness Check, your rights under the GDPR.
