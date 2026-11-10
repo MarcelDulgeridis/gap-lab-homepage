@@ -312,16 +312,14 @@ class Translator:
                 s.raw = DONE
         if n.tag != "svg" and n.children and inline_only(n) and has_words(text_of(n)):
             key, tags, xs, dates = skeleton(n)
+            # Attribute (aria-label, alt, title) aller Knoten im Segment vor dem Neuaufbau übersetzen
+            for tg in tags + xs:
+                if tg.raw is not DONE:
+                    self.attrs(tg, where)
             if key:
                 v = self.t(key, where)
                 if v is not None:
                     n.children = [Raw(rebuild(v, tags, xs, dates))]
-                    for tg in tags:
-                        self.attrs(tg, where)
-                    return
-            for c in n.children:
-                if isinstance(c, Node) and c.raw is not DONE:
-                    self.attrs(c, where)
             return
         for i, c in enumerate(n.children):
             if isinstance(c, Text) and has_words(c.raw):
@@ -384,11 +382,14 @@ def json_ld(tr, txt, where):
             for k, v in o.items():
                 if k == "inLanguage":
                     out[k] = "en-GB"
-                elif k in ("url", "item") and t in page_types | {"ListItem", "HowToStep", "Question", "Offer"}:
+                elif k == "url" and t == "ImageObject" and isinstance(v, str) and re.search(r"/assets/img/og-[a-z0-9\-]+\.jpg$", v) \
+                        and key == "primaryImageOfPage" and os.path.exists(os.path.join(ROOT, v[len(DOMAIN):].lstrip("/")[:-4] + ".en.jpg")):
+                    out[k] = v[:-4] + ".en.jpg"
+                elif k in ("url", "item") and t not in ("Organization", "WebSite"):
                     out[k] = url(v)
                 elif k == "@id" and isinstance(v, str) and re.search(r"#(webpage|breadcrumb|faq|vorgehen|stufen|service|app|termset)", v):
                     out[k] = url(v)
-                elif k == "name" and t in ("Organization", "Person", "CollegeOrUniversity", "Country", "WebSite", "PostalAddress"):
+                elif k == "name" and t in ("Organization", "Person", "CollegeOrUniversity", "WebSite", "PostalAddress"):
                     out[k] = v
                 elif k in keep_text:
                     out[k] = walk(v, t, k) if isinstance(v, (dict, list)) else v
@@ -418,6 +419,7 @@ def to_en(doc, de_path, tr, js_versions):
     doc = doc.replace('<html lang="de">', '<html lang="en">', 1)
     doc = doc.replace(f'<link rel="canonical" href="{url_de}">', f'<link rel="canonical" href="{url_en}">', 1)
     doc = doc.replace(f'<meta property="og:url" content="{url_de}">', f'<meta property="og:url" content="{url_en}">', 1)
+    doc = doc.replace('\n<meta property="og:locale:alternate" content="en_GB">', "")
     doc = doc.replace('<meta property="og:locale" content="de_DE">', '<meta property="og:locale" content="en_GB">\n<meta property="og:locale:alternate" content="de_DE">', 1)
     doc = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="[^"]+">\n?', "", doc)
     doc = doc.replace(f'<link rel="canonical" href="{url_en}">',
