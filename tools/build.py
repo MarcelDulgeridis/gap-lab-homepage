@@ -214,6 +214,7 @@ def header_html(page):
     return (
         '<header class="site-header" data-open="false"><div class="container header-inner">'
         f'<a class="brand" href="/" aria-label="THE GAP Lab Personalentwicklung, zur Startseite">THE GAP <span>Lab</span><em class="brand-tagline">Personalentwicklung</em></a>'
+        + i18n.lang_mobile(page["path"], "de") +
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menü</button>'
         f'<nav class="site-nav" id="site-nav" aria-label="Hauptnavigation"><ul>{"".join(items)}</ul></nav>'
         "</div></header>"

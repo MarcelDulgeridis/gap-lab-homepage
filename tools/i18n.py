@@ -302,6 +302,8 @@ class Translator:
     def node(self, n, where):
         if isinstance(n, (Text, Raw)) or n.raw is DONE:
             return
+        if any(k == "data-keep" for k, _ in n.attrs):  # Sprachumschalter: bewusst in der Zielsprache, nicht übersetzen
+            return
         if n.tag in RAW:
             return
         self.attrs(n, where)
@@ -335,6 +337,8 @@ class Translator:
                 self.node(c, where)
 
     def attrs(self, n, where):
+        if any(k == "data-keep" for k, _ in n.attrs):
+            return
         new = []
         is_meta = n.tag == "meta" and any(k in ("name", "property") and v in META_CONTENT for k, v in n.attrs)
         for k, v in n.attrs:
@@ -442,6 +446,7 @@ def to_en(doc, de_path, tr, js_versions):
                  lambda m: m.group(1) + json_ld(tr, m.group(2), where) + m.group(3), doc, flags=re.S)
     # Sprachumschalter: auf der englischen Seite zur deutschen Seite
     doc = re.sub(r'<li class="lang">.*?</li>', lang_switch(de_path, "en"), doc, count=1, flags=re.S)
+    doc = re.sub(r'<a class="lang-m".*?</a>', lang_mobile(de_path, "en"), doc, count=1, flags=re.S)
     root = parse(doc)
     # Links umschreiben (außer Sprachumschalter)
     def fix(n):
@@ -470,8 +475,24 @@ def alternates(de_path):
     return out
 
 
+def _en_target(de_path):
+    """Englische Entsprechung; die 404-Seite führt zur englischen Startseite."""
+    return SLUGS.get(de_path) or (SLUGS["/"] if de_path == "/404" else None)
+
+
+def lang_mobile(de_path, current):
+    """Handy/Tablet: immer sichtbarer Sprachknopf neben „Menü“, zeigt die jeweils andere Sprache."""
+    e = _en_target(de_path)
+    if not e:
+        return ""
+    if current == "de":
+        return f'<a class="lang-m" href="{e}" hreflang="en" lang="en" data-keep aria-label="English version" title="English version">EN</a>'
+    de_href = "/" if de_path == "/404" else de_path
+    return f'<a class="lang-m" href="{de_href}" hreflang="de" lang="de" data-keep aria-label="Deutsche Fassung" title="Deutsche Fassung">DE</a>'
+
+
 def lang_switch(de_path, current):
-    e = SLUGS.get(de_path)
+    e = _en_target(de_path)
     if not e:
         return ""
     de_href = de_path

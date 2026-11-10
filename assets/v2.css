@@ -567,7 +567,14 @@
 @media (min-width:1141px){.site-nav ul{gap:clamp(14px,1.25vw,18px)}}
 @media (min-width:1141px) and (max-width:1299px){.brand .brand-tagline{display:none}}
 .x-legal-note{margin:14px 0 0;padding:12px 16px;background:var(--white);border-left:3px solid var(--gold);font-size:.95rem;color:var(--muted)}
+/* Handy/Tablet: Sprachknopf immer sichtbar neben „Menü“ (zeigt die andere Sprache) */
+.lang-m{display:none}
 @media (max-width:1140px){
+  .lang-m{display:inline-flex;align-items:center;justify-content:center;gap:.4em;min-width:48px;min-height:44px;padding:0 10px;margin-left:auto;margin-right:-14px;
+    border:1px solid var(--gold-line);background:var(--white);color:var(--navy);text-decoration:none;
+    font-family:var(--font-display);font-weight:800;font-size:.9rem;letter-spacing:.1em}
+  .lang-m:hover,.lang-m:focus-visible{background:var(--cream);color:var(--gold-text)}
+  .site-nav li.lang{display:none}
   .site-nav li.lang{align-self:flex-start;margin:14px 0 0}
   .site-nav li.lang .lang-cur,.site-nav li.lang .lang-alt{min-height:44px;min-width:52px;font-size:.9rem;padding:8px 14px;border-bottom:0}
 }
