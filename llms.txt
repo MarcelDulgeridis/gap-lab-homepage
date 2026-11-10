@@ -57,3 +57,19 @@ Vollständiger Inhalt aller Seiten als Text: https://www.gap-lab.de/llms-full.tx
 - Was ist der KI-Readiness Check? Ein kostenloser Check, der in drei Minuten acht Signale zur KI-Reife Ihrer Organisation abfragt, die Sicht von Management und Mitarbeitenden vergleicht und den KI-Gap sowie das wichtigste Handlungsfeld zeigt. Zum Check.
 - Wie kommt eine Zusammenarbeit zustande? Am Anfang steht ein kostenloses Erstgespräch (20 bis 30 Minuten, Microsoft Teams) zu Anlass, Ziel und Zielgruppe. Danach erhalten Sie ein Angebot mit klarem Leistungsumfang. Termin: Kontakt.
 - Weitere Antworten: https://www.gap-lab.de/faq
+
+## English version
+- [Start](https://www.gap-lab.de/en): Personalentwicklung für Führungskräfte: Strategie, Vertrieb, Leadership und Finanzverständnis, von Konzeption bis Durchführung. Kostenloses Erstgespräch.
+- [Leistungen](https://www.gap-lab.de/en/services): Vier Stufen für Ihre Personalentwicklung: Konzeption, Entwicklung, Durchführung und Vermarktung. Einzeln oder als Kette buchbar, mit Ergebnissen je Stufe.
+- [Fokusfelder](https://www.gap-lab.de/en/focus-areas): Strategie, Vertrieb & Innovation, Leadership & Organisation, Finance & Transformation: drei Fokusfelder der Personalentwicklung mit je eigenem Ansprechpartner.
+- [Über uns](https://www.gap-lab.de/en/about-us): Das Team hinter THE GAP Lab: Prof. Dr. Constantin Schubart, Dr. Oliver Meschkat und Prof. Dr. Marcel Dulgeridis, im Verbund mit Schubart & Dulgeridis.
+- [Kontakt](https://www.gap-lab.de/en/contact): Kostenloses Erstgespräch (20–30 Min.) mit Constantin Schubart, Oliver Meschkat oder Marcel Dulgeridis buchen oder per E-Mail anfragen. Altdorf bei Nürnberg.
+- [Strategie, Vertrieb & Innovation](https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation): Strategie, Vertriebstraining, Verhandlung und Innovation: Marketing- und Sales-Management, Change Management und Rhetorik mit Dr. Oliver Meschkat.
+- [Leadership & Organisation](https://www.gap-lab.de/en/focus-areas/leadership-organisation): Führungskräfteentwicklung für klare Rollen, Entscheidungsrechte und Führungskultur: damit Strategie im Arbeitsalltag ankommt. Mit Prof. Dr. Constantin Schubart.
+- [Finance & Transformation](https://www.gap-lab.de/en/focus-areas/finance-transformation): Finance für Nicht-Finanzer: GuV, Bilanz, Cashflow, Kennzahlen und Business Case verständlich vermittelt. Maßnahmen mit Prof. Dr. Marcel Dulgeridis.
+- [KI-Readiness](https://www.gap-lab.de/en/ai-readiness): Kostenloser KI-Readiness Check als Selbsttest: in 3 Minuten acht Signale, Management- und Mitarbeitendensicht und Ihr KI-Gap, ohne Login, mit Sofortergebnis.
+- [InnoLab](https://www.gap-lab.de/en/innolab): Fünf Innovationsworkshops vor Ort: Sprint, Lernraumberatung, Train the Trainer, Change Leadership und Innovation Scorecard. Festpreis ab 5.800 € netto.
+- [Glossar](https://www.gap-lab.de/en/glossary): 22 Begriffe kurz erklärt: BATNA, ZOPA, Cashflow, Business Case, Rollenklarheit, KI-Gap und mehr, mit Link zum passenden Fokusfeld.
+- [FAQ](https://www.gap-lab.de/en/faq): 39 Antworten zu THE GAP Lab: Angebot, Fokusfelder, InnoLab, KI-Readiness Check, Zusammenarbeit und Datenschutz. Mit Suche und Themenfilter.
+- [Impressum](https://www.gap-lab.de/en/legal-notice): Impressum der The Gap Lab GmbH, Altdorf bei Nürnberg: Anschrift, Geschäftsführer, Handelsregister HRB 46649 (Amtsgericht Nürnberg) und Kontakt.
+- [Datenschutz](https://www.gap-lab.de/en/privacy): Datenschutzerklärung der The Gap Lab GmbH: keine Cookies, keine Tracking-Dienste, Hosting-Logfiles, Kontaktaufnahme, KI-Readiness Check, Ihre Rechte nach DSGVO.

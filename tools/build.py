@@ -27,6 +27,7 @@ import seo_meta  # noqa: E402
 import datetime  # noqa: E402
 import v2  # noqa: E402
 import v2_home  # noqa: E402
+import i18n  # noqa: E402
 
 PREVIEW = "--preview" in sys.argv
 V2 = "--legacy" not in sys.argv  # Redesign v2 ist Standard; --legacy erzeugt das alte Design
@@ -207,6 +208,8 @@ def header_html(page):
     for label, path, is_cta in NAV:
         cur = ' aria-current="page"' if (path == page["path"] or (path != "/" and page["path"].startswith(path + "/"))) else ""
         cls = ' class="btn"' if is_cta else ""
+        if is_cta:
+            items.append(i18n.lang_switch(page["path"], "de"))
         items.append(f'<li><a{cls} href="{esc(path)}"{cur}>{esc(label)}</a></li>')
     return (
         '<header class="site-header" data-open="false"><div class="container header-inner">'
@@ -351,6 +354,8 @@ def render(page):
     out = head + body
     if V2:
         out = v2.enhance(out, page, "/preview" if PREVIEW else None)
+    if not PREVIEW:
+        out = i18n.add_de_alternates(out, page["path"])
     return out
 
 
@@ -413,19 +418,30 @@ def write(rel, content):
 
 def sitemap(pages):
     rows = []
+
+    def alt(p):
+        e = i18n.SLUGS.get(p["path"])
+        if not e:
+            return ""
+        return (f'    <xhtml:link rel="alternate" hreflang="de" href="{url_of(p["path"])}"/>\n'
+                f'    <xhtml:link rel="alternate" hreflang="en" href="{DOMAIN}{e}"/>\n'
+                f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url_of(p["path"])}"/>\n')
     for p in pages:
         if not p.get("sitemap", True):
             continue
-        rows.append(
-            "  <url>\n"
-            f"    <loc>{url_of(p['path'])}</loc>\n"
-            f"    <lastmod>{p.get('modified', SITE['modified'])}</lastmod>\n"
-            f"    <changefreq>{p.get('changefreq', 'monthly')}</changefreq>\n"
-            f"    <priority>{p.get('priority', '0.6')}</priority>\n"
-            "  </url>"
-        )
+        for loc in [url_of(p["path"])] + ([DOMAIN + i18n.SLUGS[p["path"]]] if p["path"] in i18n.SLUGS else []):
+            rows.append(
+                "  <url>\n"
+                f"    <loc>{loc}</loc>\n"
+                + alt(p) +
+                f"    <lastmod>{p.get('modified', SITE['modified'])}</lastmod>\n"
+                f"    <changefreq>{p.get('changefreq', 'monthly')}</changefreq>\n"
+                f"    <priority>{p.get('priority', '0.6')}</priority>\n"
+                "  </url>"
+            )
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
-            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(rows) + "\n</urlset>\n")
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+            + "\n".join(rows) + "\n</urlset>\n")
 
 
 def robots():
@@ -510,21 +526,52 @@ def llms_full(pages):
     return "\n".join(out).rstrip() + "\n"
 
 
+def build_en(pages, rendered):
+    """Englische Seiten unter /en/... aus den fertigen deutschen Seiten (Katalog tools/i18n/en.json)."""
+    tr = i18n.Translator(i18n.load_catalog())
+    versions = {}
+    for name in i18n.JS_I18N:
+        src = os.path.join(ROOT, "assets", name)
+        if os.path.exists(src):
+            dst = "assets/" + name[:-3] + ".en.js"
+            write(dst, i18n.js_en(open(src, encoding="utf-8").read(), tr, name))
+            versions[name] = asset_hash(dst)
+    en_pages = []
+    for p in pages:
+        if p["path"] in i18n.SLUGS:
+            e = i18n.SLUGS[p["path"]]
+            write(e.lstrip("/") + ".html", i18n.to_en(rendered[p["path"]], p["path"], tr, versions))
+            en_pages.append((p, e, tr.tplain(p["description"], p["path"] + " [description]")))
+    return tr, en_pages
+
+
 def main():
     pages = all_pages()
     seen_paths = set()
+    rendered = {}
     for p in pages:
         assert p["path"] not in seen_paths, p["path"]
         seen_paths.add(p["path"])
-        write(("preview/" if PREVIEW else "") + out_file(p["path"]), render(p))
+        rendered[p["path"]] = render(p)
+        write(("preview/" if PREVIEW else "") + out_file(p["path"]), rendered[p["path"]])
     if PREVIEW:
         print(f"{len(pages)} Vorschau-Seiten erzeugt (preview/, noindex).")
         return
+    tr, en_pages = build_en(pages, rendered)
     write("sitemap.xml", sitemap(pages))
     write("robots.txt", robots())
-    write("llms.txt", llms(pages))
+    lines = llms(pages).rstrip("\n") + "\n\n## English version\n" + "".join(
+        f"- [{p['short']}]({DOMAIN}{e}): {d}\n" for p, e, d in en_pages)
+    write("llms.txt", lines)
     write("llms-full.txt", llms_full(pages))
-    print(f"{len(pages)} Seiten erzeugt (css v={CSS_V}, js v={JS_V}).")
+    miss = tr.missing
+    if "--i18n-todo" in sys.argv:
+        os.makedirs(os.path.join(ROOT, "tools", "i18n"), exist_ok=True)
+        with open(os.path.join(ROOT, "tools", "i18n", "todo_en.json"), "w", encoding="utf-8") as fh:
+            json.dump(miss, fh, ensure_ascii=False, indent=1)
+    print(f"{len(pages)} Seiten erzeugt, {len(en_pages)} englische Seiten (css v={CSS_V}, js v={JS_V}).")
+    if miss:
+        print(f"WARNUNG: {len(miss)} englische Übersetzungen fehlen (python3 tools/build.py --i18n-todo)")
 
 
 if __name__ == "__main__":

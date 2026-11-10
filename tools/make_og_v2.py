@@ -232,7 +232,16 @@ def main():
     force = "--all" in sys.argv
     tmp = tempfile.mkdtemp(prefix="og_v2_")
     todo = []
+    import i18n
+    tr = i18n.Translator(i18n.load_catalog())
+    items = []
     for m, doc in jobs():
+        items.append((m, doc))
+        en = dict(m, og_image=m["og_image"].replace(".jpg", ".en.jpg"))
+        items.append((en, i18n.translate_fragment(doc, tr, "OG " + m["og_image"])))
+    if tr.missing:
+        print(f"WARNUNG: {len(tr.missing)} Texte für englische Social-Bilder fehlen im Katalog:", list(tr.missing)[:8])
+    for m, doc in items:
         h = hashlib.sha1((VERSION + doc).encode()).hexdigest()[:12]
         dst = os.path.join(ROOT, m["og_image"].lstrip("/"))
         if not force and state.get(m["og_image"]) == h and os.path.exists(dst):

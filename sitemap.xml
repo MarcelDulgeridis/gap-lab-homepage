@@ -1,85 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.gap-lab.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/leistungen</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/leistungen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/leistungen"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/leistungen"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/leistungen"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/fokusfelder</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/focus-areas</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/ueber-uns</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/ueber-uns"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/about-us</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/ueber-uns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/ueber-uns"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/kontakt"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/kontakt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/kontakt"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/fokusfelder/strategie-vertrieb-innovation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/strategie-vertrieb-innovation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/strategie-vertrieb-innovation"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/strategie-vertrieb-innovation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/strategy-sales-innovation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/strategie-vertrieb-innovation"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/fokusfelder/leadership-organisation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/leadership-organisation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/leadership-organisation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/leadership-organisation"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/focus-areas/leadership-organisation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/leadership-organisation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/leadership-organisation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/leadership-organisation"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/fokusfelder/finance-transformation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/finance-transformation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/finance-transformation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/finance-transformation"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/focus-areas/finance-transformation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/fokusfelder/finance-transformation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/focus-areas/finance-transformation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/fokusfelder/finance-transformation"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/ki-readiness</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/ki-readiness"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/ai-readiness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/ki-readiness"/>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/ai-readiness</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/ki-readiness"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/ai-readiness"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/ki-readiness"/>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/innolab</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/innolab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/innolab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/innolab"/>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/innolab</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/innolab"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/innolab"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/innolab"/>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/glossar</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/glossar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/glossary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/glossar"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/glossary</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/glossar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/glossary"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/glossar"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/faq</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/faq"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/faq"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/impressum</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/impressum"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/legal-notice</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/impressum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/impressum"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.gap-lab.de/datenschutz</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/datenschutz"/>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.gap-lab.de/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.gap-lab.de/datenschutz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gap-lab.de/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gap-lab.de/datenschutz"/>
     <lastmod>2026-11-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
