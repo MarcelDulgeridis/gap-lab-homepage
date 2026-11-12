@@ -71,6 +71,8 @@
 
     var STORE_KEY = "the-gap-ki-check-v1";
     var LEAD_QUEUE_KEY = "the-gap-sa-leads";
+    // Gespeicherter Stand verfällt nach 30 Tagen, damit niemand Wochen später in einem alten Ergebnis landet
+    var KEEP_DAYS = 30;
     var $ = function (id) { return document.getElementById(id); };
     var state = load() || fresh();
     var tracking = captureTracking();
@@ -80,9 +82,15 @@
 
     function fresh() { return { view: "landing", step: 0, self: {}, team: {}, unlocked: false, email: "" }; }
     function load() {
-      try { var s = JSON.parse(localStorage.getItem(STORE_KEY)); return s && s.self ? s : null; } catch (e) { return null; }
+      try {
+        var s = JSON.parse(localStorage.getItem(STORE_KEY));
+        if (!s || !s.self) return null;
+        if (s.savedAt && Date.now() - s.savedAt > KEEP_DAYS * 864e5) { localStorage.removeItem(STORE_KEY); return null; }
+        if (!s.savedAt) s.savedAt = Date.now();
+        return s;
+      } catch (e) { return null; }
     }
-    function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {} }
+    function save() { try { state.savedAt = Date.now(); localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) {} }
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
     function complete(q) { return state.self[q.id] !== undefined && state.team[q.id] !== undefined; }
     function doneCount() { return SIGNALS.filter(complete).length; }
@@ -381,7 +389,45 @@
       $("viewResult").hidden = state.view !== "result";
       if (state.view === "question") renderQuestion(focus);
       if (state.view === "result") renderResult();
+      if (!inCheck) renderReturn();
       save();
+    }
+
+    // Hinweis auf der Startseite für wiederkehrende Besucher: Ergebnis ansehen, fortsetzen oder neu starten
+    function renderReturn() {
+      var box = $("returnBox");
+      if (!box) {
+        box = document.createElement("div");
+        box.id = "returnBox";
+        box.className = "vs-banner";
+        box.style.flexWrap = "wrap";
+        var cta = document.querySelector("#landing .hero-cta") || document.querySelector(".hero-cta");
+        if (!cta) return;
+        cta.parentNode.insertBefore(box, cta);
+        box.addEventListener("click", function (e) {
+          var b = e.target.closest("button");
+          if (!b) return;
+          if (b.getAttribute("data-act") === "reset") resetAll();
+          else start();
+        });
+      }
+      var n = doneCount();
+      box.hidden = n === 0;
+      if (!n) return;
+      var done = n === SIGNALS.length;
+      var when = state.doneAt ? new Date(state.doneAt).toLocaleDateString("de-DE", { day: "numeric", month: "long" }) : "";
+      box.innerHTML = '<span aria-hidden="true">↺</span><div style="flex:1;min-width:180px">' +
+        (done ? "Sie haben den Check bereits gemacht" + (when ? " (" + when + ")" : "") + "." : "Sie haben " + n + " von 8 Signalen beantwortet.") +
+        '</div><div class="foot-actions" style="flex-wrap:wrap">' +
+        '<button class="k-btn k-btn-navy" type="button" data-act="open" style="min-height:44px;padding:0 16px">' + (done ? "Ergebnis ansehen" : "Fortsetzen") + '</button>' +
+        '<button class="k-btn k-btn-line" type="button" data-act="reset" style="min-height:44px;padding:0 16px">Neu starten</button></div>';
+    }
+
+    function resetAll() {
+      state = fresh();
+      try { localStorage.removeItem(STORE_KEY); } catch (e) {}
+      teamData = null;
+      start();
     }
 
     function go(view) {
@@ -410,6 +456,7 @@
     function next() {
       if (!complete(SIGNALS[state.step])) return;
       if (state.step < SIGNALS.length - 1) { state.step += 1; render(true); scrollToPanel(); return; }
+      state.doneAt = state.doneAt || Date.now();
       go("result");
     }
     function back() { if (state.step > 0) { state.step -= 1; render(true); scrollToPanel(); } }
@@ -521,7 +568,7 @@
       var q = "source=ki-readiness-check" + (tracking.utm_campaign ? "&utm_campaign=" + encodeURIComponent(tracking.utm_campaign) : "");
       location.href = CONFIG.contactUrl + "?" + q;
     });
-    $("restartBtn").addEventListener("click", function () { var u = state.unlocked, m = state.email; state = fresh(); state.unlocked = u; state.email = m; go("landing"); });
+    $("restartBtn").addEventListener("click", resetAll);
     ["email", "consent"].forEach(function (id) { $(id).addEventListener("input", function () { leadError(""); }); });
 
     document.addEventListener("keydown", function (e) {
@@ -530,6 +577,7 @@
       else if (e.key === "ArrowLeft" && e.target.type !== "radio") { e.preventDefault(); back(); }
     });
 
-    if (state.view === "question" && doneCount() === 0 && state.step === 0 && !Object.keys(state.self).length) state.view = "landing";
+    // Beim Öffnen immer mit der Startseite beginnen; Fortsetzen bzw. Ergebnis gibt es über den Hinweis dort
+    state.view = "landing";
     render(false);
   }());
